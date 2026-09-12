@@ -1,0 +1,1 @@
+{"schema_version":"0.1","profession_id":"analytics-engineer","fixtures":[{"id":"analytics-transform-not-domain-truth","expected":"keep green transformations separate from business-semantic correctness"},{"id":"analytics-source-drift","expected":"detect upstream source drift and refuse silent analytical continuity"}]}

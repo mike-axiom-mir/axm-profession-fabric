@@ -1,0 +1,1 @@
+{"schema_version":"0.1","profession_id":"software-maintainer","fixtures":[{"id":"maintainer-fix-regression","expected":"detect a focused fix that breaks another accepted contract"},{"id":"maintainer-dependency-break","expected":"separate successful dependency installation from compatibility safety"}]}
