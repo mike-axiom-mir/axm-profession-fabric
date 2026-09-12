@@ -1,12 +1,13 @@
 {
-  "name": "axm-profession-fabric",
-  "version": "0.1.0-experimental",
-  "private": true,
-  "description": "AXM Profession Fabric — experimental Professional Body contracts and tests.",
-  "type": "module",
-  "scripts": {
-    "test": "node tests/validate-foundation.mjs && node tests/validate-profession-packages.mjs && node tests/validate-coverage.mjs",
-    "progress": "node tools/profession-progress.mjs"
+  "name":"axm-profession-fabric",
+  "version":"0.1.0-experimental",
+  "private":true,
+  "description":"AXM Profession Fabric — experimental Professional Body contracts and tests.",
+  "type":"module",
+  "scripts":{
+    "test":"node tests/validate-foundation.mjs && node tests/validate-profession-packages.mjs && node tests/validate-coverage.mjs && node tests/validate-build-queue.mjs && node tests/validate-scaffold.mjs",
+    "progress":"node tools/profession-progress.mjs",
+    "scaffold":"node tools/scaffold-profession.mjs"
   },
-  "engines": {"node": ">=20"}
+  "engines":{"node":">=20"}
 }
