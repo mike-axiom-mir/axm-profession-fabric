@@ -1,1 +1,3 @@
-conceptUri,conceptId,preferredLabel,altLabels,ISCOGroup,description\nhttp://example/occupation/qa,qa-1,software tester,"QA tester;quality assurance tester",2519,Tests software and documents defects.\nhttp://example/occupation/dev,dev-1,software developer,"application developer",2512,Develops software applications.\n
+conceptUri,conceptId,preferredLabel,altLabels,ISCOGroup,description
+http://example/occupation/qa,qa-1,software tester,"QA tester;quality assurance tester",2519,Tests software and documents defects.
+http://example/occupation/dev,dev-1,software developer,"application developer",2512,Develops software applications.
