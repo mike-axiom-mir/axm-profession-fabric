@@ -1,4 +1,13 @@
 {
   "schema_version": "0.1",
-  "professions": []
+  "professions": [
+    {
+      "package_id": "software-qa-playtest",
+      "profession_id": "software-qa-playtest",
+      "display_name": "Software QA / Playtest",
+      "status": "EXPERIMENTAL",
+      "root": "professions/software/qa-playtest",
+      "manifest": "package.json"
+    }
+  ]
 }

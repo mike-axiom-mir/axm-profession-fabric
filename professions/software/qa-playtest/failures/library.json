@@ -1,0 +1,13 @@
+{
+  "schema_version": "0.1",
+  "failures": [
+    {"id":"test-becomes-spec","symptom":"An old regression is treated as permanent product authority after intended behavior changes.","detection":["Compare test expectation to newest accepted contract."],"repair":["Preserve history; obtain owning decision; update regression explicitly if contract changed."]},
+    {"id":"false-positive-harness","symptom":"A stub/fixture/environment causes a failure not present on the real product surface.","detection":["Negative/control run","More faithful execution surface","Harness assumption review"],"repair":["Fix/bound harness; withdraw unsupported product-defect claim."]},
+    {"id":"evidence-label-inflation","symptom":"TESTED becomes VISUALLY_INSPECTED/PLAYTESTED or simulation becomes physical certification.","detection":["Identify actual executor/observer and surface used."],"repair":["Downgrade label; record missing evidence explicitly."]},
+    {"id":"version-drift","symptom":"Evidence belongs to an older commit/artifact than the candidate being accepted.","detection":["Exact hash/version comparison before/after run."],"repair":["Retest current candidate or scope evidence to old version."]},
+    {"id":"overfit-fixture","symptom":"Test locks incidental values/implementation rather than the accepted invariant.","detection":["Vary irrelevant conditions","Negative/control cases"],"repair":["Restate invariant and redesign fixture or narrow claim."]},
+    {"id":"duplicate-machine-proof","symptom":"More automation is produced after the same unchanged claim already has sufficient machine evidence while a different evidence category remains missing.","detection":["Compare evidence gap to existing accepted evidence."],"repair":["No-change or target the missing evidence surface."]},
+    {"id":"silent-cross-role-decision","symptom":"QA changes expected behavior, rule, UX, balance, or priority simply to resolve a test result.","detection":["Check ownership map before changing expectation."],"repair":["Handoff evidence; retain HOLD until owning decision if material."]},
+    {"id":"one-case-generalization","symptom":"One route/device/snapshot/browser is used to claim universal correctness or optimality.","detection":["Compare claim scope with sample scope."],"repair":["Narrow claim or gather broader evidence."]}
+  ]
+}

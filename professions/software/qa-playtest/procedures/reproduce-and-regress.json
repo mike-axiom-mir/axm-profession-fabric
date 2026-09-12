@@ -1,0 +1,16 @@
+{
+  "schema_version": "0.1",
+  "procedure_id": "reproduce-and-regress",
+  "purpose": "Turn a reported or suspected software behavior into bounded reproducible evidence and, when justified, a durable regression contract.",
+  "steps": [
+    {"id":"capture-identity","mode":"deterministic","action":"Record exact candidate, baseline, environment, test question, and available expected behavior.","output":"intake record"},
+    {"id":"validate-expectation","mode":"judgment","action":"Decide whether the expectation is grounded strongly enough for a defect/regression claim.","stop_if":"QA would have to invent a product/design decision.","output":"grounded expectation or handoff"},
+    {"id":"minimal-reproduction","mode":"execution","action":"Exercise the smallest faithful path through the relevant interface.","output":"reproduction result"},
+    {"id":"negative-control","mode":"execution","action":"Change one relevant factor or use a known-good/alternate path to distinguish product from harness/environment causes.","output":"control result"},
+    {"id":"characterize-boundary","mode":"hybrid","action":"Probe thresholds, states, event order, timing, retry, or environment conditions that define the behavior.","output":"bounded behavior description"},
+    {"id":"build-regression","mode":"hybrid","action":"Encode the grounded invariant/failure with a control that resists overfitting to incidental implementation detail.","stop_if":"The expectation remains unresolved.","output":"regression fixture"},
+    {"id":"rerun-exact","mode":"deterministic","action":"Run the final fixture on the exact candidate and confirm source/fixture identity.","output":"test result"},
+    {"id":"classify-evidence","mode":"deterministic","action":"Apply the evidence map and record limitations/non-claims.","output":"QA evidence packet"}
+  ],
+  "deterministic_flow_rule": "A deterministic executor may run steps marked deterministic/execution when inputs and tools are available. It must stop at judgment or hybrid steps unless an explicit bounded decision rule resolves them."
+}
