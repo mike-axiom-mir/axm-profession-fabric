@@ -1,0 +1,8 @@
+{
+  "schema_version": "0.1",
+  "target_profession_count": 100,
+  "usable_statuses": ["TEST", "WORKING", "CANON"],
+  "non_counting_statuses": ["DRAFT", "EXPERIMENTAL"],
+  "rule": "A mapped target, generated file, structurally valid package, or convincing demo does not count as usable professional capability until the package reaches TEST or higher through profession-relevant evidence.",
+  "high_stakes_require_domain_specific_evidence": true
+}

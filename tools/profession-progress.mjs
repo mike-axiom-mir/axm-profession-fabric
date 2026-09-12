@@ -1,0 +1,10 @@
+import fs from 'node:fs';
+const read = p => JSON.parse(fs.readFileSync(p, 'utf8'));
+const targets = read('registry/profession-targets.json');
+const registry = read('registry/professions.json');
+const policy = read('registry/coverage-policy.json');
+const targetCount = Object.values(targets.domains).reduce((n, items) => n + items.length, 0);
+const byStatus = {};
+for (const p of registry.professions) byStatus[p.status] = (byStatus[p.status] ?? 0) + 1;
+const usable = registry.professions.filter(p => policy.usable_statuses.includes(p.status)).length;
+console.log(JSON.stringify({targetCount, registeredPackages: registry.professions.length, usablePackages: usable, usableGoal: policy.target_profession_count, byStatus}, null, 2));
