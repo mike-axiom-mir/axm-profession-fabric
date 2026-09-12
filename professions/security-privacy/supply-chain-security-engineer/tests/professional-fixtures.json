@@ -1,0 +1,1 @@
+{"schema_version":"0.1","profession_id":"supply-chain-security-engineer","fixtures":[{"id":"supplychain-provenance-not-safety","expected":"separate valid provenance from semantic vulnerability evidence"},{"id":"supplychain-unknown-dependency","expected":"detect runtime dependency drift beyond declared inventory"}]}

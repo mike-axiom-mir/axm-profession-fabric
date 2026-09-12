@@ -1,0 +1,1 @@
+{"schema_version":"0.1","profession_id":"information-architect","fixtures":[{"id":"ia-ambiguous-label","expected":"detect ambiguous categories instead of forcing tidy classification"},{"id":"ia-structure-not-source-truth","expected":"preserve domain-source authority over IA labels"}]}

@@ -1,0 +1,1 @@
+{"schema_version":"0.1","profession_id":"design-systems-specialist","fixtures":[{"id":"design-system-breaking-change","expected":"detect consumer impact and require explicit migration evidence"},{"id":"design-system-not-product-acceptance","expected":"keep reusable-system consistency separate from product UX acceptance"}]}
