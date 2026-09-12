@@ -1,0 +1,1 @@
+{"schema_version":"0.1","profession_id":"embedded-software-engineer","fixtures":[{"id":"embedded-target-mismatch","expected":"preserve simulator/target/revision evidence boundary"},{"id":"embedded-unsafe-update","expected":"stop unrecoverable or unauthorized physical firmware transition"}]}

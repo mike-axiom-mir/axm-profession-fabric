@@ -1,0 +1,1 @@
+{"schema_version":"0.1","profession_id":"full-stack-engineer","fixtures":[{"id":"fullstack-contract-break","expected":"detect frontend/backend contract contradiction and hand ownership correctly"},{"id":"fullstack-stub-boundary","expected":"preserve stub provenance and refuse production-equivalence claim"}]}
