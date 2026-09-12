@@ -5,6 +5,11 @@
     {"package_id":"integration-release-engineer","profession_id":"integration-release-engineer","display_name":"Software Integration / Release Engineer","status":"EXPERIMENTAL","root":"professions/software/integration-release","manifest":"package.json"},
     {"package_id":"gameplay-engineer","profession_id":"gameplay-engineer","display_name":"Gameplay Engineer","status":"EXPERIMENTAL","root":"professions/game-development/gameplay-engineer","manifest":"package.json"},
     {"package_id":"game-systems-designer","profession_id":"game-systems-designer","display_name":"Game Systems Designer","status":"EXPERIMENTAL","root":"professions/game-development/game-systems-designer","manifest":"package.json"},
-    {"package_id":"world-encounter-designer","profession_id":"world-encounter-designer","display_name":"World / Encounter Designer","status":"EXPERIMENTAL","root":"professions/game-development/world-encounter-designer","manifest":"package.json"}
+    {"package_id":"world-encounter-designer","profession_id":"world-encounter-designer","display_name":"World / Encounter Designer","status":"EXPERIMENTAL","root":"professions/game-development/world-encounter-designer","manifest":"package.json"},
+    {"package_id":"software-architect","profession_id":"software-architect","display_name":"Software Architect","status":"EXPERIMENTAL","root":"professions/software/software-architect","manifest":"package.json"},
+    {"package_id":"backend-engineer","profession_id":"backend-engineer","display_name":"Backend Engineer","status":"EXPERIMENTAL","root":"professions/software/backend-engineer","manifest":"package.json"},
+    {"package_id":"frontend-engineer","profession_id":"frontend-engineer","display_name":"Frontend Engineer","status":"EXPERIMENTAL","root":"professions/software/frontend-engineer","manifest":"package.json"},
+    {"package_id":"devops-engineer","profession_id":"devops-engineer","display_name":"DevOps Engineer","status":"EXPERIMENTAL","root":"professions/software/devops-engineer","manifest":"package.json"},
+    {"package_id":"site-reliability-engineer","profession_id":"site-reliability-engineer","display_name":"Site Reliability Engineer","status":"EXPERIMENTAL","root":"professions/software/site-reliability-engineer","manifest":"package.json"}
   ]
 }
