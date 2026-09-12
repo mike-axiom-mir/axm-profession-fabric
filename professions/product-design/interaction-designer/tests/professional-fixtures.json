@@ -1,0 +1,1 @@
+{"schema_version":"0.1","profession_id":"interaction-designer","fixtures":[{"id":"interaction-recovery-path","expected":"require explicit error/retry/cancel behavior"},{"id":"interaction-prototype-not-user-proof","expected":"separate prototype behavior from representative user evidence"}]}

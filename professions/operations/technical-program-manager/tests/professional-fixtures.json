@@ -1,0 +1,1 @@
+{"schema_version":"0.1","profession_id":"technical-program-manager","fixtures":[{"id":"tpm-schedule-not-done","expected":"require source evidence rather than calendar completion"},{"id":"tpm-cross-specialist-conflict","expected":"preserve specialist authority and route disagreement"}]}

@@ -1,0 +1,1 @@
+{"schema_version":"0.1","profession_id":"threat-modeler","fixtures":[{"id":"threat-model-hypothesis-boundary","expected":"keep theoretical threat separate from confirmed vulnerability"},{"id":"threat-model-change-drift","expected":"invalidate stale threat evidence after material architecture change"}]}
