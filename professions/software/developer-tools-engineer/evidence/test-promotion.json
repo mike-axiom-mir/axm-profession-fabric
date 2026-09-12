@@ -51,7 +51,7 @@
       "result":"PASS",
       "source_evidence_ids":["universal-beacon-31","universal-workspace-isolation-33"],
       "observation":"Beacon was designed and regression-tested as proposal-only with canonical state unchanged; separately, candidate tooling exposed a real ownership bug that deleted another worker's state, then repaired cleanup to the exact owned workspace and preserved the sibling sentinel on both passing and failing tool paths.",
-      "non_claims":["This does not prove hostile-process locking, every filesystem race, or universal tool sandboxing; it proves the cited proposal-only and owned-workspace boundaries."
+      "non_claims":["This does not prove hostile-process locking, every filesystem race, or universal tool sandboxing; it proves the cited proposal-only and owned-workspace boundaries."]
     }
   ],
   "executor_conditions":[
