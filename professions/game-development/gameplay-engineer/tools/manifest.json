@@ -1,0 +1,1 @@
+{"schema_version":"0.1","profession_id":"gameplay-engineer","tools":[{"id":"source-runtime-reader","deterministic_compatible":true},{"id":"input-event-simulator","deterministic_compatible":true},{"id":"interactive-runtime","deterministic_compatible":false},{"id":"response-measurer","deterministic_compatible":true},{"id":"regression-runner","deterministic_compatible":true}]}

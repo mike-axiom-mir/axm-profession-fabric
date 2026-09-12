@@ -42,34 +42,13 @@ A **Profession Package** keeps one profession's reusable machinery isolated unde
 
 Cross-profession reuse is contract-only by default. Other packages or institutions consume explicit exports rather than silently copying another specialist's internals.
 
-The same package can expose routes for:
-
-- human-guided work;
-- AI/model-guided work;
-- other machine intelligence;
-- deterministic flows that execute only bounded procedures they can honestly satisfy.
+The same package can expose routes for human-guided work, AI/model-guided work, other machine intelligence, and deterministic flows that execute only bounded procedures they can honestly satisfy.
 
 See `docs/PROFESSION_PACKAGE_LAYOUT.md`.
 
 ## What a Professional Body must eventually contain
 
-A body is more than a role and skill list. The v0.1 contract requires explicit structure for:
-
-- professional purpose and ownership boundaries;
-- inputs and outputs;
-- knowledge domains, references, retrieval rules, and uncertainty rules;
-- reusable skills/capabilities;
-- tools with allowed and forbidden actions;
-- deterministic or bounded procedures;
-- canonical, project, and working-memory separation;
-- state interfaces and write boundaries;
-- evidence labels and claim rules;
-- decision rights and consultation boundaries;
-- cross-profession handoffs;
-- common professional failure patterns and repair paths;
-- professional tests/fixtures;
-- provenance;
-- evidence-backed growth and rollback.
+A body is more than a role and skill list. The v0.1 contract requires explicit structure for professional purpose and ownership boundaries; inputs/outputs; knowledge/retrieval/uncertainty; reusable skills; tool contracts; deterministic or bounded procedures; memory separation; state interfaces; evidence standards; decision rights; handoffs; failure patterns; professional tests; provenance; and evidence-backed growth/rollback.
 
 The machine should reproduce the **work structure** of a profession, not a stereotype or personality associated with that profession.
 
@@ -92,9 +71,13 @@ This is deliberately not a file-count or role-name target:
 - only `TEST`, `WORKING`, and `CANON` packages count under `registry/coverage-policy.json`.
 - high-stakes/regulated professions require domain-specific evidence; appearing in the target map grants no authority to execute regulated work.
 
-Run `npm run progress` for the current machine-counted state.
+Run `npm run progress` for the machine-counted state.
 
-The current target map contains more than 100 profession directions across software, AI/data, product/design, security/privacy, operations, business/finance, legal/governance, science/engineering, creative/media, education/research, health, manufacturing/infrastructure, and community/public systems.
+The current target map contains 100+ profession directions across software, AI/data, product/design, security/privacy, operations, business/finance, legal/governance, science/engineering, creative/media, education/research, health, manufacturing/infrastructure, and community/public systems.
+
+## Institution roles are not automatically professions
+
+Agent/studio role boundaries are useful observations, but Profession Fabric maps the underlying human professional disciplines rather than copying every institutional role one-to-one. `docs/GHOST_STUDIO_COHORT.md` records the first case: Gameplay, Systems, World, QA, and Integration map cleanly enough to isolate; the combined Experience / Art / Audio role must be decomposed, and Game Director spans multiple professional/institutional dimensions that need separate mapping.
 
 ## Foundation files
 
@@ -102,11 +85,11 @@ The current target map contains more than 100 profession directions across softw
 - `docs/THESIS.md` — research thesis and success boundary.
 - `docs/PROFESSIONAL_BODY_SPEC.md` — semantic contract behind the body schema.
 - `docs/PROFESSION_PACKAGE_LAYOUT.md` — isolated reusable package contract.
-- `docs/PROFESSION_COMPILER.md` — proposed pipeline for reconstructing a profession.
+- `docs/PROFESSION_COMPILER.md` — pipeline for reconstructing a profession.
 - `docs/EVIDENCE_STANDARD.md` — evidence labels and professional claim rules.
-- `docs/RESEARCH_TEAM.md` — initial meta-team for mapping and compiling professions.
-- `schemas/professional-body.schema.json` — machine-readable body contract.
-- `schemas/profession-package.schema.json` — machine-readable isolated package contract.
+- `docs/RESEARCH_TEAM.md` — meta-team for mapping and compiling professions.
+- `docs/GHOST_STUDIO_COHORT.md` — first observed-role to human-profession decomposition notes.
+- `schemas/` — machine-readable body/package contracts.
 - `templates/` — neutral starting contracts.
 - `registry/professions.json` — implemented/discoverable profession packages.
 - `registry/profession-targets.json` — broad profession research backlog.
@@ -120,12 +103,15 @@ The current target map contains more than 100 profession directions across softw
 
 Build a broad 100+ target map while deepening isolated professions one at a time. Breadth identifies what remains; only evidence-backed maturity moves the usable counter.
 
-Current deep experiments:
+Current isolated deep experiments:
 
 1. **Software QA / Playtest** — reproduction, regression, input/state edges, evidence boundaries, rendered/human-playtest distinctions, and contract conflict detection.
 2. **Software Integration / Release Engineer** — dependency ordering, semantic overlap, stale-base recomposition, exact-head verification, rollback continuity, and bounded release readiness.
+3. **Gameplay Engineer** — player-control/action implementation, device/input response, retry/recovery, collision behavior, measurement, and cross-role consequences.
+4. **Game Systems Designer** — rules/resources/progression/pressure, invariants, solvability, terminal conditions, and tradeoff contracts.
+5. **World / Encounter Designer** — spatial topology, objective/encounter placement, reachability, route costs, traversal rhythm, and spatial evidence boundaries.
 
-Both remain `EXPERIMENTAL` until professional fixtures and cross-executor evidence justify promotion.
+All five remain `EXPERIMENTAL` until their professional fixtures and cross-executor evidence justify promotion. The honest usable-profession counter therefore remains separate from implemented-package count.
 
 ## Non-claims
 

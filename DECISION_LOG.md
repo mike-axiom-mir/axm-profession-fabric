@@ -85,3 +85,15 @@ Durable architectural decisions. Prefer append/supersede over silent historical 
 **Decision:** Software Integration / Release Engineer is the second deep package experiment, seeded from observed Ghost Studio integration behavior.
 
 **Consequence:** The experiment focuses on dependency composition, semantic overlap, stale-base recomposition, exact-head verification, rollback continuity, and release readiness while preserving domain-profession decision boundaries. It remains `EXPERIMENTAL` until its own professional evidence supports promotion.
+
+## 2026-09-12 — Institution roles are not automatically professions
+
+**Decision:** Multi-discipline agent/studio roles may be used as observation sources but are not copied one-to-one into Profession Fabric unless the boundary corresponds to a defensible human profession/specialization.
+
+**Consequence:** Ghost Studio's combined Experience / Art / Audio role will be decomposed into its constituent professional disciplines before any optional institution-level composite is defined. Game Director evidence will likewise be mapped carefully across creative direction, product identity, scope/milestone governance, and coordination rather than silently becoming a generic profession.
+
+## 2026-09-12 — First game-development cohort
+
+**Decision:** Gameplay Engineer, Game Systems Designer, and World / Encounter Designer become separate `EXPERIMENTAL` Profession Packages seeded from Ghost Studio observations.
+
+**Consequence:** Their tools, maps, procedures, evidence, memory, failures, tests, and decision rights remain independently reusable. Cross-role consequences flow through declared handoffs rather than a blended game-development super-agent.

@@ -1,21 +1,10 @@
 {
   "schema_version": "0.1",
   "professions": [
-    {
-      "package_id": "software-qa-playtest",
-      "profession_id": "software-qa-playtest",
-      "display_name": "Software QA / Playtest",
-      "status": "EXPERIMENTAL",
-      "root": "professions/software/qa-playtest",
-      "manifest": "package.json"
-    },
-    {
-      "package_id": "integration-release-engineer",
-      "profession_id": "integration-release-engineer",
-      "display_name": "Software Integration / Release Engineer",
-      "status": "EXPERIMENTAL",
-      "root": "professions/software/integration-release",
-      "manifest": "package.json"
-    }
+    {"package_id":"software-qa-playtest","profession_id":"software-qa-playtest","display_name":"Software QA / Playtest","status":"EXPERIMENTAL","root":"professions/software/qa-playtest","manifest":"package.json"},
+    {"package_id":"integration-release-engineer","profession_id":"integration-release-engineer","display_name":"Software Integration / Release Engineer","status":"EXPERIMENTAL","root":"professions/software/integration-release","manifest":"package.json"},
+    {"package_id":"gameplay-engineer","profession_id":"gameplay-engineer","display_name":"Gameplay Engineer","status":"EXPERIMENTAL","root":"professions/game-development/gameplay-engineer","manifest":"package.json"},
+    {"package_id":"game-systems-designer","profession_id":"game-systems-designer","display_name":"Game Systems Designer","status":"EXPERIMENTAL","root":"professions/game-development/game-systems-designer","manifest":"package.json"},
+    {"package_id":"world-encounter-designer","profession_id":"world-encounter-designer","display_name":"World / Encounter Designer","status":"EXPERIMENTAL","root":"professions/game-development/world-encounter-designer","manifest":"package.json"}
   ]
 }
