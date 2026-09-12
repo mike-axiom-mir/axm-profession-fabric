@@ -1,0 +1,1 @@
+{"schema_version":"0.1","profession_id":"local-first-engineer","tool_contracts":[{"id":"offline-state-harness","purpose":"Exercise local writes, restarts, divergence and resynchronization","forbidden":"No silent semantic last-writer-wins without accepted domain contract."}]}

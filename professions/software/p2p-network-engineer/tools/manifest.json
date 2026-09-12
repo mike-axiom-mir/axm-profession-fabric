@@ -1,0 +1,1 @@
+{"schema_version":"0.1","profession_id":"p2p-network-engineer","tool_contracts":[{"id":"network-condition-harness","purpose":"Exercise peer transport under controlled network conditions","forbidden":"No internet-wide or application-consistency claim from bounded transport evidence."}]}

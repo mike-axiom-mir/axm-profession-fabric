@@ -1,0 +1,1 @@
+{"schema_version":"0.1","profession_id":"local-first-engineer","fixtures":[{"id":"localfirst-offline-write","expected":"Preserve divergent histories/conflict rather than silent overwrite."},{"id":"localfirst-hidden-cloud","expected":"Identify remote dependency and scope offline claim."}]}

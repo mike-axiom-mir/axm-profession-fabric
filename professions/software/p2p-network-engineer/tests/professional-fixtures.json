@@ -1,0 +1,1 @@
+{"schema_version":"0.1","profession_id":"p2p-network-engineer","fixtures":[{"id":"p2p-lan-only","expected":"Scope connectivity to tested network/NAT conditions."},{"id":"p2p-delivery-divergence","expected":"Separate transport delivery from application consistency."}]}
