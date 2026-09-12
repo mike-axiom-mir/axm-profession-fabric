@@ -1,0 +1,1 @@
+{"schema_version":"0.1","profession_id":"database-engineer","failures":[{"id":"backup-without-restore","symptom":"Backups green, restore unproven.","repair_path":["Controlled restore plus integrity verification."]},{"id":"rolling-migration-break","symptom":"Schema migration breaks old client during rollout.","repair_path":["Staged backward/forward-compatible transition."]}]}
