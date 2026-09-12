@@ -1,0 +1,1 @@
+{"schema_version":"0.1","profession_id":"integration-release-engineer","flow":["refresh accepted state","scan newest proposals","build dependency graph","scan semantic overlap","compose bounded deltas","run exact-head verification","resolve or HOLD domain conflicts","record rollback","land/synchronize accepted state"]}

@@ -77,9 +77,24 @@ The machine should reproduce the **work structure** of a profession, not a stere
 
 **EXPERIMENTAL FOUNDATION — v0.1**
 
-The repository defines the Professional Body contract and isolated Profession Package format. It does **not** yet claim that any human profession has been fully reconstructed.
+The repository defines the Professional Body contract, isolated Profession Package format, target coverage map, and maturity accounting. It does **not** yet claim that any human profession has been fully reconstructed.
 
 A body should not be called `WORKING` merely because its files validate or a model can talk convincingly about the domain. It must pass profession-relevant tests and produce grounded professional outputs on representative tasks.
+
+## 100+ usable-profession goal
+
+The long-term utility milestone is **100 or more usable Profession Packages**.
+
+This is deliberately not a file-count or role-name target:
+
+- `registry/profession-targets.json` maps the research backlog. A mapped name is not an implementation.
+- `DRAFT` and `EXPERIMENTAL` packages do **not** count toward the usable milestone.
+- only `TEST`, `WORKING`, and `CANON` packages count under `registry/coverage-policy.json`.
+- high-stakes/regulated professions require domain-specific evidence; appearing in the target map grants no authority to execute regulated work.
+
+Run `npm run progress` for the current machine-counted state.
+
+The current target map contains more than 100 profession directions across software, AI/data, product/design, security/privacy, operations, business/finance, legal/governance, science/engineering, creative/media, education/research, health, manufacturing/infrastructure, and community/public systems.
 
 ## Foundation files
 
@@ -93,17 +108,24 @@ A body should not be called `WORKING` merely because its files validate or a mod
 - `schemas/professional-body.schema.json` — machine-readable body contract.
 - `schemas/profession-package.schema.json` — machine-readable isolated package contract.
 - `templates/` — neutral starting contracts.
-- `registry/professions.json` — discoverable profession packages.
-- `tests/` — dependency-free structural verification.
+- `registry/professions.json` — implemented/discoverable profession packages.
+- `registry/profession-targets.json` — broad profession research backlog.
+- `registry/coverage-policy.json` — machine-readable definition of what counts toward the 100+ utility goal.
+- `tests/` — dependency-free structural and coverage verification.
 - `DECISION_LOG.md` — append-first durable architectural decisions.
 
 ## Current milestone
 
-**First Profession Experiment**
+**Breadth map + deep profession experiments**
 
-Use one bounded human profession to attack the contract. Its missing structures and failures should improve the fabric rather than being hidden behind a larger role prompt.
+Build a broad 100+ target map while deepening isolated professions one at a time. Breadth identifies what remains; only evidence-backed maturity moves the usable counter.
 
-The first experiment is Software QA / Playtest because AXM Ghost Studio already provides observed specialist work across reproduction, input edges, loop closure, rendered evidence, state-dependent consequence testing, cross-role conflict, and explicit non-claims.
+Current deep experiments:
+
+1. **Software QA / Playtest** — reproduction, regression, input/state edges, evidence boundaries, rendered/human-playtest distinctions, and contract conflict detection.
+2. **Software Integration / Release Engineer** — dependency ordering, semantic overlap, stale-base recomposition, exact-head verification, rollback continuity, and bounded release readiness.
+
+Both remain `EXPERIMENTAL` until professional fixtures and cross-executor evidence justify promotion.
 
 ## Non-claims
 

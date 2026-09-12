@@ -8,6 +8,14 @@
       "status": "EXPERIMENTAL",
       "root": "professions/software/qa-playtest",
       "manifest": "package.json"
+    },
+    {
+      "package_id": "integration-release-engineer",
+      "profession_id": "integration-release-engineer",
+      "display_name": "Software Integration / Release Engineer",
+      "status": "EXPERIMENTAL",
+      "root": "professions/software/integration-release",
+      "manifest": "package.json"
     }
   ]
 }
