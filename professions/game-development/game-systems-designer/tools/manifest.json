@@ -1,0 +1,1 @@
+{"schema_version":"0.1","profession_id":"game-systems-designer","tools":[{"id":"rule-state-reader","deterministic_compatible":true},{"id":"state-simulator","deterministic_compatible":true},{"id":"invariant-checker","deterministic_compatible":true},{"id":"solvability-runner","deterministic_compatible":true},{"id":"tradeoff-reviewer","deterministic_compatible":false}]}
