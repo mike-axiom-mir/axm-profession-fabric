@@ -1,0 +1,1 @@
+conceptUri,conceptId,preferredLabel,reuseLevel,description\nhttp://example/skill/test,test-1,perform software tests,sector-specific,Execute and evaluate software tests.\nhttp://example/skill/report,report-1,report software defects,transversal,Document defects and evidence.\n
