@@ -1,0 +1,107 @@
+{
+  "schema_version": "0.1",
+  "run_id": "workshop-001",
+  "run_type": "single-cognition-multi-profession-method-overlay",
+  "date": "2026-09-12",
+  "job": {
+    "source_repository": "mike-axiom-mir/axm-universal-creation",
+    "source_commit": "2d9128ecb0eb08a21ea9e8f283fe4fb613d2983a",
+    "merge_commit": "fb1f645cffcac1e05f07462b20316b51d270492b",
+    "tested_tree": "54bb1fec77c0315f00b4751181ba09bf9a8f0e1a",
+    "detailed_glb_sha256": "d89381854d9f6adad84b44980677d16d021a91ed6dd87ab98295e24f4eccdc9e",
+    "lod1_glb_sha256": "bcc56d2e217e3f35958cde5ab9370d572e4df7fbacc763817e5c9097409b8c26"
+  },
+  "observed_metrics": {
+    "detailed_triangles": 176043,
+    "detailed_vertices": 265043,
+    "lod1_triangles": 63349,
+    "lod1_vertices": 102645,
+    "lod1_triangle_ratio": 0.3598404935,
+    "material_batches_each": 18,
+    "embedded_images_each": 47,
+    "embedded_image_bytes_mib": 17.6884,
+    "estimated_rgba8_texture_mib_before_mips": 53.0,
+    "all_exported_materials_double_sided": true,
+    "animations": 0,
+    "skins": 0,
+    "detailed_degenerate_triangles_under_1e_10": 1
+  },
+  "method_overlays": [
+    {
+      "profession_id": "art-director",
+      "body_status": "EXPERIMENTAL",
+      "finding": "Craft quality is high, but large-form visual identity remains less distinctive than the intended playful game-survivor direction.",
+      "priority_actions": [
+        "Strengthen one front-facing personality/faction anchor readable at RTS distance.",
+        "Strengthen one roof/silhouette invention that reads as deliberately improvised.",
+        "Break rear/side uniformity without rebuilding the asset style.",
+        "Preserve current teal/rust/wood craft and existing personality seeds."
+      ],
+      "nonclaims": [
+        "No universal aesthetic score.",
+        "No gameplay/readability acceptance.",
+        "No target-engine acceptance."
+      ]
+    },
+    {
+      "profession_id": "3d-artist",
+      "body_status": "EXPERIMENTAL",
+      "finding": "Real authored 3D craft holds across hero, rear and close-detail views; the next art iteration should amplify readable identity rather than simply add detail.",
+      "priority_actions": [
+        "Amplify large-form personality while preserving source continuity.",
+        "Protect silhouette/proportion/visual-family coherence across revisions.",
+        "Retain editable Blender source and exact GLB identity.",
+        "Keep visual craft separate from game-ready claims."
+      ],
+      "handoff": "technical-artist"
+    },
+    {
+      "profession_id": "technical-artist",
+      "body_status": "EXPERIMENTAL",
+      "finding": "Structural/export validation is strong, but target runtime, collision, navigation, cost and LOD perceptual acceptance remain separate missing evidence surfaces.",
+      "priority_actions": [
+        "Add target-context collision/navigation lane.",
+        "Run target-engine import with exact scale/pivot/material/shader evidence.",
+        "Audit need for double-sided state on all 18 materials.",
+        "Set target texture/material budget before optimizing.",
+        "Visually compare LOD1 at intended RTS camera distance.",
+        "Preserve art-direction handoff when optimization changes silhouette/readability."
+      ],
+      "nonclaims": [
+        "No target-device FPS certification.",
+        "No LOD perceptual-equivalence claim.",
+        "No collision/navigation correctness claim.",
+        "No complete game-readiness claim."
+      ]
+    },
+    {
+      "profession_id": "software-qa-playtest",
+      "body_status": "EXPERIMENTAL",
+      "finding": "Current package supports authored-3D, structural inspection and fresh-import render evidence, but not target-game behavior.",
+      "pass": [
+        "Artifact hashes recorded.",
+        "Geometry/UV/normal/image/bounds inspection recorded.",
+        "Detailed and LOD1 triangle counts measured.",
+        "Detailed GLB freshly re-imported and visually inspected from three views.",
+        "Structural/render evidence is explicitly separated from target runtime evidence."
+      ],
+      "not_tested_or_hold": [
+        "Collider correctness.",
+        "Navigation/pathfinding integration.",
+        "Target-RTS import/runtime behavior.",
+        "Target-device performance/FPS.",
+        "LOD perceptual equivalence at game camera distance.",
+        "Gameplay readability/interaction clearance.",
+        "Art Director acceptance of final vibe."
+      ],
+      "claim_boundary": "Do not call the package game-ready until relevant target-engine, collision/navigation and runtime evidence exists."
+    }
+  ],
+  "combined_priority": [
+    "direction",
+    "integration",
+    "cost-and-readability"
+  ],
+  "effect_claim": "NONE",
+  "truth_boundary": "This run demonstrates differentiated professional method outputs on one real job. It does not prove independent specialist identities, general profession-body uplift, or final asset acceptance."
+}
