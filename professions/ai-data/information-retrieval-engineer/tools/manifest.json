@@ -1,0 +1,1 @@
+{"schema_version":"0.1","profession_id":"information-retrieval-engineer","tool_contracts":[{"id":"retrieval-eval-runner","purpose":"Build/query exact indexes and calculate bounded relevance/coverage/latency evidence.","forbidden":"Treat offline metric improvement as universal human/product relevance."}]}

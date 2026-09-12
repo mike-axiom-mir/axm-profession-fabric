@@ -1,0 +1,1 @@
+{"schema_version":"0.1","profession_id":"mlops-engineer","tool_contracts":[{"id":"model-registry-pipeline","purpose":"Build/package/promote model artifacts with exact provenance and rollback identity.","forbidden":"Promote a model solely because packaging/deployment succeeds."}]}

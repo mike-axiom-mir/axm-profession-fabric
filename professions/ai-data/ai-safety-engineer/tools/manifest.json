@@ -1,0 +1,1 @@
+{"schema_version":"0.1","profession_id":"ai-safety-engineer","tool_contracts":[{"id":"ai-safety-eval-harness","purpose":"Execute authorized bounded safety/robustness/misuse evaluations and capture reproducible evidence.","forbidden":"Expand authorization, conceal adverse results, or turn a passing suite into a universal safe claim."}]}

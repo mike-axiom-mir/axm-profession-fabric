@@ -1,0 +1,1 @@
+{"schema_version":"0.1","profession_id":"data-quality-engineer","tool_contracts":[{"id":"data-quality-profiler","purpose":"Profile and validate declared datasets/contracts with lineage-aware evidence.","forbidden":"Invent domain meaning or silently delete/repair source data."}]}
