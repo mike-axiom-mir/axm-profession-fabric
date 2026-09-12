@@ -1,0 +1,1 @@
+{"schema_version":"0.1","profession_id":"mobile-application-engineer","fixtures":[{"id":"mobile-emulator-only","expected":"refuse physical-device parity claim from emulator-only evidence"},{"id":"mobile-offline-resume","expected":"preserve local/sync state across kill/offline/resume transition"}]}

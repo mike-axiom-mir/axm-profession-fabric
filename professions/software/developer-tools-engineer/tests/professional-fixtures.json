@@ -1,0 +1,1 @@
+{"schema_version":"0.1","profession_id":"developer-tools-engineer","fixtures":[{"id":"devtools-green-not-correct","expected":"keep tool success separate from target semantic acceptance"},{"id":"devtools-hidden-write","expected":"stop undeclared shared-state mutation"}]}
