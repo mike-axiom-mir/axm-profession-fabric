@@ -35,6 +35,11 @@
     {"package_id":"data-platform-engineer","profession_id":"data-platform-engineer","display_name":"Data Platform Engineer","status":"EXPERIMENTAL","root":"professions/software/data-platform-engineer","manifest":"package.json"},
     {"package_id":"api-platform-engineer","profession_id":"api-platform-engineer","display_name":"API / Platform Engineer","status":"EXPERIMENTAL","root":"professions/software/api-platform-engineer","manifest":"package.json"},
     {"package_id":"distributed-systems-engineer","profession_id":"distributed-systems-engineer","display_name":"Distributed Systems Engineer","status":"EXPERIMENTAL","root":"professions/software/distributed-systems-engineer","manifest":"package.json"},
-    {"package_id":"embedded-software-engineer","profession_id":"embedded-software-engineer","display_name":"Embedded Software Engineer","status":"EXPERIMENTAL","root":"professions/software/embedded-software-engineer","manifest":"package.json"}
+    {"package_id":"embedded-software-engineer","profession_id":"embedded-software-engineer","display_name":"Embedded Software Engineer","status":"EXPERIMENTAL","root":"professions/software/embedded-software-engineer","manifest":"package.json"},
+    {"package_id":"mobile-application-engineer","profession_id":"mobile-application-engineer","display_name":"Mobile Application Engineer","status":"EXPERIMENTAL","root":"professions/software/mobile-application-engineer","manifest":"package.json"},
+    {"package_id":"graphics-engineer","profession_id":"graphics-engineer","display_name":"Graphics Engineer","status":"EXPERIMENTAL","root":"professions/software/graphics-engineer","manifest":"package.json"},
+    {"package_id":"developer-tools-engineer","profession_id":"developer-tools-engineer","display_name":"Developer Tools Engineer","status":"EXPERIMENTAL","root":"professions/software/developer-tools-engineer","manifest":"package.json"},
+    {"package_id":"data-scientist","profession_id":"data-scientist","display_name":"Data Scientist","status":"EXPERIMENTAL","root":"professions/ai-data/data-scientist","manifest":"package.json"},
+    {"package_id":"ontology-engineer","profession_id":"ontology-engineer","display_name":"Ontology Engineer","status":"EXPERIMENTAL","root":"professions/ai-data/ontology-engineer","manifest":"package.json"}
   ]
 }
