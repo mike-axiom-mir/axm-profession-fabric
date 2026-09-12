@@ -1,0 +1,1 @@
+{"schema_version":"0.1","profession_id":"api-platform-engineer","fixtures":[{"id":"api-compatible-shape-wrong-meaning","expected":"flag semantic compatibility risk despite stable schema"},{"id":"api-unknown-consumer","expected":"keep deprecation bounded and reversible when consumer inventory is incomplete"}]}

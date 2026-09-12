@@ -1,0 +1,1 @@
+{"schema_version":"0.1","profession_id":"distributed-systems-engineer","fixtures":[{"id":"distributed-duplicate-retry","expected":"handle ambiguous timeout/retry without duplicate side effect"},{"id":"distributed-partition-claim","expected":"refuse broad fault-tolerance claim when partition behavior is untested"}]}

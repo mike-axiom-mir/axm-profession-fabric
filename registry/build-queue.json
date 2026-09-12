@@ -32,6 +32,11 @@
     {"profession_id":"research-methodologist","priority":27,"state":"implemented-experimental","reason":"Strengthens evidence design for profession reconstruction itself."},
     {"profession_id":"statistician","priority":28,"state":"implemented-experimental","reason":"Quantitative evidence interpretation should be a bounded specialist."},
     {"profession_id":"systems-engineer","priority":29,"state":"implemented-experimental","reason":"Cross-component requirements/interfaces/verification generalize beyond software."},
-    {"profession_id":"maintenance-engineer","priority":30,"state":"implemented-experimental","reason":"Begins physical-system profession coverage for future machines/robots/Walmi contexts."}
+    {"profession_id":"maintenance-engineer","priority":30,"state":"implemented-experimental","reason":"Begins physical-system profession coverage for future machines/robots/Walmi contexts."},
+    {"profession_id":"full-stack-engineer","priority":31,"state":"implemented-experimental","reason":"Tests whether end-to-end convenience can remain subordinate to specialist ownership."},
+    {"profession_id":"data-platform-engineer","priority":32,"state":"implemented-experimental","reason":"Adds reusable data infrastructure, lineage and replay machinery for state-heavy AXM systems."},
+    {"profession_id":"api-platform-engineer","priority":33,"state":"implemented-experimental","reason":"Adds shared interface, version and consumer-migration discipline across modular repos and institutions."},
+    {"profession_id":"distributed-systems-engineer","priority":34,"state":"implemented-experimental","reason":"Adds explicit partial-failure, consistency and idempotency machinery needed for mesh and P2P futures."},
+    {"profession_id":"embedded-software-engineer","priority":35,"state":"implemented-experimental","reason":"Bridges software into devices while preserving hardware and physical-safety evidence boundaries."}
   ]
 }

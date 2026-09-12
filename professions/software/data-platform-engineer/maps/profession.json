@@ -1,0 +1,1 @@
+{"schema_version":"0.1","profession_id":"data-platform-engineer","owns":["data-platform services","lineage/replay/contracts"],"consults":["data engineer","database engineer","privacy","security","domain owner"],"adopted_research_boundary":"Structural compatibility never proves semantic compatibility; domain meaning remains externally owned.","status":"NOT_TESTED"}

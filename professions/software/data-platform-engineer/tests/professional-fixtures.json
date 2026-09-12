@@ -1,0 +1,1 @@
+{"schema_version":"0.1","profession_id":"data-platform-engineer","fixtures":[{"id":"data-platform-replay","expected":"recover partial write with checkpoints and lineage"},{"id":"data-platform-semantic-field","expected":"detect same-shape changed-meaning boundary and hand to domain owner"}]}

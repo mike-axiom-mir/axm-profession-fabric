@@ -41,18 +41,32 @@ function gitBlobSha(buffer) {
   return crypto.createHash('sha1').update(Buffer.concat([header, buffer])).digest('hex');
 }
 
-const pilotDir = path.join(root, 'research', 'pilots');
-const files = fs.readdirSync(pilotDir).filter(name => name.endsWith('.json')).sort();
-assert.ok(files.length >= 5, `research intake pilot unexpectedly small: ${files.length}`);
+function collectJson(relativeDir) {
+  const absolute = path.join(root, relativeDir);
+  if (!fs.existsSync(absolute)) return [];
+  const found = [];
+  for (const entry of fs.readdirSync(absolute, { withFileTypes: true }).sort((a, b) => a.name.localeCompare(b.name))) {
+    const relative = path.posix.join(relativeDir, entry.name);
+    if (entry.isDirectory()) found.push(...collectJson(relative));
+    else if (entry.isFile() && entry.name.endsWith('.json')) found.push(relative);
+  }
+  return found;
+}
 
-for (const name of files) {
-  const relative = path.posix.join('research', 'pilots', name);
+const files = [...collectJson('research/pilots'), ...collectJson('research/cohorts')].sort();
+assert.ok(files.length >= 10, `research intake unexpectedly small after cohort expansion: ${files.length}`);
+const seenProfessions = new Set();
+
+for (const relative of files) {
   const packet = readJson(relative);
   validateSchemaSubset(packet, packetSchema, relative);
 
+  assert.ok(!seenProfessions.has(packet.profession_id), `${relative}: duplicate body-reviewed research packet for ${packet.profession_id}`);
+  seenProfessions.add(packet.profession_id);
+
   const profession = professionById.get(packet.profession_id);
   assert.ok(profession, `${relative}: profession is not registered: ${packet.profession_id}`);
-  assert.equal(packet.research_state, 'BODY_REVIEWED', `${relative}: pilot must reach BODY_REVIEWED`);
+  assert.equal(packet.research_state, 'BODY_REVIEWED', `${relative}: research packet must reach BODY_REVIEWED`);
   assert.equal(packet.coverage.body_review, true, `${relative}: body review flag must be true`);
 
   const bodyAbsolute = path.join(root, packet.body_snapshot.path);
@@ -115,4 +129,4 @@ for (const name of files) {
   }
 }
 
-console.log(`Profession research intake PASS: ${sourceRegistry.sources.length} source policies; ${files.length} body-reviewed pilot packet(s); restricted-source ingestion blocked.`);
+console.log(`Profession research intake PASS: ${sourceRegistry.sources.length} source policies; ${files.length} body-reviewed research packet(s); restricted-source ingestion blocked.`);
