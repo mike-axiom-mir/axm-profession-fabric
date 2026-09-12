@@ -1,0 +1,278 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://axm.local/schemas/professional-body.schema.json",
+  "title": "AXM Professional Body",
+  "description": "Machine-readable v0.1 contract for a bounded Professional Body.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "profession_id",
+    "display_name",
+    "status",
+    "purpose",
+    "roots",
+    "scope",
+    "intelligence_interface",
+    "institution_interface",
+    "inputs",
+    "outputs",
+    "knowledge",
+    "skills",
+    "tools",
+    "procedures",
+    "memory",
+    "state_interfaces",
+    "evidence",
+    "decision_rights",
+    "handoffs",
+    "failure_library",
+    "professional_tests",
+    "provenance",
+    "growth"
+  ],
+  "properties": {
+    "schema_version": { "const": "0.1" },
+    "profession_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "display_name": { "type": "string", "minLength": 1 },
+    "status": {
+      "enum": ["DRAFT", "EXPERIMENTAL", "TEST", "WORKING", "CANON"]
+    },
+    "purpose": { "type": "string", "minLength": 1 },
+    "roots": {
+      "type": "array",
+      "prefixItems": [
+        { "const": "Truth" },
+        { "const": "Agency / non-domination" },
+        { "const": "Continuity" },
+        { "const": "Wisdom before speed" }
+      ],
+      "items": false,
+      "minItems": 4,
+      "maxItems": 4
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["owns", "does_not_own", "escalates_when"],
+      "properties": {
+        "owns": { "$ref": "#/$defs/string_list" },
+        "does_not_own": { "$ref": "#/$defs/string_list" },
+        "escalates_when": { "$ref": "#/$defs/string_list" }
+      }
+    },
+    "intelligence_interface": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["swappable_intelligence", "minimum_capabilities", "adaptation_rules"],
+      "properties": {
+        "swappable_intelligence": { "const": true },
+        "minimum_capabilities": { "$ref": "#/$defs/string_list" },
+        "adaptation_rules": { "$ref": "#/$defs/string_list" }
+      }
+    },
+    "institution_interface": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["reads", "writes", "services", "coordination_contracts"],
+      "properties": {
+        "reads": { "$ref": "#/$defs/string_list" },
+        "writes": { "$ref": "#/$defs/string_list" },
+        "services": { "$ref": "#/$defs/string_list" },
+        "coordination_contracts": { "$ref": "#/$defs/string_list" }
+      }
+    },
+    "inputs": { "$ref": "#/$defs/named_items" },
+    "outputs": { "$ref": "#/$defs/named_items" },
+    "knowledge": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["domains", "references", "retrieval_rules", "uncertainty_rules"],
+      "properties": {
+        "domains": { "$ref": "#/$defs/string_list" },
+        "references": { "type": "array", "items": { "$ref": "#/$defs/reference" } },
+        "retrieval_rules": { "$ref": "#/$defs/string_list" },
+        "uncertainty_rules": { "$ref": "#/$defs/string_list" }
+      }
+    },
+    "skills": { "type": "array", "items": { "$ref": "#/$defs/capability" } },
+    "tools": { "type": "array", "items": { "$ref": "#/$defs/tool" } },
+    "procedures": { "type": "array", "items": { "$ref": "#/$defs/procedure" } },
+    "memory": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["canonical", "project", "working", "forbidden_to_promote_silently", "retention_rules"],
+      "properties": {
+        "canonical": { "$ref": "#/$defs/string_list" },
+        "project": { "$ref": "#/$defs/string_list" },
+        "working": { "$ref": "#/$defs/string_list" },
+        "forbidden_to_promote_silently": { "$ref": "#/$defs/string_list" },
+        "retention_rules": { "$ref": "#/$defs/string_list" }
+      }
+    },
+    "state_interfaces": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["state", "access", "reason"],
+        "properties": {
+          "state": { "type": "string", "minLength": 1 },
+          "access": { "enum": ["read", "propose", "write-bounded"] },
+          "reason": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["accepted_labels", "claim_rules", "minimum_for_working"],
+      "properties": {
+        "accepted_labels": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "enum": ["TESTED", "MEASURED", "VISUALLY_INSPECTED", "PLAYTESTED", "OBSERVED", "INFERRED", "BLOCKED", "NOT_TESTED"]
+          }
+        },
+        "claim_rules": { "$ref": "#/$defs/string_list" },
+        "minimum_for_working": { "$ref": "#/$defs/string_list" }
+      }
+    },
+    "decision_rights": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["may_decide", "must_consult", "must_not_decide"],
+      "properties": {
+        "may_decide": { "$ref": "#/$defs/string_list" },
+        "must_consult": { "$ref": "#/$defs/string_list" },
+        "must_not_decide": { "$ref": "#/$defs/string_list" }
+      }
+    },
+    "handoffs": { "type": "array", "items": { "$ref": "#/$defs/handoff" } },
+    "failure_library": { "type": "array", "items": { "$ref": "#/$defs/failure" } },
+    "professional_tests": { "type": "array", "items": { "$ref": "#/$defs/professional_test" } },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sources_required", "changes_append_only_or_diffable", "unknowns_preserved"],
+      "properties": {
+        "sources_required": { "const": true },
+        "changes_append_only_or_diffable": { "const": true },
+        "unknowns_preserved": { "const": true }
+      }
+    },
+    "growth": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["allowed", "promotion_requirements", "rollback_required"],
+      "properties": {
+        "allowed": { "const": true },
+        "promotion_requirements": { "$ref": "#/$defs/string_list" },
+        "rollback_required": { "const": true }
+      }
+    }
+  },
+  "$defs": {
+    "string_list": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "named_items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "description", "required"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+          "description": { "type": "string", "minLength": 1 },
+          "required": { "type": "boolean" }
+        }
+      }
+    },
+    "reference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "source", "authority", "scope"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "source": { "type": "string", "minLength": 1 },
+        "authority": { "enum": ["primary", "secondary", "institutional", "experimental"] },
+        "scope": { "type": "string", "minLength": 1 },
+        "version": { "type": ["string", "null"] }
+      }
+    },
+    "capability": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "description", "mode", "evidence_required"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+        "description": { "type": "string", "minLength": 1 },
+        "mode": { "enum": ["deterministic", "model-assisted", "human-assisted", "hybrid"] },
+        "evidence_required": { "$ref": "#/$defs/string_list" }
+      }
+    },
+    "tool": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "purpose", "allowed_actions", "forbidden_actions", "failure_boundary"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+        "purpose": { "type": "string", "minLength": 1 },
+        "allowed_actions": { "$ref": "#/$defs/string_list" },
+        "forbidden_actions": { "$ref": "#/$defs/string_list" },
+        "failure_boundary": { "type": "string", "minLength": 1 }
+      }
+    },
+    "procedure": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "trigger", "steps", "stop_conditions", "outputs"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+        "trigger": { "type": "string", "minLength": 1 },
+        "steps": { "$ref": "#/$defs/string_list" },
+        "stop_conditions": { "$ref": "#/$defs/string_list" },
+        "outputs": { "$ref": "#/$defs/string_list" }
+      }
+    },
+    "handoff": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["to", "when", "required_packet"],
+      "properties": {
+        "to": { "type": "string", "minLength": 1 },
+        "when": { "type": "string", "minLength": 1 },
+        "required_packet": { "$ref": "#/$defs/string_list" }
+      }
+    },
+    "failure": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "symptom", "likely_causes", "checks", "repair_path"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+        "symptom": { "type": "string", "minLength": 1 },
+        "likely_causes": { "$ref": "#/$defs/string_list" },
+        "checks": { "$ref": "#/$defs/string_list" },
+        "repair_path": { "$ref": "#/$defs/string_list" }
+      }
+    },
+    "professional_test": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "fixture", "expected_observations", "pass_condition"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+        "fixture": { "type": "string", "minLength": 1 },
+        "expected_observations": { "$ref": "#/$defs/string_list" },
+        "pass_condition": { "type": "string", "minLength": 1 }
+      }
+    }
+  }
+}
