@@ -1,73 +1,21 @@
 {
-  "schema_version": "0.1",
-  "package_id": "software-qa-playtest",
-  "domain": "software",
-  "profession_id": "software-qa-playtest",
-  "display_name": "Software QA / Playtest",
-  "status": "EXPERIMENTAL",
-  "body": "body.json",
-  "execution_surfaces": [
-    "human-guided",
-    "ai-model",
-    "machine-intelligence",
-    "deterministic-flow"
+  "schema_version":"0.1",
+  "package_id":"software-qa-playtest",
+  "domain":"software",
+  "profession_id":"software-qa-playtest",
+  "display_name":"Software QA / Playtest",
+  "status":"EXPERIMENTAL",
+  "body":"body.json",
+  "execution_surfaces":["human-guided","ai-model","machine-intelligence","deterministic-flow"],
+  "exports":[
+    {"id":"qa-reproduce-and-regress","kind":"procedure","path":"procedures/reproduce-and-regress.json","description":"Bounded path for reproducing a reported failure and preserving it as regression evidence."},
+    {"id":"qa-release-evidence","kind":"procedure","path":"procedures/release-evidence.json","description":"Evidence-oriented pre-acceptance review that keeps exact-version, regression, conflict, and truth-boundary checks visible."},
+    {"id":"qa-evidence-contract","kind":"evidence","path":"maps/evidence.json","description":"Maps common QA claims to the evidence that may support them."},
+    {"id":"qa-ownership-contract","kind":"decision-support","path":"maps/ownership.json","description":"Defines QA-owned decisions, consultation boundaries, and explicit non-ownership."},
+    {"id":"qa-tool-contracts","kind":"tool-contract","path":"tools/manifest.json","description":"Executor-neutral tool capability contracts used by QA procedures."},
+    {"id":"qa-test-maturity-evidence","kind":"evidence","path":"evidence/test-promotion.json","description":"Machine-validated evidence for the bounded QA scope currently counted as TEST-usable."}
   ],
-  "exports": [
-    {
-      "id": "qa-reproduce-and-regress",
-      "kind": "procedure",
-      "path": "procedures/reproduce-and-regress.json",
-      "description": "Bounded path for reproducing a reported failure and preserving it as regression evidence."
-    },
-    {
-      "id": "qa-release-evidence",
-      "kind": "procedure",
-      "path": "procedures/release-evidence.json",
-      "description": "Evidence-oriented pre-acceptance review that keeps exact-version, regression, conflict, and truth-boundary checks visible."
-    },
-    {
-      "id": "qa-evidence-contract",
-      "kind": "evidence",
-      "path": "maps/evidence.json",
-      "description": "Maps common QA claims to the evidence that may support them."
-    },
-    {
-      "id": "qa-ownership-contract",
-      "kind": "decision-support",
-      "path": "maps/ownership.json",
-      "description": "Defines QA-owned decisions, consultation boundaries, and explicit non-ownership."
-    },
-    {
-      "id": "qa-tool-contracts",
-      "kind": "tool-contract",
-      "path": "tools/manifest.json",
-      "description": "Executor-neutral tool capability contracts used by QA procedures."
-    }
-  ],
-  "components": {
-    "documentation": ["README.md"],
-    "maps": ["maps/workflow.json", "maps/ownership.json", "maps/evidence.json"],
-    "knowledge": ["knowledge/map.json"],
-    "tools": ["tools/manifest.json"],
-    "procedures": ["procedures/reproduce-and-regress.json", "procedures/release-evidence.json"],
-    "failures": ["failures/library.json"],
-    "handoffs": ["handoffs/contracts.json"],
-    "tests": ["tests/professional-fixtures.json"]
-  },
-  "dependencies": {
-    "shared_services": [
-      "canonical-state-reader",
-      "source-version-access",
-      "execution-environment",
-      "evidence-store",
-      "artifact-observer"
-    ],
-    "profession_packages": []
-  },
-  "isolation": {
-    "package_local_by_default": true,
-    "cross_package_access": "contract-only",
-    "no_silent_copy": true,
-    "shared_state_through_body_interfaces": true
-  }
+  "components":{"documentation":["README.md"],"maps":["maps/workflow.json","maps/ownership.json","maps/evidence.json"],"knowledge":["knowledge/map.json"],"tools":["tools/manifest.json"],"procedures":["procedures/reproduce-and-regress.json","procedures/release-evidence.json"],"failures":["failures/library.json"],"handoffs":["handoffs/contracts.json"],"tests":["tests/professional-fixtures.json"],"evidence":["evidence/test-promotion.json"]},
+  "dependencies":{"shared_services":["canonical-state-reader","source-version-access","execution-environment","evidence-store","artifact-observer"],"profession_packages":[]},
+  "isolation":{"package_local_by_default":true,"cross_package_access":"contract-only","no_silent_copy":true,"shared_state_through_body_interfaces":true}
 }

@@ -1,0 +1,24 @@
+{
+  "schema_version":"0.1",
+  "profession_id":"integration-release-engineer",
+  "evidence_status":"TEST",
+  "evaluated_at":"2026-09-12",
+  "tested_scope":"Git-based integration of stale/concurrent browser-game changes: dependency composition, preservation of newer accepted state, exact-composition evidence checks, route/rule regression recomposition, bounded HOLD/BLOCKED reporting, and rollback identity.",
+  "package_status_at_evaluation":"EXPERIMENTAL",
+  "promotion_decision":"PROMOTE",
+  "source_evidence":[
+    {"id":"ghost-integration-compose-16","source":"https://github.com/mike-axiom-mir/axm-ghost-studio/pull/16","exact_identity":"merged PR #16; head 1591ea65d343a871ba135e11b1f5b29cbb50aa38; exact Systems/QA source blobs listed in PR","evidence_labels":["TESTED","MEASURED","INFERRED","BLOCKED","NOT_TESTED"],"summary":"Recomposed tested stale Systems+QA deltas onto newer main without losing newer governance/QA state, preserved source identities and rollback point, and refused to claim a fresh post-compose run when DNS blocked it."},
+    {"id":"ghost-integration-routing-24","source":"https://github.com/mike-axiom-mir/axm-ghost-studio/pull/24","exact_identity":"merged PR #24; head 23f2dd0676c4ee18be57b9478f002a8083860051; exact candidate game.js blob 93502235f0d5849911557d456a2a52201a962791 plus route-aware test blobs","evidence_labels":["TESTED","MEASURED","VISUALLY_INSPECTED","BLOCKED","NOT_TESTED"],"summary":"Recomposed bounded stale World geometry onto current rules, rejected inherited straight-line green evidence, rewrote exact-composition drivers, ran full current regression suite, measured route costs, and visually inspected exact route composition."}
+  ],
+  "fixture_results":[
+    {"fixture_id":"stale-branch","category":"success","result":"PASS","source_evidence_ids":["ghost-integration-compose-16"],"observation":"A non-mergeable stale Systems branch plus stacked QA evidence was decomposed into exact tested blobs and recomposed onto newer accepted main without overwriting newer state.","non_claims":["The blocked fresh Integration execution was not relabelled as passing."]},
+    {"fixture_id":"semantic-overlap","category":"boundary","result":"PASS","source_evidence_ids":["ghost-integration-routing-24"],"observation":"World geometry carried obsolete decay and terminal-order assumptions; Integration isolated the spatial delta and preserved current 4.2/s decay plus completion precedence rather than accepting stale semantics.","non_claims":["Integration did not invent new world/rule design."]},
+    {"fixture_id":"wrong-composition-green","category":"abstention","result":"PASS","source_evidence_ids":["ghost-integration-routing-24"],"observation":"Previously green straight-line loop drivers were rejected as invalid after bulkheads changed route geometry; exact route-aware tests were required on the composed candidate.","non_claims":["Evidence from the open chamber was not silently transferred to changed geometry."]},
+    {"fixture_id":"rollback-gap","category":"success","result":"PASS","source_evidence_ids":["ghost-integration-compose-16","ghost-integration-routing-24"],"observation":"Both integration handoffs recorded explicit rollback/merge points before landing rather than optimizing only for forward motion.","non_claims":["This does not yet test production deployment rollback across artifact stores or infrastructure migrations."]}
+  ],
+  "executor_conditions":["Ghost Studio Integration Steward machine specialist using GitHub exact refs/blobs, reconstructed exact source when DNS clone was blocked, deterministic test runners, and real Chromium where explicitly stated."],
+  "non_claims":["Not general production release engineering across multiple organizations or infrastructure stacks.","Not QA, security, product, legal, or domain acceptance.","Not proof of deployment/migration recovery outside the recorded Git/software composition scope."],
+  "remaining_unknowns":["Cross-repository/runtime-shape evidence is still limited to Ghost Studio seed work.","A second executor/intelligence condition has not yet run the same Integration body fixtures.","Production artifact promotion, deployment, migration, and operational rollback remain broader WORKING-level gaps."],
+  "roots":{"Truth":"PASS","Agency / non-domination":"PASS","Continuity":"PASS","Wisdom before speed":"PASS"},
+  "rollback_or_repair":"If cited composition evidence is disproven or the tested-scope interpretation is too broad, explicitly downgrade/remove this maturity record; preserve the Integration body, source PR history, and rollback evidence."
+}

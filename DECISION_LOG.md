@@ -97,3 +97,21 @@ Durable architectural decisions. Prefer append/supersede over silent historical 
 **Decision:** Gameplay Engineer, Game Systems Designer, and World / Encounter Designer become separate `EXPERIMENTAL` Profession Packages seeded from Ghost Studio observations.
 
 **Consequence:** Their tools, maps, procedures, evidence, memory, failures, tests, and decision rights remain independently reusable. Cross-role consequences flow through declared handoffs rather than a blended game-development super-agent.
+
+## 2026-09-12 — Scoped usability evidence is separate from full-body reconstruction status
+
+**Decision:** Supersede the earlier simplistic assumption that the package/body construction `status` alone must drive the 100+ usable-profession counter. Full-body reconstruction maturity and bounded reusable evidence maturity are separate axes.
+
+**Consequence:** A Professional Body may remain globally `EXPERIMENTAL` while a package-local, machine-validated maturity record establishes a `TEST` scope that is genuinely reusable. The usable counter reads `registry/maturity.json`, not package presence or rhetoric. `TEST` never means the complete human profession has been reconstructed.
+
+## 2026-09-12 — Hard scoped TEST gate
+
+**Decision:** A package can count as scoped `TEST` only with package-local evidence declaring exact sources/identities, representative professional fixtures, at least one success and one failure/abstention/boundary case, executor conditions, non-claims, remaining unknowns, roots assessment, and rollback/repair route.
+
+**Consequence:** High-stakes domains require an additional domain-specific evidence and authorization-nonclaim gate. Automated v0.1 maturity validation rejects `WORKING` or `CANON` until stronger gates are explicitly designed.
+
+## 2026-09-12 — First scoped TEST packages
+
+**Decision:** Software QA / Playtest and Software Integration / Release are the first packages with scoped `TEST` evidence, based on merged Ghost Studio work that predates the maturity mechanism.
+
+**Consequence:** Both full bodies remain `EXPERIMENTAL`. The tested scopes are the exact scopes recorded in their package-local evidence files; enterprise/general profession equivalence, human replacement, and broader production claims remain explicitly unsupported.

@@ -1,0 +1,25 @@
+{
+  "schema_version":"0.1",
+  "profession_id":"software-qa-playtest",
+  "evidence_status":"TEST",
+  "evaluated_at":"2026-09-12",
+  "tested_scope":"Exact-version software/game QA for input and retry regressions, rendered-evidence truth boundaries, controlled live-state consequence comparison, and explicit abstention from unsupported human/usability claims.",
+  "package_status_at_evaluation":"EXPERIMENTAL",
+  "promotion_decision":"PROMOTE",
+  "source_evidence":[
+    {"id":"ghost-qa-input-10","source":"https://github.com/mike-axiom-mir/axm-ghost-studio/pull/10","exact_identity":"merged PR #10; head 9be5754804198dcf834562e5001f3c721ecff6ee; tested accepted game.js blob e9cb133f350bb0ef078da1e10ba5c1b4bb7b1614","evidence_labels":["TESTED","MEASURED","INFERRED","NOT_TESTED"],"summary":"Executed exact accepted runtime through registered keyboard/blur handlers; measured movement, diagonal normalization, conflicting input, blur release, boundary clamp, and both retry paths while preserving browser/hardware non-claims."},
+    {"id":"ghost-qa-render-18","source":"https://github.com/mike-axiom-mir/axm-ghost-studio/pull/18","exact_identity":"PR #18 evidence on accepted open-chamber 4.2/s blobs index 9a12d45..., styles d410b25..., game 4388a0df...; later recomposed/accepted through Integration state sync","evidence_labels":["TESTED","MEASURED","VISUALLY_INSPECTED","INFERRED","BLOCKED","NOT_TESTED"],"summary":"Real Chromium WON/BLACKOUT/restart renders were actually inspected while human PLAYTESTED, packaged navigation, other browsers, physical input, and subjective quality remained explicitly unclaimed."},
+    {"id":"ghost-qa-triage-27","source":"https://github.com/mike-axiom-mir/axm-ghost-studio/pull/27","exact_identity":"merged PR #27; head 111cf5edd0056c229135e7973406b5cd17f562e4; accepted game.js blob 93502235f0d5849911557d456a2a52201a962791","evidence_labels":["TESTED","MEASURED","INFERRED","BLOCKED","NOT_TESTED"],"summary":"Naturally reached controlled snapshot compared equal travel/service/charge choices and measured different immediate network consequences without claiming universal strategy or human comprehension."}
+  ],
+  "fixture_results":[
+    {"fixture_id":"stuck-input-blur","category":"success","result":"PASS","source_evidence_ids":["ghost-qa-input-10"],"observation":"Focus loss cleared held movement and the exact event path was protected with a bounded regression without control redesign.","non_claims":["Not physical-keyboard or cross-browser proof."]},
+    {"fixture_id":"automation-human-claim","category":"abstention","result":"PASS","source_evidence_ids":["ghost-qa-render-18"],"observation":"Automated browser execution plus viewed screenshots was correctly labelled TESTED/MEASURED/VISUALLY_INSPECTED while genuine human PLAYTESTED and subjective claims were withheld.","non_claims":["No fresh-player, fun, balance, or intuitive-use claim."]},
+    {"fixture_id":"equal-cost-stateful-choice","category":"success","result":"PASS","source_evidence_ids":["ghost-qa-triage-27"],"observation":"Equal travel time, service duration, and charge spend were controlled; immediate online-relay consequence differed and generalization was explicitly bounded.","non_claims":["One snapshot is not a complete policy search or human-choice proof."]},
+    {"fixture_id":"candidate-moved-after-test","category":"boundary","result":"PASS","source_evidence_ids":["ghost-qa-input-10"],"observation":"Main advanced before publication; QA rescanned and bound the claim to the unchanged exact runtime blob rather than silently transferring evidence by branch name.","non_claims":["Evidence transfer depends on exact identity/equivalence, not stale branch status."]}
+  ],
+  "executor_conditions":["Ghost Studio machine specialist using exact connector-fetched Git identities, Node VM/browser-event harnesses, and real Chromium where explicitly stated."],
+  "non_claims":["Not a reconstruction of all software QA domains.","Not human/fresh-player validation.","Not enterprise, mobile, distributed-systems, load/performance, accessibility, regulated, or cross-browser certification."],
+  "remaining_unknowns":["Role-only versus Professional-Body controlled baseline has not yet been run.","A second intelligence executing the same QA body has not yet been compared.","Broader human QA practice beyond the Ghost Studio/browser-game evidence remains incomplete."],
+  "roots":{"Truth":"PASS","Agency / non-domination":"PASS","Continuity":"PASS","Wisdom before speed":"PASS"},
+  "rollback_or_repair":"If any cited evidence identity or interpretation is disproven, remove/downgrade this scoped maturity record explicitly; preserve the underlying experimental body and evidence history."
+}
