@@ -61,3 +61,27 @@ Durable architectural decisions. Prefer append/supersede over silent historical 
 **Decision:** Software QA / Playtest is the first profession used to attack the package/body contract.
 
 **Consequence:** It remains `EXPERIMENTAL`; Ghost Studio observations seed the first body, but the experiment must expose missing human-profession knowledge rather than being mislabeled as a complete reconstruction of software QA.
+
+## 2026-09-12 — 100+ usable-profession milestone
+
+**Decision:** Profession Fabric becomes materially broad when at least 100 Profession Packages reach a usable evidence maturity, not when 100 role names or files exist.
+
+**Consequence:** `DRAFT` and `EXPERIMENTAL` do not count. Under v0.1, only `TEST`, `WORKING`, and `CANON` count toward the machine-readable utility milestone.
+
+## 2026-09-12 — Broad target map is not capability
+
+**Decision:** Maintain a broad profession target registry so gaps are visible, while keeping target entries separate from implemented profession packages.
+
+**Consequence:** The target map may grow quickly; it grants no professional capability, status, execution authority, or evidence by itself.
+
+## 2026-09-12 — High-stakes profession promotion
+
+**Decision:** Regulated/high-stakes profession targets require domain-specific evidence and boundaries before maturity promotion.
+
+**Consequence:** Structural package validity, generic model performance, or target-map inclusion must never be used to imply authorization or safe independent practice in law, health, finance, security, infrastructure, or other consequential domains.
+
+## 2026-09-12 — Second profession experiment
+
+**Decision:** Software Integration / Release Engineer is the second deep package experiment, seeded from observed Ghost Studio integration behavior.
+
+**Consequence:** The experiment focuses on dependency composition, semantic overlap, stale-base recomposition, exact-head verification, rollback continuity, and release readiness while preserving domain-profession decision boundaries. It remains `EXPERIMENTAL` until its own professional evidence supports promotion.
