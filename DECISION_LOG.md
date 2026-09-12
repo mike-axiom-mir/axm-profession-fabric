@@ -115,3 +115,15 @@ Durable architectural decisions. Prefer append/supersede over silent historical 
 **Decision:** Software QA / Playtest and Software Integration / Release are the first packages with scoped `TEST` evidence, based on merged Ghost Studio work that predates the maturity mechanism.
 
 **Consequence:** Both full bodies remain `EXPERIMENTAL`. The tested scopes are the exact scopes recorded in their package-local evidence files; enterprise/general profession equivalence, human replacement, and broader production claims remain explicitly unsupported.
+
+## 2026-09-12 — 100 constructed bodies is a breadth checkpoint, not the 100-usable milestone
+
+**Decision:** Reaching 100 registered isolated Profession Packages establishes a breadth checkpoint only. The original utility milestone remains 100 Profession Packages with usable evidence-backed maturity.
+
+**Consequence:** The canonical checkpoint records 186 mapped targets, 100 constructed packages, 75 BODY_REVIEWED research packets, 75 explicit research compilations, and 10 scoped `TEST` packages. The other full bodies remain `EXPERIMENTAL`; package count must never be rewritten as 100 proven specialists or 100 reconstructed human professions. After this checkpoint, evidence, activation, composition and cross-intelligence comparison take priority over adding profession names merely for count growth.
+
+## 2026-09-12 — Creation evidence promotes bounded 3D and Technical Art without game-readiness claims
+
+**Decision:** Merged Universal Creation RTS foundry/polish evidence supports narrowly scoped `TEST` maturity for 3D Artist and Technical Artist, while Art Director and broader game-readiness claims remain unpromoted.
+
+**Consequence:** Real authored geometry, exact source/artifact provenance, GLB export/re-import inspection, LOD/material/geometry validation and preservation of visual failure as failure are reusable evidence. They do not establish target-engine or target-RTS acceptance, collider/navigation correctness, target-device FPS, LOD perceptual equivalence, universal visual quality, gameplay readability or Art Direction competence. Those remain separate future evidence lanes.
