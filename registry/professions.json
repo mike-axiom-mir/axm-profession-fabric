@@ -25,6 +25,11 @@
     {"package_id":"ai-evaluation-engineer","profession_id":"ai-evaluation-engineer","display_name":"AI Evaluation Engineer","status":"EXPERIMENTAL","root":"professions/ai-data/ai-evaluation-engineer","manifest":"package.json"},
     {"package_id":"ai-systems-engineer","profession_id":"ai-systems-engineer","display_name":"AI Systems Engineer","status":"EXPERIMENTAL","root":"professions/ai-data/ai-systems-engineer","manifest":"package.json"},
     {"package_id":"knowledge-engineer","profession_id":"knowledge-engineer","display_name":"Knowledge Engineer","status":"EXPERIMENTAL","root":"professions/ai-data/knowledge-engineer","manifest":"package.json"},
-    {"package_id":"data-engineer","profession_id":"data-engineer","display_name":"Data Engineer","status":"EXPERIMENTAL","root":"professions/ai-data/data-engineer","manifest":"package.json"}
+    {"package_id":"data-engineer","profession_id":"data-engineer","display_name":"Data Engineer","status":"EXPERIMENTAL","root":"professions/ai-data/data-engineer","manifest":"package.json"},
+    {"package_id":"technical-writer","profession_id":"technical-writer","display_name":"Technical Writer","status":"EXPERIMENTAL","root":"professions/creative-media/technical-writer","manifest":"package.json"},
+    {"package_id":"research-methodologist","profession_id":"research-methodologist","display_name":"Research Methodologist","status":"EXPERIMENTAL","root":"professions/education-research/research-methodologist","manifest":"package.json"},
+    {"package_id":"statistician","profession_id":"statistician","display_name":"Statistician","status":"EXPERIMENTAL","root":"professions/education-research/statistician","manifest":"package.json"},
+    {"package_id":"systems-engineer","profession_id":"systems-engineer","display_name":"Systems Engineer","status":"EXPERIMENTAL","root":"professions/science-engineering/systems-engineer","manifest":"package.json"},
+    {"package_id":"maintenance-engineer","profession_id":"maintenance-engineer","display_name":"Maintenance Engineer","status":"EXPERIMENTAL","root":"professions/manufacturing-infrastructure/maintenance-engineer","manifest":"package.json"}
   ]
 }
