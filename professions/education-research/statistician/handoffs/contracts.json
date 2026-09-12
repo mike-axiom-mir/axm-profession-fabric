@@ -1,0 +1,1 @@
+{"schema_version":"0.1","profession_id":"statistician","handoffs":[{"to":"Research Methodologist","when":"design or causal identification dominates inference"},{"to":"Data Engineer","when":"lineage or quality defect needs pipeline repair"}]}

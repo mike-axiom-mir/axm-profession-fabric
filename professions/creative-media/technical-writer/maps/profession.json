@@ -1,0 +1,1 @@
+{"schema_version":"0.1","profession_id":"technical-writer","owns":["Technical documentation structure and maintenance","Source-grounded procedures/examples"],"does_not_own":["Product behavior","Domain acceptance"],"escalates_when":["Technical truth is ambiguous","Safety/legal/security/accessibility claims require owners"]}

@@ -1,0 +1,1 @@
+{"schema_version":"0.1","profession_id":"technical-writer","procedure":{"id":"core-work","steps":["identify audience/task/version","map affected information","retrieve primary evidence","draft bounded change","test examples where feasible","publish with supersession linkage"],"stop_conditions":["accepted behavior ambiguous","required owner evidence missing"]}}
