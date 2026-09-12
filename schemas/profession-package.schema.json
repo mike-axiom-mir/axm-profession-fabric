@@ -5,20 +5,7 @@
   "description": "Reusable isolated package contract for one Professional Body and its profession-specific machinery.",
   "type": "object",
   "additionalProperties": false,
-  "required": [
-    "schema_version",
-    "package_id",
-    "domain",
-    "profession_id",
-    "display_name",
-    "status",
-    "body",
-    "execution_surfaces",
-    "exports",
-    "components",
-    "dependencies",
-    "isolation"
-  ],
+  "required": ["schema_version","package_id","domain","profession_id","display_name","status","body","execution_surfaces","exports","components","dependencies","isolation"],
   "properties": {
     "schema_version": { "const": "0.1" },
     "package_id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
@@ -27,77 +14,21 @@
     "display_name": { "type": "string", "minLength": 1 },
     "status": { "enum": ["DRAFT", "EXPERIMENTAL", "TEST", "WORKING", "CANON"] },
     "body": { "$ref": "#/$defs/local_path" },
-    "execution_surfaces": {
-      "type": "array",
-      "uniqueItems": true,
-      "minItems": 1,
-      "items": { "enum": ["human-guided", "ai-model", "machine-intelligence", "deterministic-flow"] }
-    },
-    "exports": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "additionalProperties": false,
-        "required": ["id", "kind", "path", "description"],
-        "properties": {
-          "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
-          "kind": { "enum": ["procedure", "skill", "evidence", "decision-support", "tool-contract"] },
-          "path": { "$ref": "#/$defs/local_path" },
-          "description": { "type": "string", "minLength": 1 }
-        }
-      }
-    },
+    "execution_surfaces": {"type":"array","uniqueItems":true,"minItems":1,"items":{"enum":["human-guided","ai-model","machine-intelligence","deterministic-flow"]}},
+    "exports": {"type":"array","items":{"type":"object","additionalProperties":false,"required":["id","kind","path","description"],"properties":{"id":{"type":"string","pattern":"^[a-z0-9]+(?:-[a-z0-9]+)*$"},"kind":{"enum":["procedure","skill","evidence","decision-support","tool-contract"]},"path":{"$ref":"#/$defs/local_path"},"description":{"type":"string","minLength":1}}}},
     "components": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": ["documentation", "maps", "knowledge", "tools", "procedures", "failures", "handoffs", "tests"],
+      "type":"object","additionalProperties":false,
+      "required":["documentation","maps","knowledge","tools","procedures","failures","handoffs","tests"],
       "properties": {
-        "documentation": { "$ref": "#/$defs/path_list" },
-        "maps": { "$ref": "#/$defs/path_list" },
-        "knowledge": { "$ref": "#/$defs/path_list" },
-        "tools": { "$ref": "#/$defs/path_list" },
-        "procedures": { "$ref": "#/$defs/path_list" },
-        "failures": { "$ref": "#/$defs/path_list" },
-        "handoffs": { "$ref": "#/$defs/path_list" },
-        "tests": { "$ref": "#/$defs/path_list" }
+        "documentation":{"$ref":"#/$defs/path_list"},"maps":{"$ref":"#/$defs/path_list"},"knowledge":{"$ref":"#/$defs/path_list"},"tools":{"$ref":"#/$defs/path_list"},"procedures":{"$ref":"#/$defs/path_list"},"failures":{"$ref":"#/$defs/path_list"},"handoffs":{"$ref":"#/$defs/path_list"},"tests":{"$ref":"#/$defs/path_list"},"evidence":{"$ref":"#/$defs/path_list"}
       }
     },
-    "dependencies": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": ["shared_services", "profession_packages"],
-      "properties": {
-        "shared_services": { "$ref": "#/$defs/string_list" },
-        "profession_packages": { "$ref": "#/$defs/string_list" }
-      }
-    },
-    "isolation": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": ["package_local_by_default", "cross_package_access", "no_silent_copy", "shared_state_through_body_interfaces"],
-      "properties": {
-        "package_local_by_default": { "const": true },
-        "cross_package_access": { "const": "contract-only" },
-        "no_silent_copy": { "const": true },
-        "shared_state_through_body_interfaces": { "const": true }
-      }
-    }
+    "dependencies": {"type":"object","additionalProperties":false,"required":["shared_services","profession_packages"],"properties":{"shared_services":{"$ref":"#/$defs/string_list"},"profession_packages":{"$ref":"#/$defs/string_list"}}},
+    "isolation": {"type":"object","additionalProperties":false,"required":["package_local_by_default","cross_package_access","no_silent_copy","shared_state_through_body_interfaces"],"properties":{"package_local_by_default":{"const":true},"cross_package_access":{"const":"contract-only"},"no_silent_copy":{"const":true},"shared_state_through_body_interfaces":{"const":true}}}
   },
   "$defs": {
-    "local_path": {
-      "type": "string",
-      "minLength": 1,
-      "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$)).+$"
-    },
-    "path_list": {
-      "type": "array",
-      "uniqueItems": true,
-      "items": { "$ref": "#/$defs/local_path" }
-    },
-    "string_list": {
-      "type": "array",
-      "uniqueItems": true,
-      "items": { "type": "string", "minLength": 1 }
-    }
+    "local_path":{"type":"string","minLength":1,"pattern":"^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$)).+$"},
+    "path_list":{"type":"array","uniqueItems":true,"items":{"$ref":"#/$defs/local_path"}},
+    "string_list":{"type":"array","uniqueItems":true,"items":{"type":"string","minLength":1}}
   }
 }

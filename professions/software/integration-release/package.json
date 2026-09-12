@@ -11,21 +11,10 @@
     {"id":"integration-compose-candidate","kind":"procedure","path":"procedures/integrate-candidate.json","description":"Compose bounded specialist changes onto current accepted software state while preserving newer truth."},
     {"id":"integration-release-readiness","kind":"procedure","path":"procedures/release-readiness.json","description":"Build an evidence-labelled release readiness packet for an exact source/artifact candidate."},
     {"id":"integration-ownership-contract","kind":"decision-support","path":"maps/ownership.json","description":"Defines integration ownership, consultation boundaries, and forbidden authority."},
-    {"id":"integration-tool-contracts","kind":"tool-contract","path":"tools/manifest.json","description":"Executor-neutral tool contracts for refs, overlap, build/test, artifact verification, and state synchronization."}
+    {"id":"integration-tool-contracts","kind":"tool-contract","path":"tools/manifest.json","description":"Executor-neutral tool contracts for refs, overlap, build/test, artifact verification, and state synchronization."},
+    {"id":"integration-test-maturity-evidence","kind":"evidence","path":"evidence/test-promotion.json","description":"Machine-validated evidence for the bounded Integration scope currently counted as TEST-usable."}
   ],
-  "components":{
-    "documentation":["README.md"],
-    "maps":["maps/workflow.json","maps/ownership.json","maps/evidence.json"],
-    "knowledge":["knowledge/map.json"],
-    "tools":["tools/manifest.json"],
-    "procedures":["procedures/integrate-candidate.json","procedures/release-readiness.json"],
-    "failures":["failures/library.json"],
-    "handoffs":["handoffs/contracts.json"],
-    "tests":["tests/professional-fixtures.json"]
-  },
-  "dependencies":{
-    "shared_services":["canonical-state-reader","version-control-ref-service","diff-overlap-inspector","build-test-runner","artifact-verifier","evidence-store"],
-    "profession_packages":["software-qa-playtest"]
-  },
+  "components":{"documentation":["README.md"],"maps":["maps/workflow.json","maps/ownership.json","maps/evidence.json"],"knowledge":["knowledge/map.json"],"tools":["tools/manifest.json"],"procedures":["procedures/integrate-candidate.json","procedures/release-readiness.json"],"failures":["failures/library.json"],"handoffs":["handoffs/contracts.json"],"tests":["tests/professional-fixtures.json"],"evidence":["evidence/test-promotion.json"]},
+  "dependencies":{"shared_services":["canonical-state-reader","version-control-ref-service","diff-overlap-inspector","build-test-runner","artifact-verifier","evidence-store"],"profession_packages":["software-qa-playtest"]},
   "isolation":{"package_local_by_default":true,"cross_package_access":"contract-only","no_silent_copy":true,"shared_state_through_body_interfaces":true}
 }

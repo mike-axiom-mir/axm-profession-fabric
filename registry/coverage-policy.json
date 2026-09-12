@@ -1,8 +1,10 @@
 {
-  "schema_version": "0.1",
-  "target_profession_count": 100,
-  "usable_statuses": ["TEST", "WORKING", "CANON"],
-  "non_counting_statuses": ["DRAFT", "EXPERIMENTAL"],
-  "rule": "A mapped target, generated file, structurally valid package, or convincing demo does not count as usable professional capability until the package reaches TEST or higher through profession-relevant evidence.",
-  "high_stakes_require_domain_specific_evidence": true
+  "schema_version":"0.1",
+  "target_profession_count":100,
+  "usable_statuses":["TEST","WORKING","CANON"],
+  "non_counting_statuses":["DRAFT","EXPERIMENTAL"],
+  "maturity_registry":"registry/maturity.json",
+  "rule":"A package counts toward the usable-profession goal only through a validated scoped maturity record at TEST or higher. Package/body construction status may remain EXPERIMENTAL while the tested scope is bounded explicitly; a mapped target, generated file, structurally valid package, or convincing demo never counts by itself.",
+  "full_body_status_rule":"Full-body package/body status remains a separate stronger reconstruction claim and is not automatically promoted by scoped TEST evidence.",
+  "high_stakes_require_domain_specific_evidence":true
 }

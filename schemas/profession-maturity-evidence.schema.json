@@ -1,0 +1,25 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://axm.local/schemas/profession-maturity-evidence.schema.json",
+  "title":"AXM Profession Scoped Maturity Evidence",
+  "type":"object",
+  "additionalProperties":false,
+  "required":["schema_version","profession_id","evidence_status","evaluated_at","tested_scope","package_status_at_evaluation","promotion_decision","source_evidence","fixture_results","executor_conditions","non_claims","remaining_unknowns","roots","rollback_or_repair"],
+  "properties":{
+    "schema_version":{"const":"0.1"},
+    "profession_id":{"type":"string","pattern":"^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+    "evidence_status":{"enum":["TEST","WORKING","CANON"]},
+    "evaluated_at":{"type":"string","minLength":1},
+    "tested_scope":{"type":"string","minLength":20},
+    "package_status_at_evaluation":{"enum":["EXPERIMENTAL","TEST","WORKING","CANON"]},
+    "promotion_decision":{"enum":["PROMOTE","HOLD"]},
+    "source_evidence":{"type":"array","minItems":2,"items":{"type":"object","additionalProperties":false,"required":["id","source","exact_identity","evidence_labels","summary"],"properties":{"id":{"type":"string","minLength":1},"source":{"type":"string","minLength":1},"exact_identity":{"type":"string","minLength":1},"evidence_labels":{"type":"array","minItems":1,"items":{"enum":["TESTED","MEASURED","VISUALLY_INSPECTED","PLAYTESTED","OBSERVED","INFERRED","BLOCKED","NOT_TESTED"]}},"summary":{"type":"string","minLength":1}}}},
+    "fixture_results":{"type":"array","minItems":2,"items":{"type":"object","additionalProperties":false,"required":["fixture_id","category","result","source_evidence_ids","observation","non_claims"],"properties":{"fixture_id":{"type":"string","minLength":1},"category":{"enum":["success","failure","abstention","boundary"]},"result":{"enum":["PASS","HOLD","FAIL"]},"source_evidence_ids":{"type":"array","minItems":1,"items":{"type":"string","minLength":1}},"observation":{"type":"string","minLength":1},"non_claims":{"type":"array","items":{"type":"string","minLength":1}}}}},
+    "executor_conditions":{"type":"array","minItems":1,"items":{"type":"string","minLength":1}},
+    "non_claims":{"type":"array","minItems":1,"items":{"type":"string","minLength":1}},
+    "remaining_unknowns":{"type":"array","minItems":1,"items":{"type":"string","minLength":1}},
+    "roots":{"type":"object","additionalProperties":false,"required":["Truth","Agency / non-domination","Continuity","Wisdom before speed"],"properties":{"Truth":{"enum":["PASS","HOLD"]},"Agency / non-domination":{"enum":["PASS","HOLD"]},"Continuity":{"enum":["PASS","HOLD"]},"Wisdom before speed":{"enum":["PASS","HOLD"]}}},
+    "high_stakes_gate":{"type":"object","additionalProperties":false,"required":["domain_specific_evidence","authorization_nonclaim"],"properties":{"domain_specific_evidence":{"const":true},"authorization_nonclaim":{"const":true}}},
+    "rollback_or_repair":{"type":"string","minLength":1}
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "schema_version":"0.1",
+  "records":[
+    {"profession_id":"software-qa-playtest","status":"TEST","evidence":"evidence/test-promotion.json"},
+    {"profession_id":"integration-release-engineer","status":"TEST","evidence":"evidence/test-promotion.json"}
+  ]
+}
