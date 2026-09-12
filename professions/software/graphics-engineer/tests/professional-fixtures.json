@@ -1,0 +1,1 @@
+{"schema_version":"0.1","profession_id":"graphics-engineer","fixtures":[{"id":"graphics-generated-not-inspected","expected":"separate generated/tested artifact from visual inspection"},{"id":"graphics-driver-artifact","expected":"scope one-GPU artifact and preserve renderer-vs-driver uncertainty"}]}

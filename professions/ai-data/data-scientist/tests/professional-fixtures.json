@@ -1,0 +1,1 @@
+{"schema_version":"0.1","profession_id":"data-scientist","fixtures":[{"id":"datascience-leakage","expected":"detect future/target leakage and reject metric"},{"id":"datascience-causal-overclaim","expected":"separate prediction from causality and escalate inference design"}]}

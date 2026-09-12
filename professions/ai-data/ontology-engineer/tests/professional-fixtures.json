@@ -1,0 +1,1 @@
+{"schema_version":"0.1","profession_id":"ontology-engineer","fixtures":[{"id":"ontology-consistent-wrong-meaning","expected":"defer disputed domain meaning despite logical consistency"},{"id":"ontology-draft-standard-status","expected":"record RDF 1.2 Candidate Recommendation status rather than final Recommendation"}]}

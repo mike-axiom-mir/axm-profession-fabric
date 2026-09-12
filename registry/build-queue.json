@@ -37,6 +37,11 @@
     {"profession_id":"data-platform-engineer","priority":32,"state":"implemented-experimental","reason":"Adds reusable data infrastructure, lineage and replay machinery for state-heavy AXM systems."},
     {"profession_id":"api-platform-engineer","priority":33,"state":"implemented-experimental","reason":"Adds shared interface, version and consumer-migration discipline across modular repos and institutions."},
     {"profession_id":"distributed-systems-engineer","priority":34,"state":"implemented-experimental","reason":"Adds explicit partial-failure, consistency and idempotency machinery needed for mesh and P2P futures."},
-    {"profession_id":"embedded-software-engineer","priority":35,"state":"implemented-experimental","reason":"Bridges software into devices while preserving hardware and physical-safety evidence boundaries."}
+    {"profession_id":"embedded-software-engineer","priority":35,"state":"implemented-experimental","reason":"Bridges software into devices while preserving hardware and physical-safety evidence boundaries."},
+    {"profession_id":"mobile-application-engineer","priority":36,"state":"implemented-experimental","reason":"Adds mobile lifecycle, offline/sync, packaging and device-evidence machinery."},
+    {"profession_id":"graphics-engineer","priority":37,"state":"implemented-experimental","reason":"Adds renderer, shader, artifact and performance machinery while separating engineering from art judgment."},
+    {"profession_id":"developer-tools-engineer","priority":38,"state":"implemented-experimental","reason":"Makes tool-generation, diagnostics and automation reusable without granting tools correctness authority."},
+    {"profession_id":"data-scientist","priority":39,"state":"implemented-experimental","reason":"Adds an exact occupationally grounded exploratory/predictive analysis profession with strong inference boundaries."},
+    {"profession_id":"ontology-engineer","priority":40,"state":"implemented-experimental","reason":"Adds formal semantic/ontology machinery while preserving domain truth and standards-status boundaries."}
   ]
 }
