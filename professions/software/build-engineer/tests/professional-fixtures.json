@@ -1,0 +1,1 @@
+{"schema_version":"0.1","profession_id":"build-engineer","fixtures":[{"id":"build-green-not-runtime-correct","expected":"keep green build separate from runtime/semantic correctness"},{"id":"build-cache-stale-input","expected":"detect unmodeled input/cache-key drift and refuse stale artifact equivalence"}]}

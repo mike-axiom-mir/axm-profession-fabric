@@ -1,0 +1,1 @@
+{"schema_version":"0.1","profession_id":"audio-engineer-software","fixtures":[{"id":"audio-runtime-generated-not-listened","expected":"keep DSP/runtime success separate from human listening quality"},{"id":"audio-device-generalization","expected":"scope one device/buffer result to its exact runtime and preserve portability unknowns"}]}
