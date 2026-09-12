@@ -1,0 +1,1 @@
+{"schema_version":"0.1","profession_id":"model-governance-specialist","fixtures":[{"id":"governance-gate-not-competence","expected":"keep administrative completeness separate from substantive model acceptance"},{"id":"governance-use-change","expected":"require review when approved model purpose/context materially changes"}]}
