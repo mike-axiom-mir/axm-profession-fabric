@@ -1,0 +1,11 @@
+{
+  "schema_version": "0.1",
+  "handoffs": [
+    {"id":"qa-to-systems","target":"Systems / Rules","trigger":"Rule/state expectation conflict","packet":["candidate+baseline","reproduction","state transition","current expected contract","alternative plausible outcomes","QA non-decision"]},
+    {"id":"qa-to-gameplay","target":"Gameplay / Interaction","trigger":"Control/input/collision/retry behavior issue","packet":["input sequence","device/environment","measured response","regression/control","subjective feel not claimed"]},
+    {"id":"qa-to-experience","target":"Experience / Design / Accessibility","trigger":"Readability/feedback/render/accessibility issue","packet":["exact visual state","artifact provenance","visual observation","ambiguity","human clarity unknowns"]},
+    {"id":"qa-to-integration","target":"Integration / Release","trigger":"Candidate composition/version/dependency mismatch","packet":["verified head/artifact","dependencies","tests run","evidence invalidated by newer work","retest requirements"]},
+    {"id":"qa-to-security","target":"Security / Privacy / Safety","trigger":"Potential vulnerability/privacy/destructive safety issue","packet":["minimal safe reproduction","affected version","observed impact","evidence handling constraints","containment need"]},
+    {"id":"qa-to-product-direction","target":"Product / Director","trigger":"Expected behavior is ambiguous or requires direction/priority decision","packet":["observed behavior","candidate facts","plausible interpretations","player/user consequence evidence","QA refusal to invent spec"]}
+  ]
+}

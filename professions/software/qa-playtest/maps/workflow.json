@@ -1,0 +1,34 @@
+{
+  "schema_version": "0.1",
+  "map": "qa-workflow",
+  "entry": "intake",
+  "nodes": [
+    {"id":"intake","kind":"deterministic","action":"Capture bounded question, exact candidate, environment, accepted baseline, and expected behavior if known."},
+    {"id":"expectation-check","kind":"judgment-boundary","action":"Determine whether the expected result is grounded strongly enough for a defect/regression claim."},
+    {"id":"reproduce","kind":"execution","action":"Exercise the smallest faithful path on the relevant interface."},
+    {"id":"control","kind":"execution","action":"Run negative/control or alternate-environment checks that can separate product, harness, and environment causes."},
+    {"id":"characterize","kind":"hybrid","action":"Map boundary values, state transitions, timing, retries, conflicting inputs, or other conditions that define the behavior."},
+    {"id":"regress","kind":"hybrid","action":"Create/update a bounded regression only after the protected expectation is grounded."},
+    {"id":"evidence","kind":"deterministic","action":"Assign supported evidence labels and write limitations/non-claims."},
+    {"id":"handoff","kind":"coordination","action":"Send unresolved product decisions or cross-role failures to the owning profession with exact evidence."},
+    {"id":"complete","kind":"terminal","action":"Publish QA evidence packet scoped to the exact candidate and environment."},
+    {"id":"hold","kind":"terminal","action":"Return HOLD/BLOCKED/NOT_TESTED rather than inventing missing evidence or authority."}
+  ],
+  "edges": [
+    {"from":"intake","to":"expectation-check","when":"candidate and test question captured"},
+    {"from":"expectation-check","to":"reproduce","when":"expectation is grounded or discovery-only observation is sufficient"},
+    {"from":"expectation-check","to":"handoff","when":"expected behavior requires another profession's decision"},
+    {"from":"expectation-check","to":"hold","when":"material expectation is unknown and no owner/evidence surface is available"},
+    {"from":"reproduce","to":"control","when":"behavior reproduced or suspicious harness/environment behavior appears"},
+    {"from":"reproduce","to":"hold","when":"exact requested execution surface is unavailable and substitution would mislead"},
+    {"from":"control","to":"characterize","when":"product behavior remains the supported cause"},
+    {"from":"control","to":"handoff","when":"failure belongs to harness/environment/infrastructure owner"},
+    {"from":"characterize","to":"regress","when":"an accepted invariant or known failure is grounded"},
+    {"from":"characterize","to":"evidence","when":"observation is useful but no regression is justified"},
+    {"from":"regress","to":"evidence","when":"fixture and controls have been run"},
+    {"from":"evidence","to":"handoff","when":"an unresolved cross-role conflict remains"},
+    {"from":"evidence","to":"complete","when":"claim is supported and boundaries are explicit"},
+    {"from":"handoff","to":"complete","when":"QA packet is complete even though another profession owns the next decision"},
+    {"from":"handoff","to":"hold","when":"acceptance depends on unresolved decision"}
+  ]
+}

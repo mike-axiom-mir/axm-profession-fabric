@@ -1,0 +1,20 @@
+{
+  "schema_version": "0.1",
+  "procedure_id": "release-evidence",
+  "purpose": "Evaluate whether the exact current candidate has sufficient QA evidence for the bounded claim being made without turning QA into general merge authority.",
+  "steps": [
+    {"id":"rescan-current","mode":"deterministic","action":"Read newest accepted state, candidate head/artifact, dependencies, and known failures."},
+    {"id":"map-risk","mode":"judgment","action":"Map direct and semantic changes to relevant regression/evidence surfaces."},
+    {"id":"run-regressions","mode":"execution","action":"Run applicable accepted regressions on the exact candidate composition."},
+    {"id":"run-candidate-tests","mode":"execution","action":"Run candidate-specific fixtures needed for changed behavior."},
+    {"id":"check-cross-role-contracts","mode":"hybrid","action":"Identify failing expectations that may represent unresolved intentional changes rather than defects.","stop_if":"An owning contract decision is unresolved."},
+    {"id":"verify-evidence-labels","mode":"deterministic","action":"Ensure requested claims do not exceed the actual tested/observed execution surfaces."},
+    {"id":"emit-recommendation","mode":"hybrid","action":"Return scoped PASS, HOLD, BLOCKED, or risk evidence with explicit untested dimensions."}
+  ],
+  "possible_results": [
+    {"id":"PASS","meaning":"QA evidence supports the bounded claim on the exact candidate; this is not automatic institutional merge authority."},
+    {"id":"HOLD","meaning":"Material expectation/conflict/evidence remains unresolved but repair or decision is available."},
+    {"id":"BLOCKED","meaning":"Required evidence surface is unavailable and substitution would weaken truth."},
+    {"id":"RISK","meaning":"Candidate may proceed under another authority only with the named QA uncertainty explicitly accepted; QA does not silently erase it."}
+  ]
+}

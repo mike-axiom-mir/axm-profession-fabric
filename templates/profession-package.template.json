@@ -1,0 +1,36 @@
+{
+  "schema_version": "0.1",
+  "package_id": "replace-me",
+  "domain": "replace-me",
+  "profession_id": "replace-me",
+  "display_name": "Replace Me",
+  "status": "DRAFT",
+  "body": "body.json",
+  "execution_surfaces": [
+    "human-guided",
+    "ai-model",
+    "machine-intelligence",
+    "deterministic-flow"
+  ],
+  "exports": [],
+  "components": {
+    "documentation": ["README.md"],
+    "maps": [],
+    "knowledge": [],
+    "tools": [],
+    "procedures": [],
+    "failures": [],
+    "handoffs": [],
+    "tests": []
+  },
+  "dependencies": {
+    "shared_services": [],
+    "profession_packages": []
+  },
+  "isolation": {
+    "package_local_by_default": true,
+    "cross_package_access": "contract-only",
+    "no_silent_copy": true,
+    "shared_state_through_body_interfaces": true
+  }
+}

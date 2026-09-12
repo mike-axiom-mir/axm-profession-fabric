@@ -43,3 +43,21 @@ Durable architectural decisions. Prefer append/supersede over silent historical 
 **Decision:** The first milestone is **Foundation Contract**, not mass production of profession profiles.
 
 **Consequence:** The initial schema/spec/compiler/evidence/test structure should be attacked by one or two bounded profession experiments before scaling to many professions.
+
+## 2026-09-12 — Profession package isolation
+
+**Decision:** Every reconstructed profession owns an isolated package containing its body, maps, knowledge, tool contracts, procedures, failures, handoffs, and professional tests.
+
+**Consequence:** Profession-owned machinery stays package-local by default. Cross-profession reuse happens through declared exports/contracts or explicit institutional services, not silent copying or shared hidden prompts.
+
+## 2026-09-12 — Execution-neutral reuse
+
+**Decision:** Profession packages should be reusable by humans, AI models, other machine intelligences, hybrids, and deterministic flows where the bounded procedure permits it.
+
+**Consequence:** Execution surface never upgrades professional authority or evidence. A deterministic flow must stop at judgment boundaries it cannot satisfy; a powerful model may not bypass the same professional evidence boundary.
+
+## 2026-09-12 — First profession experiment
+
+**Decision:** Software QA / Playtest is the first profession used to attack the package/body contract.
+
+**Consequence:** It remains `EXPERIMENTAL`; Ghost Studio observations seed the first body, but the experiment must expose missing human-profession knowledge rather than being mislabeled as a complete reconstruction of software QA.

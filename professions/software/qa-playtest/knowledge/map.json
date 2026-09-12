@@ -1,0 +1,19 @@
+{
+  "schema_version": "0.1",
+  "map": "qa-knowledge",
+  "areas": [
+    {"id":"reproduction","coverage":"seeded","needs_judgment":true,"helpers":["exact-version capture","minimal steps","negative controls"],"source_state":"Observed strongly in Ghost Studio QA lanes."},
+    {"id":"regression-testing","coverage":"seeded","needs_judgment":true,"helpers":["accepted invariant","fixture","negative/control case","exact re-run"],"source_state":"Observed strongly in Ghost Studio QA/System/Integration interactions."},
+    {"id":"boundary-state-transition","coverage":"seeded","needs_judgment":true,"helpers":["threshold matrix","state graph","same-tick transitions","retry/reset"],"source_state":"Observed in input, terminal, resource, and triage cases."},
+    {"id":"environment-differential","coverage":"partial","needs_judgment":true,"helpers":["environment identity","simulation-vs-physical distinction","browser/runtime comparison"],"source_state":"Observed, but broader cross-platform practice remains under-mapped."},
+    {"id":"visual-evidence","coverage":"partial","needs_judgment":true,"helpers":["render provenance","actual observation","pixel/artifact identity"],"source_state":"Observed in Chromium render evidence; broad visual QA remains under-mapped."},
+    {"id":"human-playtest","coverage":"partial","needs_judgment":true,"helpers":["subject identity","task/context","observation notes","automation separation"],"source_state":"Truth boundary observed; genuine human playtest methodology still needs deeper human-source mapping."},
+    {"id":"risk-based-testing","coverage":"early","needs_judgment":true,"helpers":["change surface","failure impact","evidence gap","dependency risk"],"source_state":"Implicit in Ghost Studio; needs explicit human QA source research."},
+    {"id":"test-planning-management","coverage":"missing","needs_judgment":true,"helpers":[],"source_state":"Needs human profession research beyond Ghost Studio."},
+    {"id":"performance-load-reliability","coverage":"missing","needs_judgment":true,"helpers":[],"source_state":"Should likely become a QA specialization or adjacent body after research."},
+    {"id":"accessibility-testing","coverage":"missing","needs_judgment":true,"helpers":[],"source_state":"Requires accessibility specialist sources and should not be invented by generic QA."},
+    {"id":"security-testing","coverage":"boundary-only","needs_judgment":true,"helpers":["safe handoff"],"source_state":"QA can detect symptoms but security ownership belongs to a separate profession."},
+    {"id":"regulated-compliance-qa","coverage":"missing","needs_judgment":true,"helpers":[],"source_state":"Requires domain-specific human/legal/quality sources before inclusion."}
+  ],
+  "research_rule": "Missing coverage stays explicit. Do not fill professional gaps from generic model memory and then promote them to canonical knowledge."
+}

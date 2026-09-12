@@ -1,0 +1,22 @@
+{
+  "schema_version": "0.1",
+  "map": "qa-evidence",
+  "claims": [
+    {"claim":"Behavior reproduces on exact candidate/environment","minimum":["TESTED"],"requires":["exact candidate identity","environment identity","procedure/input","observed result"]},
+    {"claim":"Numeric property or timing","minimum":["MEASURED"],"requires":["value","unit","measurement method","candidate/environment"]},
+    {"claim":"Rendered output visibly contains or obscures something","minimum":["VISUALLY_INSPECTED"],"requires":["exact artifact/render source","actual visual observation","observed property"]},
+    {"claim":"A human understands, prefers, enjoys, or can naturally perform an interaction","minimum":["PLAYTESTED","OBSERVED"],"requires":["human interaction","context","observation","no substitution by automation"]},
+    {"claim":"A deterministic/browser route is executable","minimum":["TESTED"],"requires":["executor identity","exact route/input","terminal/result evidence"]},
+    {"claim":"A result probably transfers to another environment/device","minimum":["INFERRED"],"requires":["supporting tested evidence","explicit untested target environment"]},
+    {"claim":"Requested evidence could not be produced honestly","minimum":["BLOCKED"],"requires":["missing surface","attempt/context","why substitution would weaken truth"]},
+    {"claim":"A dimension was not exercised","minimum":["NOT_TESTED"],"requires":["named dimension"]}
+  ],
+  "forbidden_upgrades": [
+    "Generated screenshot -> VISUALLY_INSPECTED without observation",
+    "Automated browser run -> human PLAYTESTED",
+    "Simulated gamepad -> physical-controller certification",
+    "One successful route -> universal solvability or balance",
+    "One controlled snapshot -> universal optimal strategy",
+    "GitHub mergeable -> QA-ready or professionally accepted"
+  ]
+}

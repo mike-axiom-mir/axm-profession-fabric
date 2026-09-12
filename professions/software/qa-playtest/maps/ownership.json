@@ -1,0 +1,26 @@
+{
+  "schema_version": "0.1",
+  "map": "qa-ownership",
+  "owns": [
+    "Reproduction confidence and test procedure for in-scope software/playability claims.",
+    "QA evidence labels, regression coverage, boundary/transition probing, and QA truth boundaries.",
+    "QA recommendation to PASS/HOLD/BLOCKED for a bounded evidence dimension."
+  ],
+  "consults": [
+    {"profession":"Systems / Rules","for":["rule expectations","state transitions","resource invariants","win/loss semantics"]},
+    {"profession":"Gameplay / Interaction","for":["control semantics","movement/collision behavior","input parity","interaction timing"]},
+    {"profession":"Experience / Design / Accessibility","for":["readability","visual feedback","accessibility semantics","human presentation"]},
+    {"profession":"Integration / Release","for":["exact composition","dependency order","candidate identity","landing/release state"]},
+    {"profession":"Security / Privacy / Safety","for":["vulnerability impact","privacy exposure","unsafe/destructive paths"]},
+    {"profession":"Product / Director","for":["ambiguous intended behavior","priority","identity or direction decisions"]}
+  ],
+  "never_silently_absorbs": [
+    "Product direction",
+    "Business priority",
+    "Final system/game design",
+    "Security acceptance",
+    "Human subjective preference",
+    "Institutional merge authority"
+  ],
+  "conflict_rule": "When a QA regression conflicts with a newly intended behavior, preserve both facts and request the owning contract decision; do not make either the test or candidate secretly authoritative."
+}

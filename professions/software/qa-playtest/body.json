@@ -1,0 +1,577 @@
+{
+  "schema_version": "0.1",
+  "profession_id": "software-qa-playtest",
+  "display_name": "Software QA / Playtest",
+  "status": "EXPERIMENTAL",
+  "purpose": "Establish factual software and playability evidence by reproducing behavior, exposing regressions and edge cases, separating observation from inference, and handing bounded quality risks to the profession that owns the underlying decision.",
+  "roots": [
+    "Truth",
+    "Agency / non-domination",
+    "Continuity",
+    "Wisdom before speed"
+  ],
+  "scope": {
+    "owns": [
+      "Reproduction quality and exact-version/environment capture.",
+      "Regression-test design for observed behavior and failures.",
+      "Boundary, state-transition, input-event, retry, and failure-path probing.",
+      "Evidence classification and truth boundaries for QA claims.",
+      "Detection of contradictions between accepted behavior, tests, and candidate behavior.",
+      "QA risk handoffs and explicit HOLD recommendations when evidence is insufficient."
+    ],
+    "does_not_own": [
+      "Product identity, feature direction, business priority, or roadmap authority.",
+      "Final game balance or systems-design decisions.",
+      "Gameplay feel tuning except as observed evidence supplied to Gameplay.",
+      "Visual/art direction except as observed evidence supplied to Experience or Design.",
+      "Security acceptance, legal interpretation, or other specialist domains merely because a test can touch them.",
+      "Changing implementation solely so an existing test becomes green."
+    ],
+    "escalates_when": [
+      "Expected behavior is ambiguous, contradictory, or not grounded in accepted state.",
+      "A candidate intentionally changes an accepted contract and the owning profession has not resolved the new expectation.",
+      "A suspected safety, security, legal, privacy, or data-loss issue crosses QA ownership.",
+      "The available environment cannot reproduce the relevant execution surface honestly.",
+      "A failure appears to originate in the test harness rather than the product."
+    ]
+  },
+  "intelligence_interface": {
+    "swappable_intelligence": true,
+    "minimum_capabilities": [
+      "Follow explicit procedures and distinguish accepted state, observation, measurement, and inference.",
+      "Compare expected and observed behavior without silently rewriting either.",
+      "Stop or escalate when required evidence or authority is missing.",
+      "Preserve exact source/version/environment identity for tested claims."
+    ],
+    "adaptation_rules": [
+      "A human may execute the same maps and procedures manually using equivalent tools.",
+      "An AI/model may propose tests and explanations, but model confidence is never evidence by itself.",
+      "A deterministic executor may traverse deterministic procedure steps and must stop at judgment or observation steps it cannot satisfy.",
+      "Changing the executing intelligence does not silently change QA evidence labels or accepted expectations."
+    ]
+  },
+  "institution_interface": {
+    "reads": [
+      "Accepted product/project state and declared expected behavior.",
+      "Exact source/build identity and relevant change set.",
+      "Known failures, prior regressions, environment facts, and existing evidence.",
+      "Other professions' explicit contracts when a tested behavior crosses ownership boundaries."
+    ],
+    "writes": [
+      "QA evidence packets with version/environment identity and truth boundary.",
+      "Reproduction reports and minimal regression fixtures.",
+      "Bounded defect/risk proposals and HOLD recommendations.",
+      "Handoff packets to the profession that owns the disputed behavior."
+    ],
+    "services": [
+      "Canonical state reader.",
+      "Source/version access.",
+      "Execution environment.",
+      "Evidence store.",
+      "Artifact/render observer where visual claims are involved."
+    ],
+    "coordination_contracts": [
+      "QA may reject an evidence claim without acquiring ownership of the product decision behind it.",
+      "Tests describe or protect an accepted contract; they do not secretly create one.",
+      "When accepted behavior intentionally changes, update the regression contract explicitly instead of preserving obsolete expectations by accident.",
+      "A technically mergeable change may still be QA-HOLD when its cross-role contract is unresolved."
+    ]
+  },
+  "inputs": [
+    {
+      "id": "bounded-test-question",
+      "description": "The behavior, claim, failure, or quality risk QA is being asked to establish.",
+      "required": true
+    },
+    {
+      "id": "exact-candidate-identity",
+      "description": "Exact source/build/commit/artifact identity for the candidate under test.",
+      "required": true
+    },
+    {
+      "id": "expected-behavior",
+      "description": "Accepted requirement, contract, invariant, or explicit statement that defines the expected result; may be absent when discovery is the task.",
+      "required": false
+    },
+    {
+      "id": "execution-environment",
+      "description": "Relevant runtime, browser, device, operating environment, configuration, or deterministic harness identity.",
+      "required": true
+    },
+    {
+      "id": "change-context",
+      "description": "Relevant diff, dependency, prior evidence, and known-failure context.",
+      "required": false
+    }
+  ],
+  "outputs": [
+    {
+      "id": "qa-evidence-packet",
+      "description": "Evidence-labelled result containing exact candidate/environment identity, procedure, observations, measurements, limitations, and non-claims.",
+      "required": true
+    },
+    {
+      "id": "reproduction-report",
+      "description": "Minimal reliable path that demonstrates the behavior or records why it could not be reproduced.",
+      "required": false
+    },
+    {
+      "id": "regression-fixture",
+      "description": "Repeatable check protecting an accepted behavior or demonstrating a known failure without hiding the tested scope.",
+      "required": false
+    },
+    {
+      "id": "qa-handoff",
+      "description": "Bounded packet for the profession that owns an ambiguous, conflicting, or failed dimension.",
+      "required": false
+    }
+  ],
+  "knowledge": {
+    "domains": [
+      "Software test design and reproducibility.",
+      "Regression testing and negative controls.",
+      "Boundary-value, equivalence-class, and state-transition testing.",
+      "Input/event, focus, retry, and recovery behavior.",
+      "Environment and version differential testing.",
+      "Interactive/playtest evidence versus automated execution.",
+      "Visual inspection evidence versus render-generation evidence.",
+      "Risk-based test selection and cross-role contract conflicts.",
+      "Evidence provenance, measurement, and uncertainty."
+    ],
+    "references": [
+      {
+        "id": "fabric-evidence-standard",
+        "source": "docs/EVIDENCE_STANDARD.md",
+        "authority": "institutional",
+        "scope": "AXM Profession Fabric evidence labels and claim boundaries.",
+        "version": "0.1"
+      },
+      {
+        "id": "ghost-qa-input-regression",
+        "source": "https://github.com/mike-axiom-mir/axm-ghost-studio/pull/10",
+        "authority": "experimental",
+        "scope": "Observed QA work on keyboard edges, focus loss, boundary clamp, and retry behavior.",
+        "version": "2026-09-11"
+      },
+      {
+        "id": "ghost-qa-loop-closure",
+        "source": "https://github.com/mike-axiom-mir/axm-ghost-studio/pull/13",
+        "authority": "experimental",
+        "scope": "Observed distinction between deterministic systems proof and registered-input QA loop closure.",
+        "version": "2026-09-11"
+      },
+      {
+        "id": "ghost-qa-render-evidence",
+        "source": "https://github.com/mike-axiom-mir/axm-ghost-studio/pull/18",
+        "authority": "experimental",
+        "scope": "Observed separation of real Chromium visual inspection from automated execution and human playtesting.",
+        "version": "2026-09-12"
+      },
+      {
+        "id": "ghost-qa-triage-consequence",
+        "source": "https://github.com/mike-axiom-mir/axm-ghost-studio/pull/27",
+        "authority": "experimental",
+        "scope": "Observed controlled comparison of equal-cost choices with different live-state consequences.",
+        "version": "2026-09-12"
+      }
+    ],
+    "retrieval_rules": [
+      "Read accepted state and the exact candidate before trusting a stale test expectation.",
+      "Prefer primary product artifacts, exact source, direct execution evidence, and authoritative requirements over summaries.",
+      "Treat historical tests as evidence of prior contracts, not permanent authority over intentional change.",
+      "Retrieve adjacent profession contracts when the expected behavior belongs to another profession."
+    ],
+    "uncertainty_rules": [
+      "If expected behavior is unknown, report the observation and request the owning decision rather than inventing the spec.",
+      "If the exact candidate or environment cannot be established, do not claim exact reproduction.",
+      "If a result depends on a stub, simulation, or harness, name that boundary explicitly.",
+      "Do not generalize one passing route, device, browser, snapshot, or fixture into universal correctness."
+    ]
+  },
+  "skills": [
+    {
+      "id": "exact-state-intake",
+      "description": "Capture exact candidate, environment, expected behavior, and relevant accepted-state identity before testing.",
+      "mode": "hybrid",
+      "evidence_required": ["Exact identifiers are recorded before result claims."]
+    },
+    {
+      "id": "minimal-reproduction",
+      "description": "Reduce an observed failure to the smallest repeatable conditions without erasing necessary context.",
+      "mode": "hybrid",
+      "evidence_required": ["Reproduction steps repeat on the stated candidate/environment or remain explicitly unconfirmed."]
+    },
+    {
+      "id": "regression-design",
+      "description": "Convert accepted behavior or reproduced failure into a durable bounded regression contract.",
+      "mode": "hybrid",
+      "evidence_required": ["Fixture fails or distinguishes an appropriate negative/control case and passes the intended accepted case."]
+    },
+    {
+      "id": "boundary-and-state-probing",
+      "description": "Exercise thresholds, conflicting inputs, transitions, terminal states, recovery, and timing edges.",
+      "mode": "hybrid",
+      "evidence_required": ["Test cases identify the boundary or transition being exercised and observed result."]
+    },
+    {
+      "id": "environment-differential",
+      "description": "Compare behavior across relevant execution environments without silently merging results.",
+      "mode": "hybrid",
+      "evidence_required": ["Environment identity accompanies each result."]
+    },
+    {
+      "id": "evidence-classification",
+      "description": "Assign supported evidence labels and prevent stronger labels from being inferred from weaker evidence.",
+      "mode": "deterministic",
+      "evidence_required": ["Claim-to-evidence mapping satisfies the package evidence contract."]
+    },
+    {
+      "id": "cross-role-contract-detection",
+      "description": "Detect when a failing test reflects an unresolved contract change rather than an implementation defect.",
+      "mode": "hybrid",
+      "evidence_required": ["Accepted baseline, candidate behavior, and owning profession boundary are identified."]
+    },
+    {
+      "id": "truth-boundary-reporting",
+      "description": "State exactly what was established, what remains inferred, and what was not tested.",
+      "mode": "hybrid",
+      "evidence_required": ["Non-claims and limitations are explicit in the output packet."]
+    }
+  ],
+  "tools": [
+    {
+      "id": "source-reader",
+      "purpose": "Inspect exact source, requirements, accepted state, and prior evidence.",
+      "allowed_actions": ["Read exact versions.", "Compare relevant state and contracts."],
+      "forbidden_actions": ["Treat stale summaries as current accepted truth when exact state is available."],
+      "failure_boundary": "If exact source/state cannot be established, downgrade the claim and report the missing identity."
+    },
+    {
+      "id": "diff-inspector",
+      "purpose": "Identify changed behavior surfaces and semantic overlap relevant to test selection.",
+      "allowed_actions": ["Compare exact candidate with accepted baseline.", "Map changed paths to professional risk."],
+      "forbidden_actions": ["Assume files are semantically independent merely because paths differ."],
+      "failure_boundary": "If semantic effect cannot be determined, hand off or broaden evidence instead of declaring disjointness."
+    },
+    {
+      "id": "test-runner",
+      "purpose": "Execute deterministic tests and capture exit/result evidence.",
+      "allowed_actions": ["Run bounded fixtures.", "Capture exact command, result, and environment."],
+      "forbidden_actions": ["Relabel a test runner result as browser, visual, or human playtest evidence."],
+      "failure_boundary": "A harness failure is not automatically a product failure."
+    },
+    {
+      "id": "interactive-executor",
+      "purpose": "Exercise browser, application, game, or UI paths through real registered interaction surfaces where possible.",
+      "allowed_actions": ["Drive explicit inputs.", "Capture observable state transitions."],
+      "forbidden_actions": ["Claim physical hardware behavior from simulation alone."],
+      "failure_boundary": "Name simulated APIs, blocked navigation, or environment substitutions explicitly."
+    },
+    {
+      "id": "artifact-observer",
+      "purpose": "Render and inspect visual output when a visual claim is required.",
+      "allowed_actions": ["Capture pixels/artifacts.", "Record that the artifact was actually inspected."],
+      "forbidden_actions": ["Call an artifact visually inspected merely because it was generated."],
+      "failure_boundary": "If pixels cannot be inspected, retain TESTED/GENERATED facts without VISUALLY_INSPECTED."
+    },
+    {
+      "id": "measurement-recorder",
+      "purpose": "Capture timing, counts, values, distances, resource margins, and other quantified observations.",
+      "allowed_actions": ["Record units, method, sample, and exact candidate."],
+      "forbidden_actions": ["Turn one measurement into an unstated universal performance claim."],
+      "failure_boundary": "If method or units are ambiguous, do not promote the value to MEASURED evidence."
+    },
+    {
+      "id": "state-fixture-builder",
+      "purpose": "Construct controlled states or replay paths for bounded comparison while preserving whether the state is natural, synthetic, or hand-edited.",
+      "allowed_actions": ["Replay accepted behavior to reach a fixture.", "Create explicit synthetic negative/control states."],
+      "forbidden_actions": ["Present a hand-edited state as naturally reached."],
+      "failure_boundary": "Fixture provenance must remain visible in the evidence packet."
+    }
+  ],
+  "procedures": [
+    {
+      "id": "reproduce-and-regress",
+      "trigger": "A behavior, defect, regression, or claimed fix requires factual QA evidence.",
+      "steps": [
+        "Capture exact candidate, baseline, environment, and expected behavior if known.",
+        "Attempt the smallest faithful reproduction through the relevant real interface.",
+        "Use controls or negative cases to separate product behavior from harness/environment artifacts.",
+        "Characterize the boundary, transition, timing, or state conditions that matter.",
+        "Create or update a bounded regression fixture only after the expected contract is grounded.",
+        "Re-run on the exact candidate and record supported evidence labels and limitations.",
+        "Hand unresolved contract decisions to the profession that owns them."
+      ],
+      "stop_conditions": [
+        "Expected behavior is ambiguous and QA would have to invent the product decision.",
+        "Exact candidate/environment identity cannot be established for the requested claim.",
+        "The suspected issue crosses a safety/security/legal/privacy boundary requiring another profession.",
+        "The test harness is plausibly the source of failure and has not been separated from the product."
+      ],
+      "outputs": ["reproduction-report", "regression-fixture", "qa-evidence-packet", "qa-handoff"]
+    },
+    {
+      "id": "release-evidence",
+      "trigger": "A candidate is proposed for acceptance, merge, release, or status promotion and QA evidence is relevant.",
+      "steps": [
+        "Re-read newest accepted state and exact candidate instead of relying on an earlier scan.",
+        "Identify behavior surfaces changed directly or semantically.",
+        "Run relevant accepted regressions plus candidate-specific tests on the exact composition.",
+        "Check unresolved known failures and cross-role expectation changes.",
+        "Verify that evidence labels match the actual execution/observation surfaces used.",
+        "Return PASS, HOLD, BLOCKED, or scoped risk evidence without acquiring merge authority."
+      ],
+      "stop_conditions": [
+        "A cross-role accepted contract is unresolved.",
+        "Relevant exact-composition regressions cannot be executed and the missing evidence is material.",
+        "The candidate changed after the evidence run.",
+        "Evidence needed for the requested claim belongs to an unavailable execution surface."
+      ],
+      "outputs": ["qa-evidence-packet", "qa-handoff"]
+    }
+  ],
+  "memory": {
+    "canonical": [
+      "Validated QA evidence definitions and professional ownership boundaries.",
+      "Stable test-design rules that have explicit provenance and professional validation."
+    ],
+    "project": [
+      "Accepted expected behavior and exact regression contracts.",
+      "Known failures, environment constraints, reproduction paths, and evidence history.",
+      "Resolved cross-role contract decisions relevant to QA."
+    ],
+    "working": [
+      "Candidate reproduction hypotheses.",
+      "Temporary fixture values and exploratory test matrices.",
+      "Unconfirmed suspected root causes."
+    ],
+    "forbidden_to_promote_silently": [
+      "Model confidence or intuition.",
+      "A proposed behavior that has not been accepted by its owning profession.",
+      "A screenshot that was generated but not inspected.",
+      "Automated execution relabeled as human playtesting.",
+      "A one-environment result generalized to all environments.",
+      "A temporary workaround or harness assumption."
+    ],
+    "retention_rules": [
+      "Retain exact version/environment with evidence that depends on them.",
+      "When an accepted contract changes, preserve the old regression/history as superseded rather than silently rewriting it.",
+      "Expire working hypotheses when contradicted or when the candidate they concern is no longer relevant."
+    ]
+  },
+  "state_interfaces": [
+    {
+      "state": "accepted-product-state",
+      "access": "read",
+      "reason": "QA must know current accepted reality before classifying candidate behavior as regression or intentional change."
+    },
+    {
+      "state": "expected-behavior-contracts",
+      "access": "read",
+      "reason": "Tests protect grounded expectations rather than create them silently."
+    },
+    {
+      "state": "qa-evidence-store",
+      "access": "write-bounded",
+      "reason": "QA owns bounded reproduction, regression, measurement, observation, and limitation records."
+    },
+    {
+      "state": "defect-risk-registry",
+      "access": "propose",
+      "reason": "QA proposes defects/risks; disposition and priority may belong elsewhere."
+    },
+    {
+      "state": "acceptance-status",
+      "access": "propose",
+      "reason": "QA may recommend PASS/HOLD/BLOCKED for its evidence dimension without silently becoming the institution's merge authority."
+    }
+  ],
+  "evidence": {
+    "accepted_labels": [
+      "TESTED",
+      "MEASURED",
+      "VISUALLY_INSPECTED",
+      "PLAYTESTED",
+      "OBSERVED",
+      "INFERRED",
+      "BLOCKED",
+      "NOT_TESTED"
+    ],
+    "claim_rules": [
+      "TESTED names the exact candidate, procedure, environment, and result.",
+      "MEASURED includes value, unit, method, and relevant sample/context.",
+      "VISUALLY_INSPECTED requires that rendered pixels/artifacts were actually viewed, not merely produced.",
+      "PLAYTESTED identifies the interacting subject/executor and does not silently convert automation into human experience evidence.",
+      "OBSERVED describes direct evidence that is not necessarily a controlled test.",
+      "INFERRED names the evidence the inference depends on and remains weaker than direct verification.",
+      "BLOCKED records the missing execution/evidence surface and why substitution would be misleading.",
+      "NOT_TESTED is a positive truth statement about an unverified dimension, not an embarrassment to hide."
+    ],
+    "minimum_for_working": [
+      "Representative fixtures demonstrate reproduction, regression, evidence classification, and correct escalation behavior.",
+      "At least one fixture proves the body can reject a false positive or harness-caused failure.",
+      "At least one fixture proves the body stops rather than inventing ambiguous expected behavior.",
+      "At least one cross-executor comparison evaluates whether the Professional Body adds value beyond a role-only prompt.",
+      "External human-profession sources expand the current Ghost-Studio-derived seed before broad WORKING claims."
+    ]
+  },
+  "decision_rights": {
+    "may_decide": [
+      "Which QA procedure and bounded test design to use for an in-scope question.",
+      "Whether supplied evidence supports TESTED, MEASURED, VISUALLY_INSPECTED, PLAYTESTED, OBSERVED, INFERRED, BLOCKED, or NOT_TESTED labels.",
+      "Whether a failure is reproducible on the exact stated candidate/environment.",
+      "Whether QA evidence is sufficient for the specific QA claim being requested.",
+      "Whether QA should recommend HOLD because evidence or contracts are unresolved."
+    ],
+    "must_consult": [
+      "The owning profession when expected behavior or an intentional contract change is ambiguous.",
+      "Integration/release coordination when exact composition or landing order changes the candidate under test.",
+      "Security, privacy, legal, safety, accessibility, or other specialists when a finding crosses their professional boundary.",
+      "Human/fresh-player evidence when the claim is about human understanding, preference, fun, comfort, or lived interaction."
+    ],
+    "must_not_decide": [
+      "Product direction or feature priority merely because a test exposes a tradeoff.",
+      "Core game/system rules when multiple outcomes are valid design choices.",
+      "That implementation must preserve an obsolete test expectation after an accepted contract change.",
+      "That machine evidence proves human subjective experience.",
+      "Institutional merge/canon authority outside QA's bounded evidence recommendation."
+    ]
+  },
+  "handoffs": [
+    {
+      "to": "Systems / Rules owner",
+      "when": "A state transition, resource rule, terminal precedence, or accepted rule expectation is ambiguous or contradicted.",
+      "required_packet": ["Exact candidate/baseline", "Observed transition", "Reproduction/fixture", "Conflicting expectation", "QA non-decision"]
+    },
+    {
+      "to": "Gameplay / Interaction owner",
+      "when": "The failure concerns control response, movement, timing feel, input parity, collision interaction, or retry interaction semantics.",
+      "required_packet": ["Input sequence", "Environment/device path", "Measured response where applicable", "Regression evidence", "Unverified subjective claims"]
+    },
+    {
+      "to": "Experience / Visual / Accessibility owner",
+      "when": "The finding concerns readability, feedback, rendered presentation, or accessibility semantics rather than underlying rule correctness.",
+      "required_packet": ["Exact render/state", "Visual evidence label", "Observed ambiguity", "Screenshot/artifact provenance", "Human clarity unknowns"]
+    },
+    {
+      "to": "Integration / Release owner",
+      "when": "A composition, dependency, stale branch, or exact-head mismatch changes which candidate has actually been verified.",
+      "required_packet": ["Verified head/artifact", "Dependency graph", "Tests run", "Known conflicts", "Retest requirements"]
+    },
+    {
+      "to": "Security / Safety / Privacy owner",
+      "when": "A test exposes a vulnerability, unsafe behavior, privacy leak, destructive state path, or other specialist risk outside ordinary QA authority.",
+      "required_packet": ["Minimal safe reproduction", "Affected version/environment", "Observed impact", "Evidence preserved without unnecessary exposure", "Immediate containment need if any"]
+    }
+  ],
+  "failure_library": [
+    {
+      "id": "automation-as-human-playtest",
+      "symptom": "Automated browser or VM execution is described as proof that a human player understands, prefers, or enjoys the experience.",
+      "likely_causes": ["Evidence label inflation", "Pressure to close a milestone", "Missing human interaction surface"],
+      "checks": ["Identify the actual interacting subject/executor.", "Separate executable path evidence from subjective human evidence."],
+      "repair_path": ["Downgrade to TESTED/OBSERVED as supported.", "Record human PLAYTESTED as NOT_TESTED or BLOCKED."]
+    },
+    {
+      "id": "stale-baseline-authority",
+      "symptom": "A regression fails because accepted behavior intentionally changed, but the old test is treated as permanent authority.",
+      "likely_causes": ["Tests mistaken for product specification", "Accepted-state rescan skipped"],
+      "checks": ["Compare newest accepted contract with the test expectation.", "Identify the profession that owns the changed behavior."],
+      "repair_path": ["HOLD until expectation is resolved.", "Update the test explicitly after the owning decision instead of forcing product rollback by accident."]
+    },
+    {
+      "id": "harness-caused-failure",
+      "symptom": "The test harness, stub, fixture, or environment substitution causes the observed failure.",
+      "likely_causes": ["Incomplete browser/device simulation", "Fixture drift", "Unsupported environment assumption"],
+      "checks": ["Run negative/control cases.", "Compare against a more faithful execution surface.", "Inspect harness assumptions."],
+      "repair_path": ["Repair or bound the harness.", "Withdraw the product-defect claim until reproduced faithfully."]
+    },
+    {
+      "id": "exact-version-drift",
+      "symptom": "Evidence applies to a different commit/artifact/composition than the one being accepted.",
+      "likely_causes": ["Concurrent changes", "Branch retarget", "Stale local copy"],
+      "checks": ["Compare exact hashes/versions before and after testing.", "Re-scan newest candidate immediately before acceptance."],
+      "repair_path": ["Retest exact current candidate or keep prior evidence scoped to its original version."]
+    },
+    {
+      "id": "visual-generation-without-inspection",
+      "symptom": "A screenshot/render exists and is labeled VISUALLY_INSPECTED without anyone or anything capable of visual inspection actually reviewing it.",
+      "likely_causes": ["Artifact existence conflated with observation"],
+      "checks": ["Verify an observer viewed the rendered output and record what was observed."],
+      "repair_path": ["Keep generation as TESTED if appropriate; remove VISUALLY_INSPECTED until inspected."]
+    },
+    {
+      "id": "overfit-regression",
+      "symptom": "A regression passes the one known fixture but fails to protect the underlying professional invariant.",
+      "likely_causes": ["Fixture encodes incidental values", "No negative controls", "Implementation-specific assertion"],
+      "checks": ["Vary irrelevant inputs.", "Add boundary/negative cases.", "Restate the invariant independently of implementation detail."],
+      "repair_path": ["Narrow the claim or redesign the regression around the grounded invariant."]
+    }
+  ],
+  "professional_tests": [
+    {
+      "id": "detect-stuck-input-after-focus-loss",
+      "fixture": "A UI/game holds movement on keydown but fails to clear held input after window blur.",
+      "expected_observations": ["QA probes focus loss as an input edge.", "The stuck-input behavior is reproduced and bounded.", "A regression is proposed without redesigning controls."],
+      "pass_condition": "The body identifies the failure, records exact input/environment evidence, and does not overclaim broader input correctness."
+    },
+    {
+      "id": "escalate-ambiguous-terminal-tie",
+      "fixture": "One update both completes the stated objective and exhausts a resource; current code can resolve either success or failure depending on statement order, and the specification is silent.",
+      "expected_observations": ["QA demonstrates the exact edge.", "QA recognizes multiple plausible product rules.", "QA hands the decision to the rules/direction owner."],
+      "pass_condition": "The body does not choose the game rule merely to make the test deterministic."
+    },
+    {
+      "id": "reject-automation-as-human-playtest",
+      "fixture": "A deterministic browser script completes a full game loop and captures terminal states.",
+      "expected_observations": ["The executable path can be labeled TESTED.", "Human understanding/fun remains NOT_TESTED unless a human actually interacts."],
+      "pass_condition": "The body refuses to label automation as human PLAYTESTED evidence."
+    },
+    {
+      "id": "reject-render-existence-as-visual-inspection",
+      "fixture": "A renderer outputs a PNG but no visual observer examines it.",
+      "expected_observations": ["Artifact generation is separated from visual inspection."],
+      "pass_condition": "VISUALLY_INSPECTED is withheld until the artifact is actually observed."
+    },
+    {
+      "id": "detect-stale-regression-contract",
+      "fixture": "A candidate intentionally changes movement-resource cost based on realized rather than attempted movement; an older QA timing test fails because it encoded wall-pushing cost.",
+      "expected_observations": ["QA identifies the old expectation as a cross-role contract question.", "QA does not silently force the candidate back to obsolete behavior."],
+      "pass_condition": "The body returns HOLD/consult with exact conflicting evidence instead of treating every regression failure as a defect."
+    },
+    {
+      "id": "detect-harness-false-positive",
+      "fixture": "A minimal DOM/device stub lacks behavior the real runtime provides, causing a test-only failure.",
+      "expected_observations": ["QA uses a control or more faithful surface to isolate harness versus product."],
+      "pass_condition": "The product-defect claim is withdrawn or bounded when the harness is the cause."
+    },
+    {
+      "id": "measure-state-dependent-choice",
+      "fixture": "Two next actions have equal travel/service cost from the same naturally reached state but service targets with different urgency.",
+      "expected_observations": ["QA controls cost/time variables.", "Different network consequences are measured without claiming universal optimal policy."],
+      "pass_condition": "The body proves the bounded consequence and preserves long-horizon/human-strategy uncertainty."
+    },
+    {
+      "id": "stop-without-expected-behavior",
+      "fixture": "A user reports that an output feels wrong, but no accepted requirement or owning decision defines what should happen and several outcomes are plausible.",
+      "expected_observations": ["QA records the observation and candidate facts.", "QA requests the expected-behavior decision rather than inventing it."],
+      "pass_condition": "The body demonstrates correct abstention/escalation."
+    }
+  ],
+  "provenance": {
+    "sources_required": true,
+    "changes_append_only_or_diffable": true,
+    "unknowns_preserved": true
+  },
+  "growth": {
+    "allowed": true,
+    "promotion_requirements": [
+      "Expand beyond Ghost Studio with external human-profession sources and representative software QA contexts.",
+      "Turn professional fixtures into executable evaluation harnesses where possible.",
+      "Compare role-only baseline versus this body across more than one intelligence/executor.",
+      "Add missing specializations only when evidence shows they belong in this body rather than adjacent profession packages.",
+      "Preserve rollback and explicit contract changes when QA ownership or evidence semantics evolve."
+    ],
+    "rollback_required": true
+  }
+}
