@@ -1,0 +1,3 @@
+occupationUri,relationType,skillType,skillUri
+http://example/occupation/qa,essential,skill,http://example/skill/test
+http://example/occupation/qa,optional,skill,http://example/skill/report
