@@ -54,30 +54,40 @@ The machine should reproduce the **work structure** of a profession, not a stere
 
 ## Status
 
-**EXPERIMENTAL FOUNDATION — v0.1**
+**EXPERIMENTAL PROFESSION FABRIC — v0.1**
 
-The repository defines the Professional Body contract, isolated Profession Package format, target coverage map, and maturity accounting. It does **not** yet claim that any human profession has been fully reconstructed.
+The breadth milestone has been reached, but the usable-profession milestone has not.
+
+Machine-validated state after the 2026-09-12 creation/evidence wave:
+
+- **186 mapped profession targets**
+- **100 constructed isolated Profession Packages**
+- **75 BODY_REVIEWED research packets**
+- **75 explicit research compilations**
+- **10 packages with validated scoped `TEST` evidence**
+
+All 100 full Professional Bodies remain `EXPERIMENTAL`. The 10 `TEST` records are bounded reusable evidence scopes in `registry/maturity.json`; they do **not** mean ten complete human professions have been reconstructed.
 
 A body should not be called `WORKING` merely because its files validate or a model can talk convincingly about the domain. It must pass profession-relevant tests and produce grounded professional outputs on representative tasks.
 
 ## 100+ usable-profession goal
 
-The long-term utility milestone is **100 or more usable Profession Packages**.
+The long-term utility milestone remains **100 or more usable Profession Packages**.
 
 This is deliberately not a file-count or role-name target:
 
 - `registry/profession-targets.json` maps the research backlog. A mapped name is not an implementation.
 - `DRAFT` and `EXPERIMENTAL` packages do **not** count toward the usable milestone.
-- only `TEST`, `WORKING`, and `CANON` packages count under `registry/coverage-policy.json`.
+- only scoped maturity records accepted under `registry/coverage-policy.json` count toward usable coverage; v0.1 currently validates `TEST` only and deliberately rejects `WORKING`/`CANON` until stronger gates are defined.
 - high-stakes/regulated professions require domain-specific evidence; appearing in the target map grants no authority to execute regulated work.
 
 Run `npm run progress` for the machine-counted state.
 
-The current target map contains 100+ profession directions across software, AI/data, product/design, security/privacy, operations, business/finance, legal/governance, science/engineering, creative/media, education/research, health, manufacturing/infrastructure, and community/public systems.
+The current target map contains profession directions across software, AI/data, product/design, security/privacy, operations, business/finance, legal/governance, science/engineering, creative/media, education/research, health, manufacturing/infrastructure, and community/public systems.
 
 ## Institution roles are not automatically professions
 
-Agent/studio role boundaries are useful observations, but Profession Fabric maps the underlying human professional disciplines rather than copying every institutional role one-to-one. `docs/GHOST_STUDIO_COHORT.md` records the first case: Gameplay, Systems, World, QA, and Integration map cleanly enough to isolate; the combined Experience / Art / Audio role must be decomposed, and Game Director spans multiple professional/institutional dimensions that need separate mapping.
+Agent/studio role boundaries are useful observations, but Profession Fabric maps the underlying human professional disciplines rather than copying every institutional role one-to-one. `docs/GHOST_STUDIO_COHORT.md` records the first case: Gameplay, Systems, World, QA, and Integration map cleanly enough to isolate; combined institution roles are decomposed before profession-level canon is claimed.
 
 ## Foundation files
 
@@ -89,29 +99,42 @@ Agent/studio role boundaries are useful observations, but Profession Fabric maps
 - `docs/EVIDENCE_STANDARD.md` — evidence labels and professional claim rules.
 - `docs/RESEARCH_TEAM.md` — meta-team for mapping and compiling professions.
 - `docs/GHOST_STUDIO_COHORT.md` — first observed-role to human-profession decomposition notes.
-- `schemas/` — machine-readable body/package contracts.
+- `docs/MILESTONE_100.md` — durable 100-body / 10-scoped-TEST checkpoint and next-phase boundary.
+- `schemas/` — machine-readable body/package/contracts.
 - `templates/` — neutral starting contracts.
 - `registry/professions.json` — implemented/discoverable profession packages.
 - `registry/profession-targets.json` — broad profession research backlog.
-- `registry/coverage-policy.json` — machine-readable definition of what counts toward the 100+ utility goal.
-- `tests/` — dependency-free structural and coverage verification.
+- `registry/coverage-policy.json` — machine-readable definition of usable coverage.
+- `registry/maturity.json` — package-local scoped maturity records that currently count toward usable evidence.
+- `tests/` — dependency-free structural, research, package, maturity and coverage verification.
 - `DECISION_LOG.md` — append-first durable architectural decisions.
 
 ## Current milestone
 
-**Breadth map + deep profession experiments**
+**Breadth milestone reached; evidence, activation and maturity are now the limiting work.**
 
-Build a broad 100+ target map while deepening isolated professions one at a time. Breadth identifies what remains; only evidence-backed maturity moves the usable counter.
+The repository has 100 constructed bodies, but only evidence-backed scopes move the usable counter. The current ten scoped `TEST` professions are:
 
-Current isolated deep experiments:
+1. **Software QA / Playtest**
+2. **Software Integration / Release Engineer**
+3. **Gameplay Engineer**
+4. **Game Systems Designer**
+5. **World / Encounter Designer**
+6. **Developer Tools Engineer**
+7. **Browser / Web Runtime Engineer**
+8. **Software Accessibility Engineer**
+9. **3D Artist**
+10. **Technical Artist**
 
-1. **Software QA / Playtest** — reproduction, regression, input/state edges, evidence boundaries, rendered/human-playtest distinctions, and contract conflict detection.
-2. **Software Integration / Release Engineer** — dependency ordering, semantic overlap, stale-base recomposition, exact-head verification, rollback continuity, and bounded release readiness.
-3. **Gameplay Engineer** — player-control/action implementation, device/input response, retry/recovery, collision behavior, measurement, and cross-role consequences.
-4. **Game Systems Designer** — rules/resources/progression/pressure, invariants, solvability, terminal conditions, and tradeoff contracts.
-5. **World / Encounter Designer** — spatial topology, objective/encounter placement, reachability, route costs, traversal rhythm, and spatial evidence boundaries.
+The latest two promotions are deliberately narrow. Merged Universal Creation RTS foundry/polish work proves bounded real-3D creation, export/re-import inspection, provenance, LOD/geometry/material evidence and the ability to preserve visual failure as failure. It does **not** prove target-RTS import, collision/navigation correctness, target-device FPS, universal visual quality, Art Direction acceptance, or complete game-readiness.
 
-All five remain `EXPERIMENTAL` until their professional fixtures and cross-executor evidence justify promotion. The honest usable-profession counter therefore remains separate from implemented-package count.
+Next-phase priorities are:
+
+- deepen existing bodies from real merged work rather than multiplying names for their own sake;
+- compare raw/role-only execution against the same intelligence using a Professional Body, then repeat across another intelligence;
+- exercise profession handoffs/composition in real software, AI and creation-machine workflows;
+- keep high-stakes domains behind domain-specific evidence and authorization boundaries;
+- turn currently explicit unknowns such as target-engine integration, collision/navigation, device performance and human/user acceptance into separate tests rather than inferred success.
 
 ## Non-claims
 
