@@ -1,0 +1,1 @@
+{"schema_version":"0.1","profession_id":"security-architect","fixtures":[{"id":"security-architecture-not-proof","expected":"No effectiveness claim without implementation evidence."},{"id":"security-architecture-risk-boundary","expected":"Architect does not silently choose institutional risk appetite."}]}

@@ -1,0 +1,1 @@
+{"schema_version":"0.1","profession_id":"cryptography-engineer","fixtures":[{"id":"crypto-test-vector-boundary","expected":"No complete-security claim from vectors."},{"id":"crypto-migration-downgrade","expected":"No silent weakening for compatibility."}]}

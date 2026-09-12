@@ -1,0 +1,1 @@
+{"schema_version":"0.1","profession_id":"incident-response-specialist","fixtures":[{"id":"incident-suspected-confirmed-boundary","expected":"No confirmed-incident claim from one alert."},{"id":"incident-recovery-not-resolution","expected":"Incident is not silently closed."}]}

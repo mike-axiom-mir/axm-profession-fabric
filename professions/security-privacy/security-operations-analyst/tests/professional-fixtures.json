@@ -1,0 +1,1 @@
+{"schema_version":"0.1","profession_id":"security-operations-analyst","fixtures":[{"id":"secops-alert-boundary","expected":"No automatic incident confirmation."},{"id":"secops-coverage-gap","expected":"Silence under missing telemetry is not threat absence."}]}
