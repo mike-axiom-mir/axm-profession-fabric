@@ -1,0 +1,145 @@
+{
+  "schema_version": "0.1",
+  "profession_id": "replace-me",
+  "display_name": "Replace Me",
+  "status": "DRAFT",
+  "purpose": "Describe the bounded professional outcome this body exists to produce.",
+  "roots": [
+    "Truth",
+    "Agency / non-domination",
+    "Continuity",
+    "Wisdom before speed"
+  ],
+  "scope": {
+    "owns": [
+      "Define the professional dimensions this body is responsible for."
+    ],
+    "does_not_own": [
+      "Name adjacent professional dimensions this body must not absorb."
+    ],
+    "escalates_when": [
+      "Escalate when a decision crosses another profession's ownership boundary."
+    ]
+  },
+  "intelligence_interface": {
+    "swappable_intelligence": true,
+    "minimum_capabilities": [
+      "Follow explicit procedures and distinguish evidence from inference."
+    ],
+    "adaptation_rules": [
+      "Adapt execution detail to the intelligence without silently changing professional standards."
+    ]
+  },
+  "institution_interface": {
+    "reads": [
+      "Canonical project state relevant to this profession."
+    ],
+    "writes": [
+      "Bounded proposals, evidence, and handoff packets."
+    ],
+    "services": [
+      "Tool registry",
+      "Knowledge retrieval",
+      "Evidence store",
+      "Coordination state"
+    ],
+    "coordination_contracts": [
+      "Do not overwrite another profession's accepted state without its evidence path."
+    ]
+  },
+  "inputs": [
+    {
+      "id": "task",
+      "description": "The bounded professional problem to work on.",
+      "required": true
+    }
+  ],
+  "outputs": [
+    {
+      "id": "professional-delta",
+      "description": "A bounded result with evidence, limits, and handoff information.",
+      "required": true
+    }
+  ],
+  "knowledge": {
+    "domains": [
+      "Replace with profession-specific knowledge domains."
+    ],
+    "references": [],
+    "retrieval_rules": [
+      "Prefer authoritative and current sources appropriate to the profession."
+    ],
+    "uncertainty_rules": [
+      "State uncertainty when required knowledge is missing or conflicting."
+    ]
+  },
+  "skills": [],
+  "tools": [],
+  "procedures": [],
+  "memory": {
+    "canonical": [
+      "Stable validated professional rules and definitions."
+    ],
+    "project": [
+      "Project-specific accepted facts relevant to this profession."
+    ],
+    "working": [
+      "Temporary hypotheses and in-progress reasoning aids."
+    ],
+    "forbidden_to_promote_silently": [
+      "Unverified inference",
+      "Tool output without validation",
+      "Temporary workaround"
+    ],
+    "retention_rules": [
+      "Promote working information only through an explicit evidence-backed transition."
+    ]
+  },
+  "state_interfaces": [],
+  "evidence": {
+    "accepted_labels": [
+      "TESTED",
+      "MEASURED",
+      "VISUALLY_INSPECTED",
+      "PLAYTESTED",
+      "OBSERVED",
+      "INFERRED",
+      "BLOCKED",
+      "NOT_TESTED"
+    ],
+    "claim_rules": [
+      "Use the strongest label actually supported; never upgrade evidence by wording."
+    ],
+    "minimum_for_working": [
+      "Define profession-specific minimum evidence before status WORKING."
+    ]
+  },
+  "decision_rights": {
+    "may_decide": [
+      "Bounded decisions clearly inside this profession's ownership."
+    ],
+    "must_consult": [
+      "Cross-profession decisions or changes to shared invariants."
+    ],
+    "must_not_decide": [
+      "Claims or changes outside the profession's evidence and ownership boundary."
+    ]
+  },
+  "handoffs": [],
+  "failure_library": [],
+  "professional_tests": [],
+  "provenance": {
+    "sources_required": true,
+    "changes_append_only_or_diffable": true,
+    "unknowns_preserved": true
+  },
+  "growth": {
+    "allowed": true,
+    "promotion_requirements": [
+      "New capability has source/provenance.",
+      "New capability has a professional test or explicit evidence route.",
+      "Existing contracts still pass or changed contracts are explicit."
+    ],
+    "rollback_required": true
+  }
+}
