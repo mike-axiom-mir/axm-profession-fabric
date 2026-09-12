@@ -28,10 +28,10 @@
     {"profession_id":"ai-systems-engineer","priority":23,"state":"implemented-experimental","reason":"Bridges models, state, runtime and infrastructure."},
     {"profession_id":"knowledge-engineer","priority":24,"state":"implemented-experimental","reason":"Directly supports profession knowledge/provenance machinery."},
     {"profession_id":"data-engineer","priority":25,"state":"implemented-experimental","reason":"Reusable data pipeline/state quality machinery."},
-    {"profession_id":"technical-writer","priority":26,"state":"mapped","reason":"Documentation and durable handoff quality is cross-domain infrastructure."},
-    {"profession_id":"research-methodologist","priority":27,"state":"mapped","reason":"Strengthens evidence design for profession reconstruction itself."},
-    {"profession_id":"statistician","priority":28,"state":"mapped","reason":"Quantitative evidence interpretation should be a bounded specialist."},
-    {"profession_id":"systems-engineer","priority":29,"state":"mapped","reason":"Cross-component requirements/interfaces/verification generalize beyond software."},
-    {"profession_id":"maintenance-engineer","priority":30,"state":"mapped","reason":"Begins physical-system profession coverage for future machines/robots/Walmi contexts."}
+    {"profession_id":"technical-writer","priority":26,"state":"implemented-experimental","reason":"Documentation and durable handoff quality is cross-domain infrastructure."},
+    {"profession_id":"research-methodologist","priority":27,"state":"implemented-experimental","reason":"Strengthens evidence design for profession reconstruction itself."},
+    {"profession_id":"statistician","priority":28,"state":"implemented-experimental","reason":"Quantitative evidence interpretation should be a bounded specialist."},
+    {"profession_id":"systems-engineer","priority":29,"state":"implemented-experimental","reason":"Cross-component requirements/interfaces/verification generalize beyond software."},
+    {"profession_id":"maintenance-engineer","priority":30,"state":"implemented-experimental","reason":"Begins physical-system profession coverage for future machines/robots/Walmi contexts."}
   ]
 }
