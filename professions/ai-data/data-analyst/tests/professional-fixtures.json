@@ -1,0 +1,1 @@
+{"schema_version":"0.1","profession_id":"data-analyst","fixtures":[{"id":"analyst-metric-drift","expected":"detect metric-definition drift before comparing trends"},{"id":"analyst-correlation-not-cause","expected":"keep observational correlation separate from causal explanation"}]}

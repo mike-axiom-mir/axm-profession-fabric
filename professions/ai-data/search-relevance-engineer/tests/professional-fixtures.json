@@ -1,0 +1,1 @@
+{"schema_version":"0.1","profession_id":"search-relevance-engineer","fixtures":[{"id":"relevance-offline-not-user-value","expected":"keep offline relevance gains separate from universal online/user value"},{"id":"relevance-retrieved-not-true","expected":"keep top-ranked/retrieved content separate from factual truth"}]}

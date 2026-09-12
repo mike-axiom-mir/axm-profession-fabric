@@ -1,0 +1,1 @@
+{"schema_version":"0.1","profession_id":"model-serving-engineer","fixtures":[{"id":"serving-speed-not-equivalence","expected":"keep speed/availability gains separate from model-output equivalence"},{"id":"serving-identity-drift","expected":"detect served model/config identity drift and reject stale evidence transfer"}]}
