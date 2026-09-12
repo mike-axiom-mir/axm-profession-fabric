@@ -1,0 +1,1 @@
+{"schema_version":"0.1","profession_id":"product-manager","failures":[{"id":"request-equals-need","symptom":"Stakeholder request treated as validated user problem.","repair_path":["Reframe as hypothesis and gather evidence."]},{"id":"single-metric-optimization","symptom":"Headline metric improves while guardrails worsen.","repair_path":["Reassess multi-outcome decision."]}]}

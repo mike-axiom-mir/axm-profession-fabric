@@ -1,6 +1,6 @@
 {
-  "schema_version": "0.1",
-  "professions": [
+  "schema_version":"0.1",
+  "professions":[
     {"package_id":"software-qa-playtest","profession_id":"software-qa-playtest","display_name":"Software QA / Playtest","status":"EXPERIMENTAL","root":"professions/software/qa-playtest","manifest":"package.json"},
     {"package_id":"integration-release-engineer","profession_id":"integration-release-engineer","display_name":"Software Integration / Release Engineer","status":"EXPERIMENTAL","root":"professions/software/integration-release","manifest":"package.json"},
     {"package_id":"gameplay-engineer","profession_id":"gameplay-engineer","display_name":"Gameplay Engineer","status":"EXPERIMENTAL","root":"professions/game-development/gameplay-engineer","manifest":"package.json"},
@@ -10,6 +10,11 @@
     {"package_id":"backend-engineer","profession_id":"backend-engineer","display_name":"Backend Engineer","status":"EXPERIMENTAL","root":"professions/software/backend-engineer","manifest":"package.json"},
     {"package_id":"frontend-engineer","profession_id":"frontend-engineer","display_name":"Frontend Engineer","status":"EXPERIMENTAL","root":"professions/software/frontend-engineer","manifest":"package.json"},
     {"package_id":"devops-engineer","profession_id":"devops-engineer","display_name":"DevOps Engineer","status":"EXPERIMENTAL","root":"professions/software/devops-engineer","manifest":"package.json"},
-    {"package_id":"site-reliability-engineer","profession_id":"site-reliability-engineer","display_name":"Site Reliability Engineer","status":"EXPERIMENTAL","root":"professions/software/site-reliability-engineer","manifest":"package.json"}
+    {"package_id":"site-reliability-engineer","profession_id":"site-reliability-engineer","display_name":"Site Reliability Engineer","status":"EXPERIMENTAL","root":"professions/software/site-reliability-engineer","manifest":"package.json"},
+    {"package_id":"database-engineer","profession_id":"database-engineer","display_name":"Database Engineer","status":"EXPERIMENTAL","root":"professions/software/database-engineer","manifest":"package.json"},
+    {"package_id":"application-security-engineer","profession_id":"application-security-engineer","display_name":"Application Security Engineer","status":"EXPERIMENTAL","root":"professions/security-privacy/application-security-engineer","manifest":"package.json"},
+    {"package_id":"privacy-engineer","profession_id":"privacy-engineer","display_name":"Privacy Engineer","status":"EXPERIMENTAL","root":"professions/security-privacy/privacy-engineer","manifest":"package.json"},
+    {"package_id":"product-manager","profession_id":"product-manager","display_name":"Product Manager","status":"EXPERIMENTAL","root":"professions/product-design/product-manager","manifest":"package.json"},
+    {"package_id":"product-designer","profession_id":"product-designer","display_name":"Product Designer","status":"EXPERIMENTAL","root":"professions/product-design/product-designer","manifest":"package.json"}
   ]
 }

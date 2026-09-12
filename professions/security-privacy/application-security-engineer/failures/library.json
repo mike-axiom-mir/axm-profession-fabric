@@ -1,0 +1,1 @@
+{"schema_version":"0.1","profession_id":"application-security-engineer","failures":[{"id":"scanner-equals-vulnerability","symptom":"Alert reported as confirmed without verification.","repair_path":["Reclassify and verify context/evidence."]},{"id":"scope-creep","symptom":"Testing moves outside authorization.","repair_path":["STOP and request explicit scope decision."]}]}

@@ -1,0 +1,1 @@
+{"schema_version":"0.1","profession_id":"product-designer","failures":[{"id":"happy-path-only","symptom":"No loading/error/empty/recovery states.","repair_path":["Enumerate/materialize state model."]},{"id":"designer-assumes-user","symptom":"User claims have no research evidence.","repair_path":["Reclassify as hypothesis and hand to Research."]}]}
