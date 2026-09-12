@@ -7,6 +7,7 @@
     {"profession_id":"game-systems-designer","status":"TEST","evidence":"evidence/test-promotion.json"},
     {"profession_id":"world-encounter-designer","status":"TEST","evidence":"evidence/test-promotion.json"},
     {"profession_id":"developer-tools-engineer","status":"TEST","evidence":"evidence/test-promotion.json"},
-    {"profession_id":"browser-engineer","status":"TEST","evidence":"evidence/test-promotion.json"}
+    {"profession_id":"browser-engineer","status":"TEST","evidence":"evidence/test-promotion.json"},
+    {"profession_id":"accessibility-engineer","status":"TEST","evidence":"evidence/test-promotion.json"}
   ]
 }

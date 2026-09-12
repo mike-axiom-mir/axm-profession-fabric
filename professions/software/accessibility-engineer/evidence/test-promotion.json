@@ -1,0 +1,59 @@
+{
+  "schema_version":"0.1",
+  "profession_id":"accessibility-engineer",
+  "evidence_status":"TEST",
+  "evaluated_at":"2026-09-12",
+  "tested_scope":"Bounded software-accessibility engineering for browser accessibility-tree evidence, focus/keyboard interaction implementation, reduced-motion/accessibility status surfaces, and explicit refusal to treat automated or synthetic evidence as full WCAG/legal conformance or human/assistive-technology usability.",
+  "package_status_at_evaluation":"EXPERIMENTAL",
+  "promotion_decision":"PROMOTE",
+  "source_evidence":[
+    {
+      "id":"universal-design-fabric-25",
+      "source":"https://github.com/mike-axiom-mir/axm-universal-creation/pull/25",
+      "exact_identity":"merged Universal Creation PR #25; head 9e4fc0dd2376f4141274d80f133cc3cad19d29a4; merge commit 8a3bf80a74baddfa7de9729eb3831c6fd2e66910",
+      "evidence_labels":["TESTED","OBSERVED","INFERRED","NOT_TESTED"],
+      "summary":"Design Fabric exercised exact browser/runtime accessibility evidence including Accessibility.getFullAXTree, bounded browser-synthetic Tab traversal, runtime/focus observations and evidence-bundle provenance. The merged truth boundary explicitly refuses to turn accessibility trees into WCAG verdicts or browser-synthetic events into trusted human input."
+    },
+    {
+      "id":"universal-character-inspector-27",
+      "source":"https://github.com/mike-axiom-mir/axm-universal-creation/pull/27",
+      "exact_identity":"merged Universal Creation PR #27; head f4eac3d3ba9093cd241064138da641ce350f5793; merge commit 2bff9c877be471b3615de12fa434171fde2e8b04",
+      "evidence_labels":["TESTED","VISUALLY_INSPECTED","INFERRED","BLOCKED","NOT_TESTED"],
+      "summary":"Character Inspector added visible focus states, aria-live action announcements, reduced-motion handling and deterministic keyboard/gamepad inspection routing. Exact routing tests and static layout inspection passed, while real-model browser motion/perceptual evidence and gameplay-controller certification remained explicitly unclaimed."
+    }
+  ],
+  "fixture_results":[
+    {
+      "fixture_id":"accessibility-automation-not-conformance",
+      "category":"success",
+      "result":"PASS",
+      "source_evidence_ids":["universal-design-fabric-25","universal-character-inspector-27"],
+      "observation":"Two real software surfaces implemented and inspected bounded technical accessibility behavior—accessibility-tree/runtime evidence, focus visibility, aria-live status and reduced-motion behavior—while the evidence contracts explicitly withheld full WCAG/legal conformance and universal user/assistive-technology success.",
+      "non_claims":["No complete WCAG 2.2 audit, legal compliance decision, screen-reader certification, disability-wide usability claim or full-product accessibility acceptance."]
+    },
+    {
+      "fixture_id":"accessibility-synthetic-not-human",
+      "category":"boundary",
+      "result":"PASS",
+      "source_evidence_ids":["universal-design-fabric-25","universal-character-inspector-27"],
+      "observation":"Browser-synthetic Tab/activation and deterministic keyboard/gamepad routing remained explicitly synthetic/test evidence. Neither source promoted those results into trusted human input, physical-device behavior, screen-reader use or gameplay-controller certification.",
+      "non_claims":["Synthetic/browser-routed interaction is not human or assistive-technology observation; physical keyboard/gamepad and real-user evidence remain separately required when material."]
+    }
+  ],
+  "executor_conditions":[
+    "AXM software/browser accessibility work using exact Git/source identities, Chromium-compatible accessibility/runtime observers, browser-synthetic interaction recipes, deterministic input-router tests and static visual inspection where explicitly stated."
+  ],
+  "non_claims":[
+    "Not a complete reconstruction of Software Accessibility Engineering.",
+    "Not full WCAG 2.2 conformance or legal accessibility compliance.",
+    "Not screen-reader, switch-device, voice-control, physical mobile-device or broad lived-disability validation.",
+    "No Product Design, UX Research, legal/compliance, platform, assistive-technology or institutional acceptance authority is granted by this TEST scope."
+  ],
+  "remaining_unknowns":[
+    "Role-only versus Professional-Body controlled baseline has not yet been run.",
+    "A second intelligence executing the same accessibility body has not yet been compared.",
+    "Actual assistive-technology/user evidence and broader browser/platform/device coverage remain incomplete."
+  ],
+  "roots":{"Truth":"PASS","Agency / non-domination":"PASS","Continuity":"PASS","Wisdom before speed":"PASS"},
+  "rollback_or_repair":"If exact source identity, accessibility evidence interpretation or fixture mapping is disproven or shown too broad, explicitly downgrade/remove this TEST record while preserving the experimental package and evidence history."
+}
