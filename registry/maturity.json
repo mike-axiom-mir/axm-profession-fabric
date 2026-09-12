@@ -1,13 +1,1 @@
-{
-  "schema_version":"0.1",
-  "records":[
-    {"profession_id":"software-qa-playtest","status":"TEST","evidence":"evidence/test-promotion.json"},
-    {"profession_id":"integration-release-engineer","status":"TEST","evidence":"evidence/test-promotion.json"},
-    {"profession_id":"gameplay-engineer","status":"TEST","evidence":"evidence/test-promotion.json"},
-    {"profession_id":"game-systems-designer","status":"TEST","evidence":"evidence/test-promotion.json"},
-    {"profession_id":"world-encounter-designer","status":"TEST","evidence":"evidence/test-promotion.json"},
-    {"profession_id":"developer-tools-engineer","status":"TEST","evidence":"evidence/test-promotion.json"},
-    {"profession_id":"browser-engineer","status":"TEST","evidence":"evidence/test-promotion.json"},
-    {"profession_id":"accessibility-engineer","status":"TEST","evidence":"evidence/test-promotion.json"}
-  ]
-}
+{"schema_version":"0.1","records":[{"profession_id":"software-qa-playtest","status":"TEST","evidence":"evidence/test-promotion.json"},{"profession_id":"integration-release-engineer","status":"TEST","evidence":"evidence/test-promotion.json"},{"profession_id":"gameplay-engineer","status":"TEST","evidence":"evidence/test-promotion.json"},{"profession_id":"game-systems-designer","status":"TEST","evidence":"evidence/test-promotion.json"},{"profession_id":"world-encounter-designer","status":"TEST","evidence":"evidence/test-promotion.json"},{"profession_id":"developer-tools-engineer","status":"TEST","evidence":"evidence/test-promotion.json"},{"profession_id":"browser-engineer","status":"TEST","evidence":"evidence/test-promotion.json"},{"profession_id":"accessibility-engineer","status":"TEST","evidence":"evidence/test-promotion.json"},{"profession_id":"3d-artist","status":"TEST","evidence":"evidence/test-promotion.json"},{"profession_id":"technical-artist","status":"TEST","evidence":"evidence/test-promotion.json"}]}
