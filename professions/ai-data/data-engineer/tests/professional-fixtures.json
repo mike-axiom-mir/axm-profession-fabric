@@ -1,0 +1,1 @@
+{"profession_id":"data-engineer","fixtures":["historical backfill","late/duplicate stream","schema evolution","invalid-record preservation"]}

@@ -1,0 +1,1 @@
+{"profession_id":"ai-evaluation-engineer","fixtures":["role-only vs body","same body across models","deterministic-only baseline","leaked benchmark"]}
