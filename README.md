@@ -120,7 +120,12 @@ The current target map contains more than 100 profession directions across softw
 
 Build a broad 100+ target map while deepening isolated professions one at a time. Breadth identifies what remains; only evidence-backed maturity moves the usable counter.
 
-Current deep experiments are tracked in `registry/professions.json` and remain `EXPERIMENTAL` until professional fixtures and cross-executor evidence justify promotion.
+Current deep experiments:
+
+1. **Software QA / Playtest** — reproduction, regression, input/state edges, evidence boundaries, rendered/human-playtest distinctions, and contract conflict detection.
+2. **Software Integration / Release Engineer** — dependency ordering, semantic overlap, stale-base recomposition, exact-head verification, rollback continuity, and bounded release readiness.
+
+Both remain `EXPERIMENTAL` until professional fixtures and cross-executor evidence justify promotion.
 
 ## Non-claims
 
