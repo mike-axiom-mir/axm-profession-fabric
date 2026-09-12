@@ -1,0 +1,1 @@
+{"schema_version":"0.1","profession_id":"synthetic-data-specialist","fixtures":[{"id":"synthetic-not-automatically-private","expected":"require disclosure-risk evidence before privacy claims"},{"id":"synthetic-use-case-boundary","expected":"keep utility scoped to evaluated tasks and populations"}]}

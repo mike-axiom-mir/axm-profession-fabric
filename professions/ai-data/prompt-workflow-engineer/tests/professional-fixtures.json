@@ -1,0 +1,1 @@
+{"schema_version":"0.1","profession_id":"prompt-workflow-engineer","fixtures":[{"id":"prompt-transfer-boundary","expected":"withhold cross-model/version transfer until retested"},{"id":"structured-output-not-truth","expected":"keep structural validity separate from factual/domain validity"}]}
