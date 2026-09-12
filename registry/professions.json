@@ -30,6 +30,11 @@
     {"package_id":"research-methodologist","profession_id":"research-methodologist","display_name":"Research Methodologist","status":"EXPERIMENTAL","root":"professions/education-research/research-methodologist","manifest":"package.json"},
     {"package_id":"statistician","profession_id":"statistician","display_name":"Statistician","status":"EXPERIMENTAL","root":"professions/education-research/statistician","manifest":"package.json"},
     {"package_id":"systems-engineer","profession_id":"systems-engineer","display_name":"Systems Engineer","status":"EXPERIMENTAL","root":"professions/science-engineering/systems-engineer","manifest":"package.json"},
-    {"package_id":"maintenance-engineer","profession_id":"maintenance-engineer","display_name":"Maintenance Engineer","status":"EXPERIMENTAL","root":"professions/manufacturing-infrastructure/maintenance-engineer","manifest":"package.json"}
+    {"package_id":"maintenance-engineer","profession_id":"maintenance-engineer","display_name":"Maintenance Engineer","status":"EXPERIMENTAL","root":"professions/manufacturing-infrastructure/maintenance-engineer","manifest":"package.json"},
+    {"package_id":"full-stack-engineer","profession_id":"full-stack-engineer","display_name":"Full-Stack Engineer","status":"EXPERIMENTAL","root":"professions/software/full-stack-engineer","manifest":"package.json"},
+    {"package_id":"data-platform-engineer","profession_id":"data-platform-engineer","display_name":"Data Platform Engineer","status":"EXPERIMENTAL","root":"professions/software/data-platform-engineer","manifest":"package.json"},
+    {"package_id":"api-platform-engineer","profession_id":"api-platform-engineer","display_name":"API / Platform Engineer","status":"EXPERIMENTAL","root":"professions/software/api-platform-engineer","manifest":"package.json"},
+    {"package_id":"distributed-systems-engineer","profession_id":"distributed-systems-engineer","display_name":"Distributed Systems Engineer","status":"EXPERIMENTAL","root":"professions/software/distributed-systems-engineer","manifest":"package.json"},
+    {"package_id":"embedded-software-engineer","profession_id":"embedded-software-engineer","display_name":"Embedded Software Engineer","status":"EXPERIMENTAL","root":"professions/software/embedded-software-engineer","manifest":"package.json"}
   ]
 }
