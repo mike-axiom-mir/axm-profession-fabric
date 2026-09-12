@@ -1,0 +1,1 @@
+{"schema_version":"0.1","profession_id":"performance-engineer","tool_contracts":[{"id":"benchmark-runner","purpose":"Execute versioned workloads and capture timing/resource metrics","forbidden":"Cherry-pick favorable runs or hide variance."}]}

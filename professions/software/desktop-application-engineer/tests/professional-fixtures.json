@@ -1,0 +1,1 @@
+{"schema_version":"0.1","profession_id":"desktop-application-engineer","fixtures":[{"id":"desktop-single-os-overclaim","expected":"Scopes evidence to tested OS/runtime."},{"id":"desktop-update-rollback","expected":"Requires explicit rollback/state-continuity evidence."}]}

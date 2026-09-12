@@ -1,0 +1,1 @@
+{"schema_version":"0.1","profession_id":"performance-engineer","fixtures":[{"id":"perf-tail-hidden","expected":"Examines distribution/tail rather than mean only."},{"id":"perf-workload-drift","expected":"Detects non-equivalent workload."}]}

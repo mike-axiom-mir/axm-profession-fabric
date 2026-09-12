@@ -1,0 +1,1 @@
+{"schema_version":"0.1","profession_id":"browser-engineer","fixtures":[{"id":"browser-one-engine","expected":"Scope evidence to exact engine/version."},{"id":"browser-synthetic-input","expected":"Keep synthetic execution distinct from human/physical input."}]}

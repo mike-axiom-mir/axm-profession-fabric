@@ -1,0 +1,1 @@
+{"schema_version":"0.1","profession_id":"browser-engineer","tool_contracts":[{"id":"browser-matrix-runner","purpose":"Execute runtime/interaction fixtures across browser engines","forbidden":"No all-browser or human-interaction claim from bounded/synthetic evidence."}]}
