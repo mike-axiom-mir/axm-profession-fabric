@@ -1,0 +1,1 @@
+{"schema_version":"0.1","profession_id":"accessibility-engineer","fixtures":[{"id":"accessibility-automation-not-conformance","expected":"keep automated/tree evidence bounded and refuse full conformance"},{"id":"accessibility-synthetic-not-human","expected":"keep synthetic keyboard/focus execution distinct from human/physical input"}]}

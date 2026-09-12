@@ -1,0 +1,1 @@
+{"schema_version":"0.1","profession_id":"release-manager-software","fixtures":[{"id":"release-mergeable-not-ready","expected":"hold a mergeable candidate when a required specialist gate is missing"},{"id":"release-candidate-moved","expected":"invalidate stale release evidence when candidate identity changes"}]}

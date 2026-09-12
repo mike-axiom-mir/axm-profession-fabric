@@ -1,0 +1,1 @@
+{"schema_version":"0.1","profession_id":"technical-game-designer","fixtures":[{"id":"tech-game-design-implementation-drift","expected":"detect semantic drift and hand changed rules to the owning designer"},{"id":"tech-game-design-script-pass-not-balance","expected":"keep successful script/prototype execution separate from balance/fun acceptance"}]}
