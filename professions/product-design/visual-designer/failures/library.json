@@ -1,0 +1,1 @@
+{"schema_version":"0.1","profession_id":"visual-designer","failures":[{"id":"flat-hierarchy","symptom":"Polished screen lacks readable priority/grouping.","repair_path":["Rebuild hierarchy before decoration."]},{"id":"provenance-hole","symptom":"Asset source/license/generation unknown.","repair_path":["Block canonical use until replaced/provenanced."]}]}

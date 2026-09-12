@@ -1,0 +1,1 @@
+{"schema_version":"0.1","profession_id":"sound-designer","tools":[{"id":"audio-workspace","purpose":"Create/edit assets."},{"id":"event-audio-map","purpose":"Events/variants/priority/cooldown/spatial rules."},{"id":"audio-playback-environment","purpose":"Audition actual context."},{"id":"asset-provenance-registry","purpose":"Source/license/generation tracking."}]}

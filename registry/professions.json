@@ -15,6 +15,11 @@
     {"package_id":"application-security-engineer","profession_id":"application-security-engineer","display_name":"Application Security Engineer","status":"EXPERIMENTAL","root":"professions/security-privacy/application-security-engineer","manifest":"package.json"},
     {"package_id":"privacy-engineer","profession_id":"privacy-engineer","display_name":"Privacy Engineer","status":"EXPERIMENTAL","root":"professions/security-privacy/privacy-engineer","manifest":"package.json"},
     {"package_id":"product-manager","profession_id":"product-manager","display_name":"Product Manager","status":"EXPERIMENTAL","root":"professions/product-design/product-manager","manifest":"package.json"},
-    {"package_id":"product-designer","profession_id":"product-designer","display_name":"Product Designer","status":"EXPERIMENTAL","root":"professions/product-design/product-designer","manifest":"package.json"}
+    {"package_id":"product-designer","profession_id":"product-designer","display_name":"Product Designer","status":"EXPERIMENTAL","root":"professions/product-design/product-designer","manifest":"package.json"},
+    {"package_id":"ux-researcher","profession_id":"ux-researcher","display_name":"UX Researcher","status":"EXPERIMENTAL","root":"professions/product-design/ux-researcher","manifest":"package.json"},
+    {"package_id":"accessibility-specialist","profession_id":"accessibility-specialist","display_name":"Accessibility Specialist","status":"EXPERIMENTAL","root":"professions/product-design/accessibility-specialist","manifest":"package.json"},
+    {"package_id":"visual-designer","profession_id":"visual-designer","display_name":"Visual Designer","status":"EXPERIMENTAL","root":"professions/product-design/visual-designer","manifest":"package.json"},
+    {"package_id":"sound-designer","profession_id":"sound-designer","display_name":"Sound Designer","status":"EXPERIMENTAL","root":"professions/product-design/sound-designer","manifest":"package.json"},
+    {"package_id":"creative-director","profession_id":"creative-director","display_name":"Creative Director","status":"EXPERIMENTAL","root":"professions/creative-media/creative-director","manifest":"package.json"}
   ]
 }

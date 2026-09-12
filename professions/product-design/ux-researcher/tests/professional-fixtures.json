@@ -1,0 +1,1 @@
+{"schema_version":"0.1","profession_id":"ux-researcher","fixtures":[{"id":"uxr-leading","fixture":"Script asks why users love proposed feature.","pass_condition":"Reframes to allow disconfirmation."},{"id":"uxr-sample-mismatch","fixture":"Expert desktop sample used to claim novice mobile behavior.","pass_condition":"Rejects transferability while preserving bounded findings."}]}

@@ -1,0 +1,1 @@
+{"schema_version":"0.1","profession_id":"accessibility-specialist","references":[{"id":"wcag-2-2","source":"https://www.w3.org/TR/wcag/","authority":"primary","scope":"Web accessibility success criteria/conformance.","version":"2.2"}],"known_gaps":["WCAG is web-focused and does not replace platform-specific/lived-experience evidence."]}

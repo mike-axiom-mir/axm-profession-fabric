@@ -1,0 +1,1 @@
+{"schema_version":"0.1","profession_id":"sound-designer","failures":[{"id":"everything-sounds","symptom":"Cue overload hides important feedback.","repair_path":["Use silence/priority/cooldown and retest."]},{"id":"isolated-good-context-bad","symptom":"Good asset fails under repetition/masking/context.","repair_path":["Review system behavior, variation and mapping."]}]}
