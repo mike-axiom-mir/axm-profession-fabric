@@ -1,0 +1,1 @@
+{"schema_version":"0.1","source_packet":"research/pilots/application-security-engineer.json","compiled_on":"2026-09-12","evidence_state":"NOT_TESTED","adopted":["NICE work-role boundary map","application dependency → organizational C-SCRM handoff"],"maturity_effect":"NO_CHANGE","authorization_nonclaim":"No test/access/risk-acceptance authority is created by these additions."}

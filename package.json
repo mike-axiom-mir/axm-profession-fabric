@@ -5,7 +5,7 @@
   "description":"AXM Profession Fabric — experimental Professional Body contracts and tests.",
   "type":"module",
   "scripts":{
-    "test":"node tests/validate-foundation.mjs && node tests/validate-research-intake.mjs && node tests/validate-local-research-intake.mjs && node tests/validate-profession-packages.mjs && node tests/validate-maturity.mjs && node tests/validate-coverage.mjs && node tests/validate-build-queue.mjs && node tests/validate-scaffold.mjs",
+    "test":"node tests/validate-foundation.mjs && node tests/validate-research-intake.mjs && node tests/validate-local-research-intake.mjs && node tests/validate-research-compilations.mjs && node tests/validate-profession-packages.mjs && node tests/validate-maturity.mjs && node tests/validate-coverage.mjs && node tests/validate-build-queue.mjs && node tests/validate-scaffold.mjs",
     "progress":"node tools/profession-progress.mjs",
     "scaffold":"node tools/scaffold-profession.mjs",
     "research:local":"node tools/local-research-intake.mjs"
