@@ -1,0 +1,1 @@
+{"schema_version":"0.1","profession_id":"data-quality-engineer","fixtures":[{"id":"dataquality-structural-not-semantic","expected":"Detects semantic uncertainty/lineage change and refuses blanket quality pass."},{"id":"dataquality-silent-repair","expected":"Preserves failure/quarantine provenance and requires owner-approved repair semantics."}]}

@@ -1,0 +1,1 @@
+{"schema_version":"0.1","profession_id":"mlops-engineer","fixtures":[{"id":"mlops-deploy-not-quality","expected":"Keeps deployment success separate from model acceptance and supports rollback."},{"id":"mlops-lineage-drift","expected":"Detects identity/provenance drift and refuses silent replacement."}]}

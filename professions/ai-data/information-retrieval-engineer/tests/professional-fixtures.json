@@ -1,0 +1,1 @@
+{"schema_version":"0.1","profession_id":"information-retrieval-engineer","fixtures":[{"id":"retrieval-offline-metric-overclaim","expected":"Scopes result to query/judgment set and withholds universal improvement claim."},{"id":"retrieval-ranked-not-true","expected":"Keeps ranking evidence separate from source truth."}]}

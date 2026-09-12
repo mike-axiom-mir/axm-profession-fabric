@@ -1,0 +1,1 @@
+{"schema_version":"0.1","profession_id":"inference-optimization-engineer","tool_contracts":[{"id":"inference-benchmark-harness","purpose":"Measure exact model/runtime/hardware configurations and compare optimized candidates.","forbidden":"Call a faster candidate equivalent or safe without model-quality/evaluation evidence."}]}

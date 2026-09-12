@@ -1,0 +1,1 @@
+{"schema_version":"0.1","profession_id":"ai-safety-engineer","fixtures":[{"id":"aisafety-bounded-pass-not-universal","expected":"Scopes evidence and preserves residual/untested contexts."},{"id":"aisafety-mitigation-tradeoff","expected":"Reports both consequences and hands acceptability decision to governance/product owner."}]}

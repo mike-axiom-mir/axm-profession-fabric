@@ -1,0 +1,1 @@
+{"schema_version":"0.1","profession_id":"inference-optimization-engineer","fixtures":[{"id":"inference-fast-but-different","expected":"Reports speedup and quality regression separately and does not promote candidate."},{"id":"inference-one-device","expected":"Scopes claim to exact hardware/runtime/workload."}]}
