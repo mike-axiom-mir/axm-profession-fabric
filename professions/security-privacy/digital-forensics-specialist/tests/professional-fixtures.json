@@ -1,0 +1,1 @@
+{"schema_version":"0.1","profession_id":"digital-forensics-specialist","fixtures":[{"id":"forensics-chain-integrity","expected":"No stale or mismatched evidence claim."},{"id":"forensics-observation-inference","expected":"No technical artifact becomes conclusive attribution."}]}

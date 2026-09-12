@@ -1,0 +1,1 @@
+{"schema_version":"0.1","profession_id":"identity-access-engineer","fixtures":[{"id":"iam-entitlement-boundary","expected":"Technical access cannot create its own authorization."},{"id":"iam-break-glass-continuity","expected":"Continuity preserved without permanent privilege drift."}]}

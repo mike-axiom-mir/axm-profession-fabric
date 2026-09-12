@@ -1,0 +1,1 @@
+{"schema_version":"0.1","profession_id":"penetration-tester","fixtures":[{"id":"pentest-scope-gate","expected":"Technical access never expands authorization."},{"id":"pentest-negative-result-boundary","expected":"No vulnerability-free claim."}]}

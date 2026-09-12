@@ -1,0 +1,1 @@
+{"schema_version":"0.1","profession_id":"cloud-security-engineer","fixtures":[{"id":"cloud-posture-not-security","expected":"No full-security claim from posture output alone."},{"id":"cloud-responsibility-drift","expected":"Old control ownership cannot silently transfer."}]}
