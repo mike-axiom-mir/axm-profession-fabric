@@ -1,0 +1,24 @@
+{
+  "schema_version":"0.1",
+  "profession_id":"world-encounter-designer",
+  "evidence_status":"TEST",
+  "evaluated_at":"2026-09-12",
+  "tested_scope":"Blackline Relay single-screen spatial-routing slice: diagnosing route degeneracy, adding bounded bulkhead topology, verifying collision/reachability and route-cost classes, re-proving exact composed routes after rule/test changes, visually inspecting the accepted route geometry, and withholding unsupported human-readability/balance claims.",
+  "package_status_at_evaluation":"EXPERIMENTAL",
+  "promotion_decision":"PROMOTE",
+  "source_evidence":[
+    {"id":"ghost-world-6","source":"https://github.com/mike-axiom-mir/axm-ghost-studio/pull/6","exact_identity":"closed/superseded World PR #6; head fc947113c5e02e61ed125a7604a0ddeb9907064c; exact game.js blob cf2e18f1e497e480d339611b6d556d2e5c5c9464","evidence_labels":["TESTED","MEASURED","INFERRED","BLOCKED","NOT_TESTED"],"summary":"World identified the open chamber as spatially degenerate, added only two bulkheads, executed the actual collision/reroute functions, measured that all relays stayed reachable and that same-side/cross/diagonal route classes differed, and explicitly withheld browser-readability and human pacing/balance claims."},
+    {"id":"ghost-world-accepted-24","source":"https://github.com/mike-axiom-mir/axm-ghost-studio/pull/24","exact_identity":"merged Integration PR #24; head 23f2dd0676c4ee18be57b9478f002a8083860051; exact accepted route-shaped game.js blob 93502235f0d5849911557d456a2a52201a962791","evidence_labels":["TESTED","MEASURED","VISUALLY_INSPECTED","BLOCKED","NOT_TESTED"],"summary":"Integration recomposed the bounded World geometry onto current rules, updated obsolete straight-line drivers, passed exact route/reachability and closure regressions, measured route classes, and visually inspected the exact Chromium composition with both passages open and objectives unobscured."}
+  ],
+  "fixture_results":[
+    {"fixture_id":"route-degeneracy","category":"success","result":"PASS","source_evidence_ids":["ghost-world-6","ghost-world-accepted-24"],"observation":"The founding open floor allowed direct core-to-relay travel with little spatial decision; two bounded bulkheads created upper/lower passage choices and materially distinct same-side, cross-room, and diagonal costs without adding a new game loop.","non_claims":["Distinct route costs do not prove the choices are fun, balanced, or meaningful to a human player."]},
+    {"fixture_id":"unreachable-target","category":"success","result":"PASS","source_evidence_ids":["ghost-world-6","ghost-world-accepted-24"],"observation":"Actual collision predicates and route diagnostics verified both blockers work while every relay remains reachable; exact current composition preserved a route-aware WON path.","non_claims":["Reachability is not human navigation/readability proof."]},
+    {"fixture_id":"movement-change","category":"boundary","result":"PASS","source_evidence_ids":["ghost-world-accepted-24"],"observation":"Once bulkheads changed the movement topology, old straight-line QA/Systems drivers were invalidated and rewritten to traverse the declared passages before route evidence was accepted.","non_claims":["Old route evidence was not silently transferred across the geometry change."]},
+    {"fixture_id":"readability-overclaim","category":"abstention","result":"PASS","source_evidence_ids":["ghost-world-6","ghost-world-accepted-24"],"observation":"World initially kept browser visual readability NOT_TESTED; later Integration visually inspected the exact Chromium geometry, while human route discovery, preference, fairness, pacing, balance, and fun remained explicitly unclaimed.","non_claims":["Visual inspection is not fresh-player comprehension or playtest evidence."]}
+  ],
+  "executor_conditions":["Ghost Studio World specialist and Integration machine evidence using exact Git blobs, actual collision/runtime probes, route-grid measurement, full exact-composition regressions, and real headless Chromium visual inspection where stated."],
+  "non_claims":["Not a full reconstruction of world/level/encounter design across 3D spaces, streaming worlds, AI navigation, scripted encounters, multiplayer, or large-scale pacing.","Not human route-understanding, balance, fairness, pacing, or fun evidence.","Not proof that this geometry is optimal."],
+  "remaining_unknowns":["Fresh-player route comprehension and preference remain untested.","Broader world/encounter scales and dynamic encounter systems remain untested.","Cross-intelligence/role-only Professional-Body comparison has not yet been run."],
+  "roots":{"Truth":"PASS","Agency / non-domination":"PASS","Continuity":"PASS","Wisdom before speed":"PASS"},
+  "rollback_or_repair":"If route/reachability or exact-composition evidence is disproven, explicitly downgrade/remove this scoped TEST record; preserve source proposals and full-body EXPERIMENTAL status."
+}
