@@ -1,6 +1,6 @@
 {
-  "schema_version":"0.1",
-  "professions":[
+  "schema_version": "0.1",
+  "professions": [
     {"package_id":"software-qa-playtest","profession_id":"software-qa-playtest","display_name":"Software QA / Playtest","status":"EXPERIMENTAL","root":"professions/software/qa-playtest","manifest":"package.json"},
     {"package_id":"integration-release-engineer","profession_id":"integration-release-engineer","display_name":"Software Integration / Release Engineer","status":"EXPERIMENTAL","root":"professions/software/integration-release","manifest":"package.json"},
     {"package_id":"gameplay-engineer","profession_id":"gameplay-engineer","display_name":"Gameplay Engineer","status":"EXPERIMENTAL","root":"professions/game-development/gameplay-engineer","manifest":"package.json"},
@@ -40,6 +40,11 @@
     {"package_id":"graphics-engineer","profession_id":"graphics-engineer","display_name":"Graphics Engineer","status":"EXPERIMENTAL","root":"professions/software/graphics-engineer","manifest":"package.json"},
     {"package_id":"developer-tools-engineer","profession_id":"developer-tools-engineer","display_name":"Developer Tools Engineer","status":"EXPERIMENTAL","root":"professions/software/developer-tools-engineer","manifest":"package.json"},
     {"package_id":"data-scientist","profession_id":"data-scientist","display_name":"Data Scientist","status":"EXPERIMENTAL","root":"professions/ai-data/data-scientist","manifest":"package.json"},
-    {"package_id":"ontology-engineer","profession_id":"ontology-engineer","display_name":"Ontology Engineer","status":"EXPERIMENTAL","root":"professions/ai-data/ontology-engineer","manifest":"package.json"}
+    {"package_id":"ontology-engineer","profession_id":"ontology-engineer","display_name":"Ontology Engineer","status":"EXPERIMENTAL","root":"professions/ai-data/ontology-engineer","manifest":"package.json"},
+    {"package_id":"desktop-application-engineer","profession_id":"desktop-application-engineer","display_name":"Desktop Application Engineer","status":"EXPERIMENTAL","root":"professions/software/desktop-application-engineer","manifest":"package.json"},
+    {"package_id":"performance-engineer","profession_id":"performance-engineer","display_name":"Software Performance Engineer","status":"EXPERIMENTAL","root":"professions/software/performance-engineer","manifest":"package.json"},
+    {"package_id":"local-first-engineer","profession_id":"local-first-engineer","display_name":"Local-First Software Engineer","status":"EXPERIMENTAL","root":"professions/software/local-first-engineer","manifest":"package.json"},
+    {"package_id":"p2p-network-engineer","profession_id":"p2p-network-engineer","display_name":"P2P Network Engineer","status":"EXPERIMENTAL","root":"professions/software/p2p-network-engineer","manifest":"package.json"},
+    {"package_id":"browser-engineer","profession_id":"browser-engineer","display_name":"Browser / Web Runtime Engineer","status":"EXPERIMENTAL","root":"professions/software/browser-engineer","manifest":"package.json"}
   ]
 }
