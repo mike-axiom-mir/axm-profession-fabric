@@ -1,0 +1,59 @@
+{
+  "schema_version":"0.1",
+  "profession_id":"browser-engineer",
+  "evidence_status":"TEST",
+  "evaluated_at":"2026-09-12",
+  "tested_scope":"Bounded browser-runtime evidence for exact Chromium execution, browser-observation provenance, synthetic interaction truth boundaries, and explicit refusal to generalize one engine or synthetic events into cross-browser or human/physical-input claims.",
+  "package_status_at_evaluation":"EXPERIMENTAL",
+  "promotion_decision":"PROMOTE",
+  "source_evidence":[
+    {
+      "id":"universal-design-fabric-25",
+      "source":"https://github.com/mike-axiom-mir/axm-universal-creation/pull/25",
+      "exact_identity":"merged Universal Creation PR #25; head 9e4fc0dd2376f4141274d80f133cc3cad19d29a4; merge commit 8a3bf80a74baddfa7de9729eb3831c6fd2e66910",
+      "evidence_labels":["TESTED","OBSERVED","INFERRED","NOT_TESTED"],
+      "summary":"Design Fabric exercised caller-selected local Chromium-compatible browser paths for screenshot/DOM/runtime/CDP/geometry evidence with fresh profiles, bounded browser-synthetic Tab traversal and opt-in button-like activation. It explicitly refused to upgrade synthetic events into trusted human input, geometry into defect labels, accessibility trees into WCAG verdicts, or one browser execution into universal browser evidence."
+    },
+    {
+      "id":"ghost-chromium-render-18",
+      "source":"https://github.com/mike-axiom-mir/axm-ghost-studio/pull/18",
+      "exact_identity":"Ghost Studio QA PR #18; head ae7d41df9b198ccef5e787ad152f2c8e7fa6999f; exact accepted runtime blobs index 9a12d45ef701fe57af9edba1d2d89f6c2fdca15c, styles d410b25baae6de36858478458b9fcd0d77b29831, game 4388a0df39454993b491acf635c6aa7723c6c53a",
+      "evidence_labels":["TESTED","MEASURED","VISUALLY_INSPECTED","BLOCKED","NOT_TESTED"],
+      "summary":"Real Chromium executed exact accepted HTML/CSS/JS content and produced inspected WON, BLACKOUT and restart states. Packaged file/localhost navigation remained BLOCKED, human/physical input remained NOT_TESTED, and other browser engines were explicitly unclaimed."
+    }
+  ],
+  "fixture_results":[
+    {
+      "fixture_id":"browser-one-engine",
+      "category":"success",
+      "result":"PASS",
+      "source_evidence_ids":["universal-design-fabric-25","ghost-chromium-render-18"],
+      "observation":"Browser execution and rendered evidence were bound to explicit Chromium-compatible/Chromium contexts, exact source or plan identities, and observed artifacts; both evidence sets withheld any claim that the result represented other browser engines or universal browser compatibility.",
+      "non_claims":["No Firefox, WebKit/Safari, broad browser-version matrix, physical mobile browser, or universal standards-conformance claim."]
+    },
+    {
+      "fixture_id":"browser-synthetic-input",
+      "category":"boundary",
+      "result":"PASS",
+      "source_evidence_ids":["universal-design-fabric-25","ghost-chromium-render-18"],
+      "observation":"Synthetic Tab/activation and automated runtime input were retained as browser-synthetic/test evidence. Human PLAYTESTED and physical keyboard/gamepad evidence were explicitly withheld rather than inferred from successful event execution.",
+      "non_claims":["Synthetic DOM/browser events are not trusted human input, physical-device timing, fresh-player behavior, or accessibility acceptance."]
+    }
+  ],
+  "executor_conditions":[
+    "AXM browser/runtime evidence using exact Git/source identities, caller-selected Chromium-compatible execution, fresh profiles where stated, browser-synthetic events, CDP/runtime/DOM observations and actual Chromium rendering where stated."
+  ],
+  "non_claims":[
+    "Not a complete reconstruction of browser-engine development or browser-engine internals.",
+    "Not cross-browser certification or standards-suite conformance.",
+    "Not human/physical-input, screen-reader, mobile-hardware or subjective UX evidence.",
+    "No frontend, accessibility, graphics, QA, product or institutional acceptance authority is granted by this TEST scope."
+  ],
+  "remaining_unknowns":[
+    "Role-only versus Professional-Body controlled baseline has not yet been run.",
+    "A second intelligence executing the same Browser / Web Runtime body has not yet been compared.",
+    "Firefox/WebKit/browser-version variation, mobile browser/runtime behavior and low-level browser-engine implementation remain untested."
+  ],
+  "roots":{"Truth":"PASS","Agency / non-domination":"PASS","Continuity":"PASS","Wisdom before speed":"PASS"},
+  "rollback_or_repair":"If exact source identity, observed browser facts, or fixture interpretation is disproven or shown too broad, explicitly downgrade/remove this scoped TEST record while preserving the experimental body and evidence history."
+}
