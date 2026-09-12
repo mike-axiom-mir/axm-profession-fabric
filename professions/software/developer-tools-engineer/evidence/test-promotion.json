@@ -1,0 +1,73 @@
+{
+  "schema_version":"0.1",
+  "profession_id":"developer-tools-engineer",
+  "evidence_status":"TEST",
+  "evaluated_at":"2026-09-12",
+  "tested_scope":"Bounded deterministic developer-tooling practice across AXM Profession Fabric and Universal Creation: exact input/tool/output provenance, tool-output truth boundaries, proposal-only/shared-state isolation, and refusal to treat tool success as target-system semantic acceptance.",
+  "package_status_at_evaluation":"EXPERIMENTAL",
+  "promotion_decision":"PROMOTE",
+  "source_evidence":[
+    {
+      "id":"profession-intake-15",
+      "source":"https://github.com/mike-axiom-mir/axm-profession-fabric/pull/15",
+      "exact_identity":"merged Profession Fabric PR #15; head 50c486eb470c71464e6c06105df8b615f827e184; merge commit 944b95f245eb3e3127f83089c2cdce774dfd33a1",
+      "evidence_labels":["TESTED","OBSERVED","INFERRED","NOT_TESTED"],
+      "summary":"Dependency-free local O*NET/ESCO intake tool consumed version-pinned local snapshots, preserved provenance/method fields, emitted candidate-only crosswalks, and passed exact-head repository validation without claiming external occupation identity equals AXM profession identity or allowing restricted-source ingestion."
+    },
+    {
+      "id":"universal-material-adapter-39",
+      "source":"https://github.com/mike-axiom-mir/axm-universal-creation/pull/39",
+      "exact_identity":"merged Universal Creation PR #39; head 1b35cb5ad938e5211bc416119ee35aaa68cab9ef; merge commit e7e5a68cce2206da72cc9cac6ce6582304387598",
+      "evidence_labels":["TESTED","OBSERVED","INFERRED","NOT_TESTED"],
+      "summary":"Deterministic donor adapter validated exact format/version, explicit routing, decoded bytes, fresh SHA-256 evidence and Asset Atom descriptors while explicitly withholding renderer consumption, PBR correctness, visual quality and live-capability promotion claims."
+    },
+    {
+      "id":"universal-beacon-31",
+      "source":"https://github.com/mike-axiom-mir/axm-universal-creation/pull/31",
+      "exact_identity":"merged Universal Creation PR #31; head 3f14252f8d04a79741273c5d70bdc259b085bfd7; merge commit 1db6371e8b6afe2d694f632e926b629d5587b572",
+      "evidence_labels":["TESTED","OBSERVED","INFERRED","NOT_TESTED"],
+      "summary":"Deterministic Beacon publisher/scanner/verifier/fetcher used canonical hashes and path-safety checks, rejected tampering, and wrote fetched discoveries only to a proposal inbox; tests verified canonical machine.contract.json remained unchanged and no apply/install/promote/merge action occurred."
+    },
+    {
+      "id":"universal-workspace-isolation-33",
+      "source":"https://github.com/mike-axiom-mir/axm-universal-creation/pull/33",
+      "exact_identity":"merged Universal Creation PR #33; head 081c5735c224f8521cafa0093f6705c48a7640dd; merge commit c52b5e5579866b6e905cbadf2d22a5b7ebae35ea",
+      "evidence_labels":["TESTED","MEASURED","OBSERVED","NOT_TESTED"],
+      "summary":"A real candidate-tool cleanup defect was reproduced on both success and failure paths: one invocation deleted another worker's sibling workspace. The repair narrowed cleanup to the exact owned UUID workspace, preserved the foreign sentinel, and passed focused plus complete regression gates while explicitly withholding claims about hostile concurrent processes or every filesystem."
+    }
+  ],
+  "fixture_results":[
+    {
+      "fixture_id":"devtools-green-not-correct",
+      "category":"success",
+      "result":"PASS",
+      "source_evidence_ids":["profession-intake-15","universal-material-adapter-39"],
+      "observation":"Two independent developer tools completed their bounded deterministic transformations/validation successfully while preserving a weaker target claim: the research intake emitted crosswalk candidates rather than profession identity, and the material adapter emitted validated descriptors rather than claiming renderer/PBR/visual correctness.",
+      "non_claims":["Tool/descriptor/schema success is not target semantic correctness, visual quality, renderer compatibility, or professional acceptance."]
+    },
+    {
+      "fixture_id":"devtools-hidden-write",
+      "category":"boundary",
+      "result":"PASS",
+      "source_evidence_ids":["universal-beacon-31","universal-workspace-isolation-33"],
+      "observation":"Beacon was designed and regression-tested as proposal-only with canonical state unchanged; separately, candidate tooling exposed a real ownership bug that deleted another worker's state, then repaired cleanup to the exact owned workspace and preserved the sibling sentinel on both passing and failing tool paths.",
+      "non_claims":["This does not prove hostile-process locking, every filesystem race, or universal tool sandboxing; it proves the cited proposal-only and owned-workspace boundaries."]
+    }
+  ],
+  "executor_conditions":[
+    "AXM deterministic Python/Node/GitHub tooling using exact repository heads, local/versioned source inputs, hash/provenance receipts, repository CI, proposal-only state contracts and isolated candidate workspaces where stated."
+  ],
+  "non_claims":[
+    "Not a complete reconstruction of Developer Tools Engineering across IDEs, compilers, debuggers, profilers, build systems, language servers or every programming ecosystem.",
+    "Tool correctness does not imply the generated, adapted or consuming system is semantically correct.",
+    "No institutional write, merge, CANON, product or consuming-profession authority is granted by this TEST scope."
+  ],
+  "remaining_unknowns":[
+    "Role-only versus Professional-Body controlled baseline has not yet been run.",
+    "A second intelligence executing the same Developer Tools body has not yet been compared.",
+    "Language/toolchain ecosystems beyond the observed AXM deterministic tools remain untested.",
+    "Hostile concurrent processes and broad filesystem/runtime isolation remain outside the cited workspace evidence."
+  ],
+  "roots":{"Truth":"PASS","Agency / non-domination":"PASS","Continuity":"PASS","Wisdom before speed":"PASS"},
+  "rollback_or_repair":"If any cited source identity, fixture mapping or professional interpretation is disproven or shown too broad, explicitly downgrade/remove this TEST record while preserving the experimental package and evidence history."
+}
