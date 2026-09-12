@@ -20,6 +20,11 @@
     {"package_id":"accessibility-specialist","profession_id":"accessibility-specialist","display_name":"Accessibility Specialist","status":"EXPERIMENTAL","root":"professions/product-design/accessibility-specialist","manifest":"package.json"},
     {"package_id":"visual-designer","profession_id":"visual-designer","display_name":"Visual Designer","status":"EXPERIMENTAL","root":"professions/product-design/visual-designer","manifest":"package.json"},
     {"package_id":"sound-designer","profession_id":"sound-designer","display_name":"Sound Designer","status":"EXPERIMENTAL","root":"professions/product-design/sound-designer","manifest":"package.json"},
-    {"package_id":"creative-director","profession_id":"creative-director","display_name":"Creative Director","status":"EXPERIMENTAL","root":"professions/creative-media/creative-director","manifest":"package.json"}
+    {"package_id":"creative-director","profession_id":"creative-director","display_name":"Creative Director","status":"EXPERIMENTAL","root":"professions/creative-media/creative-director","manifest":"package.json"},
+    {"package_id":"machine-learning-engineer","profession_id":"machine-learning-engineer","display_name":"Machine Learning Engineer","status":"EXPERIMENTAL","root":"professions/ai-data/machine-learning-engineer","manifest":"package.json"},
+    {"package_id":"ai-evaluation-engineer","profession_id":"ai-evaluation-engineer","display_name":"AI Evaluation Engineer","status":"EXPERIMENTAL","root":"professions/ai-data/ai-evaluation-engineer","manifest":"package.json"},
+    {"package_id":"ai-systems-engineer","profession_id":"ai-systems-engineer","display_name":"AI Systems Engineer","status":"EXPERIMENTAL","root":"professions/ai-data/ai-systems-engineer","manifest":"package.json"},
+    {"package_id":"knowledge-engineer","profession_id":"knowledge-engineer","display_name":"Knowledge Engineer","status":"EXPERIMENTAL","root":"professions/ai-data/knowledge-engineer","manifest":"package.json"},
+    {"package_id":"data-engineer","profession_id":"data-engineer","display_name":"Data Engineer","status":"EXPERIMENTAL","root":"professions/ai-data/data-engineer","manifest":"package.json"}
   ]
 }

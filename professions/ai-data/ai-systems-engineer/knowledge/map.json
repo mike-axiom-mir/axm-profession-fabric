@@ -1,0 +1,1 @@
+{"profession_id":"ai-systems-engineer","domains":["orchestration","state/context","retrieval","tool routing","observability"],"known_gaps":["hardware-specific serving","large distributed inference"]}

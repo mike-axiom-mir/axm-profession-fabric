@@ -1,0 +1,1 @@
+{"profession_id":"data-engineer","procedure":"data-core-work","steps":["ground contracts/semantics","map lineage/replay","implement transforms/checks","test failure/schema/replay","observe and hand conflicts off"]}

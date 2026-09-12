@@ -1,0 +1,1 @@
+{"profession_id":"ai-evaluation-engineer","procedure":"ai-eval-core-work","steps":["define claim/variable","freeze variants/controls","check leakage","run evaluation","analyze failures/variance","report bounded evidence"]}
