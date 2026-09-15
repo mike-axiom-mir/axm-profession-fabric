@@ -1,0 +1,106 @@
+{
+  "schema_version": "0.1",
+  "profession_id": "3d-game-asset-specialist",
+  "procedure_id": "3d-game-asset-core-work",
+  "trigger": "A bounded 3D game-asset task or asset defect falls inside the body scope.",
+  "ordered_phases": [
+    {
+      "id": "01-bind-intake",
+      "actions": [
+        "Record project, asset, source, task, and requester identity.",
+        "Read the accepted brief, visual direction, target engine/runtime and renderer versions, platform and camera/use context, budgets, delivery format, importer contract, and provenance packet.",
+        "Separate required decisions, accepted constraints, preferences, hypotheses, and unknowns.",
+        "Map adjacent owners and required evidence surfaces."
+      ],
+      "gate": "All required inputs are present and non-conflicting, or the result is a bounded missing-input diagnosis."
+    },
+    {
+      "id": "02-plan",
+      "actions": [
+        "Choose direct-low, high-to-low, modular, tiling, trim-sheet, unique-texture, or other declared production paths from the brief and target evidence.",
+        "Define silhouette, proportion, scale, snap, topology, deformation, UV, texel, bake, material, LOD, collision, socket, export, import, and test checkpoints.",
+        "Define reversible save points before destructive or lossy operations.",
+        "Request decisions that belong to visual, technical, graphics, world, gameplay, QA, or IP owners."
+      ],
+      "gate": "The plan traces every expensive or irreversible step to an accepted need and evidence route."
+    },
+    {
+      "id": "03-blockout",
+      "actions": [
+        "Build the minimum geometry needed to test dimensions, silhouette, proportion, pivot, articulation zones, snap, and target placement.",
+        "Compare at representative camera distance, FOV, and use context with a known-scale fixture.",
+        "Record visual-direction decisions and unresolved alternatives before detail production."
+      ],
+      "gate": "Blockout evidence supports continued production; otherwise repair, request review, or hold."
+    },
+    {
+      "id": "04-author-source",
+      "actions": [
+        "Create final high/low or direct-low geometry with intentional topology and transformation state.",
+        "Lock or record triangulation, normals, tangents, smoothing, UV seams, material slots, and deformation assumptions before dependent bakes.",
+        "Build UVs and texel plan for declared material and lighting use.",
+        "Bake and inspect required mesh maps; repair localized cage, projection, skew, seam, padding, or tangent failures.",
+        "Author PBR surface inputs with explicit color spaces, channel meanings, alpha mode, resolution, compression assumptions, and provenance.",
+        "Compare the asset with its family under representative conditions."
+      ],
+      "gate": "The exact editable source passes declared structural and sampled visual checks without hidden blockers."
+    },
+    {
+      "id": "05-prepare-runtime-candidate",
+      "actions": [
+        "Create target-declared LODs, simple collision candidates, sockets or locators, final transforms, pivots, hierarchy, naming, and material-slot layout.",
+        "Export the exact candidate with recorded DCC, exporter, format, extension, and preset versions.",
+        "Run the declared interchange validator and preserve all warnings and errors.",
+        "Do not delete unsupported data merely to make validation green; resolve, declare, or hand off it."
+      ],
+      "gate": "The exchange candidate is structurally valid for its declared scope, or all exceptions are explicit and accepted for testing."
+    },
+    {
+      "id": "06-import-observe-measure",
+      "actions": [
+        "Import or re-import the exact candidate into the exact target build with recorded settings.",
+        "Compare source and target scale, axes, transforms, bounds, pivots, hierarchy, mesh structure, normals/tangents, UVs, materials, textures, LODs, collision, sockets, and warnings.",
+        "Observe representative lighting, cameras, distances, motion, mip and LOD transitions, and scene context.",
+        "Request target-device measurements and relevant collision, deformation, animation, gameplay, or world-context tests from owning roles.",
+        "Keep each evidence surface and non-claim separate."
+      ],
+      "gate": "Requested claims are directly supported or remain explicitly NOT_TESTED, BLOCKED, or handed off."
+    },
+    {
+      "id": "07-repair-loop",
+      "actions": [
+        "Localize the failure to brief, source, bake, surface, export, import, renderer, runtime, interaction, or rights state.",
+        "Repair the smallest owned cause while preserving the prior candidate and rationale.",
+        "Invalidate and rerun every downstream check affected by the repair.",
+        "Stop when the repair crosses ownership, changes accepted meaning, or lacks a valid observation surface."
+      ],
+      "gate": "The repaired candidate has fresh downstream evidence and no stale pass is reused."
+    },
+    {
+      "id": "08-deliver",
+      "actions": [
+        "Package editable source and dependencies, runtime candidate and import instructions, textures and material mapping, LOD/collision/socket candidates, and exact identity.",
+        "Attach budget trace, structural results, target observations, measurements, provenance, failures, repairs, limitations, non-claims, and open handoffs.",
+        "State EXPERIMENTAL, TESTED, MEASURED, VISUALLY_INSPECTED, PLAYTESTED, OBSERVED, INFERRED, BLOCKED, and NOT_TESTED only where supported."
+      ],
+      "gate": "Another worker can reproduce the handoff without hidden chat reasoning or missing source identity."
+    }
+  ],
+  "global_stop_conditions": [
+    "Required source, brief, visual direction, target contract, budget, provenance, tool, or evidence surface is missing or ambiguous.",
+    "A requested action or acceptance decision belongs to another profession and no accepted contract delegates it.",
+    "The asset cannot be tied across editable source, export, target import, and evidence.",
+    "A change would destroy rollback, obscure provenance, or silently rewrite accepted direction.",
+    "Only structural or presentation evidence exists for a requested runtime, visual, performance, gameplay, animation, or legal claim."
+  ],
+  "required_outputs": [
+    "editable-source-package",
+    "runtime-candidate-package",
+    "asset-evidence-packet"
+  ],
+  "optional_outputs": [
+    "handoff-packet",
+    "blocked-input-request",
+    "repair-delta"
+  ]
+}

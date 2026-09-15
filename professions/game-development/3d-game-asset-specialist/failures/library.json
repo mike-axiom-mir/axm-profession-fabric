@@ -1,0 +1,106 @@
+{
+  "schema_version": "0.1",
+  "profession_id": "3d-game-asset-specialist",
+  "failures": [
+    {
+      "id": "missing-asset-contract",
+      "signal": "Detail production begins from a reference image without target use, scale, engine, platform, budgets, material, LOD, collision, deformation, delivery, or rights decisions.",
+      "diagnosis": [
+        "Trace each production choice to a declared input.",
+        "Mark assumed values and identify their owners."
+      ],
+      "repair": "Stop at a reversible blockout, return a missing-input packet, and resume only after the relevant contract is accepted.",
+      "evidence_reset": "All work based on guessed production targets remains provisional."
+    },
+    {
+      "id": "shading-roundtrip-drift",
+      "signal": "The target import shows gradients, seams, faceting, or normal-map changes absent from the source view.",
+      "diagnosis": [
+        "Compare final triangles, normals, tangents, smoothing, UV seams, mirrored shells, and importer recomputation.",
+        "Use a neutral diagnostic material and representative lighting."
+      ],
+      "repair": "Align the source and target triangulation/tangent contract, rebake the exact final low mesh, re-export, and re-import.",
+      "evidence_reset": "Invalidate dependent bake, material, visual, and target-import passes."
+    },
+    {
+      "id": "bake-projection-failure",
+      "signal": "Bake maps show projection misses, skew, waviness, gradients, seams, contamination, or insufficient mip padding.",
+      "diagnosis": [
+        "Inspect cage/ray distance and high/low alignment by region.",
+        "Check naming groups, UV boundaries, padding, resolution, tangent basis, and final triangulation."
+      ],
+      "repair": "Repair the localized source, cage, UV, naming, or bake setting and rerun downstream material and target inspection.",
+      "evidence_reset": "Invalidate affected maps and every material/export derived from them."
+    },
+    {
+      "id": "material-translation-failure",
+      "signal": "The target renderer changes roughness, metal response, normal intensity, alpha, color, emissive, or channel behavior.",
+      "diagnosis": [
+        "Compare material model, shader mapping, texture channels, transfer functions, compression, sampler, mip, alpha, and import settings.",
+        "Separate lighting/exposure differences from asset-data differences."
+      ],
+      "repair": "Produce a declared target material variant or request shader/graphics ownership; do not hide the mismatch with presentation lighting.",
+      "evidence_reset": "Invalidate cross-renderer equivalence claims and refresh target captures."
+    },
+    {
+      "id": "scale-axis-pivot-failure",
+      "signal": "The imported asset is mirrored, rotated, incorrectly scaled, offset, unsnappable, or unusable for intended attachment.",
+      "diagnosis": [
+        "Inspect units, axes, handedness, transforms, export conversion, importer conversion, bounds, origin, pivot, hierarchy, and socket data.",
+        "Test against a known-scale target fixture."
+      ],
+      "repair": "Apply the target conversion once, restore intended pivot/hierarchy, and rerun export/import and placement tests.",
+      "evidence_reset": "Invalidate placement, collision, LOD bounds, socket, and visual-scale evidence."
+    },
+    {
+      "id": "lod-visible-regression",
+      "signal": "A reduced mesh meets the numeric target but pops, collapses silhouette, changes shading, breaks material boundaries, or loses gameplay readability.",
+      "diagnosis": [
+        "Observe transitions at representative FOV, distance, motion, lighting, and screen size.",
+        "Compare protected features, UV/material boundaries, sockets, bounds, and collision assumptions."
+      ],
+      "repair": "Rebuild or constrain reduction around critical features and coordinate transition settings with technical and visual owners.",
+      "evidence_reset": "Keep the budget measurement but mark visual acceptance failed until fresh inspection."
+    },
+    {
+      "id": "collision-behavior-failure",
+      "signal": "Collision is missing, blocks an intended opening, allows penetration, behaves unstably, or costs more than the target allows.",
+      "diagnosis": [
+        "Inspect target-side collision primitives, convexity, intersections, transforms, naming, bounds, and trace/use requirements.",
+        "Run the relevant physics or gameplay fixture."
+      ],
+      "repair": "Revise the simple collision candidate and request gameplay/physics validation; never infer behavior from viewport fit alone.",
+      "evidence_reset": "Invalidate collision and play-context evidence only; preserve unrelated visual evidence."
+    },
+    {
+      "id": "clean-import-false-finish",
+      "signal": "The candidate is called game-ready because it validates and imports without errors.",
+      "diagnosis": [
+        "Build a matrix for source, structural, visual, runtime, performance, collision, deformation, gameplay, art, and rights evidence.",
+        "Identify missing owners and representative contexts."
+      ],
+      "repair": "Narrow the claim to structural validation/import and keep game readiness blocked until required evidence arrives.",
+      "evidence_reset": "No existing valid evidence is deleted, but unsupported acceptance is withdrawn."
+    },
+    {
+      "id": "asset-family-drift",
+      "signal": "The asset is polished alone but conflicts with accepted family scale, silhouette language, density, wear, palette, roughness, or modular rules.",
+      "diagnosis": [
+        "Compare beside accepted family members in the target context.",
+        "Check shared constraints and distinguish authored variation from accidental drift."
+      ],
+      "repair": "Restore family constraints or request an explicit direction change; rerun context comparison.",
+      "evidence_reset": "Individual craft evidence remains; family and direction fidelity fail until reviewed."
+    },
+    {
+      "id": "provenance-laundering",
+      "signal": "A generated, traced, scanned, baked, converted, or heavily modified source is treated as cleared because its final form differs.",
+      "diagnosis": [
+        "Trace every input, provider, author, license/terms capture, consent, modification, and intended distribution.",
+        "Identify protected references, trademarks, likenesses, or restricted datasets."
+      ],
+      "repair": "Block release, request IP review, and replace inputs whose permitted use cannot be established.",
+      "evidence_reset": "Rights status remains BLOCKED; technical and visual evidence may be retained but cannot authorize release."
+    }
+  ]
+}

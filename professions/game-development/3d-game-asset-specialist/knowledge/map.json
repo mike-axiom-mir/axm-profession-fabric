@@ -1,0 +1,144 @@
+{
+  "schema_version": "0.1",
+  "profession_id": "3d-game-asset-specialist",
+  "checked_on": "2026-09-15",
+  "source_policy": "Primary and normative sources define their own surfaces only. This map paraphrases bounded rules and stores links; it does not reproduce or silently generalize protected documentation.",
+  "sources": [
+    {
+      "id": "epic-fbx-static-mesh-pipeline",
+      "authority": "primary engine documentation",
+      "version": "Unreal Engine 5.8",
+      "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/fbx-static-mesh-pipeline-in-unreal-engine",
+      "bounded_findings": [
+        "The pipeline has explicit contracts for pivots, triangulation, multiple UV sets, smoothing, vertex colors, custom collision, sockets, materials, and LODs.",
+        "Manual triangulation gives the author control over the final triangle result; automatic triangulation can alter it.",
+        "Custom collision and sockets depend on target naming and export rules.",
+        "A material or texture import still requires target-side inspection because not every map is automatically connected.",
+        "FBX version compatibility is target-engine specific and must be recorded."
+      ],
+      "nonclaims": [
+        "Unreal-specific names and FBX rules are not universal interchange rules.",
+        "Successful import does not prove visual quality, performance, collision fitness, or gameplay readiness."
+      ]
+    },
+    {
+      "id": "unity-model-performance",
+      "authority": "primary engine documentation",
+      "version": "Unity 6.0",
+      "url": "https://docs.unity3d.com/6000.0/Documentation/Manual/ModelingOptimizedCharacters.html",
+      "bounded_findings": [
+        "Geometry and material counts trade visual fidelity against rendering and animation cost; the correct balance depends on target platform, scene complexity, and required appearance.",
+        "Runtime vertex counts may exceed DCC geometric vertex counts because normals, UVs, or vertex colors can split vertices.",
+        "Animated assets add bone, skinning, and renderer costs that cannot be inferred from polygon count alone."
+      ],
+      "nonclaims": [
+        "The documentation does not supply a universal polygon or material budget for every project.",
+        "A low authored vertex count does not by itself prove low runtime cost."
+      ]
+    },
+    {
+      "id": "unity-mesh-lod",
+      "authority": "primary engine documentation",
+      "version": "Unity 6.0",
+      "url": "https://docs.unity3d.com/6000.0/Documentation/Manual/LevelOfDetail.html",
+      "bounded_findings": [
+        "Mesh LOD reduces distant rendering work by switching among decreasing-detail meshes.",
+        "LOD assets are a system of geometry and transition behavior, not one isolated reduced mesh."
+      ],
+      "nonclaims": [
+        "Triangle reduction does not prove acceptable silhouette, shading, material continuity, or transition quality."
+      ]
+    },
+    {
+      "id": "unity-lightmap-uvs",
+      "authority": "primary engine documentation",
+      "version": "Unity 6.0",
+      "url": "https://docs.unity3d.com/6000.0/Documentation/Manual/LightingGiUvs-GeneratingLightmappingUVs.html",
+      "bounded_findings": [
+        "Lightmap UVs may be authored or generated and occupy target-defined UV channels.",
+        "Texture UV success does not imply valid lightmap UVs; target use and channels must be explicit."
+      ],
+      "nonclaims": [
+        "Automatic lightmap UV generation does not prove artifact-free baked lighting in the target scene."
+      ]
+    },
+    {
+      "id": "khronos-gltf-2-spec",
+      "authority": "normative format specification",
+      "version": "glTF 2.0",
+      "url": "https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.html",
+      "bounded_findings": [
+        "glTF declares a right-handed coordinate system, meter units, and explicit transformation rules.",
+        "Its core physically based material model is metallic-roughness with defined base-color, metallic, roughness, normal, occlusion, emissive, and alpha semantics.",
+        "Meshes, morph targets, skins, joint hierarchies, animation channels, samplers, and interpolation have explicit structural contracts.",
+        "Color and data textures have different transfer-function requirements; channel meaning must be preserved."
+      ],
+      "nonclaims": [
+        "glTF conformance does not prove target-engine feature parity, aesthetic fidelity, memory cost, or gameplay fitness.",
+        "A renderer may extend or translate the core material model; those differences require target evidence."
+      ]
+    },
+    {
+      "id": "khronos-gltf-validator",
+      "authority": "official format validation implementation",
+      "version": "live service checked 2026-09-15",
+      "url": "https://github.khronos.org/glTF-Validator/",
+      "bounded_findings": [
+        "A declared validator can provide repeatable structural conformance evidence for the exact asset and validator version."
+      ],
+      "nonclaims": [
+        "Validator success is not visual, performance, animation, collision, gameplay, art-direction, or legal acceptance."
+      ]
+    }
+  ],
+  "derived_professional_rules": [
+    {
+      "id": "budget-from-target-not-folklore",
+      "rule": "Derive budgets from the named project, platform, scene, camera/use context, and measurement plan; never encode universal triangle, texture, material, bone, collision, or LOD counts.",
+      "sources": [
+        "unity-model-performance",
+        "unity-mesh-lod"
+      ]
+    },
+    {
+      "id": "final-low-mesh-is-bake-contract",
+      "rule": "Lock or explicitly record final topology, triangulation, UV seams, normals, tangents, and target bake assumptions before accepting tangent-space detail; rebake after changes that invalidate them.",
+      "sources": [
+        "epic-fbx-static-mesh-pipeline",
+        "khronos-gltf-2-spec"
+      ]
+    },
+    {
+      "id": "target-material-semantics-explicit",
+      "rule": "Record material model, texture color/data spaces, channel meanings, alpha mode, target shader mapping, and renderer-specific differences.",
+      "sources": [
+        "khronos-gltf-2-spec",
+        "epic-fbx-static-mesh-pipeline"
+      ]
+    },
+    {
+      "id": "lod-is-measured-and-visible",
+      "rule": "Each LOD requires both budget measurement and target-context visual transition evidence; neither substitutes for the other.",
+      "sources": [
+        "unity-mesh-lod",
+        "epic-fbx-static-mesh-pipeline"
+      ]
+    },
+    {
+      "id": "validate-then-import-then-observe",
+      "rule": "Treat structural validation, target import, target visual observation, measured performance, and play-context verification as separate gates tied to one exact candidate.",
+      "sources": [
+        "khronos-gltf-validator",
+        "epic-fbx-static-mesh-pipeline",
+        "unity-model-performance"
+      ]
+    }
+  ],
+  "research_gaps": [
+    "Representative asset-class production studies and human expert review.",
+    "Character skinning and deformation, foliage, vehicles, weapons, photogrammetry, cloth, destruction, procedural assets, and virtualized-geometry pipelines.",
+    "Current DCC-specific authoring and bake procedures for each adopted toolchain.",
+    "Browser/WebGL/WebGPU delivery budgets, mesh or texture compression extensions, and target-device evidence.",
+    "Cross-engine material translation and tangent-basis compatibility fixtures."
+  ]
+}
