@@ -1,0 +1,92 @@
+{
+  "schema_version": "0.1",
+  "package_id": "3d-game-asset-specialist",
+  "domain": "game-development",
+  "profession_id": "3d-game-asset-specialist",
+  "display_name": "3D Game Asset Specialist",
+  "status": "EXPERIMENTAL",
+  "body": "body.json",
+  "execution_surfaces": [
+    "human-guided",
+    "ai-model",
+    "machine-intelligence",
+    "deterministic-flow"
+  ],
+  "exports": [
+    {
+      "id": "3d-game-asset-core-work",
+      "kind": "procedure",
+      "path": "procedures/core-work.json",
+      "description": "Evidence-gated asset production from brief and budgets through target-runtime handoff."
+    },
+    {
+      "id": "3d-game-asset-profession-map",
+      "kind": "decision-support",
+      "path": "maps/profession.json",
+      "description": "Ownership, gates, evidence surfaces, and adjacent-profession boundaries."
+    },
+    {
+      "id": "3d-game-asset-knowledge-map",
+      "kind": "decision-support",
+      "path": "knowledge/map.json",
+      "description": "Source-grounded interchange, optimization, LOD, UV, material, and validation knowledge."
+    },
+    {
+      "id": "3d-game-asset-tool-contracts",
+      "kind": "tool-contract",
+      "path": "tools/manifest.json",
+      "description": "Executor-neutral authoring, inspection, import, visual-observation, and provenance tool contracts."
+    }
+  ],
+  "components": {
+    "documentation": [
+      "README.md"
+    ],
+    "maps": [
+      "maps/profession.json"
+    ],
+    "knowledge": [
+      "knowledge/map.json"
+    ],
+    "tools": [
+      "tools/manifest.json"
+    ],
+    "procedures": [
+      "procedures/core-work.json"
+    ],
+    "failures": [
+      "failures/library.json"
+    ],
+    "handoffs": [
+      "handoffs/contracts.json"
+    ],
+    "tests": [
+      "tests/professional-fixtures.json"
+    ]
+  },
+  "dependencies": {
+    "shared_services": [
+      "canonical-state-reader",
+      "source-version-access",
+      "asset-provenance-registry",
+      "artifact-observer",
+      "interactive-runtime",
+      "measurement-recorder",
+      "evidence-store"
+    ],
+    "profession_packages": [
+      "3d-artist",
+      "visual-designer",
+      "technical-artist",
+      "graphics-engineer",
+      "world-encounter-designer",
+      "software-qa-playtest"
+    ]
+  },
+  "isolation": {
+    "package_local_by_default": true,
+    "cross_package_access": "contract-only",
+    "no_silent_copy": true,
+    "shared_state_through_body_interfaces": true
+  }
+}

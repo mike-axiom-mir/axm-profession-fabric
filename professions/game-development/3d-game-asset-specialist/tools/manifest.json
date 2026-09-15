@@ -1,0 +1,96 @@
+{
+  "schema_version": "0.1",
+  "profession_id": "3d-game-asset-specialist",
+  "tools": [
+    {
+      "id": "dcc-modeler",
+      "purpose": "Author editable geometry, transforms, UVs, vertex data, LODs, collision candidates, sockets, hierarchy, and exchange files.",
+      "accepted_evidence": [
+        "exact source version or hash",
+        "recorded DCC and plugin versions",
+        "source reopen result",
+        "export preset and output identity"
+      ],
+      "boundary": "DCC state does not prove target-runtime behavior or game readiness."
+    },
+    {
+      "id": "mesh-uv-bake-inspector",
+      "purpose": "Measure and localize geometry, normal, tangent, UV, texel, cage, padding, bake, and topology defects.",
+      "accepted_evidence": [
+        "machine-readable measurements",
+        "diagnostic maps or overlays",
+        "localized before/after comparisons",
+        "exact inspected candidate"
+      ],
+      "boundary": "Structural cleanliness does not prove art quality or runtime fitness."
+    },
+    {
+      "id": "material-texture-authoring-suite",
+      "purpose": "Author and export declared PBR material inputs and renderer-specific variants with color-space and channel control.",
+      "accepted_evidence": [
+        "editable material source",
+        "texture/channel manifest",
+        "color-space declarations",
+        "target-renderer comparison",
+        "source provenance"
+      ],
+      "boundary": "A material preview does not prove target-shader equivalence."
+    },
+    {
+      "id": "interchange-validator",
+      "purpose": "Check the exact exchange candidate against the declared format and extension contract.",
+      "accepted_evidence": [
+        "validator identity and version",
+        "candidate hash or version",
+        "complete warnings and errors",
+        "declared extension support"
+      ],
+      "boundary": "Conformance evidence is structural only."
+    },
+    {
+      "id": "target-engine-importer",
+      "purpose": "Import or re-import the exact candidate and inspect target-side meshes, materials, textures, LODs, collision, sockets, bounds, and warnings.",
+      "accepted_evidence": [
+        "target build and configuration",
+        "import settings",
+        "import log",
+        "target asset identity",
+        "source-to-target comparison"
+      ],
+      "boundary": "Clean import is not final integration, performance, gameplay, art, or rights acceptance."
+    },
+    {
+      "id": "artifact-observer",
+      "purpose": "Inspect exact rendered or runtime frames, turntables, debug views, LOD transitions, lighting conditions, and camera distances.",
+      "accepted_evidence": [
+        "capture timestamp and candidate identity",
+        "camera, lighting, material, mip, and LOD state",
+        "visible findings and unobserved surfaces",
+        "before/after comparison"
+      ],
+      "boundary": "Only visible sampled state is observed; absence of evidence outside it is not a pass."
+    },
+    {
+      "id": "runtime-profiler",
+      "purpose": "Record target-context geometry, material, texture, memory, draw, skinning, streaming, or frame-cost evidence supplied under technical ownership.",
+      "accepted_evidence": [
+        "target device/build/scene/configuration",
+        "measurement method and time",
+        "asset and comparison identity",
+        "raw or inspectable measurement record"
+      ],
+      "boundary": "The specialist may consume and respond to measurements but does not self-certify global performance budgets."
+    },
+    {
+      "id": "asset-provenance-registry",
+      "purpose": "Track origin, authorship, generation, consent, license, attribution, modifications, hashes, and downstream restrictions.",
+      "accepted_evidence": [
+        "source identity and capture date",
+        "terms or permission record",
+        "modification and derivative trace",
+        "attribution and unresolved rights status"
+      ],
+      "boundary": "Recorded terms are evidence for IP review, not automatic legal clearance."
+    }
+  ]
+}

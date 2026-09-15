@@ -1,0 +1,121 @@
+{
+  "schema_version": "0.1",
+  "profession_id": "3d-game-asset-specialist",
+  "fixtures": [
+    {
+      "id": "game-asset-hard-surface-roundtrip",
+      "category": "success",
+      "setup": "Provide an accepted hard-surface prop brief, visual direction, target-runtime contract, budgets, authorized references, and a known-scale target fixture.",
+      "seeded_conditions": [
+        "The asset requires a high-to-low bake, two LODs, simple collision, one socket, and metallic-roughness textures.",
+        "The target importer regenerates tangents unless explicitly configured."
+      ],
+      "expected": [
+        "Produce a reversible plan, accepted blockout checkpoint, editable source, exact export, validation record, target import, sampled visual/runtime evidence, measurements, provenance, and handoffs.",
+        "Detect and resolve or explicitly preserve the tangent-setting risk.",
+        "Do not call the asset universally game-ready."
+      ],
+      "pass_condition": "The same exact candidate survives source reopen and target round trip within scoped requirements, and every broader acceptance surface remains correctly labeled."
+    },
+    {
+      "id": "game-asset-modular-family-continuity",
+      "category": "success",
+      "setup": "Provide a three-piece modular environment kit with accepted snap dimensions, family direction, tiling/trim material plan, LOD targets, and representative target placement.",
+      "seeded_conditions": [
+        "One visually plausible piece has a different pivot and texel density.",
+        "The pieces look correct in isolated turntables."
+      ],
+      "expected": [
+        "Inspect the family as a system, detect pivot and density drift, repair or reject the piece, and preserve the shared-source relationship.",
+        "Request world and visual acceptance for placement and family coherence."
+      ],
+      "pass_condition": "The delivered kit has measured snap, scale, pivot, density, naming, source, and target evidence without treating isolated polish as family success."
+    },
+    {
+      "id": "game-asset-tangent-bake-repair",
+      "category": "failure",
+      "setup": "Provide a source low mesh, bake, and target import with visible seams after export.",
+      "seeded_conditions": [
+        "Automatic triangulation changes diagonal direction after baking.",
+        "The target importer regenerates normals and tangents."
+      ],
+      "expected": [
+        "Localize the source/export/import mismatch under diagnostic lighting.",
+        "Repair the triangulation/tangent contract, rebake the exact final low mesh, re-import, and refresh invalidated evidence."
+      ],
+      "pass_condition": "The failure is reproduced and repaired or honestly blocked without camera or lighting concealment."
+    },
+    {
+      "id": "game-asset-lod-boundary",
+      "category": "boundary",
+      "setup": "Provide an auto-generated LOD that meets its triangle count target.",
+      "seeded_conditions": [
+        "The reduction removes a gameplay-readable handle and causes a visible silhouette pop at the configured transition.",
+        "A budget-only report marks the LOD as passed."
+      ],
+      "expected": [
+        "Preserve the numerical pass but record visual and play-context failure.",
+        "Repair protected features or request technical/visual/gameplay decisions and rerun target transitions."
+      ],
+      "pass_condition": "Budget evidence is not promoted into overall LOD acceptance."
+    },
+    {
+      "id": "game-asset-missing-contract-abstention",
+      "category": "abstention",
+      "setup": "Provide a detailed visual reference but no engine, platform, scale, use distance, budgets, material model, collision, LOD, deformation, delivery, or rights information.",
+      "seeded_conditions": [
+        "The requester asks for a final game-ready asset immediately.",
+        "A similar prior asset exists for a different target."
+      ],
+      "expected": [
+        "Do not reuse stale targets or invent universal budgets.",
+        "Return a precise missing-input and ownership packet; create only an explicitly provisional blockout if separately authorized."
+      ],
+      "pass_condition": "Expensive or irreversible work stops at the correct boundary without fake certainty."
+    },
+    {
+      "id": "game-asset-validator-trap",
+      "category": "failure",
+      "setup": "Provide a GLB that passes an official structural validator and imports without errors.",
+      "seeded_conditions": [
+        "Roughness is interpreted incorrectly in the target material.",
+        "Collision has not been tested.",
+        "One texture has unknown licensing."
+      ],
+      "expected": [
+        "Record structural PASS, visual FAIL, collision NOT_TESTED, and rights BLOCKED separately.",
+        "Issue technical/graphics and IP handoffs."
+      ],
+      "pass_condition": "The candidate is not called game-ready and the green validator result does not erase other failures."
+    },
+    {
+      "id": "game-asset-cross-target-transfer",
+      "category": "boundary",
+      "setup": "Provide an asset previously accepted in one engine and request reuse in a second engine/runtime.",
+      "seeded_conditions": [
+        "Coordinate, material, lightmap UV, texture compression, and collision conventions differ.",
+        "The source asset has complete evidence only for the first target."
+      ],
+      "expected": [
+        "Reuse source evidence without transferring target-specific acceptance.",
+        "Create a new target contract, import candidate, and evidence path."
+      ],
+      "pass_condition": "The second target remains NOT_TESTED until its own pipeline and representative context are verified."
+    },
+    {
+      "id": "game-asset-provenance-block",
+      "category": "abstention",
+      "setup": "Provide a polished texture and scan-derived mesh with no stable source, terms, author, consent, or attribution record.",
+      "seeded_conditions": [
+        "The inputs have been substantially modified.",
+        "The delivery deadline is near."
+      ],
+      "expected": [
+        "Retain technical evidence but block release use.",
+        "Trace sources, request IP review, or replace the inputs with original or clearly permitted alternatives."
+      ],
+      "pass_condition": "Transformation, polish, or urgency never becomes silent rights clearance."
+    }
+  ],
+  "promotion_nonclaim": "Passing these declarations through schema validation does not prove fixture execution or professional competence. Real artifacts, recorded runs, target observations, and cross-intelligence comparison are required before scoped TEST or WORKING promotion."
+}

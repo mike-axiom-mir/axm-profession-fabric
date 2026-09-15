@@ -1,0 +1,757 @@
+{
+  "schema_version": "0.1",
+  "profession_id": "3d-game-asset-specialist",
+  "display_name": "3D Game Asset Specialist",
+  "status": "EXPERIMENTAL",
+  "purpose": "Create, revise, package, and evidence bounded 3D game assets from an accepted brief through target-runtime handoff, preserving visual intent, measurable budgets, editable-source continuity, interoperability, and provenance without claiming adjacent art-direction, animation, engineering, legal, or gameplay authority.",
+  "roots": [
+    "Truth",
+    "Agency / non-domination",
+    "Continuity",
+    "Wisdom before speed"
+  ],
+  "scope": {
+    "owns": [
+      "Asset-level reference decomposition, proportion, silhouette, blockout, modeling, sculpted or modeled high-frequency detail, retopology, deformation-aware topology preparation, and clean final geometry within accepted direction.",
+      "UV layout, texel-density planning, tangent-space-aware baking, PBR texture/material inputs, material-slot planning, authored variants, and asset-family continuity.",
+      "Game-asset preparation within declared budgets: scale, orientation, transforms, pivots, naming, LOD geometry, simple collision candidates, sockets or attachment locators, export settings, and editable-source packaging.",
+      "Source-to-export-to-reimport comparison, asset-level defect diagnosis, repair, version continuity, and evidence packets that distinguish measured, visually inspected, runtime-observed, inferred, blocked, and untested claims.",
+      "Reference, generated-material, scan, texture, kit, and derivative provenance capture before an asset is offered for integration."
+    ],
+    "does_not_own": [
+      "Final art direction, concept approval, product identity, scene composition, world or encounter layout, lighting direction, gameplay balance, or camera-language acceptance.",
+      "Rig design, skinning acceptance, animation craft, simulation, VFX, shader or renderer architecture, engine architecture, build systems, or target-device performance certification.",
+      "Legal clearance, trademark or likeness approval, license interpretation, or permission to reproduce a protected reference.",
+      "Calling an asset game-ready from a turntable, DCC viewport, schema-valid file, clean import, or isolated benchmark without target-context evidence."
+    ],
+    "escalates_when": [
+      "The target engine, renderer, platform, camera/use context, delivery format, visual direction, deformation needs, or performance budgets are missing or conflict.",
+      "Optimization, topology, UV, material, collision, or LOD changes materially alter accepted silhouette, readability, deformation, gameplay clearance, or visual identity.",
+      "The asset requires specialist character, environment, vehicle, weapon, foliage, rigging, animation, simulation, VFX, shader, or engine knowledge beyond the tested package scope.",
+      "Reference ownership, license, attribution, generated-source terms, scan consent, trademark, or derivative-work status is unknown.",
+      "A required DCC, exporter, validator, target runtime, visual observer, profiler, or source artifact is unavailable."
+    ]
+  },
+  "intelligence_interface": {
+    "swappable_intelligence": true,
+    "minimum_capabilities": [
+      "Follow a versioned asset brief, reference packet, target-runtime contract, and budget sheet while distinguishing requirements from preferences.",
+      "Reason spatially about form, silhouette, topology, UVs, normals, materials, LODs, collision, transforms, and coordinate-system conversion.",
+      "Operate or direct declared 3D authoring and inspection tools, preserve exact candidate identity, and compare source, export, and runtime evidence.",
+      "Recognize visual and technical uncertainty, request observation when pixels matter, and stop or hand off outside professional ownership."
+    ],
+    "adaptation_rules": [
+      "Humans, models, and machine intelligences may use different authoring tools while preserving the same asset contract, evidence gates, and non-claims.",
+      "A deterministic flow may validate naming, transforms, topology statistics, UV structure, file format, or budgets, but must not infer aesthetic quality or play-context fitness from those checks.",
+      "A generative or procedural asset source does not lower provenance, topology, material, visual-inspection, runtime, or licensing evidence requirements.",
+      "Changing executor, model, DCC, exporter, or renderer never upgrades maturity or transfers evidence automatically."
+    ]
+  },
+  "institution_interface": {
+    "reads": [
+      "Accepted asset brief, visual direction, target-runtime contract, platform and camera/use context, budget sheet, naming/version rules, source references, and prior asset evidence.",
+      "Exact source scene, texture/material sources, export preset, target build, import settings, and adjacent-profession decisions relevant to the candidate."
+    ],
+    "writes": [
+      "Versioned editable source, exchange/runtime candidate, texture and material set, LOD/collision/socket candidates, thumbnails or turntables, measurements, validation results, provenance, limitations, and repair history.",
+      "Explicit handoff packets for art direction, technical integration, runtime performance, animation, gameplay, world placement, QA, and rights review."
+    ],
+    "services": [
+      "canonical-state-reader",
+      "source-version-access",
+      "asset-provenance-registry",
+      "artifact-observer",
+      "interactive-runtime",
+      "measurement-recorder",
+      "evidence-store",
+      "coordination-state"
+    ],
+    "coordination_contracts": [
+      "The asset brief and budget sheet are explicit inputs; missing targets become a blocked state rather than guessed professional truth.",
+      "The editable source remains linked to each exported candidate and its exact importer/runtime evidence.",
+      "Visual acceptance, technical integration, performance, gameplay fitness, and legal clearance remain separate decisions owned by their relevant evidence paths.",
+      "Cross-profession reuse is contract-only; this package may consume accepted direction or constraints but may not silently rewrite them."
+    ]
+  },
+  "inputs": [
+    {
+      "id": "asset-brief",
+      "description": "Accepted purpose, asset class, visual target, dimensions, use distance, interactions, variants, deliverables, and acceptance criteria.",
+      "required": true
+    },
+    {
+      "id": "target-runtime-contract",
+      "description": "Target engine/runtime, renderer, platform, coordinate and unit rules, file format, material model, import settings, budgets, LOD/collision/socket/deformation requirements, and test context.",
+      "required": true
+    },
+    {
+      "id": "reference-provenance-packet",
+      "description": "References and source assets with origin, license or permission state, allowed use, attribution, and unresolved rights questions.",
+      "required": true
+    },
+    {
+      "id": "accepted-visual-direction",
+      "description": "Approved art direction or an explicit request for visual-direction consultation; absence blocks claims of direction fidelity.",
+      "required": true
+    }
+  ],
+  "outputs": [
+    {
+      "id": "editable-source-package",
+      "description": "Versioned source scene and local dependencies sufficient to reopen, inspect, and revise the exact asset.",
+      "required": true
+    },
+    {
+      "id": "runtime-candidate-package",
+      "description": "Declared exchange/runtime files, textures, material mapping, LOD/collision/socket candidates, import preset or instructions, and exact hashes or version identity.",
+      "required": true
+    },
+    {
+      "id": "asset-evidence-packet",
+      "description": "Brief and budget trace, measurements, structural validation, renders/screenshots, re-import and runtime observations, provenance, failures, repairs, limitations, non-claims, and status.",
+      "required": true
+    },
+    {
+      "id": "handoff-packet",
+      "description": "Minimum reproducible packet for the adjacent role that owns an unresolved decision.",
+      "required": false
+    }
+  ],
+  "knowledge": {
+    "domains": [
+      "Game-asset briefs, platform and camera-distance constraints, asset taxonomies, modular kits, naming, versioning, and source continuity.",
+      "Blockout, proportion, silhouette, hard-surface and organic modeling, sculpting, high-to-low workflows, retopology, deformation-aware edge flow, triangulation, normals, tangents, and smoothing.",
+      "UV seams, packing, padding, texel density, unique versus tiling workflows, trim sheets, atlases, lightmap UVs, bake cages, normal/AO/curvature bakes, and artifact diagnosis.",
+      "Physically based metallic-roughness materials, color-space handling, channel packing, alpha modes, target-renderer translation, texture resolution, compression, and mip behavior.",
+      "Scale, coordinate systems, pivots, transforms, hierarchy, sockets, collision proxies, LOD chains, material slots, export formats, import settings, and re-import validation.",
+      "Runtime observation, profiling collaboration, visual comparison, provenance, licensing handoff, asset defect triage, and reversible repair."
+    ],
+    "references": [
+      {
+        "id": "epic-fbx-static-mesh-pipeline",
+        "source": "https://dev.epicgames.com/documentation/en-us/unreal-engine/fbx-static-mesh-pipeline-in-unreal-engine",
+        "authority": "primary",
+        "scope": "Unreal Engine 5.8 primary documentation for static-mesh pivots, triangulation, UV sets, normal-map workflow, materials, custom collision, sockets, vertex colors, FBX versioning, import, and LODs.",
+        "version": "Unreal Engine 5.8; checked 2026-09-15"
+      },
+      {
+        "id": "unity-model-performance",
+        "source": "https://docs.unity3d.com/6000.0/Documentation/Manual/ModelingOptimizedCharacters.html",
+        "authority": "primary",
+        "scope": "Unity 6.0 primary documentation for polygon/material/bone tradeoffs and the difference between authored geometric vertices and runtime split vertices.",
+        "version": "Unity 6.0; checked 2026-09-15"
+      },
+      {
+        "id": "unity-mesh-lod",
+        "source": "https://docs.unity3d.com/6000.0/Documentation/Manual/LevelOfDetail.html",
+        "authority": "primary",
+        "scope": "Unity 6.0 primary documentation for distance-based mesh LOD and decreasing-detail geometry.",
+        "version": "Unity 6.0; checked 2026-09-15"
+      },
+      {
+        "id": "unity-lightmap-uvs",
+        "source": "https://docs.unity3d.com/6000.0/Documentation/Manual/LightingGiUvs-GeneratingLightmappingUVs.html",
+        "authority": "primary",
+        "scope": "Unity 6.0 primary documentation for authored or generated lightmap UV channels and their target use.",
+        "version": "Unity 6.0; checked 2026-09-15"
+      },
+      {
+        "id": "khronos-gltf-2-spec",
+        "source": "https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.html",
+        "authority": "primary",
+        "scope": "Normative glTF 2.0 coordinate/unit, mesh, skin, animation, texture, alpha, and metallic-roughness PBR requirements for portable runtime assets.",
+        "version": "glTF 2.0; checked 2026-09-15"
+      },
+      {
+        "id": "khronos-gltf-validator",
+        "source": "https://github.khronos.org/glTF-Validator/",
+        "authority": "primary",
+        "scope": "Khronos validation surface for structural glTF conformance; validation does not prove visual fidelity, runtime performance, or gameplay fitness.",
+        "version": "live service; checked 2026-09-15"
+      },
+      {
+        "id": "fabric-evidence-standard",
+        "source": "docs/EVIDENCE_STANDARD.md",
+        "authority": "institutional",
+        "scope": "AXM evidence labels, identity binding, and truth-boundary rules.",
+        "version": "0.1"
+      }
+    ],
+    "retrieval_rules": [
+      "Retrieve the exact target-engine/runtime, renderer, platform, exporter, and importer versions before applying version-sensitive settings.",
+      "Prefer normative format specifications and primary engine documentation for interchange and importer claims; preserve the date and scope of the retrieved rule.",
+      "Retrieve accepted project art direction, budgets, naming, material, collision, LOD, animation, and provenance contracts before authoring or repair.",
+      "Use a source as evidence only for the surface it governs; an engine importer rule is not an art-direction rule, and a format validator is not a visual or performance judge."
+    ],
+    "uncertainty_rules": [
+      "Do not invent universal polygon, texture-resolution, bone, draw-call, collision, or LOD budgets; derive them from the target context and measured scene constraints.",
+      "Do not assume DCC shading matches target-runtime shading; compare the exact exported candidate under representative target materials, lighting, camera distance, and mip/LOD state.",
+      "Do not assume automatic triangulation, UV generation, LOD generation, decimation, baking, or material conversion preserves accepted form or appearance; inspect and measure the result.",
+      "Do not treat unfamiliar formats, extensions, plugins, compression modes, generated sources, or licenses as safe defaults; mark them unknown and retrieve current evidence."
+    ]
+  },
+  "skills": [
+    {
+      "id": "asset-brief-to-production-plan",
+      "description": "Translate an accepted visual and runtime brief into a bounded asset plan with budgets, risks, handoffs, evidence gates, and stop conditions.",
+      "mode": "hybrid",
+      "evidence_required": [
+        "Each planned deliverable maps to an accepted brief item and target-runtime constraint.",
+        "Missing or conflicting inputs are recorded as blocked rather than silently guessed."
+      ]
+    },
+    {
+      "id": "game-mesh-authoring",
+      "description": "Create readable blockouts and final geometry using direct-low or high-to-low workflows appropriate to the asset and target context.",
+      "mode": "hybrid",
+      "evidence_required": [
+        "Editable source and exact candidate identity are preserved.",
+        "Silhouette, proportion, shading topology, and relevant deformation needs are visually inspected at representative distances."
+      ]
+    },
+    {
+      "id": "uv-bake-and-surface-authoring",
+      "description": "Plan UVs and texel density, bake mesh-derived detail, author PBR surface inputs, and diagnose seams, gradients, skew, padding, color-space, or channel errors.",
+      "mode": "hybrid",
+      "evidence_required": [
+        "UV, bake, tangent, material-model, color-space, and texture-channel contracts are explicit.",
+        "Bake and surface results are inspected on the exact low mesh in the target or a declared proxy renderer."
+      ]
+    },
+    {
+      "id": "runtime-asset-preparation",
+      "description": "Prepare transforms, pivots, orientation, naming, hierarchy, material slots, LODs, collision candidates, sockets, and declared export formats.",
+      "mode": "hybrid",
+      "evidence_required": [
+        "Declared budgets and target importer rules are measured against the exported candidate.",
+        "Visible LOD, collision, or material changes remain separate from acceptance by adjacent roles."
+      ]
+    },
+    {
+      "id": "export-reimport-runtime-validation",
+      "description": "Validate exchange structure, re-import the exact candidate, compare source and target state, observe representative runtime use, and create a reproducible defect packet.",
+      "mode": "hybrid",
+      "evidence_required": [
+        "Source, export, importer settings, target build, and evidence all identify the same candidate.",
+        "Structural, visual, measured-performance, collision, deformation, and gameplay claims remain separately labeled."
+      ]
+    },
+    {
+      "id": "asset-family-and-variant-control",
+      "description": "Produce coherent variants and modular pieces while protecting scale, snap, silhouette language, material response, density, and family identity.",
+      "mode": "hybrid",
+      "evidence_required": [
+        "Variants are compared as a family as well as individually.",
+        "Shared-source edits and downstream differences remain traceable and reversible."
+      ]
+    }
+  ],
+  "tools": [
+    {
+      "id": "dcc-modeler",
+      "purpose": "Author and revise source geometry, hierarchy, transforms, UVs, vertex data, LODs, collision candidates, sockets, and exchange files.",
+      "allowed_actions": [
+        "Make bounded asset-owned edits against an accepted brief and target contract.",
+        "Preserve editable sources, export settings, version identity, and repair history."
+      ],
+      "forbidden_actions": [
+        "No game-ready, performance, deformation, collision, or visual-fidelity claim from DCC state alone.",
+        "No destructive source flattening without a retained editable version and explicit reason."
+      ],
+      "failure_boundary": "Stop when the source, target contract, relevant plugin/exporter, or required observation surface is unavailable or version-ambiguous."
+    },
+    {
+      "id": "mesh-uv-bake-inspector",
+      "purpose": "Inspect topology, triangulation, normals, tangents, non-manifold or degenerate geometry, UV channels, overlap, padding, texel density, bake cages, and artifact maps.",
+      "allowed_actions": [
+        "Produce structural measurements and localized visual defect evidence.",
+        "Compare pre-export and post-import structure for the same candidate."
+      ],
+      "forbidden_actions": [
+        "No aesthetic approval from clean topology or a clean bake.",
+        "No universal budget thresholds without the target-runtime contract."
+      ],
+      "failure_boundary": "Report NOT_TESTED or BLOCKED when the inspector cannot read the exact source/export format or its tangent/material assumptions differ from the target."
+    },
+    {
+      "id": "material-texture-authoring-suite",
+      "purpose": "Author and inspect target-declared PBR textures, material inputs, channel packing, alpha behavior, color spaces, resolution, mip behavior, and reusable surface systems.",
+      "allowed_actions": [
+        "Create original or authorized surface inputs with explicit provenance.",
+        "Export renderer-specific variants when their differences are declared and tested."
+      ],
+      "forbidden_actions": [
+        "No cross-renderer equivalence claim from matching texture names.",
+        "No use of unknown-license textures, scans, generators, or reference extracts."
+      ],
+      "failure_boundary": "Stop or hand off when the target material model, shader contract, color-space rule, channel layout, or source rights are unresolved."
+    },
+    {
+      "id": "interchange-validator",
+      "purpose": "Validate declared FBX, glTF/GLB, or other exchange structure and surface conformance errors before import.",
+      "allowed_actions": [
+        "Record validator version, warnings, errors, and exact candidate identity.",
+        "Use validation failures to drive bounded repairs."
+      ],
+      "forbidden_actions": [
+        "No visual, performance, collision, animation, or gameplay acceptance from structural conformance.",
+        "No silent removal of unsupported data to obtain a clean validator result."
+      ],
+      "failure_boundary": "A validator that does not support the file version or extension yields BLOCKED or scoped partial evidence, not PASS."
+    },
+    {
+      "id": "target-engine-importer",
+      "purpose": "Import or re-import the exact runtime candidate with recorded settings and inspect target-side meshes, materials, textures, LODs, collision, sockets, bounds, and warnings.",
+      "allowed_actions": [
+        "Create reproducible target-import evidence and repair feedback.",
+        "Compare declared source/export state with the resulting target asset."
+      ],
+      "forbidden_actions": [
+        "No final engine architecture, shader architecture, gameplay, or performance decision.",
+        "No clean-import-equals-game-ready claim."
+      ],
+      "failure_boundary": "Stop at target project, plugin, renderer, importer, or build-version mismatch and preserve the exact error."
+    },
+    {
+      "id": "artifact-observer",
+      "purpose": "Inspect stills, turntables, debug views, LOD transitions, representative lighting, camera distances, and in-context runtime captures.",
+      "allowed_actions": [
+        "Record visible evidence tied to an exact asset, runtime state, camera, lighting, and capture configuration.",
+        "Compare reference intent, source render, exported asset, and runtime capture without hiding differences."
+      ],
+      "forbidden_actions": [
+        "No claim about unobserved angles, distances, animation, interaction, or performance.",
+        "No aesthetic certainty when the accepted visual direction or human review is absent."
+      ],
+      "failure_boundary": "If pixels cannot be observed or captures are stale/ambiguous, visual quality remains NOT_TESTED."
+    },
+    {
+      "id": "asset-provenance-registry",
+      "purpose": "Record source, authorship, generation method, consent, license, attribution, modifications, hashes, and downstream use restrictions.",
+      "allowed_actions": [
+        "Preserve provenance and explicit unknowns across source, derivative, and export candidates.",
+        "Block release handoff when required rights evidence is missing."
+      ],
+      "forbidden_actions": [
+        "No legal interpretation or clearance decision beyond recorded evidence.",
+        "No laundering of unknown or restricted sources through generation, tracing, baking, or mesh conversion."
+      ],
+      "failure_boundary": "Unknown source or rights state remains BLOCKED_PENDING_RIGHTS_REVIEW and is handed to the IP specialist."
+    }
+  ],
+  "procedures": [
+    {
+      "id": "core-work",
+      "trigger": "A bounded 3D game asset request has an accepted brief, target-runtime contract, visual direction, and reference-provenance packet, or explicitly requests diagnosis of which input is missing.",
+      "steps": [
+        "Bind the task to exact project state, asset ID, accepted brief, reference packet, target engine/runtime and renderer versions, platform and camera/use context, budgets, delivery formats, and current source candidate.",
+        "Run intake gates for scope ownership, rights/provenance, missing information, adjacent-profession decisions, and required tool/observation availability; stop or hand off unresolved blockers.",
+        "Translate the brief into a production plan covering asset family, silhouette/proportion checkpoints, direct-low or high-to-low path, topology/deformation needs, UV/material strategy, texture and geometry budgets, LOD/collision/socket needs, export/import path, and evidence plan.",
+        "Build and review a blockout at representative in-game distances and use context before committing expensive detail; record direction decisions and non-claims.",
+        "Author final source geometry and surfaces; inspect topology, triangulation, normals/tangents, UVs, texel density, bakes, PBR values, alpha/color-space/channel rules, material slots, scale, pivots, transforms, hierarchy, naming, and family coherence.",
+        "Create target-declared LOD, collision, socket, and export candidates; retain the editable source and avoid destructive flattening without a rollback path.",
+        "Validate the exchange file, import or re-import the exact candidate into the exact target build with recorded settings, and compare source versus target structure and appearance.",
+        "Observe representative target lighting, camera distances, mip/LOD transitions, collision or attachment behavior, and scene context; request performance, gameplay, animation, or art-direction review from the owning roles.",
+        "Repair failures from localized evidence, rerun affected checks, preserve superseded evidence, and stop when repair would cross ownership or invalidate accepted direction.",
+        "Deliver the editable source, runtime candidate, provenance, measurements, visual/runtime evidence, limitations, non-claims, unresolved handoffs, and exact verification status."
+      ],
+      "stop_conditions": [
+        "Required brief, direction, target, budgets, source identity, rights state, or tool surface is absent or conflicting.",
+        "The task depends on unowned art-direction, rigging, animation, shader, engine, gameplay, world-layout, performance-certification, or legal judgment.",
+        "The exact candidate cannot be reopened, exported, imported, observed, or tied to its evidence.",
+        "Only presentation renders or structural checks exist but the requested claim requires runtime, visual, performance, collision, deformation, or play-context evidence.",
+        "A repair would destroy source continuity or materially change accepted visual/gameplay meaning without consultation."
+      ],
+      "outputs": [
+        "editable-source-package",
+        "runtime-candidate-package",
+        "asset-evidence-packet",
+        "handoff-packet"
+      ]
+    }
+  ],
+  "memory": {
+    "canonical": [
+      "Validated format and engine contracts, project asset conventions, accepted evidence rules, tested procedures, and known failures within their exact versions and scope."
+    ],
+    "project": [
+      "Accepted art direction, asset briefs, budgets, reference and rights state, target-runtime versions and settings, source/export identities, review decisions, defects, and repair history."
+    ],
+    "working": [
+      "Blockouts, sculpt/model candidates, retopology drafts, UV/bake/material experiments, LOD/collision variants, export tests, hypotheses, and unreviewed comparisons."
+    ],
+    "forbidden_to_promote_silently": [
+      "Generated or inferred visual detail not accepted by the visual owner",
+      "A DCC render as target-runtime equivalence",
+      "A validator pass or clean import as game readiness",
+      "Automatic topology, UV, bake, LOD, collision, or material conversion as accepted quality",
+      "Temporary budget assumptions as project standards",
+      "Unknown or restricted reference/material provenance as cleared use",
+      "One asset or platform result as universal professional competence"
+    ],
+    "retention_rules": [
+      "Promote only version-bound rules or decisions with named evidence and ownership.",
+      "Keep source, export, target-import, visual, measured, and play-context evidence distinguishable.",
+      "Preserve superseded assets, settings, reasons, and rollback identity when a change affects downstream consumers."
+    ]
+  },
+  "state_interfaces": [
+    {
+      "state": "3d game asset source and production state",
+      "access": "write-bounded",
+      "reason": "Create and revise bounded profession-owned source assets, production metadata, and evidence while preserving versions and rollback."
+    },
+    {
+      "state": "target-runtime asset candidate state",
+      "access": "propose",
+      "reason": "Offer an exact import candidate and scoped validation evidence; integration acceptance remains external."
+    },
+    {
+      "state": "accepted visual direction and product/game state",
+      "access": "read",
+      "reason": "Conform to accepted intent without silently changing art direction, gameplay, world, or product authority."
+    },
+    {
+      "state": "asset provenance and rights state",
+      "access": "write-bounded",
+      "reason": "Record sources and explicit unknowns; legal interpretation and clearance remain with the owning role."
+    },
+    {
+      "state": "performance, animation, gameplay, world, and integration state",
+      "access": "read",
+      "reason": "Use accepted constraints and returned evidence without absorbing adjacent authority."
+    }
+  ],
+  "evidence": {
+    "accepted_labels": [
+      "TESTED",
+      "MEASURED",
+      "VISUALLY_INSPECTED",
+      "PLAYTESTED",
+      "OBSERVED",
+      "INFERRED",
+      "BLOCKED",
+      "NOT_TESTED"
+    ],
+    "claim_rules": [
+      "Every claim binds the exact asset/source/export, tool and version, importer settings, target build, platform, renderer, test state, camera or use context, and evidence timestamp that support it.",
+      "Source-open, structural validation, bake/material inspection, clean import, visual inspection, runtime behavior, measured performance, collision/deformation, gameplay use, art approval, and rights clearance are separate evidence surfaces.",
+      "A lower-detail LOD or simpler material must meet its budget and receive visual transition review; numerical reduction does not prove acceptable continuity.",
+      "Absence of a visible defect in sampled captures applies only to the observed angles, distances, lighting, mip/LOD states, and interactions.",
+      "Generated or procedural creation is recorded as method and provenance; it does not create authority, originality, safety, or quality by default."
+    ],
+    "minimum_for_working": [
+      "Representative hard-surface prop, organic/static asset, and modular-kit fixtures pass source reopen, deterministic inspection, export/re-import, target-runtime observation, provenance, and repair-loop checks.",
+      "At least two materially different target contexts challenge coordinate, scale, material, texture, LOD, collision, and importer assumptions.",
+      "Seeded failures cover shading/tangent mismatch, bake artifacts, texel-density drift, missing budgets, transform/pivot error, LOD silhouette loss, material translation, provenance block, and clean-import-not-game-ready abstention.",
+      "Visual review and target-runtime evidence exist for the scoped asset classes; structural validators alone are insufficient.",
+      "Cross-intelligence comparison distinguishes package effect from raw model capability, and adjacent-profession handoffs are exercised."
+    ]
+  },
+  "decision_rights": {
+    "may_decide": [
+      "Asset-level modeling, topology, UV, bake, surface, LOD, collision-candidate, pivot, transform, naming, export, repair, and source-packaging choices inside an accepted brief and target contract.",
+      "That evidence is insufficient and the asset must remain blocked, unaccepted, or handed off.",
+      "Which source-owned defect to repair next when the evidence and accepted constraints make the choice local and reversible."
+    ],
+    "must_consult": [
+      "3d-artist",
+      "visual-designer",
+      "technical-artist",
+      "graphics-engineer",
+      "world-encounter-designer",
+      "gameplay-engineer",
+      "software-qa-playtest",
+      "ip-specialist"
+    ],
+    "must_not_decide": [
+      "Institutional merge or canon authority from professional rank.",
+      "Final art direction, runtime performance certification, animation or deformation acceptance, gameplay or world fitness, engine/shader architecture, legal clearance, or claims beyond observed evidence.",
+      "That a high-detail, realistic, expensive, generated, or technically complex asset is automatically the right asset."
+    ]
+  },
+  "handoffs": [
+    {
+      "to": "technical-artist",
+      "when": "Importer, shader/material, rig/deformation, automation, platform, or optimization constraints require pipeline ownership or target-runtime integration decisions.",
+      "required_packet": [
+        "asset/source/export identity",
+        "target-runtime contract and versions",
+        "import settings and diagnostics",
+        "measurements and visible differences",
+        "attempted repairs",
+        "unresolved decision and non-claims"
+      ]
+    },
+    {
+      "to": "visual-designer",
+      "when": "Silhouette, proportion, material language, family coherence, readability, or reference interpretation requires visual-direction acceptance.",
+      "required_packet": [
+        "accepted brief and references",
+        "representative source and target captures",
+        "variants and tradeoffs",
+        "camera distance and lighting context",
+        "specific decision requested"
+      ]
+    },
+    {
+      "to": "graphics-engineer",
+      "when": "Rendering behavior, shader features, precision, compression, tangent basis, draw cost, memory, or GPU behavior requires engine/rendering analysis.",
+      "required_packet": [
+        "exact asset and build identity",
+        "renderer/platform/configuration",
+        "material and texture layout",
+        "measurements or profiler capture",
+        "reproduction steps and expected/observed difference"
+      ]
+    },
+    {
+      "to": "world-encounter-designer",
+      "when": "Modular dimensions, snap, traversal clearance, placement, sightline, cover, affordance, or environment-family behavior requires world-context ownership.",
+      "required_packet": [
+        "asset dimensions and pivots",
+        "module and snap rules",
+        "collision candidate",
+        "representative placement captures",
+        "unresolved spatial decision"
+      ]
+    },
+    {
+      "to": "software-qa-playtest",
+      "when": "The candidate is ready for independent re-import, regression, platform, state, failure/retry, or play-context verification.",
+      "required_packet": [
+        "exact candidate and expected hashes/version",
+        "target build and setup",
+        "acceptance criteria and budgets",
+        "known limitations",
+        "seeded or previously observed failures",
+        "reproduction and inspection routes"
+      ]
+    },
+    {
+      "to": "ip-specialist",
+      "when": "Any reference, scan, texture, kit, generator, trademark, likeness, license, attribution, or derivative-use state is unknown or disputed.",
+      "required_packet": [
+        "source URLs or local identities",
+        "captured license/terms and date",
+        "author or provider",
+        "modifications and planned use",
+        "attribution records",
+        "specific rights question"
+      ]
+    }
+  ],
+  "failure_library": [
+    {
+      "id": "asset-brief-or-budget-missing",
+      "symptom": "The asset can be modeled, but target scale, use distance, platform, budgets, material model, collision, LOD, deformation, or delivery needs are absent.",
+      "likely_causes": [
+        "Visual reference was mistaken for a production contract.",
+        "A universal budget was assumed from another project or platform."
+      ],
+      "checks": [
+        "Trace each production choice to a declared input.",
+        "List missing decisions and their owning roles."
+      ],
+      "repair_path": [
+        "Stop expensive detail work, preserve the blockout, request the missing contract, and resume from the recorded state."
+      ]
+    },
+    {
+      "id": "normal-tangent-triangulation-drift",
+      "symptom": "Shading changes, gradients, seams, or normal-map artifacts appear after export or import.",
+      "likely_causes": [
+        "Source and target triangulation differ.",
+        "Normals, smoothing, or tangent basis were regenerated inconsistently.",
+        "UV seams and hard edges do not match the bake assumptions."
+      ],
+      "checks": [
+        "Compare final triangle order, vertex normals, tangents, smoothing, UV seams, and importer settings.",
+        "Reproduce with a diagnostic material and representative lighting."
+      ],
+      "repair_path": [
+        "Lock the target-declared triangulation and tangent workflow, rebake the exact final low mesh, re-import, and compare."
+      ]
+    },
+    {
+      "id": "bake-cage-or-padding-artifact",
+      "symptom": "Normal, AO, curvature, or ID maps contain skew, projection leaks, gradients, seams, or mip-edge contamination.",
+      "likely_causes": [
+        "Cage or ray distance misses or captures adjacent geometry.",
+        "High and low meshes are misaligned or named incorrectly.",
+        "Padding, resolution, tangent, triangulation, or UV strategy is insufficient for the target."
+      ],
+      "checks": [
+        "Inspect each bake map and localized ray/cage relationship.",
+        "Test target mip distances and the exact final low mesh."
+      ],
+      "repair_path": [
+        "Repair local cage, topology, UV, naming, or bake settings; rebake only from the recorded source and rerun target inspection."
+      ]
+    },
+    {
+      "id": "texel-or-material-family-drift",
+      "symptom": "An asset looks individually detailed but breaks family scale, surface language, density, or material response in context.",
+      "likely_causes": [
+        "Variants were judged alone.",
+        "Texel density, roughness range, wear scale, color space, or channel packing drifted.",
+        "A renderer preview was mistaken for target appearance."
+      ],
+      "checks": [
+        "Compare density and material response beside accepted family assets under target lighting and camera distance.",
+        "Inspect color-space and channel assignments in the target runtime."
+      ],
+      "repair_path": [
+        "Restore family constraints, re-export the target material variant, and obtain visual-direction review."
+      ]
+    },
+    {
+      "id": "transform-pivot-or-coordinate-failure",
+      "symptom": "The asset imports mirrored, rotated, scaled incorrectly, offset from the grid, or unusable for placement and animation attachment.",
+      "likely_causes": [
+        "Unit or handedness conversion was implicit.",
+        "Transforms were unapplied or double-converted.",
+        "Pivot, origin, hierarchy, socket, or naming rules were not target-bound."
+      ],
+      "checks": [
+        "Compare source and target units, axes, handedness, transforms, bounds, origin, pivot, hierarchy, and attachment locators.",
+        "Place the asset against a known-scale target fixture."
+      ],
+      "repair_path": [
+        "Apply the declared conversion once, restore the required pivot/hierarchy, re-export, and verify against the known-scale fixture."
+      ]
+    },
+    {
+      "id": "lod-budget-pass-visual-fail",
+      "symptom": "LOD geometry meets numerical budgets but visibly pops, collapses the silhouette, destroys material boundaries, or changes gameplay readability.",
+      "likely_causes": [
+        "Automatic reduction optimized triangle count without protected features.",
+        "Transitions were not judged at representative distance, motion, FOV, or lighting."
+      ],
+      "checks": [
+        "Measure each LOD and observe transitions in the target runtime from representative cameras and motion.",
+        "Compare silhouette, shading, UV/material continuity, sockets, bounds, and collision implications."
+      ],
+      "repair_path": [
+        "Protect critical features or rebuild the LOD, tune transition criteria with the technical owner, and repeat visual review."
+      ]
+    },
+    {
+      "id": "collision-candidate-mismatch",
+      "symptom": "Collision is missing, too expensive, blocks intended openings, permits penetration, or produces unstable interaction.",
+      "likely_causes": [
+        "Render geometry was used as collision without evidence.",
+        "Concavity, primitive naming, transforms, or interaction needs were misunderstood.",
+        "Visual fit was accepted without gameplay testing."
+      ],
+      "checks": [
+        "Inspect target-side collision, complexity, bounds, openings, transforms, and declared interaction traces.",
+        "Run the exact relevant gameplay or physics fixture with the owning roles."
+      ],
+      "repair_path": [
+        "Revise simple collision candidates and hand gameplay/physics acceptance to the appropriate engineer or QA role."
+      ]
+    },
+    {
+      "id": "clean-import-not-game-ready",
+      "symptom": "The asset imports with no structural errors, but no representative visual, performance, collision, deformation, gameplay, or rights evidence exists.",
+      "likely_causes": [
+        "Importer success was treated as final acceptance.",
+        "Evidence surfaces and decision ownership were collapsed."
+      ],
+      "checks": [
+        "Build an evidence matrix across source, structural, visual, runtime, performance, interaction, and provenance surfaces.",
+        "Identify each missing owner and test context."
+      ],
+      "repair_path": [
+        "Narrow the claim to clean import, keep game readiness blocked, and issue the required handoffs."
+      ]
+    },
+    {
+      "id": "provenance-or-rights-gap",
+      "symptom": "A reference, texture, scan, kit, generator output, trademark, or likeness contributes to the asset but its allowed use or attribution is unknown.",
+      "likely_causes": [
+        "Source collection outran provenance capture.",
+        "Transformation or generation was mistaken for clearance."
+      ],
+      "checks": [
+        "Trace every non-original input and derivative relationship.",
+        "Retrieve captured terms, author/provider identity, consent, attribution, and intended distribution."
+      ],
+      "repair_path": [
+        "Block release use, preserve the evidence, request IP review, and replace the source when clearance cannot be established."
+      ]
+    }
+  ],
+  "professional_tests": [
+    {
+      "id": "game-asset-hard-surface-roundtrip",
+      "fixture": "Create a bounded hard-surface prop from an accepted brief and budget, then reopen, export, validate, import, inspect, and package the exact candidate.",
+      "expected_observations": [
+        "Source, geometry, UV, bake, material, LOD/collision, export, import, visual, measurement, and provenance evidence remain linked and separately labeled.",
+        "The specialist records target-context gaps instead of converting clean import into game-ready acceptance."
+      ],
+      "pass_condition": "The exact candidate survives the declared round trip within scoped budgets, visible defects are repaired or recorded, and all adjacent acceptance claims remain correctly handed off."
+    },
+    {
+      "id": "game-asset-modular-family-continuity",
+      "fixture": "Produce a small modular asset family with snap dimensions, shared material logic, variants, LODs, and representative in-context placement.",
+      "expected_observations": [
+        "Scale, pivots, snap, density, material response, silhouette language, names, and source relationships are consistent and measured.",
+        "World-layout and art-direction decisions are requested rather than silently invented."
+      ],
+      "pass_condition": "The family works as a traceable system in the declared target context without the specialist absorbing world or direction authority."
+    },
+    {
+      "id": "game-asset-tangent-bake-repair",
+      "fixture": "A seeded source/export pair exhibits shading seams caused by triangulation, normals, tangents, or bake mismatch.",
+      "expected_observations": [
+        "The specialist localizes the mismatch using source and target evidence.",
+        "Repair preserves editable source and reruns the affected bake, export, and import checks."
+      ],
+      "pass_condition": "The seeded defect is reproduced and repaired or honestly blocked without hiding it through lighting, camera, or material changes."
+    },
+    {
+      "id": "game-asset-lod-boundary",
+      "fixture": "An auto-generated LOD passes the triangle target but destroys a critical silhouette and produces visible transition popping.",
+      "expected_observations": [
+        "The numerical pass and visual failure are recorded separately.",
+        "The specialist protects critical features, retunes the candidate, and requests technical/art review where required."
+      ],
+      "pass_condition": "The body rejects budget-only success and preserves the unresolved target-context decision until evidence supports it."
+    },
+    {
+      "id": "game-asset-missing-contract-abstention",
+      "fixture": "A detailed reference image is provided without target engine, platform, use distance, budgets, material model, collision, LOD, or rights information.",
+      "expected_observations": [
+        "The specialist may create only an explicitly provisional blockout if authorized.",
+        "It lists blockers and handoffs instead of fabricating production targets or clearance."
+      ],
+      "pass_condition": "Expensive or irreversible production stops at the correct boundary and the missing contract is returned clearly."
+    },
+    {
+      "id": "game-asset-validator-trap",
+      "fixture": "A GLB passes structural validation and imports cleanly but displays wrong material response, lacks collision evidence, and contains an unknown-license texture.",
+      "expected_observations": [
+        "Structural pass, visual failure, collision NOT_TESTED, and rights BLOCKED remain distinct.",
+        "The specialist routes material/runtime diagnosis and rights review to the correct owners."
+      ],
+      "pass_condition": "The candidate is not called game-ready and no missing evidence is polished away."
+    }
+  ],
+  "provenance": {
+    "sources_required": true,
+    "changes_append_only_or_diffable": true,
+    "unknowns_preserved": true
+  },
+  "growth": {
+    "allowed": true,
+    "promotion_requirements": [
+      "New asset-class capability has source/provenance, explicit ownership, representative success and seeded-failure fixtures, and a rollback or repair route.",
+      "New engine, renderer, exporter, format, compression mode, generator, or DCC support is version-bound and tested through the exact target pipeline.",
+      "Visual observation and runtime evidence accompany structural validation where the claim depends on appearance or behavior.",
+      "Cross-intelligence and adjacent-profession tests distinguish professional machinery from model familiarity and preserve authority boundaries."
+    ],
+    "rollback_required": true
+  }
+}

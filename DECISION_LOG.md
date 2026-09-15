@@ -127,3 +127,9 @@ Durable architectural decisions. Prefer append/supersede over silent historical 
 **Decision:** Merged Universal Creation RTS foundry/polish evidence supports narrowly scoped `TEST` maturity for 3D Artist and Technical Artist, while Art Director and broader game-readiness claims remain unpromoted.
 
 **Consequence:** Real authored geometry, exact source/artifact provenance, GLB export/re-import inspection, LOD/material/geometry validation and preservation of visual failure as failure are reusable evidence. They do not establish target-engine or target-RTS acceptance, collider/navigation correctness, target-device FPS, LOD perceptual equivalence, universal visual quality, gameplay readability or Art Direction competence. Those remain separate future evidence lanes.
+
+## 2026-09-15 — Game-asset specialization remains separate from general 3D art
+
+**Decision:** Add `3d-game-asset-specialist` as a distinct `EXPERIMENTAL` Professional Package instead of silently narrowing or overwriting the general `3d-artist` body. The specialist owns the bounded asset-production loop from accepted brief and budgets through editable source, UV/bake/PBR work, LOD/collision/socket preparation, export/re-import, target observation, provenance, repair and evidence handoff.
+
+**Consequence:** Engine and format documentation can ground pipeline contracts, but schema validity, a clean interchange file, a turntable or a clean engine import do not prove expert competence or game readiness. Art direction, technical integration, rendering/performance, animation, gameplay/world fitness, QA and rights clearance remain separate evidence and decision paths. The new package does not enter `registry/maturity.json` until representative real-asset fixtures and cross-intelligence evidence support a scoped promotion.
