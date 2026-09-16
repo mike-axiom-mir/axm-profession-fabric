@@ -30,6 +30,18 @@
     "initial_loadout_empty": true,
     "continuous_playback_verified": false
   },
+  "runtime_attempts": [
+    {
+      "id": "profession-fabric-godot-proof-001",
+      "workflow_run_id": 35038663101,
+      "proof_runtime": "Godot 4.7.2 planned",
+      "state": "BLOCKED_PRIVATE_SOURCE_ACCESS",
+      "observed_candidate_bytes": false,
+      "basis": "Profession Fabric's repository-scoped GITHUB_TOKEN received Repository not found while attempting to fetch the separate private Wreckline repository at the pinned commit. The Godot/import steps were therefore skipped.",
+      "classification": "SOURCE_ACCESS_BLOCK_NOT_RUNTIME_FAILURE",
+      "repair": "The evidence workflow now retains this state as a successful blocked-source receipt when no scoped cross-repository read token exists, and only runs the Godot observer when WRECKLINE_READ_TOKEN is available."
+    }
+  ],
   "gates": [
     {
       "id": "identity-source-continuity",
@@ -39,22 +51,22 @@
     {
       "id": "structural-game-asset-preparation",
       "state": "PARTIAL_PASS",
-      "basis": "Retained receipts cover generated geometry, UV/tangent state, materials/textures, LODs, separate collision, hardpoints, module contracts, semantic bindings and static visual evidence, but not host interpretation."
+      "basis": "Retained Wreckline receipts cover generated geometry, UV/tangent state, materials/textures, LODs, separate collision, hardpoints, module contracts, semantic bindings and static visual evidence, but not target-host interpretation."
     },
     {
       "id": "target-native-runtime-import",
-      "state": "BLOCKED_NOT_RUN",
-      "basis": "Wreckline native engineering state records host integration pending and no completed target-engine import."
+      "state": "BLOCKED_PRIVATE_SOURCE_ACCESS",
+      "basis": "The first bounded Godot proof-host attempt never received candidate bytes because the Profession Fabric Actions token is repository-scoped and Wreckline is private. This is not evidence for or against engine compatibility."
     },
     {
       "id": "continuous-animation-observation",
       "state": "NOT_TESTED",
-      "basis": "The Wreckline asset receipt explicitly records continuous_playback_verified=false; sampled poses are not continuous observation."
+      "basis": "The Wreckline asset receipt explicitly records continuous_playback_verified=false; sampled poses are not continuous observation, and the proof-host attempt did not reach the asset."
     },
     {
       "id": "live-module-swap",
       "state": "NOT_TESTED",
-      "basis": "Module contracts and empty sockets exist, but no retained native/runtime mounted-module transition has been observed."
+      "basis": "Module contracts and empty sockets exist, but no retained native/runtime mounted-module transition has been observed. The proof-host attempt did not reach the asset."
     },
     {
       "id": "chase-context-readability",
@@ -71,6 +83,7 @@
     "The profession preserves exact candidate identity instead of treating a later regeneration as equivalent evidence.",
     "The profession separates structural, visual, runtime, animation, modularity and performance surfaces instead of collapsing them into one game-ready label.",
     "The profession treats missing target/runtime evidence as HOLD/NOT_TESTED rather than inventing acceptance.",
+    "The profession correctly classifies a private-source checkout failure as an access block rather than an asset or engine failure.",
     "The profession identifies the smallest meaningful continuation as observation/integration rather than more modeling."
   ],
   "missing_evidence_for_asset": [
@@ -88,6 +101,7 @@
     "Observed repair behavior when runtime evidence contradicts structurally green source/export evidence."
   ],
   "next_evidence_packet": {
+    "source_access_unblock": "Provide the evidence workflow a scoped read credential via WRECKLINE_READ_TOKEN or execute the pinned observer from a target-side runner with access to the exact private Wreckline commit. Do not copy in a different vehicle or silently use the newer Blender Hero V2 artifact as equivalent evidence.",
     "sequence": [
       "exact-glb",
       "native-import",
@@ -108,5 +122,5 @@
       "reproducible launch or test command"
     ]
   },
-  "truth_boundary": "This task is real evidence that the experimental body can preserve source identity, classify existing evidence, identify missing runtime proof and abstain from promotion on one substantial modular vehicle. It is not target-runtime acceptance, broad competence proof, cross-intelligence validation or permission to call the asset game-ready."
+  "truth_boundary": "This task is real evidence that the experimental body can preserve source identity, classify existing evidence, distinguish an access failure from a runtime failure, identify missing runtime proof and abstain from promotion on one substantial modular vehicle. It is not target-runtime acceptance, broad competence proof, cross-intelligence validation or permission to call the asset game-ready."
 }
