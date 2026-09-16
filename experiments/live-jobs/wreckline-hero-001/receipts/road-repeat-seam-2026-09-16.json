@@ -1,0 +1,82 @@
+{
+  "schema": "axm.profession-fabric.live-job-receipt/v0.1",
+  "date": "2026-09-16",
+  "profession": "3d-game-asset-specialist",
+  "profession_status": "EXPERIMENTAL",
+  "promotion_effect": "NONE",
+  "job": "wreckline-hero-001",
+  "evidence_extension": "second-real-asset-class-road-environment",
+  "state": "PASS_COLLISION_CONTINUITY_WITH_VISUAL_SEAM_OPEN",
+  "source": {
+    "repo": "mike-axiom-mir/axm-wreckline",
+    "branch": "evidence/3d-specialist-hero-runtime",
+    "evidence_file": "evidence/ROAD_KIT_REPEAT_SEAM_2026-09-16.json",
+    "workflow_run": 35046928935,
+    "artifact_id": 10426638591,
+    "artifact_digest": "sha256:00f463c661f961986311006411782fad369b141d438ef316b18b281ac71e5771"
+  },
+  "candidate": {
+    "asset_class": "modular-road-environment",
+    "road_id": "open-straight-a",
+    "pair": "open-straight-a -> open-straight-a",
+    "pair_scope": "diagnostic repeat only; not a route-design allowlist",
+    "length_m": 200.0,
+    "exit_position": [0.0, 0.3, 200.0],
+    "exit_grade": 0.003,
+    "lod0": {
+      "sha256": "cfb65927800feb58c0585fb0dedbf8f61649fb9bc381fd16c5e953f56bd523f3",
+      "triangles": 1138,
+      "materials": 6
+    },
+    "lod1": {
+      "sha256": "48ac787b17fecee0b84a7ce907da61e901cf962f2d0facb08da2a07b6bc96167",
+      "triangles": 212,
+      "materials": 5
+    },
+    "collision": {
+      "sha256": "d23dccc5d3e03268435694d5958d3a36333fda10248852029bab8cac0a0881e9",
+      "triangles": 34
+    }
+  },
+  "runtime": {
+    "proof_host": "Godot 4.7.2",
+    "second_cell_origin": [0.0, 0.300000011920929, 200.0],
+    "second_cell_pitch_radians": -0.0029999910000486,
+    "all_six_render_imports": "PASS",
+    "both_collision_imports": "PASS"
+  },
+  "collision_seam": {
+    "first_boundary_points": 3,
+    "second_boundary_points": 3,
+    "symmetric_max_gap_m": 0.0,
+    "acceptance_tolerance_m": 0.05,
+    "state": "PASS_SCOPED_PROOF_HOST"
+  },
+  "visual_seam": {
+    "lod0_capture": "PASS_CAPTURE",
+    "lod1_capture": "PASS_CAPTURE",
+    "observer_state": "VISIBLE_RENDER_TRANSITION_AT_OR_NEAR_JOIN",
+    "quality_gate": "HOLD_NOT_ACCEPTED",
+    "boundary": "The collision seam and visual seam are intentionally separated. Zero collision gap does not promote visual continuity. Cause is under diagnosis."
+  },
+  "harness_history": {
+    "v0_1_state": "FAILED_SOURCE_CONTRACT_HARNESS",
+    "v0_1_reason": "The first workflow assumed a top-level road LOD vertex-count field absent from the manifest; no runtime seam observation occurred.",
+    "v0_1_removed_after_v0_2_pass": true,
+    "v0_2_state": "PASS"
+  },
+  "gate_effect": {
+    "second_real_asset_class": "ADDED",
+    "repeat_cell_collision_continuity": "PASS_SCOPED_PROOF_HOST",
+    "repeat_cell_render_import_and_assembly": "PASS_SCOPED_PROOF_HOST",
+    "render_seam_visual_quality": "HOLD_VISIBLE_TRANSITION_REQUIRES_DIAGNOSIS",
+    "non_identical_cell_pairs": "NOT_TESTED",
+    "streaming": "NOT_TESTED",
+    "physics_contact_behavior": "NOT_TESTED",
+    "performance": "BLOCKED_MISSING_TARGET_BUDGET",
+    "final_native_runtime": "NOT_TESTED"
+  },
+  "profession_finding": "Evidence coverage now extends beyond one vehicle family into a real modular environment asset. The specialist correctly kept collision continuity, render assembly and visual quality as separate gates, retained the harness failure, and did not promote the profession.",
+  "decision": "KEEP_EXPERIMENTAL_NO_PROMOTION",
+  "truth_boundary": "This receipt transfers only the exact source identities, bounded Godot import/assembly observation and zero-gap repeated-cell collision measurement described above. It does not transfer acceptance across other road pairs, assets, engines, executors or production contexts."
+}

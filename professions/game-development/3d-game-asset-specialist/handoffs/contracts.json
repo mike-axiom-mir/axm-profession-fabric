@@ -1,0 +1,89 @@
+{
+  "schema_version": "0.1",
+  "profession_id": "3d-game-asset-specialist",
+  "base_packet": [
+    "project, task, asset, source, export, and target-import identity",
+    "accepted brief, visual direction, target contract, and budgets",
+    "tool, exporter, importer, engine/runtime, renderer, platform, and build versions",
+    "reproduction or inspection steps",
+    "direct evidence and timestamps",
+    "attempted repairs and downstream invalidations",
+    "limitations, unknowns, non-claims, and exact decision requested"
+  ],
+  "contracts": [
+    {
+      "to": "3d-artist",
+      "trigger": "Form, sculpt, topology, surface craft, or asset-family choices require broader 3D artistic ownership beyond the game-pipeline constraint.",
+      "additional_packet": [
+        "reference and accepted visual intent",
+        "representative views and variants",
+        "specific form or surface conflict"
+      ]
+    },
+    {
+      "to": "visual-designer",
+      "trigger": "Silhouette, proportion, readability, material language, palette, visual hierarchy, or direction fidelity requires acceptance.",
+      "additional_packet": [
+        "camera distance and lighting context",
+        "reference-versus-candidate comparison",
+        "tradeoffs caused by target budgets"
+      ]
+    },
+    {
+      "to": "technical-artist",
+      "trigger": "The issue crosses importer, material/shader setup, rig/deformation, optimization, platform, automation, or art-to-engine pipeline ownership.",
+      "additional_packet": [
+        "source/export/target structural comparison",
+        "import logs and settings",
+        "LOD, collision, socket, material, or deformation evidence"
+      ]
+    },
+    {
+      "to": "graphics-engineer",
+      "trigger": "The issue requires rendering, shader, precision, compression, tangent, memory, draw, GPU, or platform analysis.",
+      "additional_packet": [
+        "profiler or debug captures",
+        "material and texture layout",
+        "expected and observed renderer behavior"
+      ]
+    },
+    {
+      "to": "world-encounter-designer",
+      "trigger": "The asset affects modular snap, placement, traversal clearance, cover, sightlines, affordances, or world-family composition.",
+      "additional_packet": [
+        "dimensions, pivot, snap, and bounds",
+        "collision candidate",
+        "representative placement captures"
+      ]
+    },
+    {
+      "to": "gameplay-engineer",
+      "trigger": "Collision, attachment, destruction, interaction, aim/visibility, vehicle, weapon, or gameplay-state behavior requires implementation or acceptance.",
+      "additional_packet": [
+        "relevant sockets/collision/bounds/state",
+        "play fixture and expected behavior",
+        "observed failure and reproduction"
+      ]
+    },
+    {
+      "to": "software-qa-playtest",
+      "trigger": "The candidate requires independent round-trip, regression, platform, interaction, or play-context verification.",
+      "additional_packet": [
+        "candidate hashes or versions",
+        "test matrix and acceptance criteria",
+        "known issues and seeded failures"
+      ]
+    },
+    {
+      "to": "ip-specialist",
+      "trigger": "Reference, texture, scan, kit, generator, trademark, likeness, license, consent, attribution, or derivative-use state is unknown or disputed.",
+      "additional_packet": [
+        "source URLs or local identities",
+        "captured terms and dates",
+        "author/provider and attribution",
+        "modification trace and planned distribution"
+      ]
+    }
+  ],
+  "acceptance_rule": "A handoff is complete only when the destination can reproduce the state and understand the unresolved decision without hidden chat reasoning. Sending a file alone is not a complete handoff."
+}

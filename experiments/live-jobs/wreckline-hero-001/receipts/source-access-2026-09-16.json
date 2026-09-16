@@ -1,0 +1,50 @@
+{
+  "schema": "axm.profession-fabric.live-job-receipt/v0.1",
+  "date": "2026-09-16",
+  "live_job": "wreckline-hero-001",
+  "profession_id": "3d-game-asset-specialist",
+  "profession_status": "EXPERIMENTAL",
+  "attempt": {
+    "id": "profession-fabric-godot-proof-001",
+    "workflow_run_id": 35038663101,
+    "job_id": 104613384634,
+    "planned_proof_runtime": "Godot 4.7.2",
+    "state": "BLOCKED_PRIVATE_SOURCE_ACCESS",
+    "classification": "SOURCE_ACCESS_BLOCK_NOT_RUNTIME_FAILURE",
+    "candidate_bytes_observed": false,
+    "source_repository": "mike-axiom-mir/axm-wreckline",
+    "source_head": "ec382b15d642acfe647428094a5718053ef4ce20",
+    "candidate_path": "assets/hero-vehicle-001/models/wreckline-hero--lod0.glb",
+    "candidate_sha256": "7cf93c3dd80ab3952a6e8ce82accdd3c76bbc46a8aa631f642e108ceded2930e",
+    "observed_failure": "The repository-scoped Profession Fabric GITHUB_TOKEN received 'Repository not found' while actions/checkout attempted to fetch the separate private Wreckline repository. All candidate verification, Godot import, animation, swap and capture steps were skipped.",
+    "nonclaims": [
+      "No target-runtime import was observed.",
+      "No Godot compatibility result exists for the candidate from this attempt.",
+      "No continuous animation result exists from this attempt.",
+      "No live module-swap result exists from this attempt.",
+      "This failure is not evidence of a defect in Wreckline Hero Vehicle 001."
+    ]
+  },
+  "repair": {
+    "workflow_change": "The evidence workflow now emits a BLOCKED_PRIVATE_SOURCE_ACCESS receipt and succeeds at the evidence-boundary level when no scoped WRECKLINE_READ_TOKEN is configured. The Godot observer only runs after exact private-source access is available.",
+    "verification_run_id": 35039016887,
+    "verification_conclusion": "success",
+    "artifact_id": 10424308470,
+    "artifact_digest": "sha256:7002d762c880255ed0057c91c9be50de5e79643bc93ea5478424096383da2072",
+    "artifact_retained_state": "BLOCKED_PRIVATE_SOURCE_ACCESS"
+  },
+  "next_gate": {
+    "required": "Make the exact pinned candidate bytes available to the proof runner without changing candidate identity.",
+    "allowed_routes": [
+      "Configure a scoped WRECKLINE_READ_TOKEN secret for the Profession Fabric evidence workflow.",
+      "Run the same pinned observer from a target-side runner that already has legitimate read access to Wreckline."
+    ],
+    "forbidden_shortcuts": [
+      "Do not substitute the newer Blender Hero V2 artifact for Hero Vehicle 001.",
+      "Do not treat static Wreckline receipts as target-runtime observation.",
+      "Do not promote the profession because the evidence harness exists."
+    ]
+  },
+  "promotion_effect": "NONE",
+  "truth_boundary": "This receipt proves that a real runtime attempt was made and stopped at a private-source access boundary before candidate bytes were observed. It preserves the failure classification and does not widen it into an asset, engine or competence claim."
+}

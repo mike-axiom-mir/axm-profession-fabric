@@ -1,0 +1,100 @@
+{
+  "schema": "axm.profession-fabric.real-job-road-chase-lod/v0.1",
+  "date": "2026-09-16",
+  "profession_id": "3d-game-asset-specialist",
+  "profession_status_before": "EXPERIMENTAL",
+  "profession_status_after": "EXPERIMENTAL",
+  "promotion_decision": "NO_PROMOTION",
+  "job_id": "wreckline-hero-001",
+  "relationship": "APPEND_ONLY_CONTINUATION_AFTER_MATERIAL_SURFACES",
+  "source": {
+    "repository": "mike-axiom-mir/axm-wreckline",
+    "evidence_pr": 3,
+    "wreckline_receipt": "evidence/HERO_SPECIALIST_ROAD_CHASE_LOD_2026-09-16.json",
+    "successful_probe_workflow_run": 35045463765,
+    "successful_probe_artifact_digest": "sha256:1ff9b44eb997ae958e720f4b39710f96420e57ea4a71df1e5fb4c5c42620f892"
+  },
+  "probe_history": {
+    "failed_v0_1_run": 35045335871,
+    "failed_v0_1_classification": "INFRASTRUCTURE_PARSE_ERROR_BEFORE_SCENE_OBSERVATION",
+    "failed_v0_1_retained": true,
+    "superseded_v0_1_current_workflow_removed": true,
+    "current_probe": "v0.2",
+    "current_probe_state": "PASS"
+  },
+  "exact_assets": {
+    "vehicle_lod0": {
+      "sha256": "7cf93c3dd80ab3952a6e8ce82accdd3c76bbc46a8aa631f642e108ceded2930e",
+      "instantiated_triangles": 21358,
+      "vertices": 47870
+    },
+    "vehicle_lod1": {
+      "sha256": "59fc4c0ead29f9e42ec6ff2e3998227e73d763f21743426d5225891f2e53dade",
+      "instantiated_triangles": 10354,
+      "vertices": 23604
+    },
+    "road_lod0": {
+      "id": "open-straight-a",
+      "sha256": "cfb65927800feb58c0585fb0dedbf8f61649fb9bc381fd16c5e953f56bd523f3",
+      "triangles": 1138,
+      "length_m": 200.0
+    },
+    "road_lod1": {
+      "id": "open-straight-a",
+      "sha256": "48ac787b17fecee0b84a7ce907da61e901cf962f2d0facb08da2a07b6bc96167",
+      "triangles": 212,
+      "length_m": 200.0
+    }
+  },
+  "policy_boundary": {
+    "declared_lod_distance_or_hysteresis_fields": [],
+    "automatic_lod_policy": "BLOCKED_MISSING_LOD_DISTANCE_CONTRACT",
+    "near_camera_distance_m": 11.9369173049927,
+    "far_camera_distance_m": 35.0463981628418,
+    "camera_distance_role": "DIAGNOSTIC_ONLY_NOT_SWITCH_POLICY"
+  },
+  "manual_fixed_camera_observation": {
+    "vehicle_lod0_to_lod1": {
+      "state": "PASS_SCOPED_PROOF_HOST",
+      "sampled_pixels": 144000,
+      "changed_pixels": 408,
+      "changed_ratio": 0.00283333333333333
+    },
+    "road_lod0_to_lod1": {
+      "state": "PASS_SCOPED_PROOF_HOST",
+      "sampled_pixels": 144000,
+      "changed_pixels": 55612,
+      "changed_ratio": 0.386194444444444
+    }
+  },
+  "far_vehicle_silhouette_diagnostic": {
+    "lod0_mask_pixels": 1879,
+    "lod0_bbox": [452, 297, 56, 40],
+    "lod1_mask_pixels": 1761,
+    "lod1_bbox": [452, 298, 56, 39],
+    "lod1_to_lod0_footprint_ratio": 0.937200638637573,
+    "state": "PASS_DIAGNOSTIC_CONTINUITY",
+    "claim_boundary": "Screen-space footprint continuity only; no aesthetic/gameplay readability approval."
+  },
+  "gate_updates": {
+    "real_road_chase_import": "PASS_SCOPED_PROOF_HOST",
+    "manual_vehicle_lod_swap": "PASS_SCOPED_PROOF_HOST",
+    "manual_road_lod_swap": "PASS_SCOPED_PROOF_HOST",
+    "far_vehicle_silhouette_continuity": "PASS_DIAGNOSTIC_ONLY",
+    "automatic_lod_switch_policy": "BLOCKED_MISSING_LOD_DISTANCE_CONTRACT",
+    "continuous_drive_through_streamed_road_cells": "NOT_TESTED",
+    "representative_gameplay_camera_acceptance": "NOT_TESTED",
+    "road_world_dressing_visual_quality": "NOT_ACCEPTED",
+    "representative_road_chase_lod_context": "PARTIAL_PROOF_HOST_ONLY",
+    "target_performance": "BLOCKED_MISSING_TARGET_BUDGET",
+    "final_native_wreckline_runtime": "NOT_TESTED"
+  },
+  "positive_profession_evidence": [
+    "The profession used exact manifest-bound Wreckline road and vehicle LOD assets instead of substituting a synthetic road plane.",
+    "It explicitly searched for a declared LOD distance/hysteresis contract and left automatic switching blocked when none existed.",
+    "It retained manual fixed-camera vehicle and road LOD-swap observations with quantitative visual deltas.",
+    "It used a diagnostic mask for silhouette footprint continuity while refusing to convert that into an aesthetic readability claim.",
+    "It retained the failed v0.1 harness attempt as infrastructure history and replaced the active broken probe only after corrected v0.2 evidence passed."
+  ],
+  "truth_boundary": "This continuation materially strengthens evidence for exact asset targeting, real context observation and LOD integration discipline on one vehicle/road family. It does not define an automatic LOD policy, prove continuous streamed driving, gameplay-camera quality, world-dressing quality, performance, final/native runtime acceptance, broad professional competence, cross-executor reliability or any maturity promotion."
+}

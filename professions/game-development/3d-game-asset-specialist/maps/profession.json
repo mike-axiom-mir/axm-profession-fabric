@@ -1,0 +1,136 @@
+{
+  "schema_version": "0.1",
+  "profession_id": "3d-game-asset-specialist",
+  "status": "NOT_TESTED",
+  "workflow": [
+    {
+      "gate": "intake",
+      "requires": [
+        "accepted asset brief",
+        "accepted visual direction",
+        "target-runtime contract and budgets",
+        "reference provenance and rights state",
+        "exact source candidate identity"
+      ],
+      "failure_state": "BLOCKED_MISSING_OR_CONFLICTING_INPUT"
+    },
+    {
+      "gate": "plan",
+      "requires": [
+        "asset family and use context",
+        "silhouette and proportion checkpoints",
+        "modeling path",
+        "topology and deformation needs",
+        "UV, bake, material, LOD, collision, socket, export, and evidence plans"
+      ],
+      "failure_state": "HOLD_PLAN_NOT_TRACEABLE_TO_CONTRACT"
+    },
+    {
+      "gate": "blockout",
+      "requires": [
+        "known-scale fixture",
+        "representative camera distances",
+        "direction comparison",
+        "provisional runtime placement where available"
+      ],
+      "failure_state": "REPAIR_FORM_SCALE_OR_DIRECTION"
+    },
+    {
+      "gate": "source-final",
+      "requires": [
+        "editable source",
+        "final geometry and triangulation intent",
+        "normals and tangent contract",
+        "UV and texel-density evidence",
+        "bake and PBR surface evidence",
+        "asset-family comparison"
+      ],
+      "failure_state": "REPAIR_SOURCE_ASSET"
+    },
+    {
+      "gate": "runtime-candidate",
+      "requires": [
+        "transforms, pivots, units, axes, hierarchy, and naming",
+        "LOD, collision, socket, and material-slot candidates",
+        "exchange validation",
+        "recorded export settings and exact candidate identity"
+      ],
+      "failure_state": "REPAIR_EXPORT_OR_HANDOFF_PIPELINE"
+    },
+    {
+      "gate": "target-observation",
+      "requires": [
+        "recorded import settings and target build",
+        "source/export/import comparison",
+        "representative lighting, camera, mip, and LOD observations",
+        "separate runtime, performance, collision, gameplay, animation, art, and rights statuses"
+      ],
+      "failure_state": "NOT_GAME_READY_OR_ADJACENT_HANDOFF_REQUIRED"
+    },
+    {
+      "gate": "delivery",
+      "requires": [
+        "editable source package",
+        "runtime candidate package",
+        "asset evidence packet",
+        "provenance and rights status",
+        "limitations, non-claims, and open handoffs"
+      ],
+      "failure_state": "BLOCKED_INCOMPLETE_HANDOFF"
+    }
+  ],
+  "evidence_surfaces": [
+    {
+      "surface": "source",
+      "proves": "The exact editable candidate can be reopened and inspected.",
+      "does_not_prove": "Export, runtime, performance, gameplay, art-direction, or rights acceptance."
+    },
+    {
+      "surface": "structural",
+      "proves": "Declared geometry, UV, naming, transform, format, or budget checks passed for the exact candidate.",
+      "does_not_prove": "Visual quality, representative runtime behavior, or gameplay fitness."
+    },
+    {
+      "surface": "visual",
+      "proves": "No named visible defect was observed in the sampled views and states, or a named defect was observed.",
+      "does_not_prove": "Unobserved views, performance, collision, deformation, gameplay, or rights."
+    },
+    {
+      "surface": "target-runtime",
+      "proves": "The exact candidate imported or behaved as recorded in the named target build and configuration.",
+      "does_not_prove": "Other engines, platforms, versions, scenes, or professional acceptance surfaces."
+    },
+    {
+      "surface": "measured-performance",
+      "proves": "Named metrics were measured under the recorded target context.",
+      "does_not_prove": "Global scene budgets, visual equivalence, or player experience outside that context."
+    },
+    {
+      "surface": "play-context",
+      "proves": "Named interaction, collision, readability, placement, or use behavior was observed in a representative test.",
+      "does_not_prove": "Universal gameplay or production readiness."
+    },
+    {
+      "surface": "provenance-rights",
+      "proves": "Sources, terms, authorship, consent, attribution, and review state are recorded.",
+      "does_not_prove": "Legal clearance unless the owning authority explicitly supplies it."
+    }
+  ],
+  "consults": [
+    "3d-artist",
+    "visual-designer",
+    "technical-artist",
+    "graphics-engineer",
+    "world-encounter-designer",
+    "gameplay-engineer",
+    "software-qa-playtest",
+    "ip-specialist"
+  ],
+  "adopted_research_boundary": "Primary engine and format documentation defines target-specific pipeline constraints but does not reconstruct artistic judgment or prove game readiness. Budgets are project- and context-specific; no universal polygon, texture, material, bone, collision, or LOD thresholds are encoded.",
+  "known_gaps": [
+    "No representative real-asset execution has yet proven the package.",
+    "Character, creature, foliage, vehicle, weapon, photogrammetry, cloth, destruction, procedural-generation, and virtualized-geometry depth remain asset-class extensions rather than silently claimed mastery.",
+    "No cross-intelligence body-versus-baseline comparison has been run.",
+    "No target-engine-specific automation or deterministic asset auditor is included in this package."
+  ]
+}
