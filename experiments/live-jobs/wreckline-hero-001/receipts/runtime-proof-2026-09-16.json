@@ -1,0 +1,99 @@
+{
+  "schema": "axm.profession-fabric.live-job-runtime-receipt/v0.1",
+  "date": "2026-09-16",
+  "profession_id": "3d-game-asset-specialist",
+  "profession_status": "EXPERIMENTAL",
+  "promotion_effect": "NONE",
+  "source": {
+    "repository": "mike-axiom-mir/axm-wreckline",
+    "source_pr": 2,
+    "evidence_pr": 3,
+    "evidence_branch": "evidence/3d-specialist-hero-runtime",
+    "evidence_head": "ed0f87fb2c85cb3ba258852ec2102b75b5720a1c",
+    "workflow_run_id": 35041406094,
+    "tests_run_id": 35041406070,
+    "permanent_wreckline_receipt": "evidence/HERO_SPECIALIST_RUNTIME_2026-09-16.json"
+  },
+  "candidate": {
+    "asset_id": "hero-vehicle-001",
+    "path": "assets/hero-vehicle-001/models/wreckline-hero--lod0.glb",
+    "sha256": "7cf93c3dd80ab3952a6e8ce82accdd3c76bbc46a8aa631f642e108ceded2930e",
+    "instantiated_triangles": 21358,
+    "declared_vertices": 47870
+  },
+  "proof_runtime": {
+    "name": "Godot",
+    "version": "4.7.2-stable (official)",
+    "authority": "proof_host_only"
+  },
+  "evidence": {
+    "exact_candidate_identity": "PASS",
+    "proof_host_import": {
+      "state": "PASS",
+      "vertices": 47870,
+      "indices": 64074,
+      "mesh_instances": 96,
+      "surfaces": 96,
+      "material_surfaces": 96
+    },
+    "continuous_animation": {
+      "state": "PASS",
+      "animation": "AssemblyMotion",
+      "changed_nodes_per_engine_time_sample": [128, 128, 128, 128],
+      "observed_animation_position_s": 0.900412,
+      "scope": "Live transform change only; not final motion-quality or penetration approval."
+    },
+    "semantic_socket_attempt": {
+      "state": "FAIL_TRANSFORM_MISMATCH",
+      "hardpoint_id": "roof-medium",
+      "module_contract_id": "harpoon-launcher-mk1",
+      "node": "root_body_chassis_hardpoint-roof__iron",
+      "semantic_global_position": [0.0, -0.00133333448320627, 0.0],
+      "contract_position": [0.0, 1.83500003814697, -0.479999989271164],
+      "distance_m": 1.89803063869476,
+      "tolerance_m": 0.1,
+      "fixed_pose_visual_delta_ratio": 0.0,
+      "interpretation": "The imported semantic node existed but did not agree with the explicit hardpoint contract and a proxy mounted there was visually occluded."
+    },
+    "contract_position_proxy_repair": {
+      "state": "PASS_WITH_RETAINED_DEFECT",
+      "route": "explicit_hardpoint_contract_position_due_semantic_transform_mismatch",
+      "proxy_global_position": [0.0, 2.17600011825562, -0.479999989271164],
+      "sampled_pixels": 135000,
+      "changed_pixels": 2576,
+      "changed_ratio": 0.0190814814814815,
+      "detached": true,
+      "scope": "Visible attach/render/detach of a contract-sized proxy only. The semantic-node defect remains and final module geometry was not tested."
+    },
+    "material_fidelity": {
+      "state": "NOT_ACCEPTED",
+      "observation": "Retained Godot captures render the vehicle predominantly light gray/white rather than preserving the intended darker weathered steel/orange/cyan direction.",
+      "scope": "Import success is not material/shader acceptance; cause not established."
+    },
+    "chase_context": {
+      "state": "PARTIAL_PROOF_HOST_ONLY",
+      "scope": "A chase-like proof-host frame exists, but representative Wreckline road/chase context and LOD transitions remain untested."
+    },
+    "actual_module_geometry_live_swap": "NOT_TESTED",
+    "final_native_runtime_acceptance": "NOT_TESTED",
+    "target_performance": "BLOCKED_MISSING_TARGET_BUDGET"
+  },
+  "verification": {
+    "hero_specialist_runtime_workflow": "PASS",
+    "wreckline_tests": "PASS",
+    "runtime_artifact_digest": "sha256:398804b4f196c89c89f2371e57eef4426242d2dffd2b6ac91dfc5ed3d68a8cff"
+  },
+  "profession_finding": {
+    "positive": [
+      "The profession preserved exact asset identity into a real runtime observation.",
+      "It did not turn a clean import into visual/material acceptance.",
+      "It tightened its own swap evidence after noticing that captures taken at different animation times could not isolate the module.",
+      "The tighter gate failed and exposed a 1.898 m semantic-socket versus hardpoint-contract transform mismatch.",
+      "The failure was retained, localized and followed by a bounded contract-position repair with visible pixel evidence.",
+      "The repair did not erase the original defect or become a final-module claim."
+    ],
+    "promotion_decision": "NO_PROMOTION",
+    "reason": "This is strong scoped failure/repair evidence on one modular vehicle and one executor, but not representative evidence of broad professional competence across asset classes, targets and intelligences."
+  },
+  "truth_boundary": "This receipt supersedes the earlier access-block state only for the exact proof-host surfaces now observed. It does not rewrite the earlier BLOCKED_PRIVATE_SOURCE_ACCESS attempt, does not make Godot the final Wreckline runtime, does not prove actual module geometry, representative road/chase behavior, material fidelity, target performance, final art/gameplay acceptance, cross-intelligence competence or profession maturity."
+}
