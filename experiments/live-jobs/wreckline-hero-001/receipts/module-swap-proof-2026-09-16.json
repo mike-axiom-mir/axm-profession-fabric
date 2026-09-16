@@ -1,0 +1,107 @@
+{
+  "schema": "axm.profession-fabric.real-job-continuation/v0.1",
+  "date": "2026-09-16",
+  "profession_id": "3d-game-asset-specialist",
+  "profession_status_before": "EXPERIMENTAL",
+  "profession_status_after": "EXPERIMENTAL",
+  "promotion_decision": "NO_PROMOTION",
+  "job_id": "wreckline-hero-001",
+  "relationship": "APPEND_ONLY_CONTINUATION_OF_RUNTIME_PROOF_2026-09-16",
+  "source": {
+    "repository": "mike-axiom-mir/axm-wreckline",
+    "source_pr": 2,
+    "evidence_pr": 3,
+    "source_candidate_sha256": "7cf93c3dd80ab3952a6e8ce82accdd3c76bbc46a8aa631f642e108ceded2930e",
+    "workflow_run_id": 35043186425,
+    "tests_run_id": 35043186393,
+    "wreckline_receipt": "evidence/HERO_SPECIALIST_MODULE_SWAP_2026-09-16.json",
+    "wreckline_evidence_chain": "evidence/HERO_SPECIALIST_EVIDENCE_CHAIN_2026-09-16.json"
+  },
+  "historical_gates_preserved": {
+    "profession_fabric_source_access_attempt": "BLOCKED_PRIVATE_SOURCE_ACCESS",
+    "original_vehicle_semantic_roof_socket": "FAIL_TRANSFORM_MISMATCH",
+    "original_semantic_socket_distance_m": 1.89803063869476,
+    "original_fixed_pose_visible_delta": 0.0,
+    "vehicle_material_fidelity": "NOT_ACCEPTED"
+  },
+  "derived_vehicle_candidate": {
+    "purpose": "semantic transform socket repair without mutating the historical source GLB",
+    "sha256": "dbd5f71086849e1f941010cb3f61c360c560a840728d4f4cb8b7413c3e93b7fc",
+    "socket_count": 5,
+    "base_pose_contract_distance_m_each": 0.0,
+    "position_tolerance_m": 0.02,
+    "roof_socket_inherits_live_animation": true,
+    "runtime_state": "PASS_SEMANTIC_SOCKET_REPAIRED",
+    "scope": "DERIVED_PROOF_CANDIDATE_ONLY"
+  },
+  "universal_creation_provider": {
+    "repository": "mike-axiom-mir/axm-universal-creation",
+    "commit": "e2016cf30b8f7b409137d138abed91dfcc885f60",
+    "surface": "public-uc-geometry-only",
+    "organs": ["axm_uc.rts_mesh", "axm_uc.procedural_3d"],
+    "retained_boundary_findings": [
+      "The newer Wreckline full-vehicle provider requires rigid_vehicle_motion which is not present in the pinned public UC commit; the module task was narrowed to the two public geometry organs it actually needs.",
+      "The pinned public UC material grammar rejected Wreckline's newer emissive extension; the evidence modules were bounded to the supported grammar and no emissive/material-fidelity claim was transferred."
+    ]
+  },
+  "real_module_candidates": [
+    {
+      "id": "harpoon-launcher-mk1",
+      "sha256": "5163d76b4d2cf093e5efc1d7952fb88d1e55e0ca29d7d9966f8ad87ffa6e601a",
+      "triangles": 964,
+      "vertices": 2465,
+      "uc_geometry_verification": "PASS",
+      "godot_contract_envelope": "PASS"
+    },
+    {
+      "id": "salvage-rack-mk1",
+      "sha256": "59e2dc7f05a0e550259fa1dcbdf6c676997dcf10310aa1ccc7e22e77e0a45dcf",
+      "triangles": 684,
+      "vertices": 1635,
+      "uc_geometry_verification": "PASS",
+      "godot_contract_envelope": "PASS"
+    }
+  ],
+  "actual_module_swap": {
+    "proof_runtime": "Godot 4.7.2",
+    "state": "PASS_SCOPED_PROOF_HOST",
+    "sequence": ["empty", "harpoon-launcher-mk1", "salvage-rack-mk1", "empty"],
+    "sampled_pixels": 135000,
+    "empty_to_harpoon_changed_pixels": 799,
+    "empty_to_harpoon_changed_ratio": 0.00591851851851852,
+    "empty_to_salvage_changed_pixels": 1518,
+    "empty_to_salvage_changed_ratio": 0.0112444444444444,
+    "harpoon_to_salvage_changed_pixels": 1348,
+    "harpoon_to_salvage_changed_ratio": 0.00998518518518519,
+    "start_empty_to_final_empty_changed_pixels": 0,
+    "start_empty_to_final_empty_changed_ratio": 0.0,
+    "detached_after_sequence": true
+  },
+  "current_gate_updates": {
+    "derived_semantic_socket_repair": "PASS_SCOPED_PROOF_HOST",
+    "real_uc_module_generation": "PASS",
+    "actual_module_geometry_live_swap": "PASS_SCOPED_PROOF_HOST",
+    "module_empty_roundtrip": "PASS_SCOPED_PROOF_HOST",
+    "vehicle_material_fidelity": "NOT_ACCEPTED",
+    "module_production_art_quality": "NOT_ACCEPTED",
+    "module_motion": "NOT_TESTED",
+    "representative_wreckline_road_chase_lod_context": "PARTIAL_PROOF_HOST_ONLY",
+    "final_native_wreckline_runtime": "NOT_TESTED",
+    "target_performance": "BLOCKED_MISSING_TARGET_BUDGET"
+  },
+  "positive_profession_evidence": [
+    "The profession preserved immutable candidate identity and did not overwrite the source GLB when repairing semantic sockets.",
+    "The profession retained earlier failures while allowing a newly derived candidate to close a narrower gate.",
+    "The profession exposed and repaired two provider-boundary mismatches without weakening the pinned public UC validator.",
+    "The profession progressed from a contract proxy to two real deterministic GLB module candidates and observed an actual alternate-module runtime swap.",
+    "The profession still refuses to transfer runtime integration success into material or production-art acceptance."
+  ],
+  "remaining_evidence_for_profession_promotion": [
+    "representative tasks across additional asset classes including at least props/environments and deforming/character assets",
+    "more than one executor/intelligence",
+    "additional failure/repair families",
+    "accepted visual/material evidence rather than structural import alone",
+    "additional target/runtime evidence without stale acceptance transfer"
+  ],
+  "truth_boundary": "This continuation materially strengthens the experimental profession's evidence for game-asset integration, failure diagnosis, repair and modular runtime behavior. It does not establish broad professional competence, final Wreckline readiness, material fidelity, production-art quality, cross-executor reliability or any maturity promotion."
+}
