@@ -1,0 +1,105 @@
+name: Wreckline hero specialist evidence
+
+on:
+  push:
+    branches:
+      - feat/3d-game-asset-specialist
+    paths:
+      - "experiments/live-jobs/wreckline-hero-001/godot/**"
+      - ".github/workflows/wreckline-hero-specialist-evidence.yml"
+  pull_request:
+    paths:
+      - "experiments/live-jobs/wreckline-hero-001/godot/**"
+      - ".github/workflows/wreckline-hero-specialist-evidence.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  godot-proof-runtime:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out Profession Fabric
+        uses: actions/checkout@v4
+
+      - name: Check out pinned Wreckline evidence source
+        uses: actions/checkout@v4
+        with:
+          repository: mike-axiom-mir/axm-wreckline
+          ref: ec382b15d642acfe647428094a5718053ef4ce20
+          path: .wreckline-source
+
+      - name: Verify and stage exact candidate
+        shell: bash
+        run: |
+          set -euo pipefail
+          CANDIDATE=.wreckline-source/assets/hero-vehicle-001/models/wreckline-hero--lod0.glb
+          echo "7cf93c3dd80ab3952a6e8ce82accdd3c76bbc46a8aa631f642e108ceded2930e  ${CANDIDATE}" | sha256sum --check --strict
+          mkdir -p experiments/live-jobs/wreckline-hero-001/godot/generated
+          cp "${CANDIDATE}" experiments/live-jobs/wreckline-hero-001/godot/generated/wreckline-hero--lod0.glb
+          cp .wreckline-source/assets/hero-vehicle-001/vehicle-hardpoints.json experiments/live-jobs/wreckline-hero-001/godot/generated/vehicle-hardpoints.json
+          cp .wreckline-source/assets/hero-vehicle-001/mountable-modules.json experiments/live-jobs/wreckline-hero-001/godot/generated/mountable-modules.json
+
+      - name: Download pinned Godot 4.7.2
+        env:
+          GODOT_URL: https://github.com/godotengine/godot-builds/releases/download/4.7.2-stable/Godot_v4.7.2-stable_linux.x86_64.zip
+          GODOT_SHA256: cadd3204e728a35d3f13adb7fd0d7902636b79f6b95c40c265eb73b6c35329e4
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p .godot-bin
+          curl --fail --location --retry 3 --retry-delay 2 "$GODOT_URL" --output .godot-bin/godot.zip
+          echo "$GODOT_SHA256  .godot-bin/godot.zip" | sha256sum --check --strict
+          unzip -q .godot-bin/godot.zip -d .godot-bin
+          chmod +x .godot-bin/Godot_v4.7.2-stable_linux.x86_64
+          .godot-bin/Godot_v4.7.2-stable_linux.x86_64 --version
+
+      - name: Install virtual display when needed
+        shell: bash
+        run: |
+          if ! command -v xvfb-run >/dev/null 2>&1; then
+            sudo apt-get update
+            sudo apt-get install -y xvfb
+          fi
+
+      - name: Observe exact Wreckline candidate in Godot proof host
+        shell: bash
+        run: |
+          set -euo pipefail
+          xvfb-run --auto-servernum --server-args="-screen 0 640x640x24" \
+            .godot-bin/Godot_v4.7.2-stable_linux.x86_64 \
+            --display-driver x11 \
+            --rendering-method gl_compatibility \
+            --path experiments/live-jobs/wreckline-hero-001/godot \
+            --script observe.gd
+
+      - name: Validate retained receipt boundary
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          root = Path("experiments/live-jobs/wreckline-hero-001/godot")
+          receipt = json.loads((root / "runtime-receipt.json").read_text())
+          assert receipt["observed_sha256"] == "7cf93c3dd80ab3952a6e8ce82accdd3c76bbc46a8aa631f642e108ceded2930e", receipt
+          assert receipt["import"]["state"] == "PASS", receipt
+          assert receipt["status"] in {"pass_scoped_proof_runtime", "partial_scoped_proof_runtime"}, receipt
+          assert receipt["proof_runtime"] == "Godot 4.7.2", receipt
+          assert "not an undeclared choice" in receipt["limitations"][0], receipt
+          print(json.dumps(receipt, indent=2))
+          PY
+
+      - name: Upload runtime receipts and captures
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: wreckline-hero-specialist-evidence-${{ github.sha }}
+          path: |
+            experiments/live-jobs/wreckline-hero-001/godot/runtime-receipt.json
+            experiments/live-jobs/wreckline-hero-001/godot/empty-chassis.png
+            experiments/live-jobs/wreckline-hero-001/godot/proof-module-mounted.png
+          if-no-files-found: warn
+          retention-days: 14
