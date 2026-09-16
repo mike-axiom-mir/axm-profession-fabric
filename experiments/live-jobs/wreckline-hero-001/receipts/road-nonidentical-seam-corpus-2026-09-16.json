@@ -1,0 +1,58 @@
+{
+  "schema": "axm.profession-fabric.live-job-receipt/v0.1",
+  "date": "2026-09-16",
+  "profession": "3d-game-asset-specialist",
+  "profession_status": "EXPERIMENTAL",
+  "promotion_effect": "NONE",
+  "job": "wreckline-hero-001",
+  "evidence_extension": "deterministic-nonidentical-road-seam-corpus",
+  "state": "PASS_SCOPED_NONIDENTICAL_ROAD_PLANE_SEAM_CORPUS",
+  "source": {
+    "repo": "mike-axiom-mir/axm-wreckline",
+    "branch": "evidence/3d-specialist-hero-runtime",
+    "evidence_file": "evidence/ROAD_NONIDENTICAL_SEAM_CORPUS_2026-09-16.json",
+    "workflow_run": 35048791142,
+    "artifact_id": 10428181707,
+    "artifact_digest": "sha256:eb9233a4db63a752e6096c62ace2b548ed87f2fef4921d0ace0e0326d6279a42"
+  },
+  "corpus": {
+    "seed": "axm-road-seam-corpus-v1",
+    "selection": "first three unique adjacent non-identical template pairs emitted by Wreckline's deterministic road generator",
+    "pairs": [
+      "recovery-straight->sweep-right",
+      "sweep-right->wide-left",
+      "wide-left->bridge-run"
+    ],
+    "source_world_validation_errors": [],
+    "source_color_closure_max_rgb_distance": 5.384295521873979e-15,
+    "collision_symmetric_max_gap_m": [
+      0.000359553901944309,
+      0.00103759765625,
+      0.00154114270117134
+    ],
+    "collision_acceptance_tolerance_m": 0.05
+  },
+  "target_host": {
+    "engine": "Godot 4.7.2",
+    "captures": 12,
+    "matrix": "3 pairs x 2 LODs x canonical/derived",
+    "all_imports": "PASS",
+    "all_collision_seams": "PASS_SCOPED_PROOF_HOST",
+    "visual_finding": "Across straight-to-curve, curve-to-curve and curve-to-bridge joins, the canonical captures show broad continuous-road-plane tonal resets while the derived COLOR_0 candidates materially smooth those transitions in both LOD0 and LOD1 without globally disabling COLOR_0 or washing out the darker road presentation. Guardrail and edge-structure seam quality remains outside this pass."
+  },
+  "evidence_quality": {
+    "exact_provider_recovery": "PASS",
+    "byte_identical_canonical_reconstruction_before_recolor": "PASS",
+    "candidate_geometry_unchanged": "PASS",
+    "canonical_collision_bytes_unchanged": "PASS",
+    "cross_cell_exit_to_entry_road_plane_color_closure": "PASS_CORPUS_3",
+    "target_host_nonidentical_visual_observation": "PASS_SCOPED_CORPUS_3",
+    "guardrail_seams": "OPEN",
+    "continuous_streaming": "NOT_TESTED",
+    "canonical_adoption": "NOT_DONE"
+  },
+  "profession_finding": "The specialist now has evidence across a hero vehicle, real mounted modules, target-host materials/LOD behavior, one repeated modular road join, and three generator-selected non-identical road joins. It has repeatedly separated source, collision, runtime and visual gates and preserved failed intermediate evidence rather than rewriting it. This strengthens the profession experiment but does not justify promotion yet because coverage remains narrow and continuous route/streaming production behavior is still unproven.",
+  "next_gate": "Deterministic multi-cell route assembly and continuity observation using derived road-plane candidates, followed by explicit edge-structure/guardrail handling where needed.",
+  "decision": "KEEP_EXPERIMENTAL_NO_PROMOTION_NO_CANONICAL_ADOPTION",
+  "truth_boundary": "This receipt transfers only the fixed three-pair non-identical road-plane corpus. It does not imply every road pair, guardrail continuity, checkpoint-specific presentation, continuous streaming, gameplay, performance, final runtime acceptance, canonical road-kit adoption, or profession promotion."
+}
