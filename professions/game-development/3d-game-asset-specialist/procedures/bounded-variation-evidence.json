@@ -78,12 +78,13 @@
   ],
   "current_evidence_scope": {
     "experiment": "experiments/live-jobs/bounded-variation-cross-domain-001",
-    "required_material_domains": 2,
+    "required_material_domains": 3,
     "current_cases": [
       "mike-axiom-mir/axm-nature-design@f939ae78ae6bb986aa67d557d7f8ff977abb7775",
-      "mike-axiom-mir/axm-weather-design@05b26c4e82bbe0a4de0ee7bee34179efc58b9719"
+      "mike-axiom-mir/axm-weather-design@05b26c4e82bbe0a4de0ee7bee34179efc58b9719",
+      "mike-axiom-mir/axm-map-design@b8a41ec2707302ba169f5f6406b361334bdd247e"
     ],
-    "excluded_observation": "mike-axiom-mir/axm-map-design@83eb65711bdbd621227d5967b7735f1719e9b2f4 is not counted in the procedure PASS until its retained family summary carries its already-tested negative/HOLD control.",
+    "historical_gap_closed": "Map was previously excluded because its impossible-family HOLD existed only in tests. Exact head b8a41ec2707302ba169f5f6406b361334bdd247e retains that same bounded failure alongside its three successful variants without moving Map semantics into Profession Fabric.",
     "profession_status_after_success": "EXPERIMENTAL"
   },
   "roots": [
