@@ -20,18 +20,51 @@ jobs:
   godot-proof-runtime:
     runs-on: ubuntu-latest
     timeout-minutes: 20
+    env:
+      WRECKLINE_READ_TOKEN: ${{ secrets.WRECKLINE_READ_TOKEN }}
     steps:
       - name: Check out Profession Fabric
         uses: actions/checkout@v4
 
+      - name: Retain private-source access block when no scoped token is configured
+        if: env.WRECKLINE_READ_TOKEN == ''
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          path = Path("experiments/live-jobs/wreckline-hero-001/godot/source-access-receipt.json")
+          receipt = {
+              "schema": "axm.profession-fabric.source-access/v0.1",
+              "state": "BLOCKED_PRIVATE_SOURCE_ACCESS",
+              "source_repository": "mike-axiom-mir/axm-wreckline",
+              "source_head": "ec382b15d642acfe647428094a5718053ef4ce20",
+              "candidate_path": "assets/hero-vehicle-001/models/wreckline-hero--lod0.glb",
+              "candidate_sha256": "7cf93c3dd80ab3952a6e8ce82accdd3c76bbc46a8aa631f642e108ceded2930e",
+              "reason": "Profession Fabric's repository-scoped GITHUB_TOKEN cannot read the separate private Wreckline repository. No candidate bytes were observed in this run.",
+              "nonclaims": [
+                  "This is not an asset import failure.",
+                  "This is not a Godot compatibility result.",
+                  "This does not change the profession from EXPERIMENTAL.",
+              ],
+              "unblock": "Configure a scoped WRECKLINE_READ_TOKEN secret for this evidence workflow or execute the same pinned observer from a target-side runner that can read the exact Wreckline commit.",
+          }
+          path.write_text(json.dumps(receipt, indent=2) + "\n")
+          print(json.dumps(receipt, indent=2))
+          PY
+
       - name: Check out pinned Wreckline evidence source
+        if: env.WRECKLINE_READ_TOKEN != ''
         uses: actions/checkout@v4
         with:
           repository: mike-axiom-mir/axm-wreckline
           ref: ec382b15d642acfe647428094a5718053ef4ce20
           path: .wreckline-source
+          token: ${{ env.WRECKLINE_READ_TOKEN }}
 
       - name: Verify and stage exact candidate
+        if: env.WRECKLINE_READ_TOKEN != ''
         shell: bash
         run: |
           set -euo pipefail
@@ -43,6 +76,7 @@ jobs:
           cp .wreckline-source/assets/hero-vehicle-001/mountable-modules.json experiments/live-jobs/wreckline-hero-001/godot/generated/mountable-modules.json
 
       - name: Download pinned Godot 4.7.2
+        if: env.WRECKLINE_READ_TOKEN != ''
         env:
           GODOT_URL: https://github.com/godotengine/godot-builds/releases/download/4.7.2-stable/Godot_v4.7.2-stable_linux.x86_64.zip
           GODOT_SHA256: cadd3204e728a35d3f13adb7fd0d7902636b79f6b95c40c265eb73b6c35329e4
@@ -57,6 +91,7 @@ jobs:
           .godot-bin/Godot_v4.7.2-stable_linux.x86_64 --version
 
       - name: Install virtual display when needed
+        if: env.WRECKLINE_READ_TOKEN != ''
         shell: bash
         run: |
           if ! command -v xvfb-run >/dev/null 2>&1; then
@@ -65,6 +100,7 @@ jobs:
           fi
 
       - name: Observe exact Wreckline candidate in Godot proof host
+        if: env.WRECKLINE_READ_TOKEN != ''
         shell: bash
         run: |
           set -euo pipefail
@@ -75,7 +111,8 @@ jobs:
             --path experiments/live-jobs/wreckline-hero-001/godot \
             --script observe.gd
 
-      - name: Validate retained receipt boundary
+      - name: Validate retained evidence boundary
+        if: always()
         shell: bash
         run: |
           python - <<'PY'
@@ -83,23 +120,33 @@ jobs:
           from pathlib import Path
 
           root = Path("experiments/live-jobs/wreckline-hero-001/godot")
-          receipt = json.loads((root / "runtime-receipt.json").read_text())
-          assert receipt["observed_sha256"] == "7cf93c3dd80ab3952a6e8ce82accdd3c76bbc46a8aa631f642e108ceded2930e", receipt
-          assert receipt["import"]["state"] == "PASS", receipt
-          assert receipt["status"] in {"pass_scoped_proof_runtime", "partial_scoped_proof_runtime"}, receipt
-          assert receipt["proof_runtime"] == "Godot 4.7.2", receipt
-          assert "not an undeclared choice" in receipt["limitations"][0], receipt
-          print(json.dumps(receipt, indent=2))
+          runtime_path = root / "runtime-receipt.json"
+          blocked_path = root / "source-access-receipt.json"
+          if runtime_path.exists():
+              receipt = json.loads(runtime_path.read_text())
+              assert receipt["observed_sha256"] == "7cf93c3dd80ab3952a6e8ce82accdd3c76bbc46a8aa631f642e108ceded2930e", receipt
+              assert receipt["import"]["state"] == "PASS", receipt
+              assert receipt["status"] in {"pass_scoped_proof_runtime", "partial_scoped_proof_runtime"}, receipt
+              assert receipt["proof_runtime"] == "Godot 4.7.2", receipt
+              assert "not an undeclared choice" in receipt["limitations"][0], receipt
+              print(json.dumps(receipt, indent=2))
+          else:
+              assert blocked_path.exists(), "Neither runtime nor blocked-source receipt exists"
+              receipt = json.loads(blocked_path.read_text())
+              assert receipt["state"] == "BLOCKED_PRIVATE_SOURCE_ACCESS", receipt
+              assert receipt["candidate_sha256"] == "7cf93c3dd80ab3952a6e8ce82accdd3c76bbc46a8aa631f642e108ceded2930e", receipt
+              print(json.dumps(receipt, indent=2))
           PY
 
-      - name: Upload runtime receipts and captures
+      - name: Upload runtime or blocked-source receipts
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: wreckline-hero-specialist-evidence-${{ github.sha }}
           path: |
             experiments/live-jobs/wreckline-hero-001/godot/runtime-receipt.json
+            experiments/live-jobs/wreckline-hero-001/godot/source-access-receipt.json
             experiments/live-jobs/wreckline-hero-001/godot/empty-chassis.png
             experiments/live-jobs/wreckline-hero-001/godot/proof-module-mounted.png
-          if-no-files-found: warn
+          if-no-files-found: error
           retention-days: 14
