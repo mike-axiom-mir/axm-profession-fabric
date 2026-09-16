@@ -1,0 +1,56 @@
+{
+  "schema": "axm.profession-fabric.live-job-receipt/v0.1",
+  "date": "2026-09-16",
+  "profession": "3d-game-asset-specialist",
+  "profession_status": "EXPERIMENTAL",
+  "promotion_effect": "NONE",
+  "job": "wreckline-hero-001",
+  "evidence_extension": "derived-modular-road-plane-color-seam-repair",
+  "state": "PASS_DERIVED_ROAD_PLANE_SEAM_REPAIR_CANONICAL_UNCHANGED",
+  "source": {
+    "repo": "mike-axiom-mir/axm-wreckline",
+    "branch": "evidence/3d-specialist-hero-runtime",
+    "evidence_file": "evidence/ROAD_SEAM_COLOR_REPAIR_CANDIDATE_2026-09-16.json",
+    "workflow_run": 35048418427,
+    "artifact_id": 10428205343,
+    "artifact_digest": "sha256:95d9568425bacb45aaef28f379bd8a4e7b4bac9751d911299dd2309ef79ea442"
+  },
+  "provider_recovery": {
+    "repository": "mike-axiom-mir/axm-universal-creation",
+    "commit": "e2016cf30b8f7b409137d138abed91dfcc885f60",
+    "source_hashes_match_road_manifest": true,
+    "canonical_lod0_reconstructed_byte_identically": true,
+    "canonical_lod1_reconstructed_byte_identically": true
+  },
+  "candidate": {
+    "canonical_assets_unchanged": true,
+    "changed_channel": "COLOR_0 only",
+    "changed_materials": ["asphalt", "ground", "road-marking", "shoulder"],
+    "guardrail_unchanged": true,
+    "collision_unchanged": true,
+    "lod0_sha256": "742d4314b1689a337c1da7460898d2ebb7ffa83eed235d9c78389a76f3322b4f",
+    "lod1_sha256": "c49beff181eb3245f46f9b7cd2667735c1cdf36828b059d93304d547366a470b",
+    "lod0_changed_vertices": 261,
+    "lod1_changed_vertices": 90,
+    "boundary_samples_per_lod": 14,
+    "missing_boundary_samples_per_lod": 0,
+    "max_boundary_rgb_distance": 0.0
+  },
+  "target_host": {
+    "engine": "Godot 4.7.2",
+    "canonical_lod0": "PASS_IMPORT_AND_CAPTURE",
+    "candidate_lod0": "PASS_IMPORT_AND_CAPTURE",
+    "canonical_lod1": "PASS_IMPORT_AND_CAPTURE",
+    "candidate_lod1": "PASS_IMPORT_AND_CAPTURE",
+    "visual_finding": "The derived road-plane treatment removes the large diagonal tonal reset visible in the repeated canonical road join in both LOD0 and LOD1 while keeping COLOR_0 enabled and preserving the darker road presentation. Guardrail seam quality is not included in this acceptance."
+  },
+  "failure_history_preserved": [
+    "initial provider revision mismatch",
+    "vertical-offset-sensitive seam classification",
+    "guardrail oriented-beam endpoint topology outside continuous road-plane closure scope"
+  ],
+  "profession_finding": "The specialist recovered exact provider provenance, refused to weaken source hashes, separated continuous road-plane surfaces from non-corresponding guardrail beam topology, preserved canonical assets, and carried the derived candidate through byte-identical reconstruction, static review and target-host visual comparison. This materially strengthens the environment-asset evidence but is still one repeated road pair.",
+  "next_gate": "Non-identical real road-cell joins using the derived seam-safe road-plane treatment, followed by separate guardrail seam handling if evidence shows it is needed.",
+  "decision": "KEEP_EXPERIMENTAL_NO_PROMOTION_NO_CANONICAL_ADOPTION",
+  "truth_boundary": "This receipt transfers only the repeated open-straight-a derived road-plane COLOR_0 repair and its retained evidence. It does not promote the profession, modify canonical Wreckline road assets, accept guardrail joins, generalize to non-identical cells, or prove production streaming/performance/runtime behavior."
+}
