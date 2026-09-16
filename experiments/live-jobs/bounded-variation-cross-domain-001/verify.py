@@ -137,6 +137,10 @@ def validate_normalized(case: dict) -> list[str]:
 
 def build_evidence(manifest_path: Path, output_dir: Path) -> dict:
     manifest = load_json(manifest_path)
+    required_material_domains = manifest.get("required_material_domains", 2)
+    if not isinstance(required_material_domains, int) or isinstance(required_material_domains, bool) or required_material_domains < 2:
+        raise ValueError("required_material_domains must be an integer >= 2")
+
     cases = [normalize_case(spec) for spec in manifest["cases"]]
     case_results = []
     for case in cases:
@@ -150,7 +154,7 @@ def build_evidence(manifest_path: Path, output_dir: Path) -> dict:
     duplicate_detected = any("not materially distinct" in error for error in synthetic_errors)
 
     checks = {
-        "at_least_two_materially_different_domains": len(case_results) >= 2,
+        "required_material_domains_met": len(case_results) >= required_material_domains,
         "all_source_owned_family_runs_pass": all(item["state"] == "PASS" for item in case_results),
         "all_exact_heads_match": all(item["observed_head"] == item["expected_head"] for item in case_results),
         "all_cases_retain_negative_hold": all(
@@ -166,6 +170,8 @@ def build_evidence(manifest_path: Path, output_dir: Path) -> dict:
         "profession_status": manifest["profession_status"],
         "promotion_effect": manifest["promotion_effect"],
         "procedure_id": manifest["procedure_id"],
+        "required_material_domains": required_material_domains,
+        "observed_material_domains": len(case_results),
         "checks": checks,
         "cases": case_results,
         "harness_negative_control": {
@@ -173,7 +179,7 @@ def build_evidence(manifest_path: Path, output_dir: Path) -> dict:
             "state": "HOLD_AS_REQUIRED" if duplicate_detected else "FAIL_NEGATIVE_CONTROL",
             "errors": synthetic_errors,
         },
-        "excluded_observation": manifest["excluded_observation"],
+        "historical_observation": manifest.get("historical_observation"),
         "truth_boundary": manifest["truth_boundary"],
         "nonclaims": [
             "No source-domain mutation logic is implemented by Profession Fabric.",
