@@ -1,0 +1,112 @@
+{
+  "schema_version": "0.1",
+  "run_id": "wreckline-hero-001",
+  "run_type": "real-asset-specialist-evidence-task",
+  "date": "2026-09-16",
+  "profession_id": "3d-game-asset-specialist",
+  "profession_status_before": "EXPERIMENTAL",
+  "profession_status_after": "EXPERIMENTAL",
+  "promotion_decision": "NO_PROMOTION",
+  "execution_truth": "One machine cognition applied the 3D Game Asset Specialist body to one real AXM asset. This is not evidence of an independent specialist intelligence or general professional competence.",
+  "job": {
+    "source_repository": "mike-axiom-mir/axm-wreckline",
+    "source_pr": 2,
+    "source_head": "ec382b15d642acfe647428094a5718053ef4ce20",
+    "asset_id": "hero-vehicle-001",
+    "candidate_path": "assets/hero-vehicle-001/models/wreckline-hero--lod0.glb",
+    "candidate_sha256": "7cf93c3dd80ab3952a6e8ce82accdd3c76bbc46a8aa631f642e108ceded2930e"
+  },
+  "retained_asset_facts": {
+    "lod0_instantiated_triangles": 21358,
+    "lod0_vertices": 47870,
+    "lod0_nodes": 130,
+    "lod0_materials": 60,
+    "lod0_clip": "AssemblyMotion",
+    "lod0_clip_channels": 22,
+    "lod1_instantiated_triangles": 10354,
+    "collision_triangles": 36,
+    "permanent_hardpoints": 5,
+    "module_contracts": 5,
+    "initial_loadout_empty": true,
+    "continuous_playback_verified": false
+  },
+  "gates": [
+    {
+      "id": "identity-source-continuity",
+      "state": "PASS",
+      "basis": "Pinned repository, PR, source head, candidate path and exact LOD0 SHA are retained."
+    },
+    {
+      "id": "structural-game-asset-preparation",
+      "state": "PARTIAL_PASS",
+      "basis": "Retained receipts cover generated geometry, UV/tangent state, materials/textures, LODs, separate collision, hardpoints, module contracts, semantic bindings and static visual evidence, but not host interpretation."
+    },
+    {
+      "id": "target-native-runtime-import",
+      "state": "BLOCKED_NOT_RUN",
+      "basis": "Wreckline native engineering state records host integration pending and no completed target-engine import."
+    },
+    {
+      "id": "continuous-animation-observation",
+      "state": "NOT_TESTED",
+      "basis": "The Wreckline asset receipt explicitly records continuous_playback_verified=false; sampled poses are not continuous observation."
+    },
+    {
+      "id": "live-module-swap",
+      "state": "NOT_TESTED",
+      "basis": "Module contracts and empty sockets exist, but no retained native/runtime mounted-module transition has been observed."
+    },
+    {
+      "id": "chase-context-readability",
+      "state": "NOT_TESTED",
+      "basis": "Static software views exist, but representative road/chase-camera runtime observation is still open."
+    },
+    {
+      "id": "target-performance",
+      "state": "BLOCKED_MISSING_TARGET_BUDGET",
+      "basis": "No completed target runtime/hardware performance contract is retained for certification."
+    }
+  ],
+  "positive_profession_evidence": [
+    "The profession preserves exact candidate identity instead of treating a later regeneration as equivalent evidence.",
+    "The profession separates structural, visual, runtime, animation, modularity and performance surfaces instead of collapsing them into one game-ready label.",
+    "The profession treats missing target/runtime evidence as HOLD/NOT_TESTED rather than inventing acceptance.",
+    "The profession identifies the smallest meaningful continuation as observation/integration rather than more modeling."
+  ],
+  "missing_evidence_for_asset": [
+    "Declared native/target runtime import of the exact candidate.",
+    "Continuous AssemblyMotion observation.",
+    "At least one live hardpoint module mount/swap/unmount transition.",
+    "Representative chase-camera/road-context observation including LOD behavior.",
+    "Target material/glass/normal-map behavior.",
+    "Relevant target performance measurement if a performance claim is requested."
+  ],
+  "missing_evidence_for_profession_promotion": [
+    "Completion of the target-runtime gates on this real task.",
+    "Representative successful and failure/repair tasks across more than one asset class.",
+    "Evidence that the package works across more than one executor/intelligence without transferring stale acceptance.",
+    "Observed repair behavior when runtime evidence contradicts structurally green source/export evidence."
+  ],
+  "next_evidence_packet": {
+    "sequence": [
+      "exact-glb",
+      "native-import",
+      "continuous-clip-observation",
+      "live-socket-swap",
+      "chase-context-capture",
+      "retained-receipt"
+    ],
+    "required_receipts": [
+      "engine/runtime name and exact version",
+      "candidate SHA-256",
+      "import settings and warnings/errors",
+      "observed scale/orientation/pivot",
+      "required node/material/animation discovery",
+      "continuous animation observation result",
+      "socket and module IDs plus compatibility decision",
+      "runtime captures tied to the exact run",
+      "reproducible launch or test command"
+    ]
+  },
+  "truth_boundary": "This task is real evidence that the experimental body can preserve source identity, classify existing evidence, identify missing runtime proof and abstain from promotion on one substantial modular vehicle. It is not target-runtime acceptance, broad competence proof, cross-intelligence validation or permission to call the asset game-ready."
+}
