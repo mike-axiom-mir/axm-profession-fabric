@@ -1,0 +1,84 @@
+{
+  "schema": "axm.profession-fabric.real-job-material-surfaces/v0.1",
+  "date": "2026-09-16",
+  "profession_id": "3d-game-asset-specialist",
+  "profession_status_before": "EXPERIMENTAL",
+  "profession_status_after": "EXPERIMENTAL",
+  "promotion_decision": "NO_PROMOTION",
+  "job_id": "wreckline-hero-001",
+  "relationship": "APPEND_ONLY_CONTINUATION_AFTER_COLOR0_REPAIR",
+  "source": {
+    "repository": "mike-axiom-mir/axm-wreckline",
+    "evidence_pr": 3,
+    "source_candidate_sha256": "7cf93c3dd80ab3952a6e8ce82accdd3c76bbc46a8aa631f642e108ceded2930e",
+    "wreckline_receipt": "evidence/HERO_SPECIALIST_MATERIAL_SURFACES_2026-09-16.json",
+    "successful_probe_workflow_run": 35044710564,
+    "successful_probe_artifact_digest": "sha256:2ea57ee4117fa6efe04c76cc7ab19500254c1da44c81e8b5c779be7e256853cd"
+  },
+  "probe_history": {
+    "failed_v0_1_run": 35044568073,
+    "failed_v0_1_classification": "INFRASTRUCTURE_PARSE_ERROR",
+    "failed_v0_1_retained": true,
+    "current_probe": "v0.2",
+    "current_probe_state": "PASS"
+  },
+  "source_material_contract": {
+    "materials": 60,
+    "normal_textures": 43,
+    "metallic_roughness_textures": 43,
+    "nonzero_emissive_factors": 8,
+    "alpha_modes": {"OPAQUE": 60},
+    "glass_candidate": {
+      "material": "glass__glass-material",
+      "source_state": "OPAQUE_IN_SOURCE_GLTF",
+      "base_alpha": 1.0,
+      "transparent_source_contract": false
+    }
+  },
+  "runtime_evidence_after_color0_adapter": {
+    "normal_map_visual_response": {
+      "state": "PASS_SCOPED_PROOF_HOST",
+      "materials_disabled_for_ablation": 43,
+      "changed_pixels": 3079,
+      "sampled_pixels": 135000,
+      "changed_ratio": 0.0228074074074074
+    },
+    "metallic_roughness_visual_response": {
+      "state": "PASS_SCOPED_PROOF_HOST",
+      "materials_with_maps_removed": 43,
+      "changed_pixels": 11713,
+      "sampled_pixels": 135000,
+      "changed_ratio": 0.086762962962963
+    },
+    "emissive_visual_response": {
+      "state": "PASS_SCOPED_PROOF_HOST",
+      "materials_disabled": 8,
+      "changed_pixels": 770,
+      "sampled_pixels": 135000,
+      "changed_ratio": 0.0057037037037037
+    },
+    "glass": {
+      "runtime_alpha": 1.0,
+      "runtime_transparency": 0,
+      "state": "OPAQUE_MATCHES_SOURCE"
+    }
+  },
+  "gate_updates": {
+    "palette_tint_fidelity": "PASS_SCOPED_PROOF_HOST",
+    "normal_map_visual_response": "PASS_SCOPED_PROOF_HOST",
+    "metallic_roughness_visual_response": "PASS_SCOPED_PROOF_HOST",
+    "emissive_visual_response": "PASS_SCOPED_PROOF_HOST",
+    "glass_transparency_fidelity": "NOT_ACCEPTED_NO_TRANSPARENT_SOURCE_CONTRACT",
+    "full_material_fidelity": "PARTIAL_NOT_FINAL",
+    "representative_game_lighting": "NOT_TESTED",
+    "production_art_approval": "NOT_ACCEPTED"
+  },
+  "glass_boundary": "The specialist did not invent an opacity/transmission value. The source glTF explicitly authors the identified glass material OPAQUE with alpha 1.0, so changing it in the host would create new art intent rather than repair an importer defect.",
+  "positive_profession_evidence": [
+    "The profession proved normal, metallic/roughness and emissive runtime effects with reversible fixed-pose ablations instead of inferring them from bound texture counts alone.",
+    "It distinguished a source-authored opaque glass contract from a target-runtime fidelity failure.",
+    "It retained the first failed diagnostic as infrastructure evidence and replaced the current broken probe with a corrected version rather than relabeling the failure.",
+    "It narrowed the remaining material gap instead of promoting full material fidelity from partial evidence."
+  ],
+  "truth_boundary": "This continuation strengthens evidence for material-pipeline diagnosis and target-runtime observation on one vehicle family. It does not prove final glass intent, representative game lighting, production-art quality, broader asset competence, cross-executor reliability, or any maturity promotion."
+}
