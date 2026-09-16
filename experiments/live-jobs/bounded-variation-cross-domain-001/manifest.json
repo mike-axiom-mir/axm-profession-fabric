@@ -4,6 +4,7 @@
   "profession_status": "EXPERIMENTAL",
   "promotion_effect": "NONE",
   "procedure_id": "bounded-variation-evidence",
+  "required_material_domains": 3,
   "cases": [
     {
       "id": "nature-sapling-branch-crown",
@@ -73,12 +74,48 @@
       ],
       "domain_owner": "axm-weather-design",
       "domain_evaluator": "Weather visual-direction/source/spread/material-difference checks"
+    },
+    {
+      "id": "map-environment-proxy-placement",
+      "repository": "mike-axiom-mir/axm-map-design",
+      "expected_head": "b8a41ec2707302ba169f5f6406b361334bdd247e",
+      "checkout_path": ".sources/map",
+      "summary_path": ".sources/map/evidence/environment_variation_001/summary.json",
+      "summary_state_path": "status",
+      "summary_pass_states": ["PASS"],
+      "base_digest_path": "base_source_digest",
+      "family_digest_path": "family_digest",
+      "variants_path": "variants",
+      "variant_seed_path": "seed",
+      "variant_status_path": "status",
+      "variant_pass_states": ["PASS"],
+      "variant_digest_paths": ["study_digest"],
+      "negative_state_path": "retained_failure_control.observed_status",
+      "negative_hold_states": ["HOLD"],
+      "truth_boundary_path": "truth_boundary",
+      "mutation_authority": [
+        "declared nature/object proxy XY translation",
+        "declared nature/object proxy uniform scale",
+        "declared nature/object proxy rotation"
+      ],
+      "immutable_contract": [
+        "map surface",
+        "building proxy",
+        "readable path",
+        "weather context",
+        "required asset kinds",
+        "all undeclared source items"
+      ],
+      "domain_owner": "axm-map-design",
+      "domain_evaluator": "Environment required-asset/path/spacing/weather/proxy composition checks"
     }
   ],
-  "excluded_observation": {
+  "historical_observation": {
     "repository": "mike-axiom-mir/axm-map-design",
-    "head": "83eb65711bdbd621227d5967b7735f1719e9b2f4",
-    "reason": "Map already proves a third materially different mutation family, but its retained summary does not yet carry the impossible-family HOLD that its tests exercise. This procedure probe refuses to weaken the shared retained-failure requirement merely to count a third PASS."
+    "prior_head": "83eb65711bdbd621227d5967b7735f1719e9b2f4",
+    "current_head": "b8a41ec2707302ba169f5f6406b361334bdd247e",
+    "state": "RETAINED_FAILURE_GAP_CLOSED",
+    "reason": "Map was previously excluded because its impossible-family HOLD existed only in tests. The source-owned family now retains that same bounded rejection result in the exact evidence packet without changing mutation semantics."
   },
-  "truth_boundary": "This manifest tests a repeated evidence procedure across two materially different existing source-owned procedural families. It does not move mutation semantics or domain acceptance into Profession Fabric, does not alter either source repository, does not create a universal procedural generator, and does not promote the experimental profession."
+  "truth_boundary": "This manifest tests one repeated evidence procedure across three materially different existing source-owned procedural families. It does not move mutation semantics or domain acceptance into Profession Fabric, does not create a universal procedural generator, does not alter Universal Creation, and does not promote the experimental profession."
 }
