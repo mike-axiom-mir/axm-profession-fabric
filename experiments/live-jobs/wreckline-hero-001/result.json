@@ -1,5 +1,5 @@
 {
-  "schema_version": "0.1",
+  "schema_version": "0.2",
   "run_id": "wreckline-hero-001",
   "run_type": "real-asset-specialist-evidence-task",
   "date": "2026-09-16",
@@ -11,7 +11,8 @@
   "job": {
     "source_repository": "mike-axiom-mir/axm-wreckline",
     "source_pr": 2,
-    "source_head": "ec382b15d642acfe647428094a5718053ef4ce20",
+    "initial_pinned_source_head": "ec382b15d642acfe647428094a5718053ef4ce20",
+    "evidence_pr": 3,
     "asset_id": "hero-vehicle-001",
     "candidate_path": "assets/hero-vehicle-001/models/wreckline-hero--lod0.glb",
     "candidate_sha256": "7cf93c3dd80ab3952a6e8ce82accdd3c76bbc46a8aa631f642e108ceded2930e"
@@ -28,7 +29,7 @@
     "permanent_hardpoints": 5,
     "module_contracts": 5,
     "initial_loadout_empty": true,
-    "continuous_playback_verified": false
+    "historical_continuous_playback_verified": false
   },
   "runtime_attempts": [
     {
@@ -39,88 +40,146 @@
       "observed_candidate_bytes": false,
       "basis": "Profession Fabric's repository-scoped GITHUB_TOKEN received Repository not found while attempting to fetch the separate private Wreckline repository at the pinned commit. The Godot/import steps were therefore skipped.",
       "classification": "SOURCE_ACCESS_BLOCK_NOT_RUNTIME_FAILURE",
-      "repair": "The evidence workflow now retains this state as a successful blocked-source receipt when no scoped cross-repository read token exists, and only runs the Godot observer when WRECKLINE_READ_TOKEN is available."
+      "historical": true
+    },
+    {
+      "id": "wreckline-target-side-godot-proof-002",
+      "evidence_pr": 3,
+      "evidence_head": "ed0f87fb2c85cb3ba258852ec2102b75b5720a1c",
+      "workflow_run_id": 35041406094,
+      "tests_run_id": 35041406070,
+      "proof_runtime": "Godot 4.7.2-stable (official)",
+      "state": "SCOPED_RUNTIME_PASS_WITH_RETAINED_DEFECTS",
+      "observed_candidate_bytes": true,
+      "receipt": "receipts/runtime-proof-2026-09-16.json",
+      "supersedes_access_block_for": [
+        "proof-host exact-candidate import",
+        "live engine-time AssemblyMotion observation",
+        "bounded proxy attachment diagnosis and repair"
+      ],
+      "does_not_supersede": [
+        "historical private-source access failure",
+        "final/native Wreckline runtime acceptance",
+        "actual module geometry live swap",
+        "representative road/chase acceptance",
+        "material fidelity",
+        "target performance"
+      ]
+    }
+  ],
+  "gate_history": [
+    {
+      "snapshot": "before-target-side-runtime",
+      "target-native-runtime-import": "BLOCKED_PRIVATE_SOURCE_ACCESS",
+      "continuous-animation-observation": "NOT_TESTED",
+      "live-module-swap": "NOT_TESTED",
+      "chase-context-readability": "NOT_TESTED",
+      "target-performance": "BLOCKED_MISSING_TARGET_BUDGET"
+    },
+    {
+      "snapshot": "after-target-side-proof-host-runtime",
+      "proof-host-import": "PASS",
+      "continuous-animation-observation": "PASS_SCOPED_PROOF_HOST",
+      "semantic-roof-socket": "FAIL_TRANSFORM_MISMATCH",
+      "contract-position-proxy-repair": "PASS_WITH_RETAINED_DEFECT",
+      "actual-module-geometry-live-swap": "NOT_TESTED",
+      "material-fidelity": "NOT_ACCEPTED",
+      "chase-context-readability": "PARTIAL_PROOF_HOST_ONLY",
+      "final-native-runtime-acceptance": "NOT_TESTED",
+      "target-performance": "BLOCKED_MISSING_TARGET_BUDGET"
     }
   ],
   "gates": [
     {
       "id": "identity-source-continuity",
       "state": "PASS",
-      "basis": "Pinned repository, PR, source head, candidate path and exact LOD0 SHA are retained."
+      "basis": "Pinned repository, PR, exact candidate path and SHA are retained through the target-side proof run."
     },
     {
       "id": "structural-game-asset-preparation",
       "state": "PARTIAL_PASS",
-      "basis": "Retained Wreckline receipts cover generated geometry, UV/tangent state, materials/textures, LODs, separate collision, hardpoints, module contracts, semantic bindings and static visual evidence, but not target-host interpretation."
+      "basis": "Retained Wreckline receipts cover generated geometry, UV/tangent state, materials/textures, LODs, separate collision, hardpoints, module contracts and semantic bindings. Runtime evidence later exposed a semantic hardpoint transform contradiction, so structural preparation is not promoted to complete acceptance."
     },
     {
-      "id": "target-native-runtime-import",
-      "state": "BLOCKED_PRIVATE_SOURCE_ACCESS",
-      "basis": "The first bounded Godot proof-host attempt never received candidate bytes because the Profession Fabric Actions token is repository-scoped and Wreckline is private. This is not evidence for or against engine compatibility."
+      "id": "proof-host-runtime-import",
+      "state": "PASS",
+      "basis": "The exact SHA-locked LOD0 GLB parsed and instantiated in Godot 4.7.2 with 47,870 vertices, 64,074 indices, 96 mesh instances and non-empty bounds. This is proof-host evidence only."
     },
     {
       "id": "continuous-animation-observation",
-      "state": "NOT_TESTED",
-      "basis": "The Wreckline asset receipt explicitly records continuous_playback_verified=false; sampled poses are not continuous observation, and the proof-host attempt did not reach the asset."
+      "state": "PASS_SCOPED_PROOF_HOST",
+      "basis": "AssemblyMotion was discovered and four live engine-time samples each changed 128 node transforms. This does not establish final motion quality or penetration acceptance."
     },
     {
-      "id": "live-module-swap",
+      "id": "semantic-roof-socket-transform",
+      "state": "FAIL_TRANSFORM_MISMATCH",
+      "basis": "The imported semantic roof node was about 1.898 m from the explicit roof-medium hardpoint contract position, exceeding the 0.10 m tolerance; a fixed-pose proxy mounted to that node produced zero visual delta."
+    },
+    {
+      "id": "contract-position-proxy-repair",
+      "state": "PASS_WITH_RETAINED_DEFECT",
+      "basis": "Using the explicit roof-medium contract position after measuring the semantic-node mismatch produced 2,576 changed pixels out of 135,000 sampled (~1.908%) and a successful attach/render/detach proxy cycle. The semantic-node defect remains."
+    },
+    {
+      "id": "actual-module-geometry-live-swap",
       "state": "NOT_TESTED",
-      "basis": "Module contracts and empty sockets exist, but no retained native/runtime mounted-module transition has been observed. The proof-host attempt did not reach the asset."
+      "basis": "Only an explicitly labeled contract-sized proxy was used; final module asset geometry was not imported or swapped."
+    },
+    {
+      "id": "material-fidelity",
+      "state": "NOT_ACCEPTED",
+      "basis": "Retained Godot captures render the vehicle predominantly light gray/white instead of preserving the intended darker weathered steel/orange/cyan direction. Import success is not material/shader acceptance."
     },
     {
       "id": "chase-context-readability",
+      "state": "PARTIAL_PROOF_HOST_ONLY",
+      "basis": "A chase-like proof-host frame exists, but representative Wreckline road/chase context, LOD transitions and gameplay-camera acceptance remain untested."
+    },
+    {
+      "id": "final-native-runtime-acceptance",
       "state": "NOT_TESTED",
-      "basis": "Static software views exist, but representative road/chase-camera runtime observation is still open."
+      "basis": "Godot was a bounded proof host and was not declared to be Wreckline's final/native runtime."
     },
     {
       "id": "target-performance",
       "state": "BLOCKED_MISSING_TARGET_BUDGET",
-      "basis": "No completed target runtime/hardware performance contract is retained for certification."
+      "basis": "No final target hardware/performance budget was declared for certification."
     }
   ],
   "positive_profession_evidence": [
     "The profession preserves exact candidate identity instead of treating a later regeneration as equivalent evidence.",
     "The profession separates structural, visual, runtime, animation, modularity and performance surfaces instead of collapsing them into one game-ready label.",
-    "The profession treats missing target/runtime evidence as HOLD/NOT_TESTED rather than inventing acceptance.",
-    "The profession correctly classifies a private-source checkout failure as an access block rather than an asset or engine failure.",
-    "The profession identifies the smallest meaningful continuation as observation/integration rather than more modeling."
+    "The profession correctly classified the earlier private-source checkout failure as an access block rather than an asset or engine failure.",
+    "The profession reached a real proof host from the target-side repo and observed the exact candidate rather than weakening the identity requirement.",
+    "The profession tightened its own module-swap evidence after noticing that different animation times could confound a visual comparison.",
+    "The tightened test failed, exposed a 1.898 m semantic-node versus hardpoint-contract mismatch, and retained that failure.",
+    "A bounded contract-position proxy repair was demonstrated without rewriting the original defect away.",
+    "The profession preserved material fidelity as NOT_ACCEPTED despite a clean engine import."
   ],
   "missing_evidence_for_asset": [
-    "Declared native/target runtime import of the exact candidate.",
-    "Continuous AssemblyMotion observation.",
-    "At least one live hardpoint module mount/swap/unmount transition.",
-    "Representative chase-camera/road-context observation including LOD behavior.",
-    "Target material/glass/normal-map behavior.",
+    "Actual module-asset geometry import and live swap through the intended Wreckline runtime path.",
+    "Repair and re-verification of the semantic hardpoint-node transform contract.",
+    "Representative Wreckline road/chase-camera observation including LOD transition behavior.",
+    "Accepted target material/glass/normal-map behavior.",
+    "Final/native runtime acceptance once Wreckline declares that target.",
     "Relevant target performance measurement if a performance claim is requested."
   ],
   "missing_evidence_for_profession_promotion": [
-    "Completion of the target-runtime gates on this real task.",
     "Representative successful and failure/repair tasks across more than one asset class.",
     "Evidence that the package works across more than one executor/intelligence without transferring stale acceptance.",
-    "Observed repair behavior when runtime evidence contradicts structurally green source/export evidence."
+    "Additional target/runtime diversity sufficient to show the method is not overfit to one modular vehicle and one proof host.",
+    "Observed handling of other game-asset failure families such as tangent/bake seams, LOD perceptual failure, collision mismatch, provenance blocks and deformation needs."
   ],
   "next_evidence_packet": {
-    "source_access_unblock": "Provide the evidence workflow a scoped read credential via WRECKLINE_READ_TOKEN or execute the pinned observer from a target-side runner with access to the exact private Wreckline commit. Do not copy in a different vehicle or silently use the newer Blender Hero V2 artifact as equivalent evidence.",
+    "priority": "Repair the semantic hardpoint transform or import contract, then exercise an actual module asset rather than another proxy. Preserve the current failure receipt as the before-state.",
     "sequence": [
-      "exact-glb",
-      "native-import",
-      "continuous-clip-observation",
-      "live-socket-swap",
-      "chase-context-capture",
-      "retained-receipt"
-    ],
-    "required_receipts": [
-      "engine/runtime name and exact version",
-      "candidate SHA-256",
-      "import settings and warnings/errors",
-      "observed scale/orientation/pivot",
-      "required node/material/animation discovery",
-      "continuous animation observation result",
-      "socket and module IDs plus compatibility decision",
-      "runtime captures tied to the exact run",
-      "reproducible launch or test command"
+      "repair-semantic-hardpoint-transform",
+      "reimport-exact-revised-candidate-with-new-identity",
+      "actual-module-geometry-mount-swap-unmount",
+      "representative-wreckline-road-chase-context",
+      "material-fidelity-repair-or-explicit-translation",
+      "retained-before-after-receipts"
     ]
   },
-  "truth_boundary": "This task is real evidence that the experimental body can preserve source identity, classify existing evidence, distinguish an access failure from a runtime failure, identify missing runtime proof and abstain from promotion on one substantial modular vehicle. It is not target-runtime acceptance, broad competence proof, cross-intelligence validation or permission to call the asset game-ready."
+  "truth_boundary": "This live job now contains real proof-host runtime evidence and a retained failure/repair cycle on one substantial modular vehicle. It proves exact-candidate Godot import, live AssemblyMotion transform activity, a material semantic-socket transform contradiction, and a bounded contract-position proxy repair. It does not prove final Wreckline runtime acceptance, final module geometry, material fidelity, representative game context, target performance, broad competence, cross-intelligence validation or permission to call the asset or profession game-ready. The profession remains EXPERIMENTAL."
 }
