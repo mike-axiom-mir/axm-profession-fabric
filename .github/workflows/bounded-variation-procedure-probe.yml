@@ -1,0 +1,95 @@
+name: Bounded variation procedure probe
+
+on:
+  push:
+    branches:
+      - studio/procedural-bounded-variation-procedure-001
+  pull_request:
+    paths:
+      - "experiments/live-jobs/bounded-variation-cross-domain-001/**"
+      - "professions/game-development/3d-game-asset-specialist/procedures/bounded-variation-evidence.json"
+      - ".github/workflows/bounded-variation-procedure-probe.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  cross-domain-probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out Profession Fabric
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Check out exact Nature family
+        uses: actions/checkout@v4
+        with:
+          repository: mike-axiom-mir/axm-nature-design
+          ref: f939ae78ae6bb986aa67d557d7f8ff977abb7775
+          path: .sources/nature
+
+      - name: Check out exact Weather family
+        uses: actions/checkout@v4
+        with:
+          repository: mike-axiom-mir/axm-weather-design
+          ref: 05b26c4e82bbe0a4de0ee7bee34179efc58b9719
+          path: .sources/weather
+
+      - name: Check out exact Map family
+        uses: actions/checkout@v4
+        with:
+          repository: mike-axiom-mir/axm-map-design
+          ref: b8a41ec2707302ba169f5f6406b361334bdd247e
+          path: .sources/map
+
+      - name: Rebuild exact Nature multi-seed evidence
+        working-directory: .sources/nature
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf evidence/sapling-variation-family-001
+          python -m compileall -q src tools tests
+          python -m unittest discover -s tests -v
+          python tools/build_sapling_variation_evidence.py evidence/sapling-variation-family-001
+
+      - name: Rebuild exact Weather multi-seed evidence
+        working-directory: .sources/weather
+        env:
+          AXM_RECEIVING_HEAD: 05b26c4e82bbe0a4de0ee7bee34179efc58b9719
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf evidence/wind_atmosphere_variation_family_001
+          python -m compileall -q tools tests
+          python -m unittest discover -s tests -v
+          python tools/weather_variation_family.py
+
+      - name: Rebuild exact Map multi-seed evidence
+        working-directory: .sources/map
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf evidence/environment_variation_001
+          python -m compileall -q tools tests
+          python -m unittest discover -s tests -v
+          python tools/environment_variation.py
+
+      - name: Verify repeated profession-level evidence procedure
+        shell: bash
+        run: |
+          set -euo pipefail
+          python experiments/live-jobs/bounded-variation-cross-domain-001/verify.py \
+            --manifest experiments/live-jobs/bounded-variation-cross-domain-001/manifest.json \
+            --output evidence/bounded-variation-cross-domain-001
+
+      - name: Upload retained cross-domain procedure evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: bounded-variation-cross-domain-001-evidence
+          path: evidence/bounded-variation-cross-domain-001/
+          if-no-files-found: error

@@ -20,6 +20,12 @@
       "description": "Evidence-gated asset production from brief and budgets through target-runtime handoff."
     },
     {
+      "id": "bounded-variation-evidence",
+      "kind": "procedure",
+      "path": "procedures/bounded-variation-evidence.json",
+      "description": "Experimental cross-domain evidence procedure for source-owned bounded procedural families; mutation semantics and domain acceptance remain external."
+    },
+    {
       "id": "3d-game-asset-profession-map",
       "kind": "decision-support",
       "path": "maps/profession.json",
@@ -52,7 +58,8 @@
       "tools/manifest.json"
     ],
     "procedures": [
-      "procedures/core-work.json"
+      "procedures/core-work.json",
+      "procedures/bounded-variation-evidence.json"
     ],
     "failures": [
       "failures/library.json"

@@ -1,0 +1,121 @@
+{
+  "schema": "axm.profession-fabric.bounded-variation-probe-manifest/v0.1",
+  "profession": "3d-game-asset-specialist",
+  "profession_status": "EXPERIMENTAL",
+  "promotion_effect": "NONE",
+  "procedure_id": "bounded-variation-evidence",
+  "required_material_domains": 3,
+  "cases": [
+    {
+      "id": "nature-sapling-branch-crown",
+      "repository": "mike-axiom-mir/axm-nature-design",
+      "expected_head": "f939ae78ae6bb986aa67d557d7f8ff977abb7775",
+      "checkout_path": ".sources/nature",
+      "summary_path": ".sources/nature/evidence/sapling-variation-family-001/summary.json",
+      "summary_state_path": "state",
+      "summary_pass_states": ["PASS_MULTI_SEED_BOUNDED_VARIATION"],
+      "base_digest_path": "base_source_digest",
+      "family_digest_path": "family_digest",
+      "variants_path": "seeds",
+      "variant_seed_path": "seed",
+      "variant_status_path": null,
+      "variant_pass_states": [],
+      "variant_digest_paths": ["candidate_source_digest", "candidate_mesh_digest"],
+      "negative_state_path": "negative_control.state",
+      "negative_hold_states": ["HOLD_NO_VALID_VARIANT"],
+      "truth_boundary_path": "truth_boundary",
+      "mutation_authority": [
+        "branch length scale",
+        "branch yaw jitter",
+        "leaf length/width scale",
+        "leaf yaw/pitch jitter"
+      ],
+      "immutable_contract": [
+        "trunk",
+        "flex zones",
+        "design checks",
+        "donor provenance",
+        "environment handoff",
+        "weather handoff"
+      ],
+      "domain_owner": "axm-nature-design",
+      "domain_evaluator": "Nature organic-form/source/envelope checks"
+    },
+    {
+      "id": "weather-stochastic-field",
+      "repository": "mike-axiom-mir/axm-weather-design",
+      "expected_head": "05b26c4e82bbe0a4de0ee7bee34179efc58b9719",
+      "checkout_path": ".sources/weather",
+      "summary_path": ".sources/weather/evidence/wind_atmosphere_variation_family_001/summary.json",
+      "summary_state_path": "status",
+      "summary_pass_states": ["PASS"],
+      "base_digest_path": "base_source_digest",
+      "family_digest_path": "family_digest",
+      "variants_path": "variants",
+      "variant_seed_path": "seed",
+      "variant_status_path": "status",
+      "variant_pass_states": ["PASS"],
+      "variant_digest_paths": ["candidate_source_digest", "particle_layout_digest"],
+      "negative_state_path": "negative_control.status",
+      "negative_hold_states": ["HOLD_VARIANT_GATE"],
+      "truth_boundary_path": "truth_boundary",
+      "mutation_authority": [
+        "integer stochastic field seed",
+        "derived study identity"
+      ],
+      "immutable_contract": [
+        "scene extent",
+        "visual wind direction and semantics",
+        "visual displacement speed",
+        "particle count",
+        "sample times",
+        "streak length bounds",
+        "safe margin"
+      ],
+      "domain_owner": "axm-weather-design",
+      "domain_evaluator": "Weather visual-direction/source/spread/material-difference checks"
+    },
+    {
+      "id": "map-environment-proxy-placement",
+      "repository": "mike-axiom-mir/axm-map-design",
+      "expected_head": "b8a41ec2707302ba169f5f6406b361334bdd247e",
+      "checkout_path": ".sources/map",
+      "summary_path": ".sources/map/evidence/environment_variation_001/summary.json",
+      "summary_state_path": "status",
+      "summary_pass_states": ["PASS"],
+      "base_digest_path": "base_source_digest",
+      "family_digest_path": "family_digest",
+      "variants_path": "variants",
+      "variant_seed_path": "seed",
+      "variant_status_path": "status",
+      "variant_pass_states": ["PASS"],
+      "variant_digest_paths": ["study_digest"],
+      "negative_state_path": "retained_failure_control.observed_status",
+      "negative_hold_states": ["HOLD"],
+      "truth_boundary_path": "truth_boundary",
+      "mutation_authority": [
+        "declared nature/object proxy XY translation",
+        "declared nature/object proxy uniform scale",
+        "declared nature/object proxy rotation"
+      ],
+      "immutable_contract": [
+        "map surface",
+        "building proxy",
+        "readable path",
+        "weather context",
+        "required asset kinds",
+        "all undeclared source items"
+      ],
+      "domain_owner": "axm-map-design",
+      "domain_evaluator": "Environment required-asset/path/spacing/weather/proxy composition checks"
+    }
+  ],
+  "historical_observation": {
+    "repository": "mike-axiom-mir/axm-map-design",
+    "prior_head": "83eb65711bdbd621227d5967b7735f1719e9b2f4",
+    "current_head": "b8a41ec2707302ba169f5f6406b361334bdd247e",
+    "state": "RETAINED_FAILURE_GAP_CLOSED",
+    "reason": "Map was previously excluded because its impossible-family HOLD existed only in tests. The source-owned family now retains that same bounded rejection result in the exact evidence packet without changing mutation semantics."
+  },
+  "truth_boundary": "This manifest tests one repeated evidence procedure across three materially different existing source-owned procedural families. It does not move mutation semantics or domain acceptance into Profession Fabric, does not create a universal procedural generator, does not alter Universal Creation, and does not promote the experimental profession."
+}
