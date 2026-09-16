@@ -1,0 +1,34 @@
+{
+  "schema": "axm.profession-fabric.live-job-receipt/v0.1",
+  "date": "2026-09-16",
+  "profession": "3d-game-asset-specialist",
+  "profession_status": "EXPERIMENTAL",
+  "promotion_effect": "NONE",
+  "job": "wreckline-hero-001",
+  "evidence_extension": "road-modular-color-seam-causal-diagnostic",
+  "state": "PASS_CAUSAL_DIAGNOSTIC_SOURCE_RUNTIME_CONTRACT_MISMATCH",
+  "source": {
+    "repo": "mike-axiom-mir/axm-wreckline",
+    "branch": "evidence/3d-specialist-hero-runtime",
+    "evidence_file": "evidence/ROAD_SEAM_COLOR0_DIAGNOSTIC_2026-09-16.json",
+    "workflow_run": 35047401444,
+    "artifact_id": 10427980219,
+    "artifact_digest": "sha256:bd4e4d68fa99119c019c66c06ff763d1dd2d1c621cd53bf69d935661d6b35333"
+  },
+  "finding": {
+    "road_plane_color_discontinuity": {
+      "asphalt": 0.203770682215691,
+      "road_marking": 0.198110431432724,
+      "shoulder": 0.186789736151695,
+      "ground": 0.15509207546711
+    },
+    "road_plane_normal_angle_deg": 0.0279764551182933,
+    "source_behavior": "Universal Creation SurfaceBuilder.face() derives COLOR_0 aging from local x/y/z. weather=false suppresses rust tint only; the grayscale position-based field remains active.",
+    "runtime_observation": "COLOR_0 disabled substantially reduces the join discontinuity but washes out the intended road presentation; enabling COLOR_0 restores the darker presentation and exposes the local-coordinate reset at the modular join.",
+    "cause": "Local-coordinate vertex-color weather is incompatible with naive modular repetition when the cell is transformed into world position later."
+  },
+  "rejected_shortcut": "Do not globally disable road COLOR_0 as the final fix because that trades the seam defect for lost intended material modulation.",
+  "next_gate": "Build a derived seam-compatible road color candidate that preserves vertex-color material modulation, then rerun collision, LOD and visual seam evidence before any canonical asset rewrite.",
+  "decision": "KEEP_EXPERIMENTAL_NO_PROMOTION",
+  "truth_boundary": "This receipt transfers only the repeated open-straight-a LOD0 causal diagnostic. It does not transfer a final repair, acceptance across other road cells, or production runtime approval."
+}
