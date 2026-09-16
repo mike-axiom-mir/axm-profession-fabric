@@ -1,0 +1,81 @@
+{
+  "schema": "axm.profession-fabric.real-job-material-continuation/v0.1",
+  "date": "2026-09-16",
+  "profession_id": "3d-game-asset-specialist",
+  "profession_status_before": "EXPERIMENTAL",
+  "profession_status_after": "EXPERIMENTAL",
+  "promotion_decision": "NO_PROMOTION",
+  "job_id": "wreckline-hero-001",
+  "relationship": "APPEND_ONLY_CONTINUATION_AFTER_MODULE_SWAP_PROOF",
+  "source": {
+    "repository": "mike-axiom-mir/axm-wreckline",
+    "source_pr": 2,
+    "evidence_pr": 3,
+    "source_candidate_sha256": "7cf93c3dd80ab3952a6e8ce82accdd3c76bbc46a8aa631f642e108ceded2930e",
+    "derived_socket_candidate_sha256": "dbd5f71086849e1f941010cb3f61c360c560a840728d4f4cb8b7413c3e93b7fc",
+    "wreckline_receipt": "evidence/HERO_SPECIALIST_MATERIAL_COLOR0_REPAIR_2026-09-16.json"
+  },
+  "historical_material_observation": {
+    "state": "NOT_ACCEPTED_FOR_UNADAPTED_GODOT_IMPORT",
+    "observation": "The earlier retained Godot proof-host render was predominantly light gray/white rather than the authored darker weathered-steel/cool/warm palette.",
+    "rewrite": false
+  },
+  "diagnosis": {
+    "workflow_run_id": 35043888317,
+    "state": "PASS",
+    "finding": "GODOT_GENERATED_MATERIALS_DISABLED_COLOR_0_ALBEDO_MULTIPLICATION",
+    "materials_with_color_0": 60,
+    "materials_vertex_color_enabled_before": 0,
+    "materials_vertex_color_disabled_before": 60
+  },
+  "bounded_repair": {
+    "workflow_run_id": 35044094567,
+    "state": "PASS_BOUNDED_COLOR0_MATERIAL_REPAIR",
+    "scope": "Enable vertex_color_use_as_albedo only on materials attached to surfaces containing COLOR_0.",
+    "materials_changed": 60,
+    "materials_enabled_after": 60,
+    "color0_vertices": 47870,
+    "texture_binding_counts_preserved": {
+      "albedo": [43, 43],
+      "normal": [43, 43],
+      "metallic": [43, 43],
+      "roughness": [43, 43]
+    },
+    "sampled_pixels": 135000,
+    "changed_pixels": 16034,
+    "changed_ratio": 0.11877037037037,
+    "foreground_average_luma_before": 0.55248910496787,
+    "foreground_average_luma_after": 0.324198135623512,
+    "foreground_dark_ratio_before": 0.572738641100459,
+    "foreground_dark_ratio_after": 0.80776397515528,
+    "cyan_like_ratio_before": 0.0437086881438695,
+    "cyan_like_ratio_after": 0.0783643892339544,
+    "warm_like_ratio_before": 0.0,
+    "warm_like_ratio_after": 0.0161490683229814
+  },
+  "gate_updates": {
+    "source_palette_encoding": "PASS",
+    "godot_color0_binding_diagnosis": "PASS",
+    "palette_tint_fidelity": "PASS_SCOPED_PROOF_HOST",
+    "full_material_fidelity": "PARTIAL_NOT_FINAL",
+    "glass_transparency_fidelity": "NOT_TESTED",
+    "normal_map_visual_response": "NOT_TESTED",
+    "metallic_roughness_visual_response": "NOT_TESTED",
+    "emissive_behavior": "NOT_TESTED",
+    "representative_lighting_road_context": "NOT_TESTED",
+    "production_art_approval": "NOT_ACCEPTED"
+  },
+  "positive_profession_evidence": [
+    "The profession traced a visual failure from retained runtime observation through source encoding into target-host material interpretation.",
+    "It established that the authored palette existed in COLOR_0 instead of rewriting art assets to compensate for a host-side interpretation defect.",
+    "It used a narrow adapter that preserved texture-binding counts and changed only the missing COLOR_0 albedo multiplication flag.",
+    "It promoted only the palette/tint sub-gate while keeping full material fidelity open."
+  ],
+  "remaining_for_maturity": [
+    "full material-surface evidence including glass, normals, metallic/roughness and intended emissive behavior",
+    "representative additional asset classes",
+    "more than one executor/intelligence",
+    "additional targets/runtimes and failure families without stale acceptance transfer"
+  ],
+  "truth_boundary": "This continuation strengthens evidence for runtime visual diagnosis and bounded repair. It does not establish complete material fidelity, production-art quality, broad 3D game-asset competence, cross-executor reliability, final Wreckline readiness, or any profession maturity promotion."
+}
