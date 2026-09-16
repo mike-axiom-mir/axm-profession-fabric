@@ -1,0 +1,95 @@
+{
+  "schema_version": "0.1",
+  "profession_id": "3d-game-asset-specialist",
+  "procedure_id": "bounded-variation-evidence",
+  "status": "EXPERIMENTAL",
+  "promotion_effect": "NONE",
+  "purpose": "Exercise a source-owned procedural family across multiple materially different outputs while preserving exact provenance, explicit mutation authority, domain-owned acceptance, bounded failure, retained output identity, and non-claims.",
+  "owns": [
+    "Evidence sequencing for an already-existing source-owned procedural family.",
+    "Exact source/family identity checks, retained multi-output identity, and explicit failure/HOLD evidence.",
+    "Cross-domain comparison of the evidence procedure without absorbing domain mutation semantics."
+  ],
+  "does_not_own": [
+    "Domain-specific mutation ranges, geometry rules, scene composition rules, weather semantics, biological semantics, or aesthetic acceptance.",
+    "Replacing a source-domain evaluator with a generic profession verdict.",
+    "Promoting a source family, Universal Creation abstraction, profession maturity, production readiness, or CANON from procedural evidence alone."
+  ],
+  "preconditions": [
+    "The source-owning repository exposes an exact base/source identity and an explicit procedural family or equivalent mutation contract.",
+    "Allowed mutation authority and immutable source fields are explicit.",
+    "The owning domain has a rerunnable evaluator or evidence builder for every candidate.",
+    "A bounded failure/HOLD path exists; the executor may not silently widen authored bounds or choose an unrequested least-bad result.",
+    "The retained evidence set can include at least three materially different candidates when a family-level variation claim is made."
+  ],
+  "ordered_phases": [
+    {
+      "id": "01-bind-source-family",
+      "actions": [
+        "Record source repository and exact revision.",
+        "Bind exact base/source digest and exact family/procedure digest.",
+        "Record source owner, domain evaluator, allowed mutation authority, immutable contract, and truth boundary."
+      ],
+      "gate": "Source and family identities are exact and domain ownership is explicit."
+    },
+    {
+      "id": "02-execute-domain-owned-family",
+      "actions": [
+        "Run the source repository's own generator/evaluator rather than reproducing its domain logic here.",
+        "Exercise at least three declared retained variants.",
+        "Rerun the owning-domain acceptance evidence for every retained candidate."
+      ],
+      "gate": "Every retained candidate has fresh source-owned evidence; no parent PASS is inherited by label."
+    },
+    {
+      "id": "03-prove-material-difference",
+      "actions": [
+        "Retain exact seed or deterministic choice identity for each candidate.",
+        "Retain candidate/output digests sufficient to prove the sampled family did not collapse to one identical result.",
+        "Keep domain-specific material-difference metrics in the source evidence rather than redefining them generically."
+      ],
+      "gate": "At least three retained candidates are materially distinct under the owning domain's declared evidence and exact output identities."
+    },
+    {
+      "id": "04-exercise-failure-bound",
+      "actions": [
+        "Run or retain at least one meaningful negative/failure control from the source family where feasible.",
+        "Require explicit HOLD/failure rather than silent reselection outside the authored contract.",
+        "Retain the failure state alongside successful samples."
+      ],
+      "gate": "A bounded invalid or non-material case is rejected without weakening the source contract."
+    },
+    {
+      "id": "05-package-handoff",
+      "actions": [
+        "Package exact source heads, base/family/output digests, retained candidate identities, source-domain PASS/HOLD states, failure evidence, and truth boundary.",
+        "State downstream owners for visual, runtime, gameplay, biological, physical, production, or CANON decisions.",
+        "Keep source mutation code and domain acceptance in their owning repositories."
+      ],
+      "gate": "Another worker can reproduce the procedural evidence path without hidden chat state or authority inflation."
+    }
+  ],
+  "global_stop_conditions": [
+    "Source revision, base identity, family identity, mutation authority, immutable contract, domain evaluator, or truth boundary is missing or ambiguous.",
+    "The requested proceduralization would require moving domain semantics into the profession or Universal Creation merely for convenience.",
+    "Fewer than three materially different retained outputs are available for a family-level claim.",
+    "No bounded failure/HOLD behavior can be shown and the executor would need to relabel any generated output as success.",
+    "A source-domain evaluator fails or a retained candidate identity cannot be tied to its evidence."
+  ],
+  "current_evidence_scope": {
+    "experiment": "experiments/live-jobs/bounded-variation-cross-domain-001",
+    "required_material_domains": 2,
+    "current_cases": [
+      "mike-axiom-mir/axm-nature-design@f939ae78ae6bb986aa67d557d7f8ff977abb7775",
+      "mike-axiom-mir/axm-weather-design@05b26c4e82bbe0a4de0ee7bee34179efc58b9719"
+    ],
+    "excluded_observation": "mike-axiom-mir/axm-map-design@83eb65711bdbd621227d5967b7735f1719e9b2f4 is not counted in the procedure PASS until its retained family summary carries its already-tested negative/HOLD control.",
+    "profession_status_after_success": "EXPERIMENTAL"
+  },
+  "roots": [
+    "Truth",
+    "Agency / non-domination",
+    "Continuity",
+    "Wisdom before speed"
+  ]
+}
