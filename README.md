@@ -46,6 +46,15 @@ The same package can expose routes for human-guided work, AI/model-guided work, 
 
 See `docs/PROFESSION_PACKAGE_LAYOUT.md`.
 
+## Executable coding workflow
+
+The [deterministic coding workflow](workflows/code/README.md) connects six
+existing software professionals through executable package exports. It maps
+requirements to acceptance cases, creates reproducible JavaScript/Python source,
+runs fresh observations, reports bounded readiness and retains verified
+construction recipes on request. It works without a model. The tested scope
+is explicit typed pure functions; full bodies and maturity counts are unchanged.
+
 ## What a Professional Body must eventually contain
 
 A body is more than a role and skill list. The v0.1 contract requires explicit structure for professional purpose and ownership boundaries; inputs/outputs; knowledge/retrieval/uncertainty; reusable skills; tool contracts; deterministic or bounded procedures; memory separation; state interfaces; evidence standards; decision rights; handoffs; failure patterns; professional tests; provenance; and evidence-backed growth/rollback.

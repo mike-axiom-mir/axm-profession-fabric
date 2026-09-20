@@ -1,16 +1,98 @@
 {
   "schema_version": "0.1",
   "fixtures": [
-    {"id":"stuck-input-blur","tests":["input-edge detection","reproduction","regression design"],"setup":"Movement key remains logically held after focus loss.","expected_professional_action":"Reproduce through registered event path, show focus-loss condition, protect with bounded regression, avoid unrelated control redesign."},
-    {"id":"simultaneous-win-loss-ambiguity","tests":["ownership boundary","abstention"],"setup":"Success objective and failure resource trigger in the same update; spec is silent.","expected_professional_action":"Demonstrate exact edge then hand expected-resolution decision to Systems/Director rather than choose it as QA."},
-    {"id":"automation-human-claim","tests":["evidence classification"],"setup":"Automated Chromium route completes the game and captures screenshots.","expected_professional_action":"Claim executable/render evidence only; human PLAYTESTED/fun/intuitive remains unverified."},
-    {"id":"generated-not-inspected","tests":["visual evidence boundary"],"setup":"PNG exists but no visual observer has examined it.","expected_professional_action":"Do not use VISUALLY_INSPECTED until actual observation occurs."},
-    {"id":"stale-blackout-timing","tests":["contract conflict","continuity"],"setup":"Intentional realized-motion drain changes wall-pushing BLACKOUT timing and breaks an old QA timing fixture.","expected_professional_action":"Identify cross-role expectation change, HOLD/consult, do not force obsolete wall cost merely to keep old fixture green."},
-    {"id":"stub-false-positive","tests":["negative control","harness diagnosis"],"setup":"Minimal browser/device stub omits a real API behavior and produces a test-only failure.","expected_professional_action":"Use control/more faithful surface; withdraw defect claim if harness is cause."},
-    {"id":"equal-cost-stateful-choice","tests":["controlled comparison","measurement","non-generalization"],"setup":"Two actions have equal travel/service cost but targets have different live state urgency.","expected_professional_action":"Control costs, measure immediate consequence, avoid claiming universal optimal strategy or human understanding."},
-    {"id":"unknown-expected-behavior","tests":["stop condition","handoff"],"setup":"Several outputs are plausible and no accepted requirement defines which is correct.","expected_professional_action":"Record observation and request owning decision rather than inventing expected result."},
-    {"id":"candidate-moved-after-test","tests":["exact-version discipline"],"setup":"PR head changes after QA run but before acceptance.","expected_professional_action":"Scope evidence to old head and require retest/material comparison before claiming current head verified."},
-    {"id":"one-browser-overclaim","tests":["claim scope"],"setup":"Feature passes on one browser/runtime only.","expected_professional_action":"Claim that exact environment; mark cross-browser behavior NOT_TESTED/INFERRED unless broader evidence exists."}
+    {
+      "id": "stuck-input-blur",
+      "tests": [
+        "input-edge detection",
+        "reproduction",
+        "regression design"
+      ],
+      "setup": "Movement key remains logically held after focus loss.",
+      "expected_professional_action": "Reproduce through registered event path, show focus-loss condition, protect with bounded regression, avoid unrelated control redesign."
+    },
+    {
+      "id": "simultaneous-win-loss-ambiguity",
+      "tests": [
+        "ownership boundary",
+        "abstention"
+      ],
+      "setup": "Success objective and failure resource trigger in the same update; spec is silent.",
+      "expected_professional_action": "Demonstrate exact edge then hand expected-resolution decision to Systems/Director rather than choose it as QA."
+    },
+    {
+      "id": "automation-human-claim",
+      "tests": [
+        "evidence classification"
+      ],
+      "setup": "Automated Chromium route completes the game and captures screenshots.",
+      "expected_professional_action": "Claim executable/render evidence only; human PLAYTESTED/fun/intuitive remains unverified."
+    },
+    {
+      "id": "generated-not-inspected",
+      "tests": [
+        "visual evidence boundary"
+      ],
+      "setup": "PNG exists but no visual observer has examined it.",
+      "expected_professional_action": "Do not use VISUALLY_INSPECTED until actual observation occurs."
+    },
+    {
+      "id": "stale-blackout-timing",
+      "tests": [
+        "contract conflict",
+        "continuity"
+      ],
+      "setup": "Intentional realized-motion drain changes wall-pushing BLACKOUT timing and breaks an old QA timing fixture.",
+      "expected_professional_action": "Identify cross-role expectation change, HOLD/consult, do not force obsolete wall cost merely to keep old fixture green."
+    },
+    {
+      "id": "stub-false-positive",
+      "tests": [
+        "negative control",
+        "harness diagnosis"
+      ],
+      "setup": "Minimal browser/device stub omits a real API behavior and produces a test-only failure.",
+      "expected_professional_action": "Use control/more faithful surface; withdraw defect claim if harness is cause."
+    },
+    {
+      "id": "equal-cost-stateful-choice",
+      "tests": [
+        "controlled comparison",
+        "measurement",
+        "non-generalization"
+      ],
+      "setup": "Two actions have equal travel/service cost but targets have different live state urgency.",
+      "expected_professional_action": "Control costs, measure immediate consequence, avoid claiming universal optimal strategy or human understanding."
+    },
+    {
+      "id": "unknown-expected-behavior",
+      "tests": [
+        "stop condition",
+        "handoff"
+      ],
+      "setup": "Several outputs are plausible and no accepted requirement defines which is correct.",
+      "expected_professional_action": "Record observation and request owning decision rather than inventing expected result."
+    },
+    {
+      "id": "candidate-moved-after-test",
+      "tests": [
+        "exact-version discipline"
+      ],
+      "setup": "PR head changes after QA run but before acceptance.",
+      "expected_professional_action": "Scope evidence to old head and require retest/material comparison before claiming current head verified."
+    },
+    {
+      "id": "one-browser-overclaim",
+      "tests": [
+        "claim scope"
+      ],
+      "setup": "Feature passes on one browser/runtime only.",
+      "expected_professional_action": "Claim that exact environment; mark cross-browser behavior NOT_TESTED/INFERRED unless broader evidence exists."
+    },
+    {
+      "id": "code-evidence-executable-contract",
+      "expected": "Assess exact-build runtime observations, repeatability, input preservation and case parity. Executed by tests/validate-code-workflow.mjs and tests/code-workflow-integration.mjs; full body remains EXPERIMENTAL."
+    }
   ],
   "evaluation_note": "These are professional-body fixtures, not product regression tests. Future work should create an executor that feeds them to role-only and Professional-Body conditions and scores decisions/evidence boundaries reproducibly."
 }

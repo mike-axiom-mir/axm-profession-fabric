@@ -1,1 +1,69 @@
-{"schema_version":"0.1","package_id":"build-engineer","domain":"software","profession_id":"build-engineer","display_name":"Build Engineer","status":"EXPERIMENTAL","body":"body.json","execution_surfaces":["human-guided","ai-model","machine-intelligence","deterministic-flow"],"exports":[{"id":"build-engineer-profession-map","kind":"decision-support","path":"maps/profession.json","description":"Build Engineer ownership/evidence map."},{"id":"build-engineer-tool-contracts","kind":"tool-contract","path":"tools/manifest.json","description":"Executor-neutral Build Engineer tool contracts."}],"components":{"documentation":[],"maps":["maps/profession.json"],"knowledge":[],"tools":["tools/manifest.json"],"procedures":[],"failures":[],"handoffs":[],"tests":["tests/professional-fixtures.json"]},"dependencies":{"shared_services":["canonical-state-reader","source-version-access","evidence-store"],"profession_packages":["developer-tools-engineer","integration-release-engineer"]},"isolation":{"package_local_by_default":true,"cross_package_access":"contract-only","no_silent_copy":true,"shared_state_through_body_interfaces":true}}
+{
+  "schema_version": "0.1",
+  "package_id": "build-engineer",
+  "domain": "software",
+  "profession_id": "build-engineer",
+  "display_name": "Build Engineer",
+  "status": "EXPERIMENTAL",
+  "body": "body.json",
+  "execution_surfaces": [
+    "human-guided",
+    "ai-model",
+    "machine-intelligence",
+    "deterministic-flow"
+  ],
+  "exports": [
+    {
+      "id": "build-engineer-profession-map",
+      "kind": "decision-support",
+      "path": "maps/profession.json",
+      "description": "Build Engineer ownership/evidence map."
+    },
+    {
+      "id": "build-engineer-tool-contracts",
+      "kind": "tool-contract",
+      "path": "tools/manifest.json",
+      "description": "Executor-neutral Build Engineer tool contracts."
+    },
+    {
+      "id": "code-build",
+      "kind": "procedure",
+      "path": "tools/code-build.mjs",
+      "description": "Verify repeated build equality, exact source identity and artifact paths/digests."
+    }
+  ],
+  "components": {
+    "documentation": [],
+    "maps": [
+      "maps/profession.json"
+    ],
+    "knowledge": [],
+    "tools": [
+      "tools/manifest.json",
+      "tools/code-build.mjs"
+    ],
+    "procedures": [],
+    "failures": [],
+    "handoffs": [],
+    "tests": [
+      "tests/professional-fixtures.json"
+    ]
+  },
+  "dependencies": {
+    "shared_services": [
+      "canonical-state-reader",
+      "source-version-access",
+      "evidence-store"
+    ],
+    "profession_packages": [
+      "developer-tools-engineer",
+      "integration-release-engineer"
+    ]
+  },
+  "isolation": {
+    "package_local_by_default": true,
+    "cross_package_access": "contract-only",
+    "no_silent_copy": true,
+    "shared_state_through_body_interfaces": true
+  }
+}

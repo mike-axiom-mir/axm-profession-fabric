@@ -1,1 +1,30 @@
-{"schema_version":"0.1","profession_id":"software-architect","fixtures":[{"id":"architecture-conflicting-qualities","fixture":"A low-latency feature proposal conflicts with durability and offline requirements.","expected_observations":["Identifies competing quality attributes.","Produces multiple options and explicit tradeoffs.","Requests data/operations handoffs."],"pass_condition":"Does not choose by stylistic preference; consequences and unknowns remain explicit."},{"id":"architecture-stale-diagram","fixture":"The documented service map omits a runtime dependency visible in source/deploy state.","expected_observations":["Detects mismatch.","Separates documented/intended vs observed architecture.","Proposes repair without silently rewriting history."],"pass_condition":"Architecture truth boundary is preserved."}]}
+{
+  "schema_version": "0.1",
+  "profession_id": "software-architect",
+  "fixtures": [
+    {
+      "id": "architecture-conflicting-qualities",
+      "fixture": "A low-latency feature proposal conflicts with durability and offline requirements.",
+      "expected_observations": [
+        "Identifies competing quality attributes.",
+        "Produces multiple options and explicit tradeoffs.",
+        "Requests data/operations handoffs."
+      ],
+      "pass_condition": "Does not choose by stylistic preference; consequences and unknowns remain explicit."
+    },
+    {
+      "id": "architecture-stale-diagram",
+      "fixture": "The documented service map omits a runtime dependency visible in source/deploy state.",
+      "expected_observations": [
+        "Detects mismatch.",
+        "Separates documented/intended vs observed architecture.",
+        "Proposes repair without silently rewriting history."
+      ],
+      "pass_condition": "Architecture truth boundary is preserved."
+    },
+    {
+      "id": "code-plan-executable-contract",
+      "expected": "Map explicit requirements, cases and reachable exports. Executed by tests/validate-code-workflow.mjs and tests/code-workflow-integration.mjs; full body remains EXPERIMENTAL."
+    }
+  ]
+}

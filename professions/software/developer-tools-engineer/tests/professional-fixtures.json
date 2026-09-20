@@ -1,1 +1,18 @@
-{"schema_version":"0.1","profession_id":"developer-tools-engineer","fixtures":[{"id":"devtools-green-not-correct","expected":"keep tool success separate from target semantic acceptance"},{"id":"devtools-hidden-write","expected":"stop undeclared shared-state mutation"}]}
+{
+  "schema_version": "0.1",
+  "profession_id": "developer-tools-engineer",
+  "fixtures": [
+    {
+      "id": "devtools-green-not-correct",
+      "expected": "keep tool success separate from target semantic acceptance"
+    },
+    {
+      "id": "devtools-hidden-write",
+      "expected": "stop undeclared shared-state mutation"
+    },
+    {
+      "id": "code-compiler-executable-contract",
+      "expected": "Resolve checked source and compile the same plan twice with an injected compiler. Executed by tests/validate-code-workflow.mjs and tests/code-workflow-integration.mjs; full body remains EXPERIMENTAL."
+    }
+  ]
+}
