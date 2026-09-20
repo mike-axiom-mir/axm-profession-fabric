@@ -1,1 +1,71 @@
-{"schema_version":"0.1","package_id":"software-maintainer","domain":"software","profession_id":"software-maintainer","display_name":"Software Maintainer","status":"EXPERIMENTAL","body":"body.json","execution_surfaces":["human-guided","ai-model","machine-intelligence","deterministic-flow"],"exports":[{"id":"software-maintainer-profession-map","kind":"decision-support","path":"maps/profession.json","description":"Software Maintainer ownership/evidence map."},{"id":"software-maintainer-tool-contracts","kind":"tool-contract","path":"tools/manifest.json","description":"Executor-neutral Software Maintainer tool contracts."}],"components":{"documentation":[],"maps":["maps/profession.json"],"knowledge":[],"tools":["tools/manifest.json"],"procedures":[],"failures":[],"handoffs":[],"tests":["tests/professional-fixtures.json"]},"dependencies":{"shared_services":["canonical-state-reader","source-version-access","evidence-store"],"profession_packages":["software-qa-playtest","developer-tools-engineer","integration-release-engineer","build-engineer"]},"isolation":{"package_local_by_default":true,"cross_package_access":"contract-only","no_silent_copy":true,"shared_state_through_body_interfaces":true}}
+{
+  "schema_version": "0.1",
+  "package_id": "software-maintainer",
+  "domain": "software",
+  "profession_id": "software-maintainer",
+  "display_name": "Software Maintainer",
+  "status": "EXPERIMENTAL",
+  "body": "body.json",
+  "execution_surfaces": [
+    "human-guided",
+    "ai-model",
+    "machine-intelligence",
+    "deterministic-flow"
+  ],
+  "exports": [
+    {
+      "id": "software-maintainer-profession-map",
+      "kind": "decision-support",
+      "path": "maps/profession.json",
+      "description": "Software Maintainer ownership/evidence map."
+    },
+    {
+      "id": "software-maintainer-tool-contracts",
+      "kind": "tool-contract",
+      "path": "tools/manifest.json",
+      "description": "Executor-neutral Software Maintainer tool contracts."
+    },
+    {
+      "id": "code-retention",
+      "kind": "procedure",
+      "path": "tools/code-retention.mjs",
+      "description": "Retain verified construction causes and additive structural recipes on explicit request."
+    }
+  ],
+  "components": {
+    "documentation": [],
+    "maps": [
+      "maps/profession.json"
+    ],
+    "knowledge": [],
+    "tools": [
+      "tools/manifest.json",
+      "tools/code-retention.mjs"
+    ],
+    "procedures": [],
+    "failures": [],
+    "handoffs": [],
+    "tests": [
+      "tests/professional-fixtures.json"
+    ]
+  },
+  "dependencies": {
+    "shared_services": [
+      "canonical-state-reader",
+      "source-version-access",
+      "evidence-store"
+    ],
+    "profession_packages": [
+      "software-qa-playtest",
+      "developer-tools-engineer",
+      "integration-release-engineer",
+      "build-engineer"
+    ]
+  },
+  "isolation": {
+    "package_local_by_default": true,
+    "cross_package_access": "contract-only",
+    "no_silent_copy": true,
+    "shared_state_through_body_interfaces": true
+  }
+}

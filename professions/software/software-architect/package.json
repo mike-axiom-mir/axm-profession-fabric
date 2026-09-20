@@ -6,13 +6,78 @@
   "display_name": "Software Architect",
   "status": "EXPERIMENTAL",
   "body": "body.json",
-  "execution_surfaces": ["human-guided","ai-model","machine-intelligence","deterministic-flow"],
-  "exports": [
-    {"id":"software-architect-core-work","kind":"procedure","path":"procedures/core-work.json","description":"Bounded core professional procedures for this package."},
-    {"id":"software-architect-profession-map","kind":"decision-support","path":"maps/profession.json","description":"Ownership, escalation and decision-boundary map."},
-    {"id":"software-architect-tool-contracts","kind":"tool-contract","path":"tools/manifest.json","description":"Executor-neutral tool capability contracts."}
+  "execution_surfaces": [
+    "human-guided",
+    "ai-model",
+    "machine-intelligence",
+    "deterministic-flow"
   ],
-  "components": {"documentation":["README.md"],"maps":["maps/profession.json"],"knowledge":["knowledge/map.json"],"tools":["tools/manifest.json"],"procedures":["procedures/core-work.json"],"failures":["failures/library.json"],"handoffs":["handoffs/contracts.json"],"tests":["tests/professional-fixtures.json"]},
-  "dependencies": {"shared_services":["canonical-state-reader","source-version-access","evidence-store","tool-registry"],"profession_packages":[]},
-  "isolation": {"package_local_by_default":true,"cross_package_access":"contract-only","no_silent_copy":true,"shared_state_through_body_interfaces":true}
+  "exports": [
+    {
+      "id": "software-architect-core-work",
+      "kind": "procedure",
+      "path": "procedures/core-work.json",
+      "description": "Bounded core professional procedures for this package."
+    },
+    {
+      "id": "software-architect-profession-map",
+      "kind": "decision-support",
+      "path": "maps/profession.json",
+      "description": "Ownership, escalation and decision-boundary map."
+    },
+    {
+      "id": "software-architect-tool-contracts",
+      "kind": "tool-contract",
+      "path": "tools/manifest.json",
+      "description": "Executor-neutral tool capability contracts."
+    },
+    {
+      "id": "code-plan",
+      "kind": "procedure",
+      "path": "tools/code-plan.mjs",
+      "description": "Map explicit requirements, cases and reachable exports."
+    }
+  ],
+  "components": {
+    "documentation": [
+      "README.md"
+    ],
+    "maps": [
+      "maps/profession.json"
+    ],
+    "knowledge": [
+      "knowledge/map.json"
+    ],
+    "tools": [
+      "tools/manifest.json",
+      "tools/code-plan.mjs"
+    ],
+    "procedures": [
+      "procedures/core-work.json"
+    ],
+    "failures": [
+      "failures/library.json"
+    ],
+    "handoffs": [
+      "handoffs/contracts.json"
+    ],
+    "tests": [
+      "tests/professional-fixtures.json"
+    ]
+  },
+  "dependencies": {
+    "shared_services": [
+      "canonical-state-reader",
+      "source-version-access",
+      "evidence-store",
+      "tool-registry"
+    ],
+    "profession_packages": []
+  },
+  "isolation": {
+    "package_local_by_default": true,
+    "cross_package_access": "contract-only",
+    "no_silent_copy": true,
+    "shared_state_through_body_interfaces": true
+  }
 }

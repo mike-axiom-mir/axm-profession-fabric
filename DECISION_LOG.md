@@ -127,3 +127,9 @@ Durable architectural decisions. Prefer append/supersede over silent historical 
 **Decision:** Merged Universal Creation RTS foundry/polish evidence supports narrowly scoped `TEST` maturity for 3D Artist and Technical Artist, while Art Director and broader game-readiness claims remain unpromoted.
 
 **Consequence:** Real authored geometry, exact source/artifact provenance, GLB export/re-import inspection, LOD/material/geometry validation and preservation of visual failure as failure are reusable evidence. They do not establish target-engine or target-RTS acceptance, collider/navigation correctness, target-device FPS, LOD perceptual equivalence, universal visual quality, gameplay readability or Art Direction competence. Those remain separate future evidence lanes.
+
+## 2026-09-20 — Executable deterministic coding professions
+
+**Decision:** Add explicit executable exports to the existing Software Architect, Developer Tools Engineer, Build Engineer, QA/Playtest, Integration/Release and Software Maintainer packages. Compose them through a separate institutional workflow with an injected versioned Grammar compiler and optional bounded runtime executor.
+
+**Consequence:** No additional profession names or maturity promotions. Requirements, source generation, build identity, observed behavior, readiness and explicit retention remain distinct. Failed or missing evidence cannot become accepted construction memory. The previous archive remains available for repair; the integration can be removed without modifying profession history or retained source. See `workflows/code/README.md` for contracts, evidence and limitations.

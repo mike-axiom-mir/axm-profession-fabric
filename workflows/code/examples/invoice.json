@@ -1,0 +1,9 @@
+{
+  "action": "retain",
+  "job": {
+    "id": "invoice-demo",
+    "recipeId": "invoice-totals",
+    "cases": [{"id": "only-inactive", "function": "invoice", "args": [[{"name": "ignored", "quantity": 3, "unitPrice": 5, "active": false}], 0.2], "expected": {"subtotal": 0, "tax": 0, "total": 0, "labels": []}}],
+    "requirements": [{"id": "inactive-policy", "statement": "Inactive lines contribute neither charges nor labels.", "cases": ["only-inactive"]}]
+  }
+}

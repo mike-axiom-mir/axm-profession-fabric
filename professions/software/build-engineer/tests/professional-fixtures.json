@@ -1,1 +1,18 @@
-{"schema_version":"0.1","profession_id":"build-engineer","fixtures":[{"id":"build-green-not-runtime-correct","expected":"keep green build separate from runtime/semantic correctness"},{"id":"build-cache-stale-input","expected":"detect unmodeled input/cache-key drift and refuse stale artifact equivalence"}]}
+{
+  "schema_version": "0.1",
+  "profession_id": "build-engineer",
+  "fixtures": [
+    {
+      "id": "build-green-not-runtime-correct",
+      "expected": "keep green build separate from runtime/semantic correctness"
+    },
+    {
+      "id": "build-cache-stale-input",
+      "expected": "detect unmodeled input/cache-key drift and refuse stale artifact equivalence"
+    },
+    {
+      "id": "code-build-executable-contract",
+      "expected": "Verify repeated build equality, exact source identity and artifact paths/digests. Executed by tests/validate-code-workflow.mjs and tests/code-workflow-integration.mjs; full body remains EXPERIMENTAL."
+    }
+  ]
+}

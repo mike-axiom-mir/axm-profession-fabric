@@ -1,1 +1,18 @@
-{"schema_version":"0.1","profession_id":"software-maintainer","fixtures":[{"id":"maintainer-fix-regression","expected":"detect a focused fix that breaks another accepted contract"},{"id":"maintainer-dependency-break","expected":"separate successful dependency installation from compatibility safety"}]}
+{
+  "schema_version": "0.1",
+  "profession_id": "software-maintainer",
+  "fixtures": [
+    {
+      "id": "maintainer-fix-regression",
+      "expected": "detect a focused fix that breaks another accepted contract"
+    },
+    {
+      "id": "maintainer-dependency-break",
+      "expected": "separate successful dependency installation from compatibility safety"
+    },
+    {
+      "id": "code-retention-executable-contract",
+      "expected": "Retain verified construction causes and additive structural recipes on explicit request. Executed by tests/validate-code-workflow.mjs and tests/code-workflow-integration.mjs; full body remains EXPERIMENTAL."
+    }
+  ]
+}

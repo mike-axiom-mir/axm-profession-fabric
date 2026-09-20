@@ -1,0 +1,34 @@
+{
+  "status": "TESTED",
+  "scope": "Deterministic code workflow and six existing professional exports",
+  "node": "24.19.0",
+  "python": "3.12.14",
+  "foundation": "npm test passed; 100 packages, 10 existing scoped maturity records unchanged",
+  "focused_checks": 27,
+  "integration": {
+    "result": "PASS",
+    "compiler": {
+      "repository": "mike-axiom-mir/axm-102-grammer",
+      "commit": "6e9efc2ebf759f9e2d03c933eafaf71856357471"
+    },
+    "jobs": 9,
+    "successfulRuntimeProcesses": 36,
+    "successfulCaseObservations": 68,
+    "archiveEntries": 9,
+    "challenges": [
+      "build drift",
+      "fresh repeat",
+      "dependency-closure restore",
+      "rename deduplication",
+      "missing executor",
+      "wrong oracle blocks retention",
+      "raw source refused"
+    ]
+  },
+  "non_claims": [
+    "Whole-profession reconstruction",
+    "OS sandbox",
+    "General program correctness",
+    "Automatic canon or persistence"
+  ]
+}

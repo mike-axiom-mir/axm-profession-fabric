@@ -1,0 +1,403 @@
+{
+  "schema": "axm.code.build.v1",
+  "plan": {
+    "schema": "axm.code.job-plan.v1",
+    "id": "invoice-demo",
+    "program": {
+      "schema": "axm.code.program.v1",
+      "name": "invoiceTotals",
+      "functions": [
+        {
+          "name": "invoice",
+          "params": [
+            {
+              "name": "entries",
+              "type": {
+                "list": {
+                  "record": {
+                    "active": "boolean",
+                    "name": "string",
+                    "quantity": "number",
+                    "unitPrice": "number"
+                  }
+                }
+              }
+            },
+            {
+              "name": "taxRate",
+              "type": "number"
+            }
+          ],
+          "returns": {
+            "record": {
+              "labels": {
+                "list": "string"
+              },
+              "subtotal": "number",
+              "tax": "number",
+              "total": "number"
+            }
+          },
+          "body": {
+            "op": "let",
+            "name": "activeEntries",
+            "value": {
+              "op": "filter",
+              "input": {
+                "op": "ref",
+                "name": "entries"
+              },
+              "item": "entry",
+              "body": {
+                "op": "field",
+                "value": {
+                  "op": "ref",
+                  "name": "entry"
+                },
+                "key": "active"
+              }
+            },
+            "body": {
+              "op": "let",
+              "name": "subtotalValue",
+              "value": {
+                "op": "fold",
+                "input": {
+                  "op": "map",
+                  "input": {
+                    "op": "ref",
+                    "name": "activeEntries"
+                  },
+                  "item": "entry",
+                  "body": {
+                    "op": "call",
+                    "function": "lineCost",
+                    "args": [
+                      {
+                        "op": "field",
+                        "value": {
+                          "op": "ref",
+                          "name": "entry"
+                        },
+                        "key": "quantity"
+                      },
+                      {
+                        "op": "field",
+                        "value": {
+                          "op": "ref",
+                          "name": "entry"
+                        },
+                        "key": "unitPrice"
+                      }
+                    ]
+                  }
+                },
+                "item": "amount",
+                "acc": "total",
+                "initial": {
+                  "op": "literal",
+                  "type": "number",
+                  "value": 0
+                },
+                "body": {
+                  "op": "add",
+                  "left": {
+                    "op": "ref",
+                    "name": "total"
+                  },
+                  "right": {
+                    "op": "ref",
+                    "name": "amount"
+                  }
+                }
+              },
+              "body": {
+                "op": "record",
+                "fields": {
+                  "labels": {
+                    "op": "map",
+                    "input": {
+                      "op": "ref",
+                      "name": "activeEntries"
+                    },
+                    "item": "entry",
+                    "body": {
+                      "op": "trim",
+                      "value": {
+                        "op": "field",
+                        "value": {
+                          "op": "ref",
+                          "name": "entry"
+                        },
+                        "key": "name"
+                      }
+                    }
+                  },
+                  "subtotal": {
+                    "op": "ref",
+                    "name": "subtotalValue"
+                  },
+                  "tax": {
+                    "op": "multiply",
+                    "left": {
+                      "op": "ref",
+                      "name": "subtotalValue"
+                    },
+                    "right": {
+                      "op": "ref",
+                      "name": "taxRate"
+                    }
+                  },
+                  "total": {
+                    "op": "add",
+                    "left": {
+                      "op": "ref",
+                      "name": "subtotalValue"
+                    },
+                    "right": {
+                      "op": "multiply",
+                      "left": {
+                        "op": "ref",
+                        "name": "subtotalValue"
+                      },
+                      "right": {
+                        "op": "ref",
+                        "name": "taxRate"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "lineCost",
+          "params": [
+            {
+              "name": "quantity",
+              "type": "number"
+            },
+            {
+              "name": "unitPrice",
+              "type": "number"
+            }
+          ],
+          "returns": "number",
+          "body": {
+            "op": "multiply",
+            "left": {
+              "op": "ref",
+              "name": "quantity"
+            },
+            "right": {
+              "op": "ref",
+              "name": "unitPrice"
+            }
+          }
+        }
+      ],
+      "exports": [
+        "invoice"
+      ]
+    },
+    "cases": [
+      {
+        "id": "only-inactive",
+        "function": "invoice",
+        "args": [
+          [
+            {
+              "name": "ignored",
+              "quantity": 3,
+              "unitPrice": 5,
+              "active": false
+            }
+          ],
+          0.2
+        ],
+        "expected": {
+          "subtotal": 0,
+          "tax": 0,
+          "total": 0,
+          "labels": []
+        }
+      },
+      {
+        "id": "recipe-001",
+        "function": "invoice",
+        "args": [
+          [
+            {
+              "name": " bolts ",
+              "quantity": 3,
+              "unitPrice": 4,
+              "active": true
+            },
+            {
+              "name": "skip",
+              "quantity": 50,
+              "unitPrice": 20,
+              "active": false
+            }
+          ],
+          0.25
+        ],
+        "expected": {
+          "subtotal": 12,
+          "tax": 3,
+          "total": 15,
+          "labels": [
+            "bolts"
+          ]
+        }
+      },
+      {
+        "id": "recipe-002",
+        "function": "invoice",
+        "args": [
+          [],
+          0.21
+        ],
+        "expected": {
+          "subtotal": 0,
+          "tax": 0,
+          "total": 0,
+          "labels": []
+        }
+      }
+    ],
+    "requirements": [
+      {
+        "id": "inactive-policy",
+        "statement": "Inactive lines contribute neither charges nor labels.",
+        "cases": [
+          "only-inactive"
+        ]
+      },
+      {
+        "id": "recipe-contract",
+        "statement": "Filter active lines, call a reusable cost function, sum and calculate tax.",
+        "cases": [
+          "recipe-001",
+          "recipe-002"
+        ]
+      }
+    ],
+    "languages": [
+      "javascript",
+      "python"
+    ],
+    "source": {
+      "kind": "bundled-recipe",
+      "recipeId": "invoice-totals"
+    },
+    "coverage": {
+      "exports": [
+        "invoice"
+      ],
+      "cases": 3,
+      "requirements": 2
+    },
+    "planSha256": "96fa5afb57d18c1ca6b168d1c81905ff20ccc4922469eaee108d04e2e71ab260"
+  },
+  "compiler": {
+    "repository": "mike-axiom-mir/axm-102-grammer",
+    "commit": "6e9efc2ebf759f9e2d03c933eafaf71856357471"
+  },
+  "programSha256": "3fd54f97d0fee498641c412eca4a91730053a4354cb334cf6ff650a05887dcbb",
+  "targets": [
+    {
+      "language": "javascript",
+      "compilationSha256": "65b19ba3c1e3197093ef71ab48e98217f7f0421d089b794b649c1514279f7e64",
+      "sourceSha256": "2afd33d1ecf439776e3a0913da9f213b532f0fccdbca4610d3c72d9d2171df5a",
+      "artifacts": [
+        {
+          "path": "module.js",
+          "role": "source",
+          "content": "// Generated by AXM code-programs v1. Candidate source; verification remains separate.\n'use strict';\n\nfunction _axm_error(code) { throw new Error(code); }\nfunction _axm_tick(ctx) { if (--ctx[0] < 0) _axm_error('STEP_LIMIT'); }\nfunction _axm_step(ctx, value) {\n  _axm_tick(ctx);\n  if (typeof value === 'number' && (!Number.isFinite(value) || Math.abs(value) > 9007199254740991)) _axm_error('NUMBER_RANGE');\n  if (typeof value === 'string') {\n    ctx[0] -= [...value].length; if (ctx[0] < 0) _axm_error('STEP_LIMIT');\n    if (value.length > 32768 || [...value].length > 16384) _axm_error('STRING_LIMIT');\n    for (const ch of value) { const cp = ch.codePointAt(0); if (cp >= 0xd800 && cp <= 0xdfff) _axm_error('UNICODE_SURROGATE'); }\n  }\n  if (Array.isArray(value)) {\n    if (value.length > 4096) _axm_error('LIST_LIMIT');\n    ctx[0] -= value.length; if (ctx[0] < 0) _axm_error('STEP_LIMIT');\n  }\n  return Object.is(value, -0) ? 0 : value;\n}\nfunction _axm_check(ctx, value, wanted, depth = 0) {\n  _axm_step(ctx, value);\n  if (depth > 48) _axm_error('VALUE_DEPTH_LIMIT');\n  if (wanted === 'null') { if (value !== null) _axm_error('VALUE_TYPE'); return; }\n  if (typeof wanted === 'string') { if (typeof value !== wanted) _axm_error('VALUE_TYPE'); return; }\n  if (wanted.nullable !== undefined) { if (value !== null) _axm_check(ctx, value, wanted.nullable, depth + 1); return; }\n  if (wanted.list !== undefined) {\n    if (!Array.isArray(value)) _axm_error('VALUE_TYPE');\n    const descriptors = Object.getOwnPropertyDescriptors(value);\n    if (Reflect.ownKeys(descriptors).length !== value.length + 1) _axm_error('VALUE_TYPE');\n    for (let i = 0; i < value.length; i++) {\n      const descriptor = descriptors[i];\n      if (!descriptor || !Object.hasOwn(descriptor, 'value') || !descriptor.enumerable) _axm_error('VALUE_TYPE');\n      _axm_check(ctx, descriptor.value, wanted.list, depth + 1);\n    }\n    return;\n  }\n  if (!value || typeof value !== 'object' || Array.isArray(value) || ![Object.prototype, null].includes(Object.getPrototypeOf(value))) _axm_error('VALUE_TYPE');\n  const descriptors = Object.getOwnPropertyDescriptors(value), keys = Object.keys(wanted.record).sort(_axm_compare);\n  if (Reflect.ownKeys(descriptors).length !== keys.length) _axm_error('VALUE_TYPE');\n  for (const key of keys) {\n    const descriptor = descriptors[key];\n    if (!descriptor || !Object.hasOwn(descriptor, 'value') || !descriptor.enumerable) _axm_error('VALUE_TYPE');\n    _axm_check(ctx, descriptor.value, wanted.record[key], depth + 1);\n  }\n}\nfunction _axm_literal(ctx, value, wanted) { _axm_check(ctx, value, wanted); return value; }\nfunction _axm_entry(fn, args, types, resultType) {\n  if (args.length !== types.length) _axm_error('ARGUMENT_COUNT');\n  const ctx = [100000];\n  args.forEach((arg, i) => _axm_check(ctx, arg, types[i]));\n  const value = fn(ctx, ...args);\n  _axm_check(ctx, value, resultType);\n  return value;\n}\nfunction _axm_index(value) { if (!Number.isSafeInteger(value) || value < 0) _axm_error('INDEX_INVALID'); return value; }\nfunction _axm_div(left, right) { if (right === 0) _axm_error('DIVISION_BY_ZERO'); return left / right; }\nfunction _axm_rem(left, right) { if (right === 0) _axm_error('DIVISION_BY_ZERO'); return left % right; }\nfunction _axm_equal(ctx, left, right) {\n  _axm_tick(ctx);\n  if (left === right && (left === null || typeof left !== 'object')) return true;\n  if (left === null || right === null || typeof left !== 'object' || typeof right !== 'object') return false;\n  if (Array.isArray(left) !== Array.isArray(right)) return false;\n  if (Array.isArray(left)) return left.length === right.length && left.every((value, i) => _axm_equal(ctx, value, right[i]));\n  const keys = Object.keys(left).sort(_axm_compare);\n  return keys.length === Object.keys(right).length && keys.every(k => Object.hasOwn(right, k) && _axm_equal(ctx, left[k], right[k]));\n}\nfunction _axm_seq(ctx, kind, values, fn) {\n  const output = [];\n  for (const item of values) {\n    _axm_tick(ctx);\n    const value = fn(item);\n    if (kind === 'map') output.push(value);\n    else if (kind === 'filter' && value) output.push(item);\n    else if (kind === 'some' && value) return true;\n    else if (kind === 'every' && !value) return false;\n  }\n  return kind === 'some' ? false : kind === 'every' ? true : output;\n}\nfunction _axm_fold(ctx, values, initial, fn) { let value = initial; for (const item of values) { _axm_tick(ctx); value = fn(value, item); } return value; }\nfunction _axm_compare(left, right) {\n  if (typeof left === 'number') return left < right ? -1 : left > right ? 1 : 0;\n  const a = [...left], b = [...right];\n  for (let i = 0; i < Math.min(a.length, b.length); i++) { const d = a[i].codePointAt(0) - b[i].codePointAt(0); if (d) return d < 0 ? -1 : 1; }\n  return a.length < b.length ? -1 : a.length > b.length ? 1 : 0;\n}\nfunction _axm_sort(ctx, values, fn, descending) {\n  const decorated = values.map((value, index) => { _axm_tick(ctx); return {value, index, key: fn(value)}; });\n  for (let i = 0; i < values.length * Math.max(1, values.length ? Math.floor(Math.log2(values.length)) + 1 : 0); i++) _axm_tick(ctx);\n  decorated.sort((a, b) => { const order = _axm_compare(a.key, b.key); return (descending ? -order : order) || a.index - b.index; });\n  return decorated.map(item => item.value);\n}\nfunction _axm_at(values, index, fallback) { _axm_index(index); return index < values.length ? values[index] : fallback(); }\nfunction _axm_slice(value, start, end) { _axm_index(start); _axm_index(end); return typeof value === 'string' ? [...value].slice(start, end).join('') : value.slice(start, end); }\nfunction _axm_join(values, separator) { return values.join(separator); }\nfunction _axm_contains(left, right) { return left.includes(right); }\nfunction _axm_split(value, separator) { if (!separator.length) _axm_error('EMPTY_SEPARATOR'); return value.split(separator); }\nfunction _axm_trim(value) { return value.replace(/^[ \\t\\r\\n\\v\\f]+|[ \\t\\r\\n\\v\\f]+$/g, ''); }\nfunction _axm_lower(value) { return value.replace(/[A-Z]/g, ch => String.fromCharCode(ch.charCodeAt(0) + 32)); }\nfunction _axm_upper(value) { return value.replace(/[a-z]/g, ch => String.fromCharCode(ch.charCodeAt(0) - 32)); }\nfunction _axm_coalesce(value, fallback) { return value === null ? fallback() : value; }\n\n\n// lineCost: \"number\"\nfunction _axm_f1(_axm_ctx, _axm_v0, _axm_v1) {\n  return _axm_step(_axm_ctx, (_axm_step(_axm_ctx, _axm_v0) * _axm_step(_axm_ctx, _axm_v1)));\n}\n\n// invoice: {\"record\":{\"labels\":{\"list\":\"string\"},\"subtotal\":\"number\",\"tax\":\"number\",\"total\":\"number\"}}\nfunction _axm_f0(_axm_ctx, _axm_v2, _axm_v3) {\n  return _axm_step(_axm_ctx, ((_axm_v4) => _axm_step(_axm_ctx, ((_axm_v5) => _axm_step(_axm_ctx, {\"labels\": _axm_step(_axm_ctx, _axm_seq(_axm_ctx, \"map\", _axm_step(_axm_ctx, _axm_v4), ((_axm_v6) => _axm_step(_axm_ctx, _axm_trim(_axm_step(_axm_ctx, _axm_step(_axm_ctx, _axm_v6)[\"name\"])))))), \"subtotal\": _axm_step(_axm_ctx, _axm_v5), \"tax\": _axm_step(_axm_ctx, (_axm_step(_axm_ctx, _axm_v5) * _axm_step(_axm_ctx, _axm_v3))), \"total\": _axm_step(_axm_ctx, (_axm_step(_axm_ctx, _axm_v5) + _axm_step(_axm_ctx, (_axm_step(_axm_ctx, _axm_v5) * _axm_step(_axm_ctx, _axm_v3)))))}))(_axm_step(_axm_ctx, _axm_fold(_axm_ctx, _axm_step(_axm_ctx, _axm_seq(_axm_ctx, \"map\", _axm_step(_axm_ctx, _axm_v4), ((_axm_v9) => _axm_step(_axm_ctx, _axm_f1(_axm_ctx, _axm_step(_axm_ctx, _axm_step(_axm_ctx, _axm_v9)[\"quantity\"]), _axm_step(_axm_ctx, _axm_step(_axm_ctx, _axm_v9)[\"unitPrice\"])))))), _axm_step(_axm_ctx, 0), ((_axm_v8, _axm_v7) => _axm_step(_axm_ctx, (_axm_step(_axm_ctx, _axm_v8) + _axm_step(_axm_ctx, _axm_v7)))))))))(_axm_step(_axm_ctx, _axm_seq(_axm_ctx, \"filter\", _axm_step(_axm_ctx, _axm_v2), ((_axm_v10) => _axm_step(_axm_ctx, _axm_step(_axm_ctx, _axm_v10)[\"active\"]))))));\n}\nfunction invoice(..._axm_args) { return _axm_entry(_axm_f0, _axm_args, [{\"list\": {\"record\": {\"active\": \"boolean\", \"name\": \"string\", \"quantity\": \"number\", \"unitPrice\": \"number\"}}}, \"number\"], {\"record\": {\"labels\": {\"list\": \"string\"}, \"subtotal\": \"number\", \"tax\": \"number\", \"total\": \"number\"}}); }\nmodule.exports = Object.freeze({invoice});\n",
+          "sha256": "2afd33d1ecf439776e3a0913da9f213b532f0fccdbca4610d3c72d9d2171df5a"
+        },
+        {
+          "path": "selftest.js",
+          "role": "verification",
+          "content": "'use strict';\nconst assert = require('node:assert/strict');\nconst functions = require('./module.js');\nconst cases = [{\"args\": [[{\"active\": false, \"name\": \"ignored\", \"quantity\": 3, \"unitPrice\": 5}], 0.2], \"expected\": {\"labels\": [], \"subtotal\": 0, \"tax\": 0, \"total\": 0}, \"function\": \"invoice\"}, {\"args\": [[{\"active\": true, \"name\": \" bolts \", \"quantity\": 3, \"unitPrice\": 4}, {\"active\": false, \"name\": \"skip\", \"quantity\": 50, \"unitPrice\": 20}], 0.25], \"expected\": {\"labels\": [\"bolts\"], \"subtotal\": 12, \"tax\": 3, \"total\": 15}, \"function\": \"invoice\"}, {\"args\": [[], 0.21], \"expected\": {\"labels\": [], \"subtotal\": 0, \"tax\": 0, \"total\": 0}, \"function\": \"invoice\"}];\nfor (const row of cases) {\n  if (Object.hasOwn(row, \"error\")) assert.throws(() => functions[row.function](...row.args), error => error.message === row.error);\n  else assert.deepStrictEqual(functions[row.function](...row.args), row.expected);\n}\nconsole.log(\"PASS code-program cases:\", cases.length);\n",
+          "sha256": "a38de9b029a8d7ce845e572e27f2820a80c8efc06437ff36f62ffa2834443292"
+        }
+      ],
+      "sourceMap": [
+        {
+          "function": "lineCost",
+          "irPath": "/functions/1",
+          "startLine": 102,
+          "endLine": 106
+        },
+        {
+          "function": "invoice",
+          "irPath": "/functions/0",
+          "startLine": 107,
+          "endLine": 111
+        }
+      ],
+      "reusableFunctions": [
+        {
+          "name": "invoice",
+          "structuralSha256": "0361714b03dd7519238d54e013ac162c1b74915d7cf198fb07674a71ad71a450"
+        },
+        {
+          "name": "lineCost",
+          "structuralSha256": "89ae7df005057d24559958b5624082e25d0f42b6cead11ec7359f7cf84f51982"
+        }
+      ]
+    },
+    {
+      "language": "python",
+      "compilationSha256": "ea3fab55f279343e009d2dd7889591a9700d4a3be4818d06fd497ac9e0f8182a",
+      "sourceSha256": "1330c95a0f8723baf84b4002d190a7cfc13928ddfdc7b0c19401226723076f16",
+      "artifacts": [
+        {
+          "path": "module.py",
+          "role": "source",
+          "content": "# Generated by AXM code-programs v1. Candidate source; verification remains separate.\nimport math as _axm_math\nimport builtins as _axm_b\n\n\ndef _axm_error(code):\n    raise _axm_b.ValueError(code)\n\n\ndef _axm_tick(ctx):\n    ctx[0] -= 1\n    if ctx[0] < 0:\n        _axm_error(\"STEP_LIMIT\")\n\n\ndef _axm_step(ctx, value):\n    _axm_tick(ctx)\n    if _axm_b.type(value) in (_axm_b.int, _axm_b.float):\n        if _axm_b.abs(value) > 9007199254740991 or not _axm_math.isfinite(value):\n            _axm_error(\"NUMBER_RANGE\")\n        return 0 if value == 0 else value\n    if _axm_b.type(value) is _axm_b.str:\n        ctx[0] -= _axm_b.len(value)\n        if ctx[0] < 0:\n            _axm_error(\"STEP_LIMIT\")\n        if _axm_b.len(value) > 16384:\n            _axm_error(\"STRING_LIMIT\")\n        if _axm_b.any(0xD800 <= _axm_b.ord(ch) <= 0xDFFF for ch in value):\n            _axm_error(\"UNICODE_SURROGATE\")\n    if _axm_b.type(value) is _axm_b.list:\n        if _axm_b.len(value) > 4096:\n            _axm_error(\"LIST_LIMIT\")\n        ctx[0] -= _axm_b.len(value)\n        if ctx[0] < 0:\n            _axm_error(\"STEP_LIMIT\")\n    return value\n\n\ndef _axm_check(ctx, value, wanted, depth=0):\n    _axm_step(ctx, value)\n    if depth > 48:\n        _axm_error(\"VALUE_DEPTH_LIMIT\")\n    if wanted == \"null\":\n        if value is not None:\n            _axm_error(\"VALUE_TYPE\")\n        return\n    if _axm_b.type(wanted) is _axm_b.str:\n        valid = (_axm_b.type(value) in (_axm_b.int, _axm_b.float) if wanted == \"number\" else\n                 _axm_b.type(value) is _axm_b.str if wanted == \"string\" else _axm_b.type(value) is bool)\n        if not valid:\n            _axm_error(\"VALUE_TYPE\")\n        return\n    if \"nullable\" in wanted:\n        if value is not None:\n            _axm_check(ctx, value, wanted[\"nullable\"], depth + 1)\n        return\n    if \"list\" in wanted:\n        if _axm_b.type(value) is not _axm_b.list:\n            _axm_error(\"VALUE_TYPE\")\n        for item in value:\n            _axm_check(ctx, item, wanted[\"list\"], depth + 1)\n        return\n    if _axm_b.type(value) is not _axm_b.dict or _axm_b.set(value) != _axm_b.set(wanted[\"record\"]):\n        _axm_error(\"VALUE_TYPE\")\n    for key in _axm_b.sorted(wanted[\"record\"]):\n        _axm_check(ctx, value[key], wanted[\"record\"][key], depth + 1)\n\n\ndef _axm_literal(ctx, value, wanted):\n    _axm_check(ctx, value, wanted)\n    return value\n\n\ndef _axm_entry(fn, args, types, result_type):\n    if _axm_b.len(args) != _axm_b.len(types):\n        _axm_error(\"ARGUMENT_COUNT\")\n    ctx = [100000]\n    for arg, wanted in _axm_b.zip(args, types):\n        _axm_check(ctx, arg, wanted)\n    value = fn(ctx, *args)\n    _axm_check(ctx, value, result_type)\n    return value\n\n\ndef _axm_index(value):\n    if value < 0 or value != _axm_math.floor(value):\n        _axm_error(\"INDEX_INVALID\")\n    return _axm_b.int(value)\n\n\ndef _axm_div(left, right):\n    if right == 0:\n        _axm_error(\"DIVISION_BY_ZERO\")\n    return _axm_b.float(left) / _axm_b.float(right)\n\n\ndef _axm_rem(left, right):\n    if right == 0:\n        _axm_error(\"DIVISION_BY_ZERO\")\n    return _axm_math.fmod(left, right)\n\n\ndef _axm_equal(ctx, left, right):\n    _axm_tick(ctx)\n    if _axm_b.type(left) is _axm_b.list and _axm_b.type(right) is _axm_b.list:\n        return _axm_b.len(left) == _axm_b.len(right) and _axm_b.all(_axm_equal(ctx, a, b) for a, b in _axm_b.zip(left, right))\n    if _axm_b.type(left) is _axm_b.dict and _axm_b.type(right) is _axm_b.dict:\n        return _axm_b.set(left) == _axm_b.set(right) and _axm_b.all(_axm_equal(ctx, left[k], right[k]) for k in _axm_b.sorted(left))\n    return left == right\n\n\ndef _axm_seq(ctx, kind, values, fn):\n    output = []\n    for item in values:\n        _axm_tick(ctx)\n        value = fn(item)\n        if kind == \"map\":\n            output.append(value)\n        elif kind == \"filter\" and value:\n            output.append(item)\n        elif kind == \"some\" and value:\n            return True\n        elif kind == \"every\" and not value:\n            return False\n    return False if kind == \"some\" else True if kind == \"every\" else output\n\n\ndef _axm_fold(ctx, values, initial, fn):\n    value = initial\n    for item in values:\n        _axm_tick(ctx)\n        value = fn(value, item)\n    return value\n\n\ndef _axm_sort(ctx, values, fn, descending):\n    # Decorate exactly once. Python and ECMAScript both specify stable sorting.\n    decorated = []\n    for value in values:\n        _axm_tick(ctx)\n        decorated.append((fn(value), value))\n    # Charge a conservative shared bound instead of a runtime-specific comparator count.\n    for unused in _axm_b.range(_axm_b.len(values) * _axm_b.max(1, _axm_b.len(values).bit_length())):\n        _axm_tick(ctx)\n    return [pair[1] for pair in _axm_b.sorted(decorated, key=lambda pair: pair[0], reverse=descending)]\n\n\ndef _axm_at(values, index, fallback):\n    index = _axm_index(index)\n    return values[index] if index < _axm_b.len(values) else fallback()\n\n\ndef _axm_slice(value, start, end):\n    return value[_axm_index(start):_axm_index(end)]\n\n\ndef _axm_join(values, separator):\n    return separator.join(values)\n\n\ndef _axm_contains(left, right):\n    return right in left\n\n\ndef _axm_split(value, separator):\n    if not separator:\n        _axm_error(\"EMPTY_SEPARATOR\")\n    return value.split(separator)\n\n\ndef _axm_trim(value):\n    return value.strip(\" \\t\\r\\n\\v\\f\")\n\n\ndef _axm_lower(value):\n    return \"\".join(_axm_b.chr(_axm_b.ord(ch) + 32) if \"A\" <= ch <= \"Z\" else ch for ch in value)\n\n\ndef _axm_upper(value):\n    return \"\".join(_axm_b.chr(_axm_b.ord(ch) - 32) if \"a\" <= ch <= \"z\" else ch for ch in value)\n\n\ndef _axm_coalesce(value, fallback):\n    return fallback() if value is None else value\n\n\n# lineCost: \"number\"\ndef _axm_f1(_axm_ctx, _axm_v0, _axm_v1):\n    return _axm_step(_axm_ctx, (_axm_b.float(_axm_step(_axm_ctx, _axm_v0)) * _axm_b.float(_axm_step(_axm_ctx, _axm_v1))))\n\n\n# invoice: {\"record\":{\"labels\":{\"list\":\"string\"},\"subtotal\":\"number\",\"tax\":\"number\",\"total\":\"number\"}}\ndef _axm_f0(_axm_ctx, _axm_v2, _axm_v3):\n    return _axm_step(_axm_ctx, (lambda _axm_v4: _axm_step(_axm_ctx, (lambda _axm_v5: _axm_step(_axm_ctx, {\"labels\": _axm_step(_axm_ctx, _axm_seq(_axm_ctx, \"map\", _axm_step(_axm_ctx, _axm_v4), (lambda _axm_v6: _axm_step(_axm_ctx, _axm_trim(_axm_step(_axm_ctx, _axm_step(_axm_ctx, _axm_v6)[\"name\"])))))), \"subtotal\": _axm_step(_axm_ctx, _axm_v5), \"tax\": _axm_step(_axm_ctx, (_axm_b.float(_axm_step(_axm_ctx, _axm_v5)) * _axm_b.float(_axm_step(_axm_ctx, _axm_v3)))), \"total\": _axm_step(_axm_ctx, (_axm_b.float(_axm_step(_axm_ctx, _axm_v5)) + _axm_b.float(_axm_step(_axm_ctx, (_axm_b.float(_axm_step(_axm_ctx, _axm_v5)) * _axm_b.float(_axm_step(_axm_ctx, _axm_v3)))))))}))(_axm_step(_axm_ctx, _axm_fold(_axm_ctx, _axm_step(_axm_ctx, _axm_seq(_axm_ctx, \"map\", _axm_step(_axm_ctx, _axm_v4), (lambda _axm_v9: _axm_step(_axm_ctx, _axm_f1(_axm_ctx, _axm_step(_axm_ctx, _axm_step(_axm_ctx, _axm_v9)[\"quantity\"]), _axm_step(_axm_ctx, _axm_step(_axm_ctx, _axm_v9)[\"unitPrice\"])))))), _axm_step(_axm_ctx, 0), (lambda _axm_v8, _axm_v7: _axm_step(_axm_ctx, (_axm_b.float(_axm_step(_axm_ctx, _axm_v8)) + _axm_b.float(_axm_step(_axm_ctx, _axm_v7))))))))))(_axm_step(_axm_ctx, _axm_seq(_axm_ctx, \"filter\", _axm_step(_axm_ctx, _axm_v2), (lambda _axm_v10: _axm_step(_axm_ctx, _axm_step(_axm_ctx, _axm_v10)[\"active\"]))))))\n\ndef invoice(*_axm_args):\n    return _axm_entry(_axm_f0, _axm_args, [{\"list\": {\"record\": {\"active\": \"boolean\", \"name\": \"string\", \"quantity\": \"number\", \"unitPrice\": \"number\"}}}, \"number\"], {\"record\": {\"labels\": {\"list\": \"string\"}, \"subtotal\": \"number\", \"tax\": \"number\", \"total\": \"number\"}})\n\nFUNCTIONS = {\"invoice\": invoice}\n",
+          "sha256": "1330c95a0f8723baf84b4002d190a7cfc13928ddfdc7b0c19401226723076f16"
+        },
+        {
+          "path": "selftest.py",
+          "role": "verification",
+          "content": "# Caller-supplied or bundled cases. Passing these alone is not general correctness proof.\nfrom module import FUNCTIONS\n\nCASES = [{\"args\": [[{\"active\": False, \"name\": \"ignored\", \"quantity\": 3, \"unitPrice\": 5}], 0.2], \"expected\": {\"labels\": [], \"subtotal\": 0, \"tax\": 0, \"total\": 0}, \"function\": \"invoice\"}, {\"args\": [[{\"active\": True, \"name\": \" bolts \", \"quantity\": 3, \"unitPrice\": 4}, {\"active\": False, \"name\": \"skip\", \"quantity\": 50, \"unitPrice\": 20}], 0.25], \"expected\": {\"labels\": [\"bolts\"], \"subtotal\": 12, \"tax\": 3, \"total\": 15}, \"function\": \"invoice\"}, {\"args\": [[], 0.21], \"expected\": {\"labels\": [], \"subtotal\": 0, \"tax\": 0, \"total\": 0}, \"function\": \"invoice\"}]\nfor case in CASES:\n    try:\n        actual = FUNCTIONS[case[\"function\"]](*case[\"args\"])\n    except Exception as error:\n        if \"error\" not in case or str(error) != case[\"error\"]:\n            raise\n    else:\n        if \"error\" in case or actual != case[\"expected\"]:\n            raise AssertionError(\"CASE_MISMATCH:\" + case[\"function\"])\nprint(\"PASS code-program cases:\", len(CASES))\n",
+          "sha256": "05ce1676f8b7d695f6d561cde76aacd99e0c92c816182d77d63b98a24236257f"
+        }
+      ],
+      "sourceMap": [
+        {
+          "function": "lineCost",
+          "irPath": "/functions/1",
+          "startLine": 186,
+          "endLine": 190
+        },
+        {
+          "function": "invoice",
+          "irPath": "/functions/0",
+          "startLine": 191,
+          "endLine": 195
+        }
+      ],
+      "reusableFunctions": [
+        {
+          "name": "invoice",
+          "structuralSha256": "0361714b03dd7519238d54e013ac162c1b74915d7cf198fb07674a71ad71a450"
+        },
+        {
+          "name": "lineCost",
+          "structuralSha256": "89ae7df005057d24559958b5624082e25d0f42b6cead11ec7359f7cf84f51982"
+        }
+      ]
+    }
+  ],
+  "reproducibility": {
+    "buildsCompared": 2,
+    "identical": true
+  },
+  "execution": "NOT_RUN",
+  "buildSha256": "463c11deaccbabf9eb20a4fecdcf9fe700ff2423f72aa0e5cb03031d6733f570"
+}
